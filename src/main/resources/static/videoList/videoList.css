@@ -1,0 +1,395 @@
+.myLectureVideos {
+  font-family: inherit;
+  font-weight: bold;
+}
+
+div.RootWrapper {
+  position: relative;
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
+}
+
+div.PageWrapper {
+  display: flex;
+  flex-flow: column;
+  align-content: flex-start;
+  margin: 0px auto;
+  max-width: 808px;
+  width: 100%;
+  padding: 0px 20px;
+  min-height: 1px;
+}
+
+.pc header.myLecturesHeader{
+  border-bottom: 1px solid rgb(238, 238, 238);
+}
+
+div.Content {
+  padding: 50px 20px 20px;
+  margin: 0px auto;
+  max-width: 768px;
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+}
+
+div.Title {
+  font-size: 24px;
+  line-height: 36px;
+  font-weight: bold;
+  letter-spacing: -0.72px;
+  color: rgb(51, 51, 51);
+}
+
+div.VidoListWrapper {
+  width: auto;
+  height: auto;
+  transition: opacity 200ms ease-in-out 0s;
+  display: none;
+  opacity: 0;
+  min-width: 0px;
+  min-height: 1px;
+}
+
+div.ListSmallTitle {
+  line-height: 14px;
+  padding: 23px 20px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+div.VideoListPage {
+  padding: 0px;
+}
+
+div.VideoList {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  border-bottom: 1px solid rgb(238, 238, 238);
+  margin-top: 10px;
+}
+
+.VideoListPage > * > div:first-child {
+  -webkit-box-flex: 0;
+  flex: 0 0 auto;
+  margin-left: 30px;
+  width: 100px;
+}
+
+div.VideoThumbnailWrapper {
+  min-height: 1px;
+  margin-right: 20px;
+}
+
+img.LectureImageLoader {
+  display: none !important;
+}
+
+img.RealViedoThumbnail {
+  display: initial;
+  border-radius: 10px;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-left: 20px;
+  margin-top: 5px;
+}
+
+div.VideoTitle {
+  margin-left: 20px;
+  margin-bottom: 14px;
+  line-height: 24px;
+  font-size: 20px;
+  font-weight: bold;
+  width: 450px;
+}
+
+.LectureDetail {
+  margin-left: 20px;
+  line-height: 18px;
+  color: rgb(155, 155, 155);
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+/* 재생버튼 */
+
+img.PlayButton {
+  width: 40px;
+  margin-left: 40px;
+  margin-right: 40px;
+  cursor: pointer;
+}
+
+
+/* 결제한 강의가 없을 때 나오는 섹션의 css */
+
+div.ContentWrapper {
+  padding: 0px 20px;
+  position: relative;
+}
+
+div.noLectureContentWrapper {
+  width: auto;
+  height: auto;
+  transition: opacity 200ms ease-in-out 0s;
+  display: none;
+  opacity: 0;
+  min-width: 0px;
+  min-height: 1px;
+}
+
+div.noLectureBaseWrapper {
+  display: flex;
+  flex-direction: column;
+  -webkit-box-align: center;
+  align-items: center;
+  color: rgb(119, 119, 119);
+  padding: 100px 0px;
+}
+
+img.noPTEVER {
+  width: 100px;
+}
+
+strong.BaseHeader {
+  font-size: 18px;
+  line-height: 26px;
+  margin-top: 24px;
+}
+
+div.BaseDescription {
+  font-size: 14px;
+  line-height: 20px;
+  margin-top: 6px;
+}
+
+button.ButtonWrapper {
+  position: relative;
+  font-family: inherit;
+  line-height: initial;
+  font-weight: bold;
+  cursor: pointer;
+  transition-duration: 0.1s;
+  transition-property: background-color, color, border-color, opacity, box-shadow;
+  transition-timing-function: ease-out;
+  outline: none;
+  border: 1px solid rgb(205, 205, 205);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 8px 0px;
+  padding: 8px 10px;
+  min-height: 35px;
+  background-color: rgb(255, 255, 255);
+  color: rgb(205, 205, 205);
+  border-radius: 5px;
+}
+
+button.ButtonWrapper:hover {
+  position: relative;
+  font-family: inherit;
+  line-height: initial;
+  font-weight: bold;
+  cursor: pointer;
+  transition-duration: 0.1s;
+  transition-property: background-color, color, border-color, opacity, box-shadow;
+  transition-timing-function: ease-out;
+  outline: none;
+  border: 1px solid rgb(205, 205, 205);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 8px 0px;
+  padding: 8px 10px;
+  min-height: 35px;
+  background-color: rgb(255, 255, 255);
+  color: rgb(153, 89, 255);
+  border-radius: 5px;
+}
+
+span.FlexWrapper {
+  width: 100%;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+}
+
+span.ButtonTextWrapper {
+  transition: all 0.2s ease 0s;
+}
+
+span.TextContinue {
+  margin: 0px;
+  max-width: 100%;
+  width: inherit;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 20px;
+  line-height: 1;
+  font-family: inherit;
+}
+
+.ButtonWrapper::after {
+  position: absolute;
+  content: " ";
+  inset: 0px;
+  transition: all 0.1s ease-out 0s;
+}
+
+
+@media(max-width:768px) {
+
+  .pc {
+    display: block !important;
+  }
+
+
+  .VideoListPage > * > div:first-child {
+    -webkit-box-flex: 0;
+    flex: 0 0 auto;
+    margin-right: 10px;
+    width: 100px;
+  }
+
+  img.RealViedoThumbnail {
+    display: initial;
+    border-radius: 10px;
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+    margin-left: 10px;
+    margin-top: 5px;
+  }
+
+  div.VideoTitle {
+    margin-bottom: 10px;
+    line-height: 24px;
+    font-size: 18px;
+    font-weight: bold;
+    width: auto;
+}
+
+.LectureDetail {
+  line-height: 18px;
+  color: rgb(155, 155, 155);
+  font-size: 12px;
+  margin-right: 13px;
+  margin-bottom: 10px;
+}
+
+img.PlayButton {
+  width: 30px;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+  
+
+}
+
+@media(max-width:450px) {
+  .VideoListPage > * > div:first-child {
+    -webkit-box-flex: 0;
+    flex: 0 0 auto;
+    width: 80px;
+    
+  }
+
+  img.RealViedoThumbnail {
+    display: initial;
+    border-radius: 10px;
+    width: 85px;
+    height: 85px;
+    object-fit: cover;
+    margin-left: 0px;
+    margin-top: 0px;
+  }
+
+  div.VideoTitle {
+    margin-left: 8px;
+    margin-bottom: 7px;
+    line-height: 24px;
+    font-size: 14px;
+    font-weight: bold;
+    width: auto;
+}
+  .LectureDetail {
+    line-height: 18px;
+    color: rgb(155, 155, 155);
+    font-size: 12px;
+    margin-left: 8px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+  }
+
+  img.PlayButton {
+    width: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  button.ButtonWrapper {
+    position: relative;
+    font-family: inherit;
+    line-height: initial;
+    font-weight: bold;
+    cursor: pointer;
+    transition-duration: 0.1s;
+    transition-property: background-color, color, border-color, opacity, box-shadow;
+    transition-timing-function: ease-out;
+    outline: none;
+    border: 1px solid rgb(205, 205, 205);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 8px 0px;
+    padding: 5px 10px;
+    min-height: 28px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(205, 205, 205);
+    border-radius: 5px;
+  }
+  
+  button.ButtonWrapper:hover {
+    position: relative;
+    font-family: inherit;
+    line-height: initial;
+    font-weight: bold;
+    cursor: pointer;
+    transition-duration: 0.1s;
+    transition-property: background-color, color, border-color, opacity, box-shadow;
+    transition-timing-function: ease-out;
+    outline: none;
+    border: 1px solid rgb(205, 205, 205);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 8px 0px;
+    padding: 5px 10px;
+    min-height: 28px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(153, 89, 255);
+    border-radius: 5px;
+  }
+  
+  span.FlexWrapper {
+    width: 100%;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+  }
+  
+  span.ButtonTextWrapper {
+    transition: all 0.2s ease 0s;
+  }
+  
+  span.TextContinue {
+    margin: 0px;
+    max-width: 100%;
+    width: inherit;
+    font-weight: bold;
+    font-size: 13px;
+    line-height: 20px;
+    line-height: 1;
+    font-family: inherit;
+  }
+  
+  .ButtonWrapper::after {
+    position: absolute;
+    content: " ";
+    inset: 0px;
+    transition: all 0.1s ease-out 0s;
+  }
+
+}

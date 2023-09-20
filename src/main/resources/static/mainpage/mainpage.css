@@ -1,0 +1,1541 @@
+/* 기본 CSS */
+* {
+    outline: none;
+    background-repeat: no-repeat;
+    font-family: inherit;
+    box-sizing: inherit;
+    font-weight: bold;
+}
+
+html,
+body {
+    width: 100%;
+    font-size: 14px;
+    color: black;
+    word-break: normal;
+    overflow-wrap: break-word;
+}
+
+html {
+    display: block;
+    box-sizing: border-box;
+    cursor: default;
+    font-family: sans-serif;
+    line-height: 1.5;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+}
+
+div.root {
+    background-color: white;
+    min-height: 100%;
+    min-width: 100%;
+}
+
+div.RootWrapper {
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    min-height: 100vh;
+}
+
+div {
+    display: block;
+}
+
+input {
+    text-rendering: auto;
+    letter-spacing: normal;
+    word-spacing: normal;
+    line-height: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    appearance: auto;
+    -webkit-rtl-ordering: logical;
+    cursor: text;
+    border-width: 2px;
+    border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+    border-image: initial;
+}
+
+section {
+    display: block;
+    font-family: "SUIT", sans-serif;
+}
+
+h1 {
+    display: block;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+form {
+    display: block;
+    margin-top: 0em;
+}
+
+img {
+    border-style: none;
+    overflow-clip-margin: content-box;
+    overflow: clip;
+}
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+a,
+area,
+button,
+input,
+label,
+select,
+textarea,
+[tabindex] {
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+}
+
+button,
+input {
+    overflow: visible;
+}
+
+button,
+input,
+select,
+textarea {
+    background-color: transparent;
+    border-style: none;
+    color: inherit;
+    font-size: 1em;
+    margin: 0;
+}
+
+button,
+select {
+    text-transform: none;
+}
+
+button,
+html [type="button"],
+[type="reset"],
+[type="submit"] {
+    -webkit-appearance: button;
+}
+
+input:not([type="range"]):not([type="color"]):not([type="button"]):not([type="reset"]):not([type="submit"]):not(
+        [type="file"]
+    ) {
+    writing-mode: horizontal-tb !important;
+}
+
+input[type="text" i] {
+    padding: 1px 2px;
+}
+
+ul {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+menu,
+nav,
+section,
+summary {
+    display: block;
+}
+
+button {
+    text-rendering: auto;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-indent: 0px;
+    text-shadow: none;
+    writing-mode: horizontal-tb !important;
+    padding-block: 1px;
+    padding-inline: 6px;
+    border-width: 2px;
+    border-image: initial;
+}
+
+hr {
+    overflow: visible;
+    display: block;
+    unicode-bidi: isolate;
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+p,
+label {
+    margin: 0px;
+}
+
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+b,
+strong {
+    font-weight: bolder;
+}
+
+/* 메인페이지 css */
+.MainPageWrapper {
+    min-height: 1px;
+}
+
+.Main-Wrapper {
+    display: flex;
+    flex-flow: column;
+    align-content: flex-start;
+    margin: 0px auto;
+    max-width: 808px;
+    width: 100%;
+    padding: 0px 20px;
+    min-height: 1px;
+}
+
+.Main-Banner-Wrapper {
+    width: 100%;
+}
+
+.Main-Banner-FadeWrapper {
+    display: block;
+    opacity: 1;
+    width: auto;
+    height: auto;
+    transition: opacity 200ms ease-in-out 0s;
+    min-width: 0px;
+    min-height: 1px;
+}
+
+.Main-SlideBannerWrapper {
+    margin-bottom: 24px;
+    width: 100%;
+}
+
+.ImageSlider {
+    position: relative;
+    overflow: hidden;
+    display: block;
+    box-sizing: border-box;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+    -ms-touch-action: pan-y;
+    touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+    width: 768px;
+}
+
+.ImageSlider-PrevArrow {
+    display: block;
+    z-index: 1;
+    width: 50px;
+    height: 50px;
+    transform: rotate(180deg) translate(0px, 50%);
+    font-size: 0;
+    line-height: 0;
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    padding: 0;
+    cursor: pointer;
+    color: transparent;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+
+.ImageSlider-PrevArrow:before {
+    content: '←';
+    font-family: 'slick';
+    font-size: 20px;
+    line-height: 1;
+    opacity: .75;
+    color: white;
+    -webkit-font-smoothing: antialiased;
+}
+
+.ImageSlider-NextArrow {
+    display: block;
+    z-index: 1;
+    width: 50px;
+    height: 50px;
+    font-size: 0;
+    line-height: 0;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    padding: 0;
+    transform: translate(0, -50%);
+    cursor: pointer;
+    color: transparent;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+
+.ImageSlider-NextArrow:before {
+    content: '→';
+    font-family: 'slick';
+    font-size: 20px;
+    line-height: 1;
+    opacity: .75;
+    color: white;
+    -webkit-font-smoothing: antialiased;
+}
+
+.ImageSlider-ImageTrack {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 9216px;
+    cursor: pointer;
+}
+
+.ImageSlider-ImageTrack div {
+    width: 768px;
+    float: left;
+}
+
+.ImageSlider-ImageTrack img {
+    width: 100%;
+}
+
+.MainBanner-InfoButton {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    position: absolute;
+    right: 12px;
+    height: 28px;
+    padding: 6px 10px;
+    color: rgb(204, 204, 204);
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: -0.36px;
+    font-weight: bold;
+    border-radius: 16px;
+    background-color: rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    bottom: 12px;
+}
+
+.MainBanner-CurrentCount {
+    color: rgb(255, 255, 255);
+    margin-right: 2px;
+}
+
+.MainBanner-InfoButtonImg {
+    margin-left: 4px;
+}
+
+.FullScreenWrapper {
+    display: none;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 800;
+}
+
+.MainBannerViewer {
+    max-width: 768px;
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+    height: 100%;
+    margin: 0px auto;
+}
+
+.MainBannerViewer-Header {
+    position: relative;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    width: 100%;
+    min-height: 32px;
+    margin-top: 40px;
+    margin-bottom: 16px;
+}
+
+.MainBannerViewer-HeaderTitle {
+    font-size: 16px;
+    color: rgb(255, 255, 255);
+    line-height: 24px;
+    letter-spacing: -0.48px;
+    font-weight: 500;
+}
+
+.MainBannerViewer-Exit {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    padding: 0px;
+    width: 32px;
+    cursor: pointer;
+}
+
+.MainBannerViewer-Exit img {
+    width: 100%;
+}
+
+.MainBannerViewer-Container {
+    width: 100%;
+    padding: 0px;
+    overflow: auto;
+}
+
+.MainBannerViewer-ContainerA {
+    min-height: 1px;
+}
+
+.MainBannerViewer-ImageWrapper {
+    margin-bottom: 8px;
+    min-height: 1px;
+}
+
+/* shortcut 리스트 css */
+.ShortcutListWrapper {
+    margin-bottom: 40px;
+}
+
+.Shortcut-FadeWrapper {
+    display: block;
+    opacity: 1;
+    width: auto;
+    height: auto;
+    transition: opacity 200ms ease-in-out 0s;
+    min-width: 0px;
+    min-height: 1px;
+}
+
+.Shortcut-NodelistWrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    justify-items: center;
+}
+
+.Shortcut-NodelistWrapper-Mobile {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    justify-items: center;
+}
+
+.Shortcut-NodelistWrapper > *, .Shortcut-NodelistWrapper-Mobile > * {
+    display: table;
+}
+
+.Shortcut-NodelistWrapper a, .Shortcut-NodelistWrapper-Mobile a {
+    width: 100%;
+}
+
+.Shortcut-ItemWrapper {
+    display: flex;
+    align-items: flex-end;
+    height: 92px;
+    border-radius: 5px;
+    padding: 6px 10px;
+    background-color: rgb(244, 244, 244);
+    background-size: cover;
+    color: white;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.48px;
+    position: relative;
+}
+
+.Shortcut-BackgroundDeemed {
+    opacity: 0.2;
+    background-color: rgb(17, 17, 17);
+    height: 100%;
+    width: 100%;
+    left: 0px;
+    bottom: 0px;
+    position: absolute;
+    border-radius: 5px;
+}
+
+.Shortcut-TextDeemed {
+    opacity: 0.2;
+    background-image: linear-gradient(to right, rgb(3, 0, 0), rgba(2, 0, 0, 0.52), rgba(0, 0, 0, 0));
+    width: 94px;
+    height: 100%;
+    left: 0px;
+    bottom: 0px;
+    position: absolute;
+    border-radius: 5px;
+}
+
+.Shortcut1 {
+    background-image: url(./shortcutIcons/shortcut_lectureImage.jpg);
+}
+
+.Shortcut2 {
+    background-image: url(./shortcutIcons/shortcut_shoppingmallImage.jpg);
+}
+
+.Shortcut3 {
+    background-image: url(./shortcutIcons/shortcut_communityImage.jpg);
+}
+
+.Shortcut4 {
+    background-image: url(./shortcutIcons/shortcut_myLectureImage.jpg);
+}
+
+/* .Shortcut5 {
+    background-image: url(./shortcutIcons/shortcut_mypageImage.jpg);
+} */
+
+.Shortcut6 {
+    background-image: url(./shortcutIcons/shortcut_purchaseListImage.jpg);
+}
+
+.Shortcut7 {
+    background-image: url(./shortcutIcons/shortcut_eventImage.jpg);
+}
+
+.Shortcut-ItemWrapper span {
+    z-index: 1;
+}
+
+
+.Shortcut-ImageWrapper {
+    min-height: 1px;
+}
+
+.Shortcut-ItemWrapper span {
+    white-space: nowrap;
+    letter-spacing: -0.7px;
+    margin-top: 7px;
+}
+
+.Shortcut-ItemWrapper image {
+    display: initial;
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.RatioRatio {
+    height: 0px;
+    position: relative;
+    width: 100%;
+    padding-top: 100%;
+}
+
+.RatioContent {
+    height: 100%;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+}
+
+.ProductListWrapper {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+}
+
+.ProductList-FadeWrapper {
+    opacity: 1;
+    display: block;
+    width: auto;
+    height: auto;
+    transition: opacity 200ms ease-in-out 0s;
+    min-width: 0px;
+    min-height: 1px;
+}
+
+.CardGroupWrapper {
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    min-height: 1px;
+    padding-bottom: 18px;
+}
+
+.ProductSection-HeaderWrapper {
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    line-height: 18px;
+    font-size: 14px;
+}
+
+.ProductSection-Header {
+    display: flex;
+    max-width: calc(100% - 62px);
+    font-size: 18px;
+    line-height: 22px;
+}
+
+.ProductSection-HeaderTitle {
+    display: block;
+    margin-right: 8px;
+    font-weight: bold;
+    color: black;
+    font-size: inherit;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.ProductSection-HeaderLinkWrapper {
+    display: flex;
+    align-items: center;
+    min-width: 52px;
+}
+
+.ProductSection-HeaderLink {
+    color: black;
+}
+
+.CardGroup-ProductContent, .CardGroup-ProductContent-Mobile {
+    display: flex;
+    flex-flow: wrap;
+    min-height: 1px;
+}
+
+.CardGroup-ProductContent-Mobile > :nth-child(2n) {
+    margin-right: 0px;
+}
+
+.CardGroup-ProductContent > * {
+    margin-right: 15px;
+    margin-bottom: 30px;
+    width: calc(25% - 11.25px) !important;
+}
+
+.CardGroup-ProductContent-Mobile > * {
+    margin-right: 15px;
+    margin-bottom: 30px;
+    width: calc(50% - 7.5px) !important;
+}
+
+.CardGroup-ProductContent > :last-child {
+    margin-right: 0;
+}
+
+.CardGroup-ProductWrapper {
+    display: flex;
+    flex-flow: column;
+    background-color: white;
+    min-height: 1px;
+}
+
+.CardGroup-ProductWrapper > a {
+    min-height: 1px;
+}
+
+.CardProduct-InfoWrapper {
+    overflow: hidden;
+}
+
+.CardProduct-ImageContainer {
+    position: relative;
+}
+
+.CardProduct-ImageWrapper {
+    min-height: 1px;
+}
+
+.CardProduct-Image {
+    display: initial;
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.CardProduct-WishContainer {
+    position: absolute;
+    right: 15px;
+    bottom: 13px;
+}
+
+.CardProduct-WishButton {
+    width: 24px;
+    height: 24px;
+    line-height: normal;
+    padding: 0px;
+    background-color: transparent;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+    outline: none;
+}
+
+.CardProduct-WishButton > img {
+    filter: drop-shadow(rgba(0, 0, 0, 0.4) 1px 1px 3px);
+}
+
+.FilledHeartImage {
+    display: none;
+}
+
+.CardProduct-DetailContainer {
+    padding: 10px 13px 0px 11px;
+}
+
+.CardProduct-Location {
+    display: block;
+    color: rgb(119, 119, 119);
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 14px;
+    margin: 0px 0px 8px;
+}
+
+.CardProduct-Title {
+    height: auto;
+    margin: 0px 0px 9px;
+    font-weight: 400;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    max-height: 40px;
+    line-height: 20px;
+    font-size: 14px;
+}
+
+.CardProduct-ReviewContainer {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.StarsWrapper {
+    display: flex;
+    flex-flow: row;
+}
+
+.StarsWrapper > img {
+    margin-right: 1px;
+}
+
+.CardProduct-ReviewCount {
+    display: block;
+    margin: 0px 0px 0px 4px;
+    color: rgb(51, 51, 51);
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 14px;
+    letter-spacing: -0.03em;
+}
+
+.CardProduct-BottomBorder {
+    height: 1px;
+    background-color: rgb(255, 255, 255);
+    margin: 8px 0px;
+    border-top: 1px solid rgb(238, 238, 238);
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+}
+
+.CardProduct-PriceContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.CardProduct-Price {
+    color: rgb(204, 204, 204);
+    font-size: 10px;
+    line-height: 14px;
+    letter-spacing: -0.48px;
+    text-decoration: line-through;
+}
+
+.CardProduct-DiscountRateContainer {
+    display: flex;
+}
+
+.CardProduct-DiscountRate {
+    margin: 0px 2px 0px 0px;
+    color: rgb(255, 63, 51);
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 22px;
+}
+
+.CardProduct-SalePrice {
+    color: rgb(51, 51, 51);
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 22px;
+}
+
+/* 광고 배너 css */
+
+.Main-Banner-Wrapper-Ad, .Main-Banner-Wrapper-Ad-Mobile {
+    width: 100%;
+}
+
+.Main-Banner-FadeWrapper-Ad, .Main-Banner-FadeWrapper-Ad-Mobile {
+    display: block;
+    opacity: 1;
+    width: auto;
+    height: auto;
+    transition: opacity 200ms ease-in-out 0s;
+    min-width: 0px;
+    min-height: 1px;
+}
+
+.Main-SlideBannerWrapper-Ad, .Main-SlideBannerWrapper-Ad-Mobile {
+    margin-bottom: 24px;
+    width: 100%;
+}
+
+.ImageSlider-Ad {
+    position: relative;
+    overflow: hidden;
+    display: block;
+    box-sizing: border-box;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+    -ms-touch-action: pan-y;
+    touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+    width: 768px;
+}
+
+.ImageSlider-Ad-Mobile {
+    position: relative;
+    overflow: hidden;
+    display: block;
+    box-sizing: border-box;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+    -ms-touch-action: pan-y;
+    touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+    width: 90vw;
+}
+
+.ImageSlider-PrevArrow-Ad {
+    display: block;
+    z-index: 1;
+    width: 50px;
+    height: 50px;
+    transform: rotate(180deg) translate(0px, 50%);
+    font-size: 0;
+    line-height: 0;
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    padding: 0;
+    cursor: pointer;
+    color: transparent;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+
+.ImageSlider-PrevArrow-Ad:before {
+    content: '←';
+    font-family: 'slick';
+    font-size: 20px;
+    line-height: 1;
+    opacity: .75;
+    color: white;
+    -webkit-font-smoothing: antialiased;
+}
+
+.ImageSlider-NextArrow-Ad {
+    display: block;
+    z-index: 1;
+    width: 50px;
+    height: 50px;
+    font-size: 0;
+    line-height: 0;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    padding: 0;
+    transform: translate(0, -50%);
+    cursor: pointer;
+    color: transparent;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+
+.ImageSlider-NextArrow-Ad:before {
+    content: '→';
+    font-family: 'slick';
+    font-size: 20px;
+    line-height: 1;
+    opacity: .75;
+    color: white;
+    -webkit-font-smoothing: antialiased;
+}
+
+.ImageSlider-ImageTrack-Ad {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 3072px;
+    cursor: pointer;
+}
+
+.ImageSlider-ImageTrack-Ad-Mobile {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 360vw;
+    cursor: pointer;
+}
+
+.ImageSlider-ImageTrack-Ad div {
+    width: 768px;
+    float: left;
+}
+
+.ImageSlider-ImageTrack-Ad-Mobile div {
+    width: 90vw;
+    float: left;
+}
+
+.ImageSlider-ImageTrack-Ad img, .ImageSlider-ImageTrack-Ad-Mobile img {
+    width: 100%;
+}
+
+/* 기획전 슬라이드배너 css */
+.Main-Banner-Wrapper-ex {
+    width: 100%;
+}
+
+.Main-Banner-FadeWrapper-ex {
+    display: block;
+    opacity: 1;
+    width: auto;
+    height: auto;
+    transition: opacity 200ms ease-in-out 0s;
+    min-width: 0px;
+    min-height: 1px;
+}
+
+.ExBannerWrapper {
+    margin-bottom: 32px;
+    width: 100%;
+}
+
+.ImageSlider-ex-Wrapper {
+    overflow: hidden;
+}
+
+.Main-SlideBannerWrapper-ex {
+    padding-bottom: 40px;
+    height: 340px;
+}
+
+.ImageSlider-ex {
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    height: 307.2px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+    -ms-touch-action: pan-y;
+    touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+    visibility: visible;
+}
+
+.ImageSlider-PrevArrow-ex {
+    display: block;
+    z-index: 1;
+    width: 50px;
+    height: 50px;
+    transform: rotate(180deg) translate(0px, 50%);
+    font-size: 0;
+    line-height: 0;
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    padding: 0;
+    cursor: pointer;
+    color: transparent;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+
+.ImageSlider-PrevArrow-ex:before {
+    content: '←';
+    font-family: 'slick';
+    font-size: 20px;
+    line-height: 1;
+    opacity: .75;
+    color: white;
+    -webkit-font-smoothing: antialiased;
+}
+
+.ImageSlider-NextArrow-ex {
+    display: block;
+    z-index: 1;
+    width: 50px;
+    height: 50px;
+    font-size: 0;
+    line-height: 0;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    padding: 0;
+    transform: translate(0, -50%);
+    cursor: pointer;
+    color: transparent;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+
+.ImageSlider-NextArrow-ex:before {
+    content: '→';
+    font-family: 'slick';
+    font-size: 20px;
+    line-height: 1;
+    opacity: .75;
+    color: white;
+    -webkit-font-smoothing: antialiased;
+}
+
+.ImageSlider-ImageTrack-ex {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 5376px;
+    cursor: pointer;
+}
+
+.ImageSlider-ImageTrack-ex div {
+    width: 768px;
+    float: left;
+}
+
+.ImageSlider-ImageTrack-ex img {
+    width: 100%;
+}
+
+.ImageSlider-DotButtons {
+    position: absolute;
+    bottom: -30px;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-align: center;
+}
+
+.ImageSlider-DotButtons li {
+    width: 13px;
+    height: 13px;
+    margin: 0px;
+    position: relative;
+    display: inline-block;
+    padding: 0;
+    cursor: pointer;
+}
+
+.ImageSlider-DotButtons li button {
+    width: 100%;
+    height: 100%;
+    font-size: 0;
+    line-height: 0;
+    display: block;
+    content: "";
+    padding: 5px;
+    cursor: pointer;
+    color: transparent;
+    border: 0;
+    outline: none;
+    background: transparent;
+}
+
+.Dotbutton::before {
+    opacity: 1;
+    content: "";
+    width: 5px;
+    height: 5px;
+    border-radius: 2.5px;
+    font-family: 'slick';
+    font-size: 6px;
+    line-height: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+    color: black;
+    -webkit-font-smoothing: antialiased;
+    background-color: rgb(51, 151, 255);
+}
+
+.ImageSlider-DotButtons li .ButtonUnselected::before {
+    opacity: 1;
+    background-color: rgb(238, 238, 238);
+    content: "";
+    width: 5px;
+    height: 5px;
+    border-radius: 2.5px;
+    font-family: 'slick';
+    font-size: 6px;
+    line-height: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+    color: black;
+    -webkit-font-smoothing: antialiased;
+}
+
+.TrainerBannerWrapper {
+    overflow: hidden;
+    margin-bottom: 40px;
+    height: 100px;
+}
+
+.TrainerBannerImg {
+    width: 100%;
+}
+
+/* 메인페이지 반응형(앱) css입니다. */
+.MainBannerWrapper-Mobile {
+    width: 100vw;
+    margin-left: -20px;
+}
+
+.MainBanner-FadeWrapper-Mobile {
+    opacity: 1;
+    display: block;
+    width: auto;
+    height: auto;
+    transition: opacity 200ms ease-in-out 0s;
+    min-width: 0px;
+    min-height: 1px;
+}
+
+.MainBanner-BannerWrapperMobile {
+    margin-bottom: 24px;
+    width: 100%;
+}
+
+.MainBanner-ImgSliderWrapper-Mobile {
+    position: relative;
+    overflow: hidden;
+}
+
+.ImageSlider-Mobile {
+    visibility: visible;
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+    touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.SlickList-Mobile {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.SlickTrack-Mobile {
+    width: 1000vw;
+    opacity: 1;
+    position: relative;
+    top: 0;
+    left: 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.SlickTrack-Mobile div {
+    width: 100vw;
+    float: left;
+}
+
+.SlickTrack-Mobile img {
+    width: 100%;
+}
+
+.MainBanner-InfoButton-Mobile {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    position: absolute;
+    right: 12px;
+    height: 28px;
+    padding: 6px 10px;
+    color: rgb(204, 204, 204);
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: -0.36px;
+    font-weight: bold;
+    border-radius: 16px;
+    background-color: rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    bottom: 12px;
+}
+
+.MainBanner-CurrentCount-Mobile {
+    color: rgb(255, 255, 255);
+    margin-right: 2px;
+}
+
+.MainBanner-InfoButtonImg-Mobile {
+    margin-left: 4px;
+}
+
+.FullScreenWrapper-Mobile {
+    display: none;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 800;
+}
+
+.MainBannerViewer-Mobile {
+    max-width: 768px;
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+    height: 100%;
+    margin: 0px auto;
+}
+
+.MainBannerViewer-HeaderMobile {
+    position: relative;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    width: 100%;
+    min-height: 32px;
+    margin-top: 20px;
+    margin-bottom: 4px;
+}
+
+.MainBannerViewer-HeaderTitleMobile {
+    font-size: 16px;
+    color: rgb(255, 255, 255);
+    line-height: 24px;
+    letter-spacing: -0.48px;
+    font-weight: 500;
+}
+
+.MainBannerViewer-Exit-Mobile {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    padding: 0px;
+    width: 32px;
+    cursor: pointer;
+}
+
+.MainBannerViewer-Exit-Mobile img {
+    width: 100%;
+}
+
+h2 {
+    margin: 0px;
+    padding: 0px;
+}
+
+.MainBannerViewer-ContainerWrapperMobile {
+    width: 100%;
+    padding: 0px;
+    overflow: auto;
+}
+
+.MainBannerViewer-ContainerMobile {
+    margin-bottom: 56px;
+}
+
+.MainBannerViewer-ContainerA {
+    min-height: 1px;
+}
+
+.MainBannerViewer-ImageWrapperMobile {
+    margin-bottom: 4px;
+    min-height: 1px;
+}
+
+.MainBannerViewer-ImageWrapperMobile img {
+    width: 100%;
+}
+
+/* 기획전 슬라이드배너 (앱) css입니다. */
+.ExBannerListWrapper-Mobile {
+    position: relative;
+    width: 100%;
+}
+
+.ExBanner-FadeWrapper {
+    width: auto;
+    height: auto;
+    transition: opacity 200ms ease-in-out 0s;
+    display: block;
+    opacity: 1;
+    min-width: 0px;
+    min-height: 1px;
+}
+
+.ExBannerWrapper-Mobile {
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.ExBanner-ImgSliderWrapper {
+    overflow: hidden;
+    margin-left: -10px;
+    width: 95vw;
+}
+
+.ExImgSliderWrapper-SliderWrapper {
+    padding-bottom: 40px;
+    position: relative;
+}
+
+.ExImgSlider {
+    visibility: visible;
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+    -ms-touch-action: pan-y;
+    touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.ExSlick-List {
+    padding: 0;
+    position: relative;
+    display: block;
+    overflow: hidden;
+    margin: 0;
+}
+
+.ExSlick-Track {
+    width: 665vw;
+    opacity: 1;
+    position: relative;
+    top: 0;
+    left: 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ExSlick-Track div {
+    width: 95vw;
+    float: left;
+}
+
+.ExSlick-Track img {
+    width: 100%;
+}
+
+.ImageSlider-DotButtons-Mobile {
+    position: absolute;
+    bottom: -30px;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-align: center;
+}
+
+.ImageSlider-DotButtons-Mobile li {
+    width: 13px;
+    height: 13px;
+    margin: 0px;
+    position: relative;
+    display: inline-block;
+    padding: 0;
+    cursor: pointer;
+}
+
+.ImageSlider-DotButtons-Mobile li button {
+    width: 100%;
+    height: 100%;
+    font-size: 0;
+    line-height: 0;
+    display: block;
+    content: "";
+    padding: 5px;
+    cursor: pointer;
+    color: transparent;
+    border: 0;
+    outline: none;
+    background: transparent;
+}
+
+.Dotbutton-Mobile::before {
+    opacity: 1;
+    content: "";
+    width: 5px;
+    height: 5px;
+    border-radius: 2.5px;
+    font-family: 'slick';
+    font-size: 6px;
+    line-height: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+    color: black;
+    -webkit-font-smoothing: antialiased;
+    background-color: rgb(51, 151, 255);
+}
+
+.ImageSlider-DotButtons-Mobile li .ButtonUnselected-Mobile::before {
+    opacity: 1;
+    background-color: rgb(238, 238, 238);
+    content: "";
+    width: 5px;
+    height: 5px;
+    border-radius: 2.5px;
+    font-family: 'slick';
+    font-size: 6px;
+    line-height: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+    color: black;
+    -webkit-font-smoothing: antialiased;
+}
+
+.TrainerBannerWrapper-Mobile {
+    overflow: hidden;
+    margin-bottom: 20px;
+    width: calc(100% + 40px);
+    margin-left: -20px;
+}
+
+.TrainerBannerImg {
+    width: 100%;
+}
+
+
+
+
+/* 미디어 쿼리 */
+.pc {
+    display: block;
+}
+
+.mobile {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .pc {
+        display: none;
+    }
+
+    .mobile {
+        display: block;
+    }
+}

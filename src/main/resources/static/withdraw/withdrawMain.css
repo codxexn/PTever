@@ -1,0 +1,257 @@
+div.RootWrapper {
+  position: relative;
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
+}
+
+div.BaseStyle {
+  font-family: inherit;
+  box-sizing: border-box;
+  color: rgb(68, 68, 68);
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.BaseStyle * {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.BaseStyle *, .BaseStyle ::before, .BaseStyle ::after {
+  box-sizing: inherit;
+  -webkit-font-smoothing: antialiased;
+}
+
+div.PageWrapper {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  padding-bottom: 0px;
+  padding-top: 0px;
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  flex-direction: column;
+  overflow: auto;
+  align-self: flex-start;
+}
+
+div.AllContentWrapper {
+  width: 100%;
+  overflow-y: auto;
+  display: flex;
+  flex: 1 1 0%;
+  padding-left: 80px;
+  padding-right: 80px;
+}
+
+div.ScreenContent {
+  width: 100%;
+  max-width: 720px;
+  display: flex;
+  flex-flow: column;
+  text-align: center;
+  margin: 0px auto;
+}
+
+.ScreenContent::before, .ScreenContent::after {
+  content: "";
+  flex: 1 1 0%;
+}
+
+div.ContentWrapperInner {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+div.AnimateStyled {
+  display: block !important;
+}
+
+div.AttachmentWrapper {
+  width: 100%;
+  margin: 0px auto;
+  padding-bottom: 10px;
+}
+
+div.FilterWrapper {
+  filter: contrast(1) brightness(1);
+  height: 100%;
+  width: 100%;
+}
+
+img.ByeImage {
+  pointer-events: none;
+  max-width: 100%;
+}
+
+div.DistributeWrapper {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.DistributeWrapper [data-qa="animate"] > :not(:last-child) {
+  margin-bottom: 16px;
+}
+
+h1.TextWrapper {
+  margin: 0px;
+  max-width: 100%;
+  width: inherit;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 44px;
+  color: rgb(51, 51, 51);
+  overflow-wrap: break-word;
+  margin-bottom: 16px;
+}
+
+
+p.BeneathTextWrapper {
+  margin-top: 30px;
+  max-width: 100%;
+  width: inherit;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 28px;
+  color: rgba(51, 51, 51, 0.7);
+  overflow-wrap: break-word;
+  font-family: inherit;
+}
+
+
+div.InlineButtonWrapper {
+  position: relative;
+  height: 95px;
+  margin-top: 10px;
+}
+
+div.InlineButtonInnerWrapper {
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+}
+
+a.SubmitWrapper {
+  display: flex;
+  flex-flow: wrap;
+  position: relative;
+  -webkit-box-align: center;
+  align-items: center;
+  margin-bottom: 0px;
+}
+
+button.ButtonWrapper {
+  position: relative;
+  font-family: inherit;
+  line-height: initial;
+  font-weight: 700;
+  cursor: pointer;
+  transition-duration: 0.1s;
+  transition-property: background-color, color, border-color, opacity, box-shadow;
+  transition-timing-function: ease-out;
+  outline: none;
+  border: 1px solid transparent;
+  margin: 0px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 12px 0px;
+  padding: 8px 18px;
+  min-height: 48px;
+  background-color: rgb(122, 41, 250);
+  color: rgb(255, 255, 255);
+  border-radius: 5px;
+}
+
+button.ButtonWrapper:hover {
+  position: relative;
+  font-family: inherit;
+  line-height: initial;
+  font-weight: 700;
+  cursor: pointer;
+  transition-duration: 0.1s;
+  transition-property: background-color, color, border-color, opacity, box-shadow;
+  transition-timing-function: ease-out;
+  outline: none;
+  border: 1px solid transparent;
+  margin: 0px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 12px 0px;
+  padding: 8px 18px;
+  min-height: 48px;
+  background-color: rgb(153, 89, 255);
+  color: rgb(255, 255, 255);
+  border-radius: 5px;
+}
+
+span.FlexWrapper {
+  width: 100%;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+}
+
+span.ButtonTextWrapper {
+  transition: all 0.2s ease 0s;
+}
+
+span.TextContinue {
+  margin: 0px;
+  max-width: 100%;
+  width: inherit;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 32px;
+  line-height: 1;
+  letter-spacing: 0.6px;
+}
+
+.ButtonWrapper::after {
+  position: absolute;
+  content: " ";
+  inset: 0px;
+  transition: all 0.1s ease-out 0s;
+}
+
+
+@media(max-width:768px) {
+  .pc {
+    display: block !important;
+  }
+}
+
+@media(max-width:450px) {
+
+  div.AllContentWrapper {
+    width: 100%;
+    overflow-y: auto;
+    display: flex;
+    flex: 1 1 0%;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+  h1.TextWrapper {
+    max-width: 100%;
+    width: inherit;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 44px;
+    color: rgb(51, 51, 51);
+    overflow-wrap: break-word;
+    margin: 0px 0px 16px;
+}
+
+  p.BeneathTextWrapper {
+    margin-top: -6px;
+    max-width: 100%;
+    width: inherit;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 28px;
+    color: rgba(51, 51, 51, 0.7);
+    overflow-wrap: break-word;
+    font-family: inherit;
+}
+
+
+}

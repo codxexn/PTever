@@ -1,0 +1,643 @@
+html {
+    cursor: default;
+    line-height: 1.5;
+    font-size: 14px;
+    color: black;
+    word-break: normal;
+    overflow-wrap: break-word;
+  }
+  body {
+    font-size: 14px;
+    color: black;
+    word-break: normal;
+    overflow-wrap: break-word;
+  }
+  * {
+      outline: none;
+      font-family: inherit;
+      min-width: 0px;
+      min-height: 1px;
+      background-repeat: no-repeat;
+      box-sizing: inherit;
+      background-repeat: no-repeat;
+      box-sizing: inherit;
+      background-repeat: no-repeat;
+      box-sizing: inherit;
+  }
+  header, section {
+    display: block;
+    font-family: 'SUIT', sans-serif;
+  }
+  
+  header.NavBar-wrapper {
+    width: 100%;
+    border-bottom: 1px solid rgb(238, 238, 238);
+    z-index: 300;
+  }
+  
+  section.NavBar-TopNavContainer {
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    height: 32px;
+    background-color: rgb(244, 244, 244);
+  }
+  
+  div.NavBar-TopNavMenuWrapper {
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+    max-width: 768px;
+    width: 100%;
+    padding: 6px 20px;
+  }
+  
+  div.NavBar-TopNavMenu {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+  }
+  
+  .NavBar-TopNavMenu a {
+    margin-left: 20px;
+  }
+  
+  .NavBar-TopNavMenu a:first-child {
+    margin-left: 0px;
+  }
+  
+  a {
+    color: inherit;
+    text-decoration: none;
+    touch-action: manipulation;
+    background-color: transparent;
+    cursor: pointer;
+  }
+  
+  a.TopNavMenu-A, a.MainNavMenu-A {
+    min-height: 1px;
+  }
+  
+  div.TopNavMenu-Text {
+    color: rgb(119, 119, 119);
+    font-size: 10px;
+    line-height: 14px;
+    letter-spacing: -0.3px;
+    font-weight: bold;
+  }
+  
+  section.NavBar-MainNavContainer {
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    background-color: rgb(255, 255, 255);
+  }
+  
+  div.NavBar-MainNavMenuWrapper {
+    position: relative;
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    max-width: 768px;
+    width: 100%;
+    padding: 22px 20px 8px;
+  }
+  
+  div.NavBar-MainNavLeft {
+    display: flex;
+    width: 100%;
+  }
+  
+  div.MainNavLeft-Category {
+    width: 48px;
+    height: 51px;
+  }
+  
+  div.IconWrapper {
+    display: flex;
+    align-items: flex-end;
+    -webkit-box-pack: center;
+    justify-content: center;
+    width: 100%;
+    height: 34px;
+  }
+  
+  /* img {
+    border-style: none;
+  } */
+  img {
+    border-style: none;
+    overflow-clip-margin: content-box;
+    overflow: clip;
+    vertical-align: middle;
+  }
+  
+  span.MainNav {
+    display: block;
+    margin-top: 3px;
+    font-size: 10px;
+    line-height: 14px;
+    letter-spacing: -0.3px;
+    text-align: center;
+    color: rgb(170, 170, 170);
+  }
+  
+  span.MainNav-Pipe {
+    width: 1px;
+    height: 38px;
+    background-color: rgb(238, 238, 238);
+    margin-top: 10px;
+    margin-left: 20px;
+    display: inline-block;
+  }
+  
+  img.MainNav-Logo {
+    margin: 17px 0px 17px 20px;
+    width: 68px;
+    height: 24px;
+  }
+  
+  div.MainNav-SearchWrapper {
+    height: 38px;
+    padding: 0px 14px;
+    margin-top: 10px;
+    -webkit-box-flex: 1;
+    flex: 1 1 auto;
+  }
+  
+  div.SearchWrapper {
+    width: 100%;
+  }
+  
+  form {
+    display: block;
+    margin-top: 0em;
+  }
+  
+  form.SearchForm {
+    position: relative;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    width: 100%;
+    height: 38px;
+    padding: 0px 12px;
+    border-radius: 19px;
+    background-color: rgb(244, 244, 244);
+    border: none;
+  }
+  
+  img.SearchBar-Icon {
+    margin-right: 5px;
+    user-select: none;
+  }
+  
+  input.SearchInput {
+    width: 100%;
+    color: rgb(51, 51, 51);
+    height: 24px;
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 700;
+    overflow: visible;
+    background-color: transparent;
+    border-style: none;
+    margin: 0;
+    touch-action: manipulation;
+    text-rendering: auto;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    -webkit-rtl-ordering: logical;
+    cursor: text;
+    border-width: 2px;
+    border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+    border-image: initial;
+  }
+  
+  input::placeholder {
+    color:rgb(200, 200, 200);
+  }
+  
+  [type="search"] {
+    -webkit-appearance: textfield;
+    outline-offset: -2px;
+    padding: 1px 2px;
+    writing-mode: horizontal-tb;
+  }
+  
+  div.NavBar-MainNavRight {
+    display: flex;
+    width: 168px;
+  }
+  
+  div.MainNavRight-Community, div.MainNavRight-Wishlist,
+  div.MainNavRight-Mypage {
+    width: 48px;
+    height: 51px;
+  }
+  h2 {
+    margin: 0px;
+    padding: 0px;
+  }
+  /* 쇼핑몰 리뷰 페이지 */
+  .Review-PageWrap {
+    display: flex;
+    flex-flow: column;
+    align-content: flex-start;
+    margin: 0px auto;
+    max-width: 808px;
+    width: 100%;
+    padding: 0px 20px;
+    min-height: 1px;
+}
+.Review-FadeWrap {
+    opacity: 1;
+    display: block;
+    width: auto;
+    height: auto;
+    transition: opacity 200ms ease-in-out 0s;
+    min-width: 0px;
+    min-height: 1px;
+}
+.Review-header {
+    display: block;
+    border-bottom: 1px solid rgb(238, 238, 238);
+    padding: 30px 0px;
+}
+.Review-header-title {
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    padding: 0px;
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: bold;
+    margin-bottom: 17px;
+}
+.Review-count {
+    font-weight: normal;
+}
+.Filter-review {
+    font-size: 14px;
+    line-height: 18px;
+    position: relative;
+    text-align: right;
+}
+.Review-header-Star {
+    padding: 0px;
+    color: rgb(155, 155, 155);
+    font-size: 14px;
+    font-weight: 500;
+}
+.Review-RatingWrap {
+    margin-right: 6px;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+}
+.ReviewStart-Wrap {
+display: flex;
+flex-flow: row; 
+}
+button {
+cursor: pointer;
+touch-action: manipulation;
+text-transform: none;
+overflow: visible;
+background-color: transparent;
+border-style: none;
+color: inherit;
+font-size: 1em;
+margin: 0;
+}
+.Review-RatingNumber {
+    margin-left: 14px;
+}
+.Review-ReviewWrap {
+    padding: 0px;
+}
+.CardReview-Wrap {
+    padding: 30px 0px;
+    border-bottom: 1px solid rgb(238, 238, 238);
+}
+.Cardreview-header {
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.CardReview-ImageWrap {
+    flex: 0 0 auto;
+    margin-right: 14px;
+    width: 48px;
+    height: 48px;
+    border-radius: 24px;
+    overflow: hidden;
+}
+.CardReview-ImageWrap {
+    min-height: 1px;
+}
+.Review-Image-Style {
+    display: none !important;
+}
+.Review-ImgFadeWrap {
+    opacity: 1;
+    display: block;
+    width: auto;
+    height: auto;
+    transition: opacity 200ms ease-in-out 0s;
+    min-width: 0px;
+    min-height: 1px;
+}
+.Ratio {
+    display: block;
+    }
+.Ratio-Ratio {
+height: 0px;
+position: relative;
+width: 100%;
+ padding-top: 100%;
+      
+}
+    
+.Ratio-Content {
+height: 100%;
+left: 0px;
+position: absolute;
+top: 0px;
+width: 100%
+}
+.Img-StyleImg{
+display: initial;
+border-radius: 5px;
+width: 100%;
+height: 120%;
+object-fit: cover;
+}
+.Img-StyleImg-align {
+  display: initial;
+  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  }
+.Review-Image {
+  display: initial;
+border-radius: 5px;
+width: 100%;
+height: 100%;
+object-fit: cover;
+overflow: hidden;
+}
+.CardReview-MetaData {
+  -webkit-box-flex: 1;
+  flex: 1 1 auto;
+  margin-right: auto;
+}
+.CardReview-Title {
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 12px;
+    margin-bottom: 10px;
+  }
+.CardReview-Row {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+}
+.CardReview-Created {
+  margin-left: 6px;
+  line-height: 10px;
+  color: rgb(155, 155, 155);
+  font-size: 10px;
+}
+.CardReview-Body {
+  margin-top: -20px;
+  margin-left: -60px;
+  text-align: left; 
+  margin-bottom: 20px;
+  white-space: pre-wrap;
+  font-size: 12px;
+  line-height: 22px;
+}
+
+.CardReview-align {
+  margin-top: -35px;
+  margin-left: -132px;
+  text-align: left; 
+  margin-bottom: 20px;
+  white-space: pre-wrap;
+  font-size: 12px;
+  line-height: 22px;
+}
+.CardReview-PurchaseInfo {
+  position: relative;
+  bottom: 40px;
+  color: rgb(155, 155, 155);
+  display: inline-block;
+}
+/* .CardReview-PurchaseInfo-align {
+  position: relative;
+  bottom: -20px;
+  color: rgb(155, 155, 155);
+  display: inline-block;
+} */
+.CardReview-Product {
+  margin-bottom: 10px;
+  line-height: 10px;
+  font-size: 10px;
+}
+.CardReview-Time {
+  margin-bottom: 10px;
+  line-height: 10px;
+  font-size: 10px;
+}
+.CardReview-LikeWrap {
+  height: 24px;
+  text-align: right;
+}
+.CardReview-LikeButton {
+  width: auto;
+  height: auto;
+  line-height: 10px;
+  padding: 0px;
+  background-color: transparent;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 5px;
+  color: rgb(85, 85, 85);
+  font-size: 10px;
+}
+.CardReview-Like {
+  width: auto;
+  height: auto;
+  line-height: 10px;
+  padding: 0px;
+  background-color: transparent;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 5px;
+  color: rgb(85, 85, 85);
+  font-size: 10px;
+}
+.CardReview-Like {
+  margin-left: 2px;
+  vertical-align: bottom;
+}
+.CardReview-ReviewImgWrap {
+  display: flex;
+  margin-top: 22px;
+}
+.CardReview-ReviewImg {
+  -webkit-box-flex: 0;
+  flex: 0 0 auto;
+  margin-right: 0px;
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+  min-height: 1px;  
+}
+.CardReview-Img {
+  display: none !important;
+}
+.CardReview-ReplyWrap {
+  margin-top: 22px;
+}
+.ReplyEntity-Wrap {
+  margin-bottom: 0px;
+  width: 100%;
+  line-height: 22px;
+  border-radius: 5px;
+  padding: 20px;
+  background-color: rgb(249, 249, 249);
+  font-size: 12px;
+}
+.ReplyEntity-AuthorWrap {
+  display: flex;
+  margin-bottom: 20px;
+}
+.ReplyEntity-ImageWrap {
+  -webkit-box-flex: 0;
+  flex: 0 0 auto;
+  margin-right: 14px;
+  width: 36px;
+  height: 36px;
+  border-radius: 18px;
+  overflow: hidden;
+}
+.ReviewReply-imgWrap {
+  min-height: 1px;
+}
+.Review-hdsImg {
+  display: none !important;
+}
+.ReplyEntity-Name {
+  margin-bottom: 10px;
+  height: 12px;
+  line-height: 12px;
+  font-size: 12px;
+  font-weight: bold;
+}
+.ReplyEntity-Created {
+  position: relative;
+  right: -10px;
+  line-height: 10px;
+  font-size: 10px;
+  color: rgb(155, 155, 155);
+}
+.ReplyEntity-Body {
+  margin-top: -40px;
+  margin-left: -100px;
+  white-space: pre-wrap;  
+}
+.ReplyEntity-Body-align {
+  margin-top: -40px;
+  margin-left: -180px;
+  white-space: pre-wrap;  
+}
+.Review-PaginationWrap {
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-flex: 0;
+  flex: 0 0 auto;
+  width: 100%;
+  padding: 30px 0px;
+  background-color: white;
+}
+.Review-PagButtonGroup {
+  display: flex;
+  margin-right: 10px;
+}
+.Review-ButtonPag {
+  width: 40px;
+  height: 40px;
+  line-height: normal;
+  padding: 0px;
+  background-color: white;
+  text-align: center;
+  cursor: not-allowed;
+  border-radius: 50%;
+  font-size: 18px;
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  outline: none;
+  cursor: not-allowed;
+}
+.Review-PageIcon {
+  transform: rotate(180deg);
+}
+.Review-Page {
+  width: 40px;
+  height: 40px;
+  line-height: normal;
+  padding: 0px;
+  background-color: white;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 50%;
+  color: rgb(51, 151, 255);
+  font-size: 18px;
+  font-weight: bold;
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  outline: none;
+}
+.Review-NextPageWrap {
+  display: flex;
+  margin-left: 10px;
+}
+.Review-NextPage {
+  width: 40px;
+  height: 40px;
+  line-height: normal;
+  padding: 0px;
+  background-color: white;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 50%;
+  font-size: 18px;
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  outline: none;
+}

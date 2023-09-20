@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- 페이지 타이틀은 프립처럼 상세설명 추가해도 되고, -->
+  <!-- 깔끔하게 PTever만 넣어도 될 것 같습니다. -->
+  <title>내 강의실 -피테버(PTever)</title>
+  <!-- SUIT 폰트 링크입니다. 프립과 동일한 폰트입니다. -->
+  <link href="https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/static/woff2/SUIT.css" rel="stylesheet">
+  <style>
+    body {font-family: 'SUIT', sans-serif;}
+  </style>
+  <!-- 아래 링크 태그를 꼭 넣어주세요. (경로 조심) -->
+  <link rel="stylesheet" href="../defaultCommon.css">
+  <link rel="stylesheet" href="./noLectures.css">
+</head>
+<body>
+<div class="root pc myLectures">
+  <div class="RootWrapper">
+
+    <div class="PageWrapper">
+      <header class="myLecturesHeader">
+        <div class="Content">
+          <div class="Title">내 강의실</div>
+        </div>
+      </header>
+      <!-- 결제한 강의가 없을 때 나오는 섹션 -->
+      <div class="ContentWrapper">
+        <!-- 찜한 강의 목록 Inner Wrapper -->
+        <div class="noLectureContentWrapper" style="opacity: 1; display: block;">
+          <!-- 가장 안쪽 Wrapper -->
+          <div class="noLectureBaseWrapper">
+            <!-- 찜한 강의가 없을 때의 화면입니다. -->
+            <img class="noPTEVER" src="./noPTEVER.png" alt="아직 찜한 프립이 없어요.">
+            <strong class="BaseHeader">아직 결제한 강의가 없어요.</strong>
+            <div class="BaseDescription">피테버 시작으로 건강한 신체와 마음을 가져보세요!</div>
+            <!-- 컨텐츠 부분과 버튼 사이를 띄워줍니다. -->
+            <br>
+            <br>
+            <a class="GoToShoppingBasket" href="">
+              <button type="button" class="ButtonWrapper jXWOEn">
+                  <span class="FlexWrapper lnoWON">
+                    <span class="ButtonTextWrapper ffdgGn">
+                    <span class="TextContinue bFCrTC">장바구니로 이동</span>
+                    </span>
+                  </span>
+              </button>
+            </a>
+
+          </div>
+        </div>
+      </div>
+
+
+
+    </div>
+  </div>
+</div>
+
+
+
+</body>
+<script src="./myLectures.js"></script>
+</html>

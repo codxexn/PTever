@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 페이지 타이틀은 프립처럼 상세설명 추가해도 되고, -->
+    <!-- 깔끔하게 PTever만 넣어도 될 것 같습니다. -->
+    <title>찜 -피테버(PTever)</title>
+    <!-- SUIT 폰트 링크입니다. 프립과 동일한 폰트입니다. -->
+    <link href="https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/static/woff2/SUIT.css" rel="stylesheet">
+    <style>
+        body {font-family: 'SUIT', sans-serif;}
+    </style>
+    <!-- 아래 링크 태그를 꼭 넣어주세요. (경로 조심) -->
+    <link rel="stylesheet" href="../../defaultCommon.css">
+    <link rel="stylesheet" href="../like.css">
+    <link rel="stylesheet" href="../../paging.css">
+</head>
+<body>
+<!-- DOM TREE를 하나로 구성하기 위해서 전체를 감싸는 div태그입니다. -->
+<!-- 내가 찜한 강의 pc 버전 -->
+<div class="root pc list">
+    <div class="RootWrapper">
+
+        <!-- 내가 찜한 강의 Page -->
+        <!-- 전체 div -->
+        <div class="PageWrap">
+            <!-- 찜페이지 Navigation -->
+            <div class="LikeNavi">
+                <!-- 내가 찜한 강의 Page 링크 -->
+                <a href="/likeLecture/likeLecture.html">
+                    <button class="FocusNaviButton">
+                        <div>강의</div>
+                    </button>
+                </a>
+                <!-- 내가 찜한 상품 Page 링크 -->
+                <a href="../likeProduct/likeProduct.html">
+                    <button class="NaviButton">
+                        <div>상품</div>
+                    </button>
+                </a>
+                <a href="../likeTrainer/likeTrainer.html">
+                    <button class="NaviButton">
+                        <div>트레이너</div>
+                    </button>
+                </a>
+            </div>
+            <!-- 찜한 강의 목록 Wrapper -->
+            <div class="LikeWrapper">
+                <!-- 찜한 강의 목록 Inner Wrapper -->
+                <div class="LikeContentWrapper" style="opacity: 1; display: block;">
+
+                    <!-- 찜한 강의가 있을 때의 Wrapper입니다. -->
+                    <div class="LikeListWrapper">
+                        <div class="LikeList">
+                            <!-- 누르면 해당 컨텐츠 상세보기로 들어갑니다. -->
+                            <a class="LikListwithLink">
+                                <!-- 컨텐츠 정보 Wrapper -->
+                                <div class="ListInfoWrapper">
+                                    <!-- 이미지 Container -->
+                                    <div class="ImageContainer">
+                                        <div class="ImageWrapper">
+                                            <img class="ImageLoader" width="192" src="https://res.cloudinary.com/frientrip/image/upload/ar_1:1,c_fill,dpr_2,f_auto,q_auto,w_310/product_banner_1592887555895_114991">
+                                            <div class="LikeContentWrapper" style="opacity: 1; display: block;">
+                                                <div class="Ratio " style="display: block;">
+                                                    <div class="Ratio-ratio " style="height: 0px; position: relative; width: 100%; padding-top: 100%;">
+                                                        <div class="Ratio-content " style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;">
+                                                            <img alt="[자세교정]요가 클리닉" class="ListImage" width="192" src="https://res.cloudinary.com/frientrip/image/upload/ar_1:1,c_fill,dpr_2,f_auto,q_auto,w_310/product_banner_1592887555895_114991">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- 이미지 안에 들어가는 하트(빨간 버전) -->
+                                        <div class="HeartContainer">
+                                            <button class="HeartButton">
+                                                <img class="RedHeart" src="data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cg clip-path='url(%23clip0_2517_457)'%3E %3Cpath d='M15.4448 27.0641L15.4368 27.0593L15.4064 27.0433C14.775 26.6998 14.1549 26.3359 13.5472 25.9521C12.0981 25.0404 10.7174 24.0243 9.41595 22.9121C6.47195 20.3729 3.19995 16.5633 3.19995 12.0001C3.20009 10.5112 3.66179 9.05903 4.52147 7.84344C5.38115 6.62785 6.59654 5.70866 8.00027 5.21244C9.40401 4.71622 10.9271 4.66737 12.3597 5.07263C13.7924 5.47788 15.0641 6.31729 16 7.4753C16.9358 6.31729 18.2075 5.47788 19.6402 5.07263C21.0728 4.66737 22.5959 4.71622 23.9996 5.21244C25.4034 5.70866 26.6187 6.62785 27.4784 7.84344C28.3381 9.05903 28.7998 10.5112 28.8 12.0001C28.8 16.5633 25.5296 20.3729 22.584 22.9121C20.7349 24.492 18.7274 25.8764 16.5936 27.0433L16.5632 27.0593L16.5552 27.0641H16.552C16.3819 27.1542 16.1925 27.2014 16.0001 27.2017C15.8078 27.2019 15.6182 27.1553 15.448 27.0657L15.4448 27.0641Z' fill='%23FD2748'/%3E %3C/g%3E %3Cdefs%3E %3CclipPath id='clip0_2517_457'%3E %3Crect width='32' height='32' fill='white'/%3E %3C/clipPath%3E %3C/defs%3E %3C/svg%3E" alt="찜하기">
+                                                <img class="NoHeart" src="data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cg clip-path='url(%23clip0_2514_433)'%3E %3Cmask id='mask0_2514_433' style='mask-type:luminance' maskUnits='userSpaceOnUse' x='0' y='0' width='32' height='32'%3E %3Cpath d='M32 0H0V32H32V0Z' fill='white'/%3E %3C/mask%3E %3Cg mask='url(%23mask0_2514_433)'%3E %3Cmask id='mask1_2514_433' style='mask-type:luminance' maskUnits='userSpaceOnUse' x='0' y='0' width='32' height='32'%3E %3Cpath d='M32 0H0V32H32V0Z' fill='white'/%3E %3C/mask%3E %3Cg mask='url(%23mask1_2514_433)'%3E %3Cpath d='M28 12C28 16.1889 24.9781 19.7916 22.063 22.3047C20.2579 23.8469 18.2982 25.1986 16.2154 26.3381C16.2027 26.3441 16.1898 26.3505 16.1774 26.357C16.1226 26.3861 16.0613 26.4013 15.999 26.4015C15.9401 26.4015 15.882 26.3881 15.8293 26.362L15.8094 26.3511L15.784 26.3378C15.1694 26.0033 14.5659 25.649 13.9743 25.2754C12.5586 24.3847 11.2086 23.3914 9.93704 22.3049C7.02334 19.7914 4.00003 16.1887 4 12C4.00014 10.6766 4.41054 9.38568 5.17469 8.30517C5.93885 7.22466 7.01918 6.4076 8.26696 5.96651C9.51472 5.52542 10.8685 5.482 12.142 5.84222C13.4155 6.20245 14.546 6.94859 15.3778 7.97794C15.5297 8.16589 15.7584 8.2751 16 8.2751C16.2416 8.2751 16.4704 8.16589 16.6222 7.97794C17.4541 6.94859 18.5845 6.20245 19.8579 5.84222C21.1315 5.482 22.4853 5.52542 23.7331 5.96651C24.9808 6.4076 26.0611 7.22466 26.8253 8.30517C27.5894 9.38568 27.9998 10.6766 28 12Z' stroke='white' stroke-width='1.5' stroke-linejoin='round'/%3E %3C/g%3E %3C/g%3E %3C/g%3E %3Cdefs%3E %3CclipPath id='clip0_2514_433'%3E %3Crect width='32' height='32' fill='white'/%3E %3C/clipPath%3E %3C/defs%3E %3C/svg%3E" alt="찜하기">
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <!-- 컨텐츠 설명 Container -->
+                                    <div class="DetailContainer">
+                                        <!-- 해당 컨텐츠의 카테고리를 표시 -->
+                                        <span class="ListCategory">요가</span>
+                                        <!-- 컨텐츠 제목 -->
+                                        <div class="ListTitle">집에서 받는 자세교정 요가클리닉🧘‍♀️ [90분 프로그램]</div>
+                                        <hr type="Line" size="16" class="Border">
+                                        <!-- 가격정보 전체를 감싸는 div -->
+                                        <div class="PriceContainer">
+                                            <div class="OriginalPrice">44,000원</div>
+                                            <div class="DiscountRateContainer">
+                                                <div class="DiscountRate">34%</div>
+                                                <div class="SalePrice">29,000원</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <!-- 2번째 찜목록 -->
+                        <div class="LikeList">
+                            <!-- 누르면 해당 컨텐츠 상세보기로 들어갑니다. -->
+                            <a class="LikListwithLink">
+                                <!-- 컨텐츠 정보 Wrapper -->
+                                <div class="ListInfoWrapper">
+                                    <!-- 이미지 Container -->
+                                    <div class="ImageContainer">
+                                        <div class="ImageWrapper">
+                                            <img class="ImageLoader" width="192" src="https://res.cloudinary.com/frientrip/image/upload/ar_1:1,c_fill,dpr_2,f_auto,q_auto,w_310/%EC%9A%94%EA%B0%80%EB%A7%81%20%EC%8A%A4%ED%8A%B8%EB%A0%88%EC%B9%AD_1_45548f387b2648d910561a88b12c21f2c0c4c1e21509d8a511cb929c196f4d1c">
+                                            <div class="LikeContentWrapper" style="opacity: 1; display: block;">
+                                                <div class="Ratio " style="display: block;">
+                                                    <div class="Ratio-ratio " style="height: 0px; position: relative; width: 100%; padding-top: 100%;">
+                                                        <div class="Ratio-content " style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;">
+                                                            <img alt="요가링" class="ListImage" width="192" src="https://res.cloudinary.com/frientrip/image/upload/ar_1:1,c_fill,dpr_2,f_auto,q_auto,w_310/%EC%9A%94%EA%B0%80%EB%A7%81%20%EC%8A%A4%ED%8A%B8%EB%A0%88%EC%B9%AD_1_45548f387b2648d910561a88b12c21f2c0c4c1e21509d8a511cb929c196f4d1c">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- 이미지 안에 들어가는 하트-->
+                                        <div class="HeartContainer">
+                                            <button class="HeartButton">
+                                                <img class="RedHeart" src="data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cg clip-path='url(%23clip0_2517_457)'%3E %3Cpath d='M15.4448 27.0641L15.4368 27.0593L15.4064 27.0433C14.775 26.6998 14.1549 26.3359 13.5472 25.9521C12.0981 25.0404 10.7174 24.0243 9.41595 22.9121C6.47195 20.3729 3.19995 16.5633 3.19995 12.0001C3.20009 10.5112 3.66179 9.05903 4.52147 7.84344C5.38115 6.62785 6.59654 5.70866 8.00027 5.21244C9.40401 4.71622 10.9271 4.66737 12.3597 5.07263C13.7924 5.47788 15.0641 6.31729 16 7.4753C16.9358 6.31729 18.2075 5.47788 19.6402 5.07263C21.0728 4.66737 22.5959 4.71622 23.9996 5.21244C25.4034 5.70866 26.6187 6.62785 27.4784 7.84344C28.3381 9.05903 28.7998 10.5112 28.8 12.0001C28.8 16.5633 25.5296 20.3729 22.584 22.9121C20.7349 24.492 18.7274 25.8764 16.5936 27.0433L16.5632 27.0593L16.5552 27.0641H16.552C16.3819 27.1542 16.1925 27.2014 16.0001 27.2017C15.8078 27.2019 15.6182 27.1553 15.448 27.0657L15.4448 27.0641Z' fill='%23FD2748'/%3E %3C/g%3E %3Cdefs%3E %3CclipPath id='clip0_2517_457'%3E %3Crect width='32' height='32' fill='white'/%3E %3C/clipPath%3E %3C/defs%3E %3C/svg%3E" alt="찜하기">
+                                                <img class="NoHeart" src="data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cg clip-path='url(%23clip0_2514_433)'%3E %3Cmask id='mask0_2514_433' style='mask-type:luminance' maskUnits='userSpaceOnUse' x='0' y='0' width='32' height='32'%3E %3Cpath d='M32 0H0V32H32V0Z' fill='white'/%3E %3C/mask%3E %3Cg mask='url(%23mask0_2514_433)'%3E %3Cmask id='mask1_2514_433' style='mask-type:luminance' maskUnits='userSpaceOnUse' x='0' y='0' width='32' height='32'%3E %3Cpath d='M32 0H0V32H32V0Z' fill='white'/%3E %3C/mask%3E %3Cg mask='url(%23mask1_2514_433)'%3E %3Cpath d='M28 12C28 16.1889 24.9781 19.7916 22.063 22.3047C20.2579 23.8469 18.2982 25.1986 16.2154 26.3381C16.2027 26.3441 16.1898 26.3505 16.1774 26.357C16.1226 26.3861 16.0613 26.4013 15.999 26.4015C15.9401 26.4015 15.882 26.3881 15.8293 26.362L15.8094 26.3511L15.784 26.3378C15.1694 26.0033 14.5659 25.649 13.9743 25.2754C12.5586 24.3847 11.2086 23.3914 9.93704 22.3049C7.02334 19.7914 4.00003 16.1887 4 12C4.00014 10.6766 4.41054 9.38568 5.17469 8.30517C5.93885 7.22466 7.01918 6.4076 8.26696 5.96651C9.51472 5.52542 10.8685 5.482 12.142 5.84222C13.4155 6.20245 14.546 6.94859 15.3778 7.97794C15.5297 8.16589 15.7584 8.2751 16 8.2751C16.2416 8.2751 16.4704 8.16589 16.6222 7.97794C17.4541 6.94859 18.5845 6.20245 19.8579 5.84222C21.1315 5.482 22.4853 5.52542 23.7331 5.96651C24.9808 6.4076 26.0611 7.22466 26.8253 8.30517C27.5894 9.38568 27.9998 10.6766 28 12Z' stroke='white' stroke-width='1.5' stroke-linejoin='round'/%3E %3C/g%3E %3C/g%3E %3C/g%3E %3Cdefs%3E %3CclipPath id='clip0_2514_433'%3E %3Crect width='32' height='32' fill='white'/%3E %3C/clipPath%3E %3C/defs%3E %3C/svg%3E" alt="찜하기">
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <!-- 컨텐츠 설명 Container -->
+                                    <div class="DetailContainer">
+                                        <!-- 해당 컨텐츠의 카테고리를 표시 -->
+                                        <span class="ListCategory">운동 소도구</span>
+                                        <!-- 컨텐츠 제목 -->
+                                        <div class="ListTitle">요가링</div>
+                                        <hr type="Line" size="16" class="Border">
+                                        <!-- 가격정보 전체를 감싸는 div -->
+                                        <div class="PriceContainer">
+                                            <div class="OriginalPrice">20,000원</div>
+                                            <div class="DiscountRateContainer">
+                                                <div class="DiscountRate">25%</div>
+                                                <div class="SalePrice">15,000원</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                    </div>
+                    <!-- 찜했을 때 생기는 리스트의 끝 -->
+                </div>
+            </div>
+
+            <!-- 찜목록이 생기면 아래에 Paging 생성 -->
+            <footer class="PaginationWrapper">
+                <!-- 이전 버튼 Wrapper -->
+                <div class="PrevButtonWrapper">
+                    <!-- 이전 버튼 -->
+                    <button class="PrevButton">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath fill='%23FFF' fill-opacity='0' fill-rule='nonzero' d='M0 0h40v40H0z'/%3E %3Cpath stroke='%23DDD' stroke-width='1.5' d='M16 16l4 4-4 4M21 16l4 4-4 4'/%3E %3C/g%3E %3C/svg%3E" class="PrevButtonImg">
+                    </button>
+                    <button class="PrevButton">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath fill='none' d='M0 0h40v40H0z'/%3E %3Cpath stroke='%23DDD' stroke-width='1.5' d='M18 16l4 4-4 4'/%3E %3C/g%3E %3C/svg%3E" class="PrevButtonImg">
+                    </button>
+                </div>
+                <!-- 현재 페이지 -->
+                <button class="CurrentPage">1</button>
+                <!-- 다음 버튼 Wrapper -->
+                <div class="NextButtonWrapper">
+                    <!-- 다음 버튼 -->
+                    <button class="NextButton">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath fill='none' d='M0 0h40v40H0z'/%3E %3Cpath stroke='%23DDD' stroke-width='1.5' d='M18 16l4 4-4 4'/%3E %3C/g%3E %3C/svg%3E" class="NextButtonImg">
+                    </button>
+                    <button class="NextButton">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath fill='%23FFF' fill-opacity='0' fill-rule='nonzero' d='M0 0h40v40H0z'/%3E %3Cpath stroke='%23DDD' stroke-width='1.5' d='M16 16l4 4-4 4M21 16l4 4-4 4'/%3E %3C/g%3E %3C/svg%3E" class="NextButtonImg">
+                    </button>
+                </div>
+            </footer>
+
+        </div>
+    </div>
+</div>
+
+
+<!-- 내가 찜한 강의 Mobile 버전 -->
+<div class="root mobile">
+    <div class="RootWrapper">
+
+        <!-- 내가 찜한 강의 Page -->
+        <!-- 전체 div -->
+        <div class="PageWrap">
+            <!-- 찜페이지 Navigation -->
+            <div class="LikeNavi">
+                <!-- 내가 찜한 강의 Page 링크 -->
+                <a href="/likeLecture/likeLecture.html">
+                    <button class="FocusNaviButton">
+                        <div>강의</div>
+                    </button>
+                </a>
+                <!-- 내가 찜한 상품 Page 링크 -->
+                <a href="../likeProduct/likeProduct.html">
+                    <button class="NaviButton">
+                        <div>상품</div>
+                    </button>
+                </a>
+                <a href="../likeTrainer/likeTrainer.html">
+                    <button class="NaviButton">
+                        <div>트레이너</div>
+                    </button>
+                </a>
+            </div>
+            <!-- 찜한 강의 목록 Wrapper -->
+            <div class="LikeWrapper">
+                <!-- 찜한 강의 목록 Inner Wrapper -->
+                <div class="LikeContentWrapper" style="opacity: 1; display: block;">
+                    <!-- 찜한 강의가 있을 때의 Wrapper입니다. -->
+                    <div class="LikeListWrapper">
+                        <div class="LikeList">
+                            <!-- 누르면 해당 컨텐츠 상세보기로 들어갑니다. -->
+                            <a class="LikListwithLink">
+                                <!-- 컨텐츠 정보 Wrapper -->
+                                <div class="ListInfoWrapper">
+                                    <!-- 이미지 Container -->
+                                    <div class="ImageContainer">
+                                        <div class="ImageWrapper">
+                                            <img class="ImageLoader" width="192" src="https://res.cloudinary.com/frientrip/image/upload/ar_1:1,c_fill,dpr_2,f_auto,q_auto,w_310/product_banner_1592887555895_114991">
+                                            <div class="LikeContentWrapper" style="opacity: 1; display: block;">
+                                                <div class="Ratio " style="display: block;">
+                                                    <div class="Ratio-ratio " style="height: 0px; position: relative; width: 100%; padding-top: 100%;">
+                                                        <div class="Ratio-content " style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;">
+                                                            <img alt="[자세교정]요가 클리닉" class="ListImage" width="192" src="https://res.cloudinary.com/frientrip/image/upload/ar_1:1,c_fill,dpr_2,f_auto,q_auto,w_310/product_banner_1592887555895_114991">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- 이미지 안에 들어가는 하트 -->
+                                        <div class="HeartContainer">
+                                            <button class="HeartButton">
+                                                <img class="RedHeart" src="data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cg clip-path='url(%23clip0_2517_457)'%3E %3Cpath d='M15.4448 27.0641L15.4368 27.0593L15.4064 27.0433C14.775 26.6998 14.1549 26.3359 13.5472 25.9521C12.0981 25.0404 10.7174 24.0243 9.41595 22.9121C6.47195 20.3729 3.19995 16.5633 3.19995 12.0001C3.20009 10.5112 3.66179 9.05903 4.52147 7.84344C5.38115 6.62785 6.59654 5.70866 8.00027 5.21244C9.40401 4.71622 10.9271 4.66737 12.3597 5.07263C13.7924 5.47788 15.0641 6.31729 16 7.4753C16.9358 6.31729 18.2075 5.47788 19.6402 5.07263C21.0728 4.66737 22.5959 4.71622 23.9996 5.21244C25.4034 5.70866 26.6187 6.62785 27.4784 7.84344C28.3381 9.05903 28.7998 10.5112 28.8 12.0001C28.8 16.5633 25.5296 20.3729 22.584 22.9121C20.7349 24.492 18.7274 25.8764 16.5936 27.0433L16.5632 27.0593L16.5552 27.0641H16.552C16.3819 27.1542 16.1925 27.2014 16.0001 27.2017C15.8078 27.2019 15.6182 27.1553 15.448 27.0657L15.4448 27.0641Z' fill='%23FD2748'/%3E %3C/g%3E %3Cdefs%3E %3CclipPath id='clip0_2517_457'%3E %3Crect width='32' height='32' fill='white'/%3E %3C/clipPath%3E %3C/defs%3E %3C/svg%3E" alt="찜하기">
+                                                <img class="NoHeart" src="data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cg clip-path='url(%23clip0_2514_433)'%3E %3Cmask id='mask0_2514_433' style='mask-type:luminance' maskUnits='userSpaceOnUse' x='0' y='0' width='32' height='32'%3E %3Cpath d='M32 0H0V32H32V0Z' fill='white'/%3E %3C/mask%3E %3Cg mask='url(%23mask0_2514_433)'%3E %3Cmask id='mask1_2514_433' style='mask-type:luminance' maskUnits='userSpaceOnUse' x='0' y='0' width='32' height='32'%3E %3Cpath d='M32 0H0V32H32V0Z' fill='white'/%3E %3C/mask%3E %3Cg mask='url(%23mask1_2514_433)'%3E %3Cpath d='M28 12C28 16.1889 24.9781 19.7916 22.063 22.3047C20.2579 23.8469 18.2982 25.1986 16.2154 26.3381C16.2027 26.3441 16.1898 26.3505 16.1774 26.357C16.1226 26.3861 16.0613 26.4013 15.999 26.4015C15.9401 26.4015 15.882 26.3881 15.8293 26.362L15.8094 26.3511L15.784 26.3378C15.1694 26.0033 14.5659 25.649 13.9743 25.2754C12.5586 24.3847 11.2086 23.3914 9.93704 22.3049C7.02334 19.7914 4.00003 16.1887 4 12C4.00014 10.6766 4.41054 9.38568 5.17469 8.30517C5.93885 7.22466 7.01918 6.4076 8.26696 5.96651C9.51472 5.52542 10.8685 5.482 12.142 5.84222C13.4155 6.20245 14.546 6.94859 15.3778 7.97794C15.5297 8.16589 15.7584 8.2751 16 8.2751C16.2416 8.2751 16.4704 8.16589 16.6222 7.97794C17.4541 6.94859 18.5845 6.20245 19.8579 5.84222C21.1315 5.482 22.4853 5.52542 23.7331 5.96651C24.9808 6.4076 26.0611 7.22466 26.8253 8.30517C27.5894 9.38568 27.9998 10.6766 28 12Z' stroke='white' stroke-width='1.5' stroke-linejoin='round'/%3E %3C/g%3E %3C/g%3E %3C/g%3E %3Cdefs%3E %3CclipPath id='clip0_2514_433'%3E %3Crect width='32' height='32' fill='white'/%3E %3C/clipPath%3E %3C/defs%3E %3C/svg%3E" alt="찜하기">
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <!-- 컨텐츠 설명 Container -->
+                                    <div class="DetailContainer">
+                                        <!-- 해당 컨텐츠의 카테고리를 표시 -->
+                                        <span class="ListCategory">요가</span>
+                                        <!-- 컨텐츠 제목 -->
+                                        <div class="ListTitle">집에서 받는 자세교정 요가클리닉🧘‍♀️ [90분 프로그램]</div>
+                                        <hr type="Line" size="16" class="Border">
+                                        <!-- 가격정보 전체를 감싸는 div -->
+                                        <div class="PriceContainer">
+                                            <div class="OriginalPrice">44,000원</div>
+                                            <div class="DiscountRateContainer">
+                                                <div class="DiscountRate">34%</div>
+                                                <div class="SalePrice">29,000원</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <!-- 2번째 찜목록 -->
+                        <div class="LikeList">
+                            <!-- 누르면 해당 컨텐츠 상세보기로 들어갑니다. -->
+                            <a class="LikListwithLink">
+                                <!-- 컨텐츠 정보 Wrapper -->
+                                <div class="ListInfoWrapper">
+                                    <!-- 이미지 Container -->
+                                    <div class="ImageContainer">
+                                        <div class="ImageWrapper">
+                                            <img class="ImageLoader" width="192" src="https://res.cloudinary.com/frientrip/image/upload/ar_1:1,c_fill,dpr_2,f_auto,q_auto,w_310/%EC%9A%94%EA%B0%80%EB%A7%81%20%EC%8A%A4%ED%8A%B8%EB%A0%88%EC%B9%AD_1_45548f387b2648d910561a88b12c21f2c0c4c1e21509d8a511cb929c196f4d1c">
+                                            <div class="LikeContentWrapper" style="opacity: 1; display: block;">
+                                                <div class="Ratio " style="display: block;">
+                                                    <div class="Ratio-ratio " style="height: 0px; position: relative; width: 100%; padding-top: 100%;">
+                                                        <div class="Ratio-content " style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;">
+                                                            <img alt="요가링" class="ListImage" width="192" src="https://res.cloudinary.com/frientrip/image/upload/ar_1:1,c_fill,dpr_2,f_auto,q_auto,w_310/%EC%9A%94%EA%B0%80%EB%A7%81%20%EC%8A%A4%ED%8A%B8%EB%A0%88%EC%B9%AD_1_45548f387b2648d910561a88b12c21f2c0c4c1e21509d8a511cb929c196f4d1c">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- 이미지 안에 들어가는 하트(빨간 버전) -->
+                                        <div class="HeartContainer">
+                                            <button class="HeartButton">
+                                                <img class="RedHeart" src="data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cg clip-path='url(%23clip0_2517_457)'%3E %3Cpath d='M15.4448 27.0641L15.4368 27.0593L15.4064 27.0433C14.775 26.6998 14.1549 26.3359 13.5472 25.9521C12.0981 25.0404 10.7174 24.0243 9.41595 22.9121C6.47195 20.3729 3.19995 16.5633 3.19995 12.0001C3.20009 10.5112 3.66179 9.05903 4.52147 7.84344C5.38115 6.62785 6.59654 5.70866 8.00027 5.21244C9.40401 4.71622 10.9271 4.66737 12.3597 5.07263C13.7924 5.47788 15.0641 6.31729 16 7.4753C16.9358 6.31729 18.2075 5.47788 19.6402 5.07263C21.0728 4.66737 22.5959 4.71622 23.9996 5.21244C25.4034 5.70866 26.6187 6.62785 27.4784 7.84344C28.3381 9.05903 28.7998 10.5112 28.8 12.0001C28.8 16.5633 25.5296 20.3729 22.584 22.9121C20.7349 24.492 18.7274 25.8764 16.5936 27.0433L16.5632 27.0593L16.5552 27.0641H16.552C16.3819 27.1542 16.1925 27.2014 16.0001 27.2017C15.8078 27.2019 15.6182 27.1553 15.448 27.0657L15.4448 27.0641Z' fill='%23FD2748'/%3E %3C/g%3E %3Cdefs%3E %3CclipPath id='clip0_2517_457'%3E %3Crect width='32' height='32' fill='white'/%3E %3C/clipPath%3E %3C/defs%3E %3C/svg%3E" alt="찜하기">
+                                                <img class="NoHeart" src="data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cg clip-path='url(%23clip0_2514_433)'%3E %3Cmask id='mask0_2514_433' style='mask-type:luminance' maskUnits='userSpaceOnUse' x='0' y='0' width='32' height='32'%3E %3Cpath d='M32 0H0V32H32V0Z' fill='white'/%3E %3C/mask%3E %3Cg mask='url(%23mask0_2514_433)'%3E %3Cmask id='mask1_2514_433' style='mask-type:luminance' maskUnits='userSpaceOnUse' x='0' y='0' width='32' height='32'%3E %3Cpath d='M32 0H0V32H32V0Z' fill='white'/%3E %3C/mask%3E %3Cg mask='url(%23mask1_2514_433)'%3E %3Cpath d='M28 12C28 16.1889 24.9781 19.7916 22.063 22.3047C20.2579 23.8469 18.2982 25.1986 16.2154 26.3381C16.2027 26.3441 16.1898 26.3505 16.1774 26.357C16.1226 26.3861 16.0613 26.4013 15.999 26.4015C15.9401 26.4015 15.882 26.3881 15.8293 26.362L15.8094 26.3511L15.784 26.3378C15.1694 26.0033 14.5659 25.649 13.9743 25.2754C12.5586 24.3847 11.2086 23.3914 9.93704 22.3049C7.02334 19.7914 4.00003 16.1887 4 12C4.00014 10.6766 4.41054 9.38568 5.17469 8.30517C5.93885 7.22466 7.01918 6.4076 8.26696 5.96651C9.51472 5.52542 10.8685 5.482 12.142 5.84222C13.4155 6.20245 14.546 6.94859 15.3778 7.97794C15.5297 8.16589 15.7584 8.2751 16 8.2751C16.2416 8.2751 16.4704 8.16589 16.6222 7.97794C17.4541 6.94859 18.5845 6.20245 19.8579 5.84222C21.1315 5.482 22.4853 5.52542 23.7331 5.96651C24.9808 6.4076 26.0611 7.22466 26.8253 8.30517C27.5894 9.38568 27.9998 10.6766 28 12Z' stroke='white' stroke-width='1.5' stroke-linejoin='round'/%3E %3C/g%3E %3C/g%3E %3C/g%3E %3Cdefs%3E %3CclipPath id='clip0_2514_433'%3E %3Crect width='32' height='32' fill='white'/%3E %3C/clipPath%3E %3C/defs%3E %3C/svg%3E" alt="찜하기">
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <!-- 컨텐츠 설명 Container -->
+                                    <div class="DetailContainer">
+                                        <!-- 해당 컨텐츠의 카테고리를 표시 -->
+                                        <span class="ListCategory">운동 소도구</span>
+                                        <!-- 컨텐츠 제목 -->
+                                        <div class="ListTitle">요가링</div>
+                                        <hr type="Line" size="16" class="Border">
+                                        <!-- 가격정보 전체를 감싸는 div -->
+                                        <div class="PriceContainer">
+                                            <div class="OriginalPrice">20,000원</div>
+                                            <div class="DiscountRateContainer">
+                                                <div class="DiscountRate">25%</div>
+                                                <div class="SalePrice">15,000원</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                    </div>
+                    <!-- 찜했을 때 생기는 리스트의 끝 -->
+                </div>
+            </div>
+
+            <!-- 찜목록이 생기면 아래에 Paging 생성 -->
+            <footer class="PaginationWrapper">
+                <!-- 이전 버튼 Wrapper -->
+                <div class="PrevButtonWrapper">
+                    <!-- 이전 버튼 -->
+                    <button class="PrevButton">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath fill='%23FFF' fill-opacity='0' fill-rule='nonzero' d='M0 0h40v40H0z'/%3E %3Cpath stroke='%23DDD' stroke-width='1.5' d='M16 16l4 4-4 4M21 16l4 4-4 4'/%3E %3C/g%3E %3C/svg%3E" class="PrevButtonImg">
+                    </button>
+                    <button class="PrevButton">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath fill='none' d='M0 0h40v40H0z'/%3E %3Cpath stroke='%23DDD' stroke-width='1.5' d='M18 16l4 4-4 4'/%3E %3C/g%3E %3C/svg%3E" class="PrevButtonImg">
+                    </button>
+                </div>
+                <!-- 현재 페이지 -->
+                <button class="CurrentPage">1</button>
+                <!-- 다음 버튼 Wrapper -->
+                <div class="NextButtonWrapper">
+                    <!-- 다음 버튼 -->
+                    <button class="NextButton">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath fill='none' d='M0 0h40v40H0z'/%3E %3Cpath stroke='%23DDD' stroke-width='1.5' d='M18 16l4 4-4 4'/%3E %3C/g%3E %3C/svg%3E" class="NextButtonImg">
+                    </button>
+                    <button class="NextButton">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath fill='%23FFF' fill-opacity='0' fill-rule='nonzero' d='M0 0h40v40H0z'/%3E %3Cpath stroke='%23DDD' stroke-width='1.5' d='M16 16l4 4-4 4M21 16l4 4-4 4'/%3E %3C/g%3E %3C/svg%3E" class="NextButtonImg">
+                    </button>
+                </div>
+            </footer>
+
+        </div>
+    </div>
+</div>
+</body>
+<script src="../like.js"></script>
+</html>

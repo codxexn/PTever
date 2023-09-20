@@ -1,0 +1,211 @@
+.myInfo > * {
+    font-family: inherit;
+    font-weight: bold;
+}
+
+div.RootWrapper {
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    min-height: 100vh;
+}
+
+.pc header.myInfoHeaderContainer{
+    border-bottom: 1px solid rgb(238, 238, 238);
+}
+
+section.PageWrapper {
+    display: flex;
+    flex-flow: column;
+    align-content: flex-start;
+    margin: 0px auto;
+    max-width: 808px;
+    width: 100%;
+    padding: 0px 20px;
+    min-height: 1px;
+}
+
+article.PageTitleContainer {
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+    margin: 50px 0px 20px;
+    font-size: 24px;
+    line-height: 24px;
+}
+
+h1.PageTitle {
+    color: rgb(51, 51, 51);
+    font-size: 24px;
+    line-height: 24px;
+    font-weight: bold;
+}
+
+button.MyInfoSaveButton {
+    color: rgb(0, 117, 239);
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+section.MyProfilePageInfoContainer {
+    margin: 24px 0px 0px;
+}
+
+article.MyInfoImageContainer {
+    position: relative;
+    width: 64px;
+    height: 64px;
+    margin: 0px 0px 16px;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+img.MyInfoProfileThumbnail {
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+}
+
+label.MyInfoCameraImgContainer {
+    position: absolute;
+    bottom: 0px;
+    right: -3px;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    width: 24px;
+    height: 24px;
+    background-color: rgb(51, 51, 51);
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+img.MyInfoCameraImg {
+    width: 18px;
+    height: 16px;
+}
+
+#MyInfoImageFileInput {
+    display: none;
+}
+
+.MyInfoInputContainer > div {
+    margin: 0px 0px 16px;
+}
+
+label.TextFieldLabel {
+    display: block;
+    margin-bottom: 6px;
+    color: rgb(102, 102, 102);
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 22px;
+    letter-spacing: -0.03em;
+    text-align: left;
+}
+
+div.TextFieldInputWrapper {
+    position: relative;
+}
+
+input.TextFieldInput {
+    width: 100%;
+    border: 1px solid rgb(238, 238, 238);
+    box-sizing: border-box;
+    border-radius: 3px;
+    padding: 14px 14px 12px;
+    background: rgb(250, 250, 250);
+    color: rgb(17, 17, 17);
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 22px;
+    letter-spacing: -0.03em;
+    text-align: left;
+}
+
+input.TextFieldInput:disabled {
+    background: rgb(238, 238, 238);
+    color: rgb(170, 170, 170);
+}
+
+div.PasswordInputContainer {
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+}
+
+.PasswordInputContainer > div:first-child {
+    width: 100%;
+    margin: 0px 8px 0px 0px;
+}
+
+input:disabled {
+    -webkit-text-fill-color: currentcolor;
+    opacity: 1;
+}
+
+div.MyInfoButtonContainer {
+    display: flex;
+    align-items: flex-end;
+}
+
+.MyInfoButtonContainer > button {
+    width: 87px;
+    height: 50px;
+}
+
+button.ChangePwButton {
+    border: 1px solid rgb(204, 204, 204);
+    background: rgb(255, 255, 255);
+    color: rgb(51, 51, 51);
+    display: inline-flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    box-sizing: border-box;
+    font-weight: bold;
+    letter-spacing: -0.03em;
+    text-align: center;
+    white-space: nowrap;
+    width: auto;
+    border-radius: 10px;
+    padding: 10px 14px;
+    font-size: 12px;
+    line-height: 16px;
+    cursor: pointer;
+}
+
+button.ChangePwButton:hover {
+    border: 1px solid rgb(204, 204, 204);
+    background: rgb(250, 250, 250);
+    color: rgb(51, 51, 51);
+    display: inline-flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    box-sizing: border-box;
+    font-weight: bold;
+    letter-spacing: -0.03em;
+    text-align: center;
+    white-space: nowrap;
+    width: auto;
+    border-radius: 10px;
+    padding: 10px 14px;
+    font-size: 12px;
+    line-height: 16px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .pc {
+        display: block !important;
+    }
+}

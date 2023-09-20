@@ -1,0 +1,417 @@
+.purchaseHistory {
+  font-family: inherit;
+  font-weight: bold;
+}
+
+div.RootWrapper {
+  position: relative;
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
+}
+
+div.PageWrapper {
+  display: flex;
+  flex-flow: column;
+  align-content: flex-start;
+  margin: 0px auto;
+  max-width: 808px;
+  width: 100%;
+  padding: 0px 20px;
+  min-height: 1px;
+}
+
+.pc header.purchaseHistoryHeader {
+  border-bottom: 1px solid rgb(238, 238, 238);
+}
+
+div.Content {
+  padding: 50px 20px 20px;
+  margin: 0px auto;
+  max-width: 768px;
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+}
+
+div.Title {
+  font-size: 24px;
+  line-height: 36px;
+  font-weight: bold;
+  letter-spacing: -0.72px;
+  color: rgb(51, 51, 51);
+}
+
+div.purchaseHistoryListWrapper {
+  width: auto;
+  height: auto;
+  transition: opacity 200ms ease-in-out 0s;
+  display: none;
+  opacity: 0;
+  min-width: 0px;
+  min-height: 1px;
+}
+
+div.ListSmallTitle {
+  line-height: 14px;
+  padding: 23px 20px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+div.MyLectureListPage {
+  padding: 0px;
+}
+
+div.LectureList {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  border-bottom: 1px solid rgb(238, 238, 238);
+  margin-top: 10px;
+}
+
+.MyLectureListPage > * > div:first-child {
+  -webkit-box-flex: 0;
+  flex: 0 0 auto;
+  margin-right: 30px;
+  width: 160px;
+}
+
+div.LectureImageWrapper {
+  min-height: 1px;
+  margin-bottom: 10px;
+}
+
+img.LectureImageLoader {
+  display: none !important;
+}
+
+img.RealLectureImage {
+  display: initial;
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+div.LectureTitle {
+  margin-bottom: 14px;
+  line-height: 24px;
+  font-size: 24px;
+  font-weight: 500;
+  width: 450px;
+}
+
+.LectureDetail {
+  line-height: 18px;
+  color: rgb(155, 155, 155);
+  font-size: 13px;
+  margin-right: 20px;
+  margin-bottom: 10px;
+}
+
+a.SubmitWrapper {
+  display: flex;
+  flex-flow: wrap;
+  position: relative;
+  -webkit-box-align: center;
+  align-items: center;
+  margin-bottom: 0px;
+}
+
+button.ButtonWrapper {
+  position: relative;
+  font-family: inherit;
+  line-height: initial;
+  font-weight: 700;
+  cursor: pointer;
+  transition-duration: 0.1s;
+  transition-property: background-color, color, border-color, opacity,
+    box-shadow;
+  transition-timing-function: ease-out;
+  outline: none;
+  border: 1px solid transparent;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 12px 0px;
+  padding: 8px 18px;
+  min-height: 40px;
+  background-color: rgb(122, 41, 250);
+  color: rgb(255, 255, 255);
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+button.ButtonWrapper:hover {
+  position: relative;
+  font-family: inherit;
+  line-height: initial;
+  font-weight: 700;
+  cursor: pointer;
+  transition-duration: 0.1s;
+  transition-property: background-color, color, border-color, opacity,
+    box-shadow;
+  transition-timing-function: ease-out;
+  outline: none;
+  border: 1px solid transparent;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 12px 0px;
+  padding: 8px 18px;
+  min-height: 40px;
+  background-color: rgb(153, 89, 255);
+  color: rgb(255, 255, 255);
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+span.FlexWrapper {
+  width: 100%;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+}
+
+span.ButtonTextWrapper {
+  transition: all 0.2s ease 0s;
+}
+
+span.TextContinue {
+  margin: 0px;
+  max-width: 100%;
+  width: inherit;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 32px;
+  line-height: 1;
+  font-family: inherit;
+}
+
+/* 강의, 상품 나누는 버튼 css */
+
+button.CategoryButtonWrapper {
+  position: relative;
+  font-family: inherit;
+  line-height: initial;
+  font-weight: 700;
+  cursor: pointer;
+  transition-duration: 0.1s;
+  transition-property: background-color, color, border-color, opacity,
+    box-shadow;
+  transition-timing-function: ease-out;
+  outline: none;
+  padding: 8px 18px;
+  min-height: 40px;
+  background-color: rgb(255, 255, 255);
+  color: rgb(213, 213, 213);
+  margin-bottom: 10px;
+  border: 1px solid rgb(238, 238, 238);
+  border-radius: 5px;
+}
+
+button.CategoryButtonWrapperCurrent {
+  position: relative;
+  font-family: inherit;
+  line-height: initial;
+  font-weight: 700;
+  cursor: pointer;
+  transition-duration: 0.1s;
+  transition-property: background-color, color, border-color, opacity,
+    box-shadow;
+  transition-timing-function: ease-out;
+  outline: none;
+  padding: 8px 18px;
+  min-height: 40px;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  margin-bottom: 10px;
+  border: 1px solid rgb(238, 238, 238);
+  border-radius: 5px;
+}
+
+button.CategoryButtonWrapper:hover,
+button.CategoryButtonWrapperCurrent:hover {
+  position: relative;
+  font-family: inherit;
+  line-height: initial;
+  font-weight: 700;
+  cursor: pointer;
+  transition-duration: 0.1s;
+  transition-property: background-color, color, border-color, opacity,
+    box-shadow;
+  transition-timing-function: ease-out;
+  outline: none;
+  padding: 8px 18px;
+  min-height: 40px;
+  background-color: rgb(255, 255, 255);
+  color: rgb(137, 137, 137);
+  margin-bottom: 10px;
+  border: 1px solid rgb(238, 238, 238);
+  border-radius: 5px;
+}
+
+span.CategoryFlexWrapper {
+  width: 100%;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+}
+
+span.CategoryButtonTextWrapper {
+  transition: all 0.2s ease 0s;
+}
+
+span.CategoryTextContinue {
+  margin: 0px;
+  max-width: 100%;
+  width: inherit;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 32px;
+  line-height: 1;
+  font-family: inherit;
+}
+
+.ButtonWrapper::after {
+  position: absolute;
+  content: " ";
+  inset: 0px;
+  transition: all 0.1s ease-out 0s;
+}
+
+/* 결제한 강의가 없을 때 나오는 섹션의 css */
+
+div.ContentWrapper {
+  padding: 0px 20px;
+  position: relative;
+}
+
+div.noLectureContentWrapper {
+  width: auto;
+  height: auto;
+  transition: opacity 200ms ease-in-out 0s;
+  display: none;
+  opacity: 0;
+  min-width: 0px;
+  min-height: 1px;
+}
+
+div.noLectureBaseWrapper {
+  display: flex;
+  flex-direction: column;
+  -webkit-box-align: center;
+  align-items: center;
+  color: rgb(119, 119, 119);
+  padding: 100px 0px;
+}
+
+img.noPTEVER {
+  width: 100px;
+}
+
+strong.BaseHeader {
+  font-size: 18px;
+  line-height: 26px;
+  margin-top: 24px;
+}
+
+div.BaseDescription {
+  font-size: 14px;
+  line-height: 20px;
+  margin-top: 6px;
+}
+
+@media (max-width: 768px) {
+  .MyLectureListPage > * > div:first-child {
+    -webkit-box-flex: 0;
+    flex: 0 0 auto;
+    margin-right: 10px;
+    width: 140px;
+  }
+
+  div.LectureTitle {
+    margin-bottom: 6px;
+    line-height: 24px;
+    font-size: 20px;
+    font-weight: 500;
+    width: auto;
+  }
+
+  .LectureDetail {
+    line-height: 18px;
+    color: rgb(155, 155, 155);
+    font-size: 12px;
+    margin-right: 13px;
+    margin-bottom: 5px;
+  }
+
+  button.ButtonWrapper {
+    position: relative;
+    font-family: inherit;
+    line-height: initial;
+    font-weight: 700;
+    cursor: pointer;
+    transition-duration: 0.1s;
+    transition-property: background-color, color, border-color, opacity,
+      box-shadow;
+    transition-timing-function: ease-out;
+    outline: none;
+    border: 1px solid transparent;
+    margin: 2px;
+    margin-left: 0px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 12px 0px;
+    padding: 8px 10px;
+    min-height: 38px;
+    background-color: rgb(122, 41, 250);
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+  }
+
+  button.ButtonWrapper:hover {
+    position: relative;
+    font-family: inherit;
+    line-height: initial;
+    font-weight: 700;
+    cursor: pointer;
+    transition-duration: 0.1s;
+    transition-property: background-color, color, border-color, opacity,
+      box-shadow;
+    transition-timing-function: ease-out;
+    outline: none;
+    border: 1px solid transparent;
+    margin: 2px;
+    margin-left: 0px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 12px 0px;
+    padding: 8px 10px;
+    min-height: 38px;
+    background-color: rgb(153, 89, 255);
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+  }
+
+  span.TextContinue {
+    margin: 0px;
+    max-width: 100%;
+    width: inherit;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 32px;
+    line-height: 1;
+    font-family: inherit;
+  }
+}
+
+@media (max-width: 450px) {
+  .LectureDetail {
+    line-height: 18px;
+    color: rgb(155, 155, 155);
+    font-size: 12px;
+    margin-right: 10px;
+    margin-bottom: 5px;
+  }
+
+  div.LectureTitle {
+    margin-bottom: 3px;
+    line-height: 24px;
+    font-size: 14px;
+    font-weight: bold;
+    width: auto;
+  }
+}

@@ -1,0 +1,788 @@
+div.RootWrapper {
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    min-height: 100vh;
+}
+
+div.PageWrap {
+    display: flex;
+    flex-flow: column;
+    align-content: flex-start;
+    margin: 0px auto;
+    max-width: 808px;
+    width: 100%;
+    padding: 0px;
+    min-height: 1px;
+}
+
+.pc div.LikeNavi {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    margin: 20px 20px 0px;
+}
+
+.pc div.LikeNavi > * {
+    margin-right: 60px;
+}
+
+button.FocusNaviButton {
+    width: auto;
+    height: 60px;
+    line-height: 20px;
+    padding: 0px 0px 26px;
+    background-color: transparent;
+    text-align: center;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    -webkit-box-align: center;
+    align-items: center;
+    border-radius: 0px;
+}
+
+button.FocusNaviButton::after {
+    content: "";
+    display: block;
+    margin: 9px auto 0px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: rgb(51, 151, 255);
+}
+
+button.NaviButton {
+    width: auto;
+    height: 60px;
+    line-height: 20px;
+    padding: 0px 0px 26px;
+    background-color: transparent;
+    text-align: center;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    -webkit-box-align: center;
+    align-items: center;
+    border-radius: 0px;
+}
+
+div.LikeWrapper {
+    padding: 0px 20px;
+    position: relative;
+}
+
+div.LikeContentWrapper {
+    width: auto;
+    height: auto;
+    transition: opacity 200ms ease-in-out 0s;
+    display: none;
+    opacity: 0;
+    min-width: 0px;
+    min-height: 1px;
+}
+
+div.LikeBaseWrapper {
+    display: flex;
+    flex-direction: column;
+    -webkit-box-align: center;
+    align-items: center;
+    color: rgb(119, 119, 119);
+    padding: 100px 0px;
+}
+
+strong.BaseHeader {
+    font-size: 18px;
+    line-height: 26px;
+    margin-top: 24px;
+}
+
+div.BaseDescription {
+    font-size: 14px;
+    line-height: 20px;
+    margin-top: 6px;
+}
+
+/* list(찜한 목록)가 생겼을 때의 변화된 부분의 css 입니다. */
+
+div.LikeListWrapper {
+    display: flex;
+    flex-flow: wrap;
+}
+
+.pc div.LikeListWrapper > * {
+    margin-right: 15px;
+    -webkit-box-flex: 0;
+    flex: 0 1 calc(25% - 11.25px);
+    width: calc(25% - 11.25px);
+    max-width: 250px;
+    margin-bottom: 60px;
+}
+
+div.LikeList {
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+    background-color: white;
+    min-height: 1px;
+}
+
+a.LikListwithLink {
+    min-height: 1px;
+}
+
+div.ListInfoWrapper {
+    overflow: hidden;
+}
+
+div.ImageContainer {
+    position: relative;
+}
+
+div.ImageWrapper {
+    min-height: 1px;
+}
+
+img.ImageLoader {
+    display: none !important;
+}
+
+img.ListImage {
+    display: initial;
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+div.HeartContainer {
+    position: absolute;
+    right: 15px;
+    bottom: 0px;
+}
+
+button.HeartButton {
+    width: 24px;
+    height: 24px;
+    line-height: normal;
+    padding: 0px;
+    background-color: transparent;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+    outline: none;
+}
+
+button.HeartButton img.PcRedHeart {
+    filter: drop-shadow(rgba(0, 0, 0, 0.4) 1px 1px 3px);
+    display: block;
+}
+
+button.HeartButton img.PcNoHeart {
+    filter: drop-shadow(rgba(0, 0, 0, 0.4) 1px 1px 3px);
+    display: none;
+}
+
+div.DetailContainer {
+    padding: 10px 13px 0px 11px;
+}
+
+span.ListCategory {
+    display: block;
+    color: rgb(119, 119, 119);
+    font-size: 10px;
+    font-weight: bold;
+    line-height: 14px;
+    margin: 0px 0px 8px;
+}
+
+div.ListTitle {
+    height: auto;
+    margin: 0px 0px 9px;
+    font-weight: bold;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    max-height: 40px;
+    line-height: 20px;
+    font-size: 14px;
+}
+
+.DetailContainer hr.Border {
+    height: 1px;
+    background-color: rgb(255, 255, 255);
+    margin: 8px 0px;
+    border-top: 1px solid rgb(238, 238, 238);
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+}
+
+div.PriceContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+div.OriginalPrice {
+    color: rgb(204, 204, 204);
+    font-size: 10px;
+    line-height: 14px;
+    letter-spacing: -0.48px;
+    text-decoration: line-through;
+}
+
+div.DiscountRateContainer {
+    display: flex;
+}
+
+div.DiscountRate {
+    margin: 0px 2px 0px 0px;
+    color: rgb(255, 63, 51);
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 22px;
+}
+
+div.SalePrice {
+    color: rgb(51, 51, 51);
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 22px;
+}
+
+/* 트레이너 찜목록 css 입니다. */
+
+div.LikeTrianerWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.pc div.LikeTrianerWrapper > :nth-child(2n-1) {
+    margin-right: 30px;
+}
+
+
+div.ProfileWrapper {
+    display: flex;
+    flex-flow: column;
+    border-bottom: 1px solid rgb(238, 238, 238);
+    padding: 30px 0px;
+    border-bottom: 1px solid rgb(238, 238, 238);
+    -webkit-box-flex: 0;
+    flex: 0 1 350px;
+}
+
+div.ProfileContentWrapper {
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+    font-size: 14px;
+    line-height: 24px;
+}
+
+div.ProfileInfo {
+    display: flex;
+    width: 100%;
+}
+
+div.ProfileImageWrapper {
+    margin-right: 20px;
+    overflow: hidden;
+    width: 56px;
+    height: 56px;
+    min-width: 56px;
+    border-radius: 28px;
+}
+
+div.ProfileImageInnerWrapper {
+    min-height: 1px;
+}
+
+div.ProfileImageLoader {
+    display: none !important;
+}
+
+div.ProfileContent {
+    display: flex;
+    flex-flow: column;
+    -webkit-box-pack: center;
+    justify-content: center;
+    width: 100%;
+}
+
+div.TrainerNameWrapper {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    width: 100%;
+    max-width: 212px;
+}
+
+span.TrainerNickName {
+    display: inline-flex;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 26px;
+    letter-spacing: -0.54px;
+    color: rgb(51, 51, 51);
+    font-family: inherit;
+    font-weight: bold;
+}
+
+span.TrainerNickName > span {
+    max-width: 170px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    font-family: inherit;
+    font-weight: bold;
+}
+
+span.ProfileStat {
+    margin-top: 2px;
+    color: rgb(170, 170, 170);
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: -0.36px;
+    font-family: inherit;
+    font-weight: bold;
+}
+
+span.ProfileStat > span {
+    color: rgb(221, 221, 221);
+    font-size: 10px;
+    vertical-align: top;
+    display: inline-block;
+    padding: 0px 6px;
+    font-family: inherit;
+    font-weight: bold;
+}
+
+button.ProfileHeart {
+    width: 32px;
+    height: 32px;
+    line-height: normal;
+    padding: 0px;
+    background-color: transparent;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+    outline: none;
+}
+
+button.ProfileHeart img.ProfileRedHeart {
+    filter: drop-shadow(rgba(0, 0, 0, 0.4) 1px 1px 3px);
+    display: block;
+}
+
+button.ProfileHeart img.ProfileNoHeart {
+    filter: drop-shadow(rgba(0, 0, 0, 0.4) 1px 1px 3px);
+    display: none;
+}
+
+/* 모바일 버전 반응형 */
+@media (max-width: 768px) {
+    div.PageWrap {
+        display: flex;
+        flex-flow: column;
+        align-content: flex-start;
+        margin: 0px auto;
+        max-width: 808px;
+        width: 100%;
+        padding: 0px;
+        min-height: 1px;
+    }
+
+    .mobile div.LikeNavi {
+        display: flex;
+        -webkit-box-align: center;
+        align-items: center;
+        -webkit-box-pack: justify;
+        justify-content: space-between;
+        margin: 20px;
+    }
+
+    .mobile div.LikeNavi > * {
+        margin-right: 0px;
+        -webkit-box-flex: 1;
+        flex: 1 1 auto;
+        width: calc(50%);
+    }
+
+    .mobile button.FocusNaviButton {
+        width: 100%;
+        height: 60px;
+        line-height: 14px;
+        padding: 16px 0px 15px;
+        background-color: transparent;
+        text-align: center;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: bold;
+        position: relative;
+        display: flex;
+        flex-flow: column;
+        -webkit-box-align: center;
+        align-items: center;
+        border-radius: 0px;
+    }
+
+    .mobile button.FocusNaviButton::after {
+        content: "";
+        display: block;
+        margin: 10px auto 0px;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background-color: rgb(51, 151, 255);
+    }
+
+    .mobile button.NaviButton {
+        width: 100%;
+        height: 60px;
+        line-height: 14px;
+        padding: 16px 0px 15px;
+        background-color: transparent;
+        text-align: center;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: bold;
+        position: relative;
+        display: flex;
+        flex-flow: column;
+        -webkit-box-align: center;
+        align-items: center;
+        border-radius: 0px;
+    }
+
+    div.LikeWrapper {
+        padding: 0px 20px;
+        position: relative;
+    }
+
+    div.LikeContentWrapper {
+        width: auto;
+        height: auto;
+        transition: opacity 200ms ease-in-out 0s;
+        display: none;
+        opacity: 0;
+        min-width: 0px;
+        min-height: 1px;
+    }
+
+    div.LikeBaseWrapper {
+        display: flex;
+        flex-direction: column;
+        -webkit-box-align: center;
+        align-items: center;
+        color: rgb(119, 119, 119);
+        padding: 100px 0px;
+    }
+
+    strong.BaseHeader {
+        font-size: 18px;
+        line-height: 26px;
+        margin-top: 24px;
+    }
+
+    div.BaseDescription {
+        font-size: 14px;
+        line-height: 20px;
+        margin-top: 6px;
+    }
+
+    /* 모바일버전 찜목록 생겼을 때 css */
+    div.LikeListWrapper {
+        display: flex;
+        flex-flow: wrap;
+        flex-wrap: nowrap;
+    }
+
+    div.LikeList {
+        margin-right: 15px;
+        -webkit-box-flex: 0;
+        flex: 0 1 calc(50% - 7.5px);
+        width: calc(50% - 7.5px);
+        margin-bottom: 30px;
+        display: flex;
+        flex-flow: column;
+        background-color: white;
+        min-height: 1px;
+    }
+
+    a.LikListwithLink {
+        min-height: 1px;
+    }
+
+    div.ListInfoWrapper {
+        overflow: hidden;
+    }
+
+    div.ImageContainer {
+        position: relative;
+    }
+
+    div.ImageWrapper {
+        min-height: 1px;
+    }
+
+    img.ImageLoader {
+        display: none !important;
+    }
+
+    img.ListImage {
+        display: initial;
+        border-radius: 5px;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    div.HeartContainer {
+        position: absolute;
+        right: 15px;
+        bottom: 0px;
+    }
+
+    button.HeartButton {
+        width: 24px;
+        height: 24px;
+        line-height: normal;
+        padding: 0px;
+        background-color: transparent;
+        text-align: center;
+        cursor: pointer;
+        border-radius: 5px;
+        font-size: 14px;
+        margin-top: -3px;
+        margin-right: -3px;
+        outline: none;
+    }
+
+    button.HeartButton img.RedHeart {
+        filter: drop-shadow(rgba(0, 0, 0, 0.4) 1px 1px 3px);
+        display: block;
+    }
+
+    button.HeartButton img.NoHeart {
+        filter: drop-shadow(rgba(0, 0, 0, 0.4) 1px 1px 3px);
+        display: none;
+    }
+
+    div.DetailContainer {
+        padding: 10px 13px 0px 11px;
+    }
+
+    span.ListCategory {
+        display: block;
+        color: rgb(119, 119, 119);
+        font-size: 10px;
+        font-weight: bold;
+        line-height: 14px;
+        margin: 0px 0px 6px;
+    }
+
+    div.ListTitle {
+        height: auto;
+        margin: 0px 0px 9px;
+        font-weight: bold;
+        word-break: keep-all;
+        overflow-wrap: break-word;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: 2;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        max-height: 36px;
+        line-height: 18px;
+        font-size: 12px;
+    }
+
+    .DetailContainer hr.Border {
+        height: 1px;
+        background-color: rgb(255, 255, 255);
+        margin: 8px 0px;
+        border-top: 1px solid rgb(238, 238, 238);
+        border-left: none;
+        border-right: none;
+        border-bottom: none;
+    }
+
+    div.PriceContainer {
+        display: flex;
+        flex-direction: column;
+    }
+
+    div.OriginalPrice {
+        color: rgb(204, 204, 204);
+        font-size: 10px;
+        line-height: 14px;
+        letter-spacing: -0.48px;
+        text-decoration: line-through;
+    }
+
+    div.DiscountRateContainer {
+        display: flex;
+    }
+
+    div.DiscountRate {
+        margin: 0px 2px 0px 0px;
+        color: rgb(255, 63, 51);
+        font-size: 14px;
+        font-weight: bold;
+        line-height: 22px;
+    }
+
+    div.SalePrice {
+        color: rgb(51, 51, 51);
+        font-size: 14px;
+        font-weight: bold;
+        line-height: 22px;
+    }
+
+    /* 트레이너 찜목록 css 입니다. */
+
+    div.LikeTrianerWrapper {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+
+    div.ProfileWrapper {
+        border-bottom: 1px solid rgb(238, 238, 238);
+        -webkit-box-flex: 1;
+        flex: 1 0 100%;
+        padding: 30px 20px;
+        display: flex;
+        flex-flow: column;
+    }
+
+    div.ProfileContentWrapper {
+        display: flex;
+        -webkit-box-pack: justify;
+        justify-content: space-between;
+        -webkit-box-align: center;
+        align-items: center;
+        font-size: 14px;
+        line-height: 24px;
+    }
+
+    div.ProfileInfo {
+        display: flex;
+        width: 100%;
+    }
+
+    div.ProfileImageWrapper {
+        margin-right: 20px;
+        overflow: hidden;
+        width: 56px;
+        height: 56px;
+        min-width: 56px;
+        border-radius: 28px;
+    }
+
+    div.ProfileImageInnerWrapper {
+        min-height: 1px;
+    }
+
+    div.ProfileImageLoader {
+        display: none !important;
+    }
+
+    div.ProfileContent {
+        display: flex;
+        flex-flow: column;
+        -webkit-box-pack: center;
+        justify-content: center;
+        width: 100%;
+    }
+
+    div.TrainerNameWrapper {
+        display: flex;
+        -webkit-box-align: center;
+        align-items: center;
+        width: 100%;
+        max-width: 212px;
+    }
+
+    span.TrainerNickName {
+        display: inline-flex;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 26px;
+        letter-spacing: -0.54px;
+        color: rgb(51, 51, 51);
+        font-family: inherit;
+        font-weight: bold;
+    }
+
+    span.TrainerNickName > span {
+        max-width: 170px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        font-family: inherit;
+        font-weight: bold;
+    }
+
+    span.ProfileStat {
+        margin-top: 2px;
+        color: rgb(170, 170, 170);
+        font-size: 12px;
+        line-height: 16px;
+        letter-spacing: -0.36px;
+        font-family: inherit;
+        font-weight: bold;
+    }
+
+    span.ProfileStat > span {
+        color: rgb(221, 221, 221);
+        font-size: 10px;
+        vertical-align: top;
+        display: inline-block;
+        padding: 0px 6px;
+        font-family: inherit;
+        font-weight: bold;
+    }
+
+    button.ProfileHeart {
+        width: 32px;
+        height: 32px;
+        line-height: normal;
+        padding: 0px;
+        background-color: transparent;
+        text-align: center;
+        cursor: pointer;
+        border-radius: 5px;
+        font-size: 14px;
+        outline: none;
+    }
+
+    button.ProfileHeart img.ProfileRedHeart {
+        filter: drop-shadow(rgba(0, 0, 0, 0.4) 1px 1px 3px);
+        display: block;
+    }
+
+    button.ProfileHeart img.ProfileNoHeart {
+        filter: drop-shadow(rgba(0, 0, 0, 0.4) 1px 1px 3px);
+        display: none;
+    }
+
+}

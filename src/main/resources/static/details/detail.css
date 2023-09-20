@@ -1,0 +1,509 @@
+/* 기본 CSS */
+* {
+    outline: none;
+    background-repeat: no-repeat;
+    font-family: inherit;
+    box-sizing: inherit;
+    font-weight: bold;
+}
+
+html, body {
+    width: 100%;
+    font-size: 14px;
+    color: black;
+    word-break: normal;
+    overflow-wrap: break-word;
+}
+
+html {
+    display: block;
+    box-sizing: border-box;
+    cursor: default;
+    font-family: sans-serif;
+    line-height: 1.5;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+}
+
+#root {
+    background-color: white;
+    min-height: 100%;
+    min-width: 100%;
+}
+
+div.RootWrapper {
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    min-height: 100vh;
+}
+
+div {
+    display: block;
+}
+
+
+
+div.PageWrapper{
+    display: flex;
+    flex-flow: column;
+    align-content: flex-start;
+    margin: 0px auto;
+    max-width: 808px;
+    width: 100%;
+    padding: 0px 20px;
+    min-height: 1px;
+}
+
+div.Fade_Wrapper{
+    width: auto;
+    height: auto;
+    transition: opacity 200ms ease-in-out 0s;
+    min-width: 0px;
+    min-height: 1px;
+}
+
+.detailPage_Header{
+    border-bottom: 1px solid rgb(238, 238, 238);
+    padding: 20px 0px;
+}
+
+.detailPage_Wrapper{
+    padding: 0px;
+}
+
+.detailPage_Title{
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    padding: 0px;
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: bold;
+
+}
+
+.detailPageContent_Wrapper{
+    padding: 0px;
+}
+
+.detailContent_wrapper{
+    padding: 30px 0px;
+    border-bottom: 1px solid rgb(238, 238, 238);
+}
+
+.detailContent_Header{
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.detailContent_Body{
+    display: inline-block;
+}
+
+.detailContent_LikeButton{
+    height: 24px;
+    text-align: left;
+}
+
+.detailContent_ImageWrapper{
+    display: flex;
+    margin-top: 22px;
+    overflow: auto;
+}
+
+.detailContent_ProfileImageWrapper{
+    flex: 0 0 auto;
+    margin-right: 14px;
+    width: 48px;
+    height: 48px;
+    border-radius: 24px;
+    overflow: hidden;
+}
+
+.detailContent_Header > div:last-child{
+    -webkit-box-flex: 1;
+    flex: 1 1 auto;
+}
+
+.Image_Wrapper{
+    min-height: 1px;
+}
+
+.Fade_Wrapper{
+    width: auto;
+    height: auto;
+    transition: opacity 200ms ease-in-out 0s;
+    min-width: 0px;
+    min-height: 1px;
+}
+
+.Image_Default{
+    width: 100%;
+    border-radius: 5px;
+}
+
+.detailContent_Name{
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 12px;
+    margin-bottom: 10px;
+}
+
+.detailContent_Row{
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.detailContent_Created{
+    line-height: 10px;
+    color: rgb(155, 155, 155);
+    font-size: 10px;
+}
+
+.detailContent_Title{
+    margin-bottom: 10px;
+    line-height: 22px;
+    font-size: 20px;
+}
+
+.like_Button{
+    width: auto;
+    height: auto;
+    line-height: 10px;
+    padding: 0px;
+    background-color: transparent;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+    color: rgb(85, 85, 85);
+    font-size: 10px;
+    border: none;
+}
+
+.like_Button_Icon{
+    margin-left: 2px;
+}
+
+img {
+    border-style: none;
+}
+
+.Image_StyledWrapper{
+    -webkit-box-flex: 0;
+    flex: 0 0 auto;
+    margin-right: 10px;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+}
+
+.Image_StyledImage{
+    display: initial;
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+img{
+    vertical-align: middle;
+}
+
+.like_Button > *{
+    vertical-align: bottom;
+}
+
+.like_ButtonOn{
+    width: auto;
+    height: auto;
+    line-height: 10px;
+    padding: 0px;
+    background-color: transparent;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+    color: rgb(51, 151, 255);
+    font-size: 10px;
+    border: none;
+}
+
+.like_ButtonOn > *{
+    vertical-align: bottom;
+}
+
+button.ButtonWrite{
+    width: 210px;
+    height: 50px;
+    line-height: normal;
+    padding: 0px;
+    background-color: transparent;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid rgb(238, 238, 238);
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.button_Wrapper{
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: flex-end;
+    -webkit-box-align: center;
+    align-items: center;
+    margin-top: 10px;
+    text-align: right;
+
+}
+
+.comment_Wrapper{
+    margin-top: 22px;
+}
+
+
+.commentInner_Wrapper > div:last-child{
+    margin-bottom: 0px;
+}
+
+.commentInner_Wrapper{
+    width: 100%;
+    line-height: 22px;
+    border-radius: 5px;
+    padding: 20px;
+    background-color: rgb(249, 249, 249);
+    font-size: 12px;
+}
+
+.commentInner_Author{
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.Image_StyledLoader{
+    display: none !important;
+}
+
+.comment{
+    width: auto;
+    height: auto;
+    transition: opacity 200ms ease-in-out 0s;
+    min-width: 0px;
+    min-height: 1px;
+    position: relative;
+}
+
+.InnerCard_Body{
+    white-space: pre-wrap;
+}
+
+element.style {
+    opacity: 1;
+    display: block;
+}
+
+.commentInner_ImageWrapper{
+    flex: 0 0 auto;
+    margin-right: 14px;
+    width: 36px;
+    height: 36px;
+    border-radius: 18px;
+    overflow: hidden;
+}
+
+.InnerCard_Label{
+    margin-bottom: 10px;
+    height: 12px;
+    line-height: 12px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.InnerCard_SubLabel{
+    line-height: 10px;
+    font-size: 10px;
+    color: rgb(155, 155, 155);
+}
+
+form.commentwrite{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 12;
+    box-sizing: border-box;
+    padding: 8px;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+div.backdrop{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 12;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.5);
+}
+
+div.wrap{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    z-index: 13;
+    box-sizing: border-box;
+    padding: 16px 0;
+    border-radius: 3px;
+    width: 100%;
+    max-width: 440px;
+    background-color: #fff;
+    transform: translate(-50%, -50%);
+    height: 24%;
+}
+
+p.profile{
+    display: inline-block;
+    margin: 0 0 16px 16px;
+    padding-left: 28px;
+    line-height: 20px;
+    color: #4c4c4c;
+    font-size: 13px;
+    font-weight: bold;
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 20px 20px;
+}
+
+textarea{
+    box-sizing: border-box;
+    margin-bottom: 16px;
+    padding: 0 16px;
+    width: 100%;
+    height: 96px;
+    line-height: 24px;
+    color: #292929;
+    font-size: 16px;
+    -moz-appearance: none;
+    appearance: none;
+    letter-spacing: -0.5px;
+    resize: none;
+    border: none;
+}
+
+.submit{
+    margin-right: 16px;
+    border: 1px solid rgba(0,0,0,0);
+    color: #fff;
+    background-color: rgb(51, 151, 255);
+}
+
+.cancel{
+    margin-right: 8px;
+    border: 1px solid #d6d6d6;
+    color: #737373;
+    background-color: #fff;
+}
+
+input.cancel,
+input.submit{
+    float: right;
+    padding: 0 16px;
+    border-radius: 18px;
+    height: 36px;
+    line-height: 36px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.imageStyled_Box{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 12;
+    box-sizing: border-box;
+    padding: 8px;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+.imageWrap{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    z-index: 13;
+    box-sizing: border-box;
+    padding: 16px 0;
+    border-radius: 3px;
+    width: 100%;
+    max-width: 440px;
+    background-color: #fff;
+    transform: translate(-50%, -50%);
+    height: 24%;
+}
+
+.imageBox_Styled{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    z-index: 13;
+    box-sizing: border-box;
+    border-radius: 3px;
+    max-width: 440px;
+    background-color: #fff;
+    transform: translate(-50%, -50%);
+}
+
+
+
+.header{
+    display: inline-block;
+    position: fixed;
+    left: 20px;
+    right: 0;
+    top: 54px;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    z-index: 99;
+}
+
+.close{
+    margin: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 16px;
+    padding: 8px;
+    background-color: #fff !important;;
+    background: none;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+    top: 0px;
+    vertical-align: bottom;
+    z-index: 1;
+    fill: white;
+}
+
+.closeButton{
+    position:relative;
+    float:left;
+    display:inline-block;
+
+}
+
+.closeButton::after{
+    content: "\00d7";
+    font-size:15pt;
+    line-height:1em;
+    text-align:center;
+}

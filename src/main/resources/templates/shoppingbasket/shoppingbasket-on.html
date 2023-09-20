@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PTever</title>
+    <link href="https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/static/woff2/SUIT.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'SUIT'
+        }
+    </style>
+    <!-- 아래 링크 태그를 꼭 넣어주세요. (경로 조심) -->
+    <link rel="stylesheet" href="./mainpage-header.css">
+    <link rel="stylesheet" href="shoppingbasket.css">
+
+</head>
+<body>
+
+<!-- 장바구니 담은 상품 있을 때 페이지 -->
+<div class="BasketPage-Wrap">
+    <div class="Basket-Nav">
+        <a class="Basket-Nav-Wrap" href="">
+            <button class="Basket-Nav-Button">
+                <div>장바구니</div>
+            </button>
+        </a>
+        <!-- 프립 찜 창 호스트 부분 -->
+        <!-- <a class="Basket-Nav-Wrap" href=""></a> -->
+    </div>
+    <div class="Basket-Padded">
+        <div class="Basket-Padded-Wrap">
+            <div class="BasketList-Wrap">
+                <!-- 첫번째 장바구니 -->
+                <div class="CardProduct-Wrap">
+                    <!-- 상품가격측정 div -->
+                    <div class="cart-item">
+                        <!-- 링크 연결 안됨 -->
+                        <a class="WithRink-Card" href="">
+                            <div class="CardProduct-Info">
+                                <div class="CardProduct-Img">
+                                    <div class="Img-Wrap">
+                                        <img class="ImgCard-First" width="192"
+                                             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNn6H5246pgBA9UAK1Jh44SDZicX7VNrE19w&usqp=CAU">
+                                        <div class="Img-FadeWrap" style="opacity: 1; display: block;">
+                                            <div class="Ratio">
+                                                <div class="Ratio-Ratio">
+                                                    <div class="Ratio-Content">
+                                                        <!-- 상품 이미지 -->
+                                                        <img alt="덤벨" class="Img-StyleImg" width="192"
+                                                             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNn6H5246pgBA9UAK1Jh44SDZicX7VNrE19w&usqp=CAU">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- 찜 버튼 -->
+                                    <!-- 장바구니 체크박스 -->
+                                    <div class="CardProduct-Heart">
+                                        <input type="checkbox" class="Basket-Checkbox" name="Basket" value="20000"
+                                               checked>
+                                    </div>
+                                    <!-- 설명 div -->
+                                </div>
+                                <div class="CardProduct-Detail">
+                                    <span class="CardProduct-Location">운동소도구</span>
+                                    <div class="CardProduct-Title">핑크덤벨</div>
+                                    <!-- 리뷰 지움 -->
+
+                                    <!-- 수량 -->
+                                    <!-- <form> -->
+
+                                    <button onclick="this.parentNode.querySelector('input[type=number]').stepDown(); return false;"
+                                            class="icon-number ver"></button>
+                                    <input class="quantity" min="1" max="99" name="quantity" value="1" type="number">
+                                    <button onclick="this.parentNode.querySelector('input[type=number]').stepUp(); return false;"
+                                            class="plus icon-number ver"></button>
+
+                                    <!-- <button class="btn-form btn-add-cart" type="submit">ADD TO CART</button> -->
+
+                                    <!-- </form> -->
+                                    <hr type="Line" size="16" class="CardProduct-Border">
+                                    <div class="CardProduct-PriceContainer">
+                                        <div class="CardProduct-Discount">
+                                            30,000
+                                            원
+                                        </div>
+                                        <div class="CardProduct-DiscountPrice">
+                                            <div class="CardProduct-DiscountRate">
+                                                33
+                                                %
+                                            </div>
+                                            <div class="CardProduct-SalePrice">
+                                                <span class="price">0원</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+
+                    <!-- 여기다가 -->
+                    <!-- <div class="quantity">
+                     <label for="quantity">수량:</label>
+                     <input type="number" class="quantity-input" value="1" min="1">
+                     </div>
+                 <p class="subtotal">가격: $10.00</p> -->
+                </div>
+                <!-- 두번째 장바구니 상품 div-->
+                <div class="CardProduct-Wrap">
+                    <!-- 링크 연결 안됨 -->
+                    <a class="WithRink-Card" href="">
+                        <div class="CardProduct-Info">
+                            <div class="CardProduct-Img">
+                                <div class="Img-Wrap">
+                                    <!-- 여기부터 -->
+                                    <img class="ImgCard-First" width="192"
+                                         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNn6H5246pgBA9UAK1Jh44SDZicX7VNrE19w&usqp=CAU">
+                                    <div class="Img-FadeWrap" style="opacity: 1; display: block;">
+                                        <div class="Ratio">
+                                            <div class="Ratio-Ratio">
+                                                <div class="Ratio-Content">
+                                                    <!-- 상품 이미지 -->
+                                                    <img alt="덤벨" class="Img-StyleImg" width="192"
+                                                         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNn6H5246pgBA9UAK1Jh44SDZicX7VNrE19w&usqp=CAU">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 찜 버튼 -->
+                                <!-- 장바구니 체크박스 -->
+                                <div class="CardProduct-Heart">
+                                    <input type="checkbox" class="Basket-Checkbox" name="Basket" value="20000" checked>
+                                </div>
+                                <!-- 설명 div -->
+                            </div>
+                            <div class="CardProduct-Detail">
+                                <span class="CardProduct-Location">운동소도구</span>
+                                <div class="CardProduct-Title">핑크덤벨</div>
+                                <!-- 리뷰 지움 -->
+                                <hr type="Line" size="16" class="CardProduct-Border">
+                                <div class="CardProduct-PriceContainer">
+                                    <div class="CardProduct-Discount">
+                                        30,000
+                                        원
+                                    </div>
+                                    <div class="CardProduct-DiscountPrice">
+                                        <div class="CardProduct-DiscountRate">
+                                            33
+                                            %
+                                        </div>
+                                        <div class="CardProduct-SalePrice">
+                                            20,000
+                                            원
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- 3번째 장바구니 상품 -->
+                <div class="CardProduct-Wrap">
+                    <!-- 링크 연결 안됨 -->
+                    <a class="WithRink-Card" href="">
+                        <div class="CardProduct-Info">
+                            <div class="CardProduct-Img">
+                                <div class="Img-Wrap">
+                                    <!-- 여기부터 -->
+                                    <img class="ImgCard-First" width="192"
+                                         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNn6H5246pgBA9UAK1Jh44SDZicX7VNrE19w&usqp=CAU">
+                                    <div class="Img-FadeWrap" style="opacity: 1; display: block;">
+                                        <div class="Ratio">
+                                            <div class="Ratio-Ratio">
+                                                <div class="Ratio-Content">
+                                                    <!-- 상품 이미지 -->
+                                                    <img alt="덤벨" class="Img-StyleImg" width="192"
+                                                         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNn6H5246pgBA9UAK1Jh44SDZicX7VNrE19w&usqp=CAU">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 장바구니 체크박스 -->
+                                <div class="CardProduct-Heart">
+                                    <input type="checkbox" class="Basket-Checkbox" name="Basket" value="20000" checked>
+                                </div>
+                                <!-- 설명 div -->
+                            </div>
+                            <div class="CardProduct-Detail">
+                                <span class="CardProduct-Location">운동소도구</span>
+                                <div class="CardProduct-Title">핑크덤벨</div>
+                                <hr type="Line" size="16" class="CardProduct-Border">
+                                <div class="CardProduct-PriceContainer">
+                                    <div class="CardProduct-Discount">
+                                        30,000
+                                        원
+                                    </div>
+                                    <div class="CardProduct-DiscountPrice">
+                                        <div class="CardProduct-DiscountRate">
+                                            33
+                                            %
+                                        </div>
+                                        <div class="CardProduct-SalePrice">
+                                            20,000
+                                            원
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- 네번째 상품 div -->
+                <div class="CardProduct-Wrap-Last">
+                    <a class="WithRink-Card" href="">
+                        <div class="CardProduct-Info">
+                            <!-- ㅇㅇㅇㅇ -->
+                            <div class="CardProduct-Img">
+                                <div class="Img-Wrap">
+                                    <img class="ImgCard-First" width="192"
+                                         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS61ALInbTyNztyx9fa8EC-0ZYL1KvNFQm4Tg&usqp=CAU">
+                                    <div class="Img-FadeWrap" style="opacity: 1; display: block;">
+                                        <div class="Ratio">
+                                            <div class="Ratio-Ratio">
+                                                <div class="Ratio-Content">
+                                                    <!-- 상품 이미지 -->
+                                                    <img alt="덤벨" class="Img-StyleImg" width="192"
+                                                         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS61ALInbTyNztyx9fa8EC-0ZYL1KvNFQm4Tg&usqp=CAU">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 장바구니 체크박스  -->
+                                <div class="CardProduct-Heart">
+                                    <input type="checkbox" class="Basket-Checkbox" name="Basket" value="20000" checked>
+                                </div>
+                                <!-- 설명 div -->
+                            </div>
+                            <div class="CardProduct-Detail">
+                                <span class="CardProduct-Location">운동소도구</span>
+                                <div class="CardProduct-Title">푸시업바</div>
+                                후기
+                                <hr type="Line" size="16" class="CardProduct-Border">
+                                <div class="CardProduct-PriceContainer">
+                                    <div class="CardProduct-Discount">
+                                        30,000
+                                        원
+                                    </div>
+                                    <div class="CardProduct-DiscountPrice">
+                                        <div class="CardProduct-DiscountRate">
+                                            33
+                                            %
+                                        </div>
+                                        <div class="CardProduct-SalePrice">
+                                            20,000
+                                            원
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </a>
+</div>
+</div>
+</div>
+<!-- 전체 선택  -->
+<div>
+    <div class="basket-Allcheck">
+        <label>
+            <input type='checkbox' name='Basket' value='selectall'
+                   onclick='selectAll(this)' checked/>
+            <b>전체 선택</b>
+        </label>
+
+    </div>
+</div>
+
+<!-- 총 금액 -->
+<h2>총 가격: <span id="totalPrice">0원</span></h2>
+
+
+<!-- 총 금액
+   <div class="total">
+      <p>총 결제금액: $<span id="total-amount">0.00</span></p>
+  </div>  -->
+<!-- 결제하기 버튼  -->
+<div class="Basket-PayWrap">
+    <div class="Basket-PayBar">
+        <button class="Basket-PayButton">
+            <div id="totalAmount">결제하기</div>
+        </button>
+    </div>
+</div>
+<!-- 마지막 div  -->
+</div>
+<script src="shoppingbasket.js"></script>
+</body>
+</html>

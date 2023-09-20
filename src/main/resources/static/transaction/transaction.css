@@ -1,0 +1,292 @@
+/* 기본 CSS */
+* {
+  outline: none;
+  background-repeat: no-repeat;
+  font-family: inherit;
+  box-sizing: inherit;
+  font-weight: bold;
+}
+
+html, body {
+  width: 100%;
+  font-size: 14px;
+  color: black;
+  word-break: normal;
+  overflow-wrap: break-word;
+}
+
+html {
+  display: block;
+  box-sizing: border-box;
+  cursor: default;
+  font-family: sans-serif;
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+#root {
+  background-color: white;
+  min-height: 100%;
+  min-width: 100%;
+}
+
+div.RootWrapper {
+  position: relative;
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
+}
+
+div {
+  display: block;
+}
+
+
+div.MainPadded{
+  padding: 0px 20px;
+}
+
+div.FreePostPage_Wrapper{
+  max-width: 768px;
+  margin: 0px auto;
+}
+
+div.FreePostPage_Header{
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  align-items: center;
+  padding: 20px 0px;
+}
+
+div.LeftPageTitle{
+  margin: 0px;
+    line-height: 20px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+button.ButtonWrite{
+  width: 210px;
+    height: 50px;
+    line-height: normal;
+    padding: 0px;
+    background-color: transparent;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid rgb(238, 238, 238);
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+hr.Hr{
+  width: 100%;
+    height: 1px;
+    background-color: rgb(238, 238, 238);
+    border: none;
+}
+
+hr{
+  overflow: visible;
+}
+
+div.FreePostPage_Bar{
+  display: flex;
+    gap: 6px;
+    overflow-y: hidden;
+    white-space: nowrap;
+}
+
+a.FreePostPage_Link{
+  border-radius: 20px;
+    text-decoration: none;
+    align-items: center;
+    display: inline-flex;
+}
+
+div.FreePostPage_Link_Wrapper{
+  display: flex;
+    align-items: center;
+    height: 40px;
+    justify-content: center;
+    background: #fff;
+    border: 1px solid #dadce0;
+    box-sizing: border-box;
+    border-radius: 20px;
+    min-width: 38px;
+    cursor: pointer;
+}
+
+span.FreePostPage_Link_Element{
+  color: #202124;
+  margin: 0 14px;
+  font-size: 14px;
+    width: fit-content;
+    cursor: pointer;
+}
+
+div.Fade_Wrapper{
+  width: auto;
+    height: auto;
+    transition: opacity 200ms ease-in-out 0s;
+    min-width: 0px;
+    min-height: 1px;
+}
+
+ul.Transaction_Wrapper{
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+
+footer.Footer_Wrapper{
+  display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-flex: 0;
+    width: 100%;
+    padding: 30px 0px;
+    background-color: white;
+}
+
+div.Transaction_TitleWrapper{
+  display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    min-height: 60px;
+    line-height: 24px;
+    padding: 18px 0px;
+    font-size: 14px;
+    cursor: pointer;
+    border-bottom: 1px solid rgb(230, 230, 230);
+}
+
+div.Transaction_Bage{
+  margin-left: 0px;
+    margin-right: 21px;
+    width: 90px;
+    height: 20px;
+    line-height: 20px;
+    border-radius: 5px;
+    padding: 0px 6px;
+    font-size: 10px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    background-color: rgb(160, 130, 250);
+    -webkit-box-flex: 0;
+    flex: 0 0 auto;
+}
+
+div.Transaction_Title{
+  -webkit-box-flex: 1;
+  flex: 1 1 auto;
+}
+
+div.Transaction_Date{
+  -webkit-box-flex: 0;
+    flex: 0 0 auto;
+    margin-left: 10px;
+    color: rgb(155, 155, 155);
+    font-size: 12px;
+    font-weight: normal;
+}
+
+div.PaginationButtonGroup_PrevButtonWrapper{
+  display: flex;
+    margin-right: 10px;
+}
+
+button.ButtonPage_StyledButtonOn{
+  width: 40px;
+  height: 40px;
+  line-height: normal;
+  padding: 0px;
+  background-color: white;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 50%;
+  color: rgb(51, 151, 255);
+  font-size: 18px;
+  font-weight: bold;
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  outline: none;
+}
+
+button.ButtonPage_StyledButton{
+  width: 40px;
+  height: 40px;
+  line-height: normal;
+  padding: 0px;
+  background-color: white;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 50%;
+  color: black;
+  font-size: 18px;
+  font-weight: normal;
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  outline: none;
+}
+
+button{
+  border-style: none;
+  margin: 0;
+}
+
+div.PaginationButtonGroup_NextButtonWrapper{
+  display: flex;
+  margin-left: 10px;
+}
+
+button.ButtonPage_StyledOff{
+  width: 40px;
+    height: 40px;
+    line-height: normal;
+    padding: 0px;
+    background-color: white;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 18px;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    outline: none;
+}
+
+.PaginationButtonGroup_Icon{
+  transform: rotate(180deg);
+}
+
+button.ButtonPage_Styled{
+  width: 40px;
+  height: 40px;
+  line-height: normal;
+  padding: 0px;
+  background-color: white;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 50%;
+  font-size: 18px;
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  outline: none;
+}

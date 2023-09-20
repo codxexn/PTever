@@ -1,0 +1,746 @@
+/* 기본 CSS */
+* {
+    outline: none;
+    background-repeat: no-repeat;
+    font-family: inherit;
+    box-sizing: inherit;
+    font-weight: bold;
+}
+
+html, body {
+    width: 100%;
+    font-size: 14px;
+    color: black;
+    word-break: normal;
+    overflow-wrap: break-word;
+}
+
+html {
+    display: block;
+    box-sizing: border-box;
+    cursor: default;
+    font-family: sans-serif;
+    line-height: 1.5;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+}
+
+#root {
+    background-color: white;
+    min-height: 100%;
+    min-width: 100%;
+}
+
+div.RootWrapper {
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    min-height: 100vh;
+}
+
+div {
+    display: block;
+}
+
+/* header 및 자식 태그들 css */
+header, section {
+    display: block;
+    font-family: 'SUIT', sans-serif;
+}
+
+header.NavBar-wrapper {
+    width: 100%;
+    border-bottom: 1px solid rgb(238, 238, 238);
+    z-index: 300;
+}
+
+section.NavBar-TopNavContainer {
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    height: 32px;
+    background-color: rgb(244, 244, 244);
+}
+
+div.NavBar-TopNavMenuWrapper {
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+    max-width: 768px;
+    width: 100%;
+    padding: 6px 20px;
+}
+
+div.NavBar-TopNavMenu {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.NavBar-TopNavMenu a {
+    margin-left: 20px;
+}
+
+.NavBar-TopNavMenu a:first-child {
+    margin-left: 0px;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    touch-action: manipulation;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+a.TopNavMenu-A, a.MainNavMenu-A {
+    min-height: 1px;
+}
+
+div.TopNavMenu-Text {
+    color: rgb(119, 119, 119);
+    font-size: 10px;
+    line-height: 14px;
+    letter-spacing: -0.3px;
+    font-weight: bold;
+}
+
+section.NavBar-MainNavContainer {
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    background-color: rgb(255, 255, 255);
+}
+
+div.NavBar-MainNavMenuWrapper {
+    position: relative;
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    max-width: 768px;
+    width: 100%;
+    padding: 22px 20px 8px;
+}
+
+div.NavBar-MainNavLeft {
+    display: flex;
+    width: 100%;
+}
+
+div.MainNavLeft-Category {
+    width: 48px;
+    height: 51px;
+}
+
+div.IconWrapper {
+    display: flex;
+    align-items: flex-end;
+    -webkit-box-pack: center;
+    justify-content: center;
+    width: 100%;
+    height: 34px;
+}
+
+img {
+    border-style: none;
+    overflow-clip-margin: content-box;
+    overflow: clip;
+    vertical-align: middle;
+}
+
+span.MainNav {
+    display: block;
+    margin-top: 3px;
+    font-size: 10px;
+    line-height: 14px;
+    letter-spacing: -0.3px;
+    text-align: center;
+    color: rgb(170, 170, 170);
+}
+
+span.MainNav-Pipe {
+    width: 1px;
+    height: 38px;
+    background-color: rgb(238, 238, 238);
+    margin-top: 10px;
+    margin-left: 20px;
+    display: inline-block;
+}
+
+img.MainNav-Logo {
+    margin: 17px 0px 17px 20px;
+    width: 68px;
+    height: 24px;
+}
+
+div.MainNav-SearchWrapper {
+    height: 38px;
+    padding: 0px 14px;
+    margin-top: 10px;
+    -webkit-box-flex: 1;
+    flex: 1 1 auto;
+}
+
+div.SearchWrapper {
+    width: 100%;
+}
+
+form {
+    display: block;
+    margin-top: 0em;
+}
+
+form.SearchForm {
+    position: relative;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    width: 100%;
+    height: 38px;
+    padding: 0px 12px;
+    border-radius: 19px;
+    background-color: rgb(244, 244, 244);
+    border: none;
+}
+
+img.SearchBar-Icon {
+    margin-right: 5px;
+    user-select: none;
+}
+
+input.SearchInput {
+    width: 100%;
+    color: rgb(51, 51, 51);
+    height: 24px;
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 700;
+    overflow: visible;
+    background-color: transparent;
+    border-style: none;
+    margin: 0;
+    touch-action: manipulation;
+    text-rendering: auto;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    -webkit-rtl-ordering: logical;
+    cursor: text;
+    border-width: 2px;
+    border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+    border-image: initial;
+}
+
+input::placeholder {
+    color:rgb(200, 200, 200);
+}
+
+input::-webkit-inner-spin-button {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+}
+
+[type="search"] {
+    -webkit-appearance: textfield;
+    outline-offset: -2px;
+    padding: 1px 2px;
+    writing-mode: horizontal-tb;
+}
+
+div.NavBar-MainNavRight {
+    display: flex;
+    width: 168px;
+}
+
+div.MainNavRight-Community, div.MainNavRight-Wishlist,
+div.MainNavRight-Mypage {
+    width: 48px;
+    height: 51px;
+}
+
+/* =========================================================== */
+.page-Wrapper {
+    display: flex;
+    flex-flow: column;
+    align-content: flex-start;
+    margin: 0px auto;
+    max-width: 808px;
+    width: 100%;
+    padding: 0px;
+    min-height: 653px;
+}
+
+
+.register-Page-Wrapper {
+    margin-top: 20px;
+}
+
+.center-Wrapper {
+    width: 100%;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    height: 50px;
+    position: relative;
+}
+
+.center-Wrapper h3 {
+    font-weight: bold;
+    font-size: 20px;
+    letter-spacing: -0.54px;
+    line-height: 28px;
+    color: rgb(51, 51, 51);
+    padding: 12px 0px;
+    margin: 0px;
+}
+
+.form-RegisterPage {
+    width: 100%;
+    max-width: 400px;
+    margin: 0px auto 60px;
+    padding: 24px 20px;
+}
+
+.form-Input {
+    width: 100%;
+    padding: 14px 14px 12px;
+    color: rgb(17, 17, 17);
+    font-size: 14px;
+    line-height: 22px;
+    letter-spacing: -0.42px;
+    border-radius: 3px;
+    background-color: rgb(250, 250, 250);
+    border: 1px solid rgb(238, 238, 238);
+    margin: 4px 0px 8px;
+}
+
+input {
+    touch-action: manipulation;
+    background-color: transparent;
+    border-style: none;
+    color: inherit;
+    font-size: 1em;
+    margin: 0;
+}
+
+input:focus {
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(0, 117, 239);
+}
+
+
+button, input {
+    overflow: visible;
+}
+
+.certification-Input-PhoneNum-Btn-Wrapper {
+    display: flex;
+}
+
+.certification-Input-PhoneNum-Btn-Wrapper > div {
+    display: inline-block;
+    width: calc(100% - 126px);
+}
+
+button:disabled {
+    background-color: rgb(238, 238, 238);
+    color: rgb(170, 170, 170);
+    cursor: not-allowed;
+}
+
+.certification-Input-PhoneNum-Btn-Wrapper > button {
+    margin-left: 12px;
+}
+
+button, html [type="button"] {
+    -webkit-appearance: button;
+}
+
+.certification-Btn {
+    width: 136px;
+    height: 50px;
+    line-height: 20px;
+    padding: 0px 13px;
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid rgb(204, 204, 204);
+    border-radius: 8px;
+    color: rgb(51, 51, 51);
+    font-size: 14px;
+    margin: 4px 0px 8px;
+}
+
+.certification-Btn > button {
+    margin-left: 12px;
+}
+
+button {
+    background-color: transparent;
+    border-style: none;
+    color: inherit;
+    font-size: 1em;
+    margin: 0;
+    cursor: pointer;
+}
+
+.input-Certification {
+    display: flex;
+}
+
+.input-Certification > div {
+    display: inline-block;
+    width: calc(100% - 100px);
+}
+
+.certification-Btn2:disabled {
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(181, 197, 214);
+    border-radius: 8px;
+    color: rgb(181, 197, 214);
+    cursor: not-allowed;
+}
+
+.certification-Btn2 {
+    width: 106px;
+    height: 50px;
+    line-height: 20px;
+    padding: 0px 13px;
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid rgb(0, 117, 239);
+    border-radius: 8px;
+    color: rgb(0, 117, 239);
+    font-size: 14px;
+    margin: 4px 0px 8px;
+}
+
+
+
+
+/* .signUp-Btn {
+    width: 100%;
+    height: 56px;
+    line-height: 24px;
+    padding: 0px 13px;
+    background-color: rgb(181, 197, 214);
+    text-align: center;
+    border-radius: 10px;
+    color: rgb(244, 244, 244);
+    font-size: 16px;
+    margin-top: 44px;
+} */
+
+.form_Input {
+    width: 100%;
+    padding: 14px 14px 12px;
+    color: rgb(17, 17, 17);
+    font-size: 14px;
+    line-height: 22px;
+    letter-spacing: -0.42px;
+    border-radius: 3px;
+    background-color: rgb(250, 250, 250);
+    border: 1px solid rgb(238, 238, 238);
+    margin: 4px 0px 8px;
+}
+
+
+
+.agreement-Btn {
+    width: 100%;
+    height: 56px;
+    line-height: normal;
+    padding: 16px;
+    background-color: rgb(0, 117, 239);
+    text-align: center;
+    cursor: pointer;
+    border-radius: 10px;
+    color: white;
+    font-size: 16px;
+    margin: 15px 0px 30px;
+}
+
+.agreement-Btn:disabled {
+    background-color: rgb(181, 197, 214);
+    color: rgb(244, 244, 244);
+    cursor: not-allowed;
+}
+
+
+.agreement-Btn-mobile {
+    width: 100%;
+    height: 56px;
+    line-height: normal;
+    padding: 16px;
+    background-color: rgb(0, 117, 239);
+    text-align: center;
+    cursor: pointer;
+    border-radius: 10px;
+    color: white;
+    font-size: 16px;
+    margin: 15px 0px 30px;
+}
+
+.agreement-Btn-mobile:disabled {
+    background-color: rgb(181, 197, 214);
+    color: rgb(244, 244, 244);
+    cursor: not-allowed;
+}
+
+.sheet-Layout {
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px -10px 4px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.accept-Box-Header {
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 28px;
+    color: rgb(51, 51, 51);
+    padding: 12px 0px;
+}
+
+.accept-List {
+    padding: 10px 0px;
+}
+
+.accept-List > * {
+    margin-bottom: 6px;
+}
+
+.accept-All, .agreement-List, .personal-Info-List, .loaction-Service-List, .marketing-List {
+    font-size: 14px;
+    line-height: 20px;
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: left;
+}
+
+.agreement-List, .personal-Info-List, .loaction-Service-List, .marketing-List {
+    display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+    cursor: pointer;
+    flex: 1 1 0%;
+}
+
+.hr {
+    padding: 0px;
+    height: 1px;
+    border: none;
+    background-color: rgb(234, 237, 239);
+    margin: 18px 0px;
+}
+
+.essential-Div {
+    margin-top: 20px;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    width: 100%;
+}
+
+.choose-Div {
+    margin-top: 20px;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    width: 100%;
+}
+
+.accept-List span{
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+
+.checkArea-Border {
+    left: 0;
+}
+
+input[type="checkbox"]:disabled {
+    cursor: not-allowed;
+}
+
+
+/* mobile */
+.mobile {
+    background-color: white;
+    min-height: 100%;
+    min-width: 100%;
+}
+
+.RootWrapper-mobile {
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    min-height: 100vh;
+}
+
+.registerPage-mobile {
+    display: flex;
+    flex-flow: column;
+    align-content: flex-start;
+    margin: 0px auto;
+    max-width: 808px;
+    width: 100%;
+    padding: 0px;
+    min-height: 653px;
+}
+
+.center-wrapper-mobile {
+    width: 100%;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    height: 50px;
+    position: relative;
+}
+
+.center-wrapper-mobile h3 {
+    font-size: 18px;
+    line-height: 26px;
+    letter-spacing: -0.54px;
+    color: rgb(51, 51, 51);
+    text-align: center;
+    font-weight: bold;
+    margin: 0px;
+}
+
+.backBtn-mobile {
+    position: absolute;
+    left: 10px;
+    cursor: pointer;
+    padding: 0px;
+}
+
+.registerPage-Form-mobile {
+    width: 100%;
+    max-width: 400px;
+    margin: 0px auto 60px;
+    padding: 24px 20px;
+}
+
+.form-InputNickName-mobile, .form_InputPhoneNum-mobile, .form_InputCheckNum-mobile {
+    width: 100%;
+    padding: 14px 14px 12px;
+    color: rgb(17, 17, 17);
+    font-size: 14px;
+    line-height: 22px;
+    letter-spacing: -0.42px;
+    border-radius: 3px;
+    background-color: rgb(250, 250, 250);
+    border: 1px solid rgb(238, 238, 238);
+    margin: 4px 0px 8px;
+}
+
+
+.certification-Btn-mobile {
+     width: 136px;
+    height: 50px;
+    line-height: 20px;
+    padding: 0px 13px;
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid rgb(204, 204, 204);
+    border-radius: 8px;
+    color: rgb(51, 51, 51);
+    font-size: 14px;
+    margin: 4px 0px 8px;
+}
+
+.certification-Btn2-mobile:disabled {
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(181, 197, 214);
+    border-radius: 8px;
+    color: rgb(181, 197, 214);
+    cursor: not-allowed;
+}
+
+.certification-Btn2-mobile {
+    width: 106px;
+    height: 50px;
+    line-height: 20px;
+    padding: 0px 13px;
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid rgb(0, 117, 239);
+    border-radius: 8px;
+    color: rgb(0, 117, 239);
+    font-size: 14px;
+    margin: 4px 0px 8px;
+}
+
+.agreement-Btn-mobile:disabled {
+    background-color: rgb(181, 197, 214);
+    color: rgb(244, 244, 244);
+    cursor: not-allowed;
+}
+
+.agreement-Btn-mobile {
+    width: 100%;
+    height: 56px;
+    line-height: normal;
+    padding: 16px;
+    background-color: rgb(0, 117, 239);
+    text-align: center;
+    cursor: pointer;
+    border-radius: 10px;
+    color: white;
+    font-size: 16px;
+    margin: 15px 0px 30px;
+}
+
+/* 약관 동의 */
+
+.sheet-Layout-mobile {
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px -10px 4px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+
+/* 미디어 쿼리 */
+.pc {
+    display: block;
+}
+
+.mobile {
+    display: none;
+}
+
+@media (max-width: 768px){
+    .pc {
+        display: none;
+    }
+
+    .mobile {
+        display: block;
+    }
+}

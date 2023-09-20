@@ -1,0 +1,170 @@
+.noReviews {
+  font-family: inherit;
+}
+
+div.RootWrapper {
+  position: relative;
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
+}
+
+div.PageWrapper {
+  display: flex;
+  flex-flow: column;
+  align-content: flex-start;
+  margin: 0px auto;
+  max-width: 808px;
+  width: 100%;
+  padding: 0px 20px;
+  min-height: 1px;
+}
+
+.pc header.myReviewsHeader {
+  border-bottom: 1px solid rgb(238, 238, 238);
+}
+
+div.Content {
+  padding: 50px 20px 20px;
+  margin: 0px auto;
+  max-width: 768px;
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+}
+
+div.Title {
+  font-size: 24px;
+  line-height: 36px;
+  font-weight: bold;
+  letter-spacing: -0.72px;
+  color: rgb(51, 51, 51);
+}
+
+a.SubmitWrapper {
+  display: flex;
+  flex-flow: wrap;
+  position: relative;
+  -webkit-box-align: center;
+  align-items: center;
+  margin-bottom: 0px;
+}
+
+button.ButtonWrapper {
+  position: relative;
+  font-family: inherit;
+  line-height: initial;
+  font-weight: 700;
+  cursor: pointer;
+  transition-duration: 0.1s;
+  transition-property: background-color, color, border-color, opacity,
+    box-shadow;
+  transition-timing-function: ease-out;
+  outline: none;
+  border: 1px solid transparent;
+  margin-bottom: 30px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 12px 0px;
+  padding: 8px 18px;
+  min-height: 48px;
+  background-color: rgb(122, 41, 250);
+  color: rgb(255, 255, 255);
+  border-radius: 5px;
+}
+
+button.ButtonWrapper:hover {
+  position: relative;
+  font-family: inherit;
+  line-height: initial;
+  font-weight: 700;
+  cursor: pointer;
+  transition-duration: 0.1s;
+  transition-property: background-color, color, border-color, opacity,
+    box-shadow;
+  transition-timing-function: ease-out;
+  outline: none;
+  border: 1px solid transparent;
+  margin-bottom: 30px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 12px 0px;
+  padding: 8px 18px;
+  min-height: 48px;
+  background-color: rgb(153, 89, 255);
+  color: rgb(255, 255, 255);
+  border-radius: 5px;
+}
+
+span.FlexWrapper {
+  width: 100%;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+}
+
+span.ButtonTextWrapper {
+  transition: all 0.2s ease 0s;
+}
+
+span.TextContinue {
+  margin: 0px;
+  max-width: 100%;
+  width: inherit;
+  font-weight: bold;
+  font-size: 17px;
+  line-height: 20px;
+  line-height: 1;
+  font-family: inherit;
+}
+
+.ButtonWrapper::after {
+  position: absolute;
+  content: " ";
+  inset: 0px;
+  transition: all 0.1s ease-out 0s;
+}
+
+/* 결제한 후기가 없을 때 나오는 섹션의 css */
+
+div.ContentWrapper {
+  padding: 0px 20px;
+  position: relative;
+}
+
+div.noReviewContentWrapper {
+  width: auto;
+  height: auto;
+  transition: opacity 200ms ease-in-out 0s;
+  display: none;
+  opacity: 0;
+  min-width: 0px;
+  min-height: 1px;
+}
+
+div.noReviewBaseWrapper {
+  display: flex;
+  flex-direction: column;
+  -webkit-box-align: center;
+  align-items: center;
+  color: rgb(119, 119, 119);
+  padding: 100px 0px;
+}
+
+img.noReview {
+  width: 80px;
+}
+
+strong.BaseHeader {
+  font-size: 13px;
+  line-height: 26px;
+  margin-top: 18px;
+}
+
+div.BaseDescription {
+  font-size: 14px;
+  line-height: 20px;
+  margin-top: 6px;
+}
+
+@media (max-width: 768px) {
+  .pc {
+    display: block !important;
+  }
+}
