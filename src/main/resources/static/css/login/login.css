@@ -1,0 +1,592 @@
+/* 기본 CSS */
+* {
+    outline: none;
+    background-repeat: no-repeat;
+    font-family: inherit;
+    box-sizing: inherit;
+    font-weight: bold;
+}
+
+html, body {
+    width: 100%;
+    font-size: 14px;
+    color: black;
+    word-break: normal;
+    overflow-wrap: break-word;
+}
+
+html {
+    display: block;
+    box-sizing: border-box;
+    cursor: default;
+    font-family: sans-serif;
+    line-height: 1.5;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+}
+
+#root {
+    background-color: white;
+    min-height: 100%;
+    min-width: 100%;
+}
+
+div.rootWrapper {
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    min-height: 100vh;
+}
+
+div {
+    display: block;
+}
+
+/* header 및 자식 태그들 css */
+header, section {
+    display: block;
+    font-family: 'SUIT', sans-serif;
+}
+
+header.NavBar-wrapper {
+    width: 100%;
+    border-bottom: 1px solid rgb(238, 238, 238);
+    z-index: 300;
+}
+
+section.NavBar-TopNavContainer {
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    height: 32px;
+    background-color: rgb(244, 244, 244);
+}
+
+div.NavBar-TopNavMenuWrapper {
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+    max-width: 768px;
+    width: 100%;
+    padding: 6px 20px;
+}
+
+div.NavBar-TopNavMenu {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.NavBar-TopNavMenu a {
+    margin-left: 20px;
+}
+
+.NavBar-TopNavMenu a:first-child {
+    margin-left: 0px;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    touch-action: manipulation;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+a.TopNavMenu-A, a.MainNavMenu-A {
+    min-height: 1px;
+}
+
+div.TopNavMenu-Text {
+    color: rgb(119, 119, 119);
+    font-size: 10px;
+    line-height: 14px;
+    letter-spacing: -0.3px;
+    font-weight: bold;
+}
+
+section.NavBar-MainNavContainer {
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    background-color: rgb(255, 255, 255);
+}
+
+div.NavBar-MainNavMenuWrapper {
+    position: relative;
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    max-width: 768px;
+    width: 100%;
+    padding: 22px 20px 8px;
+}
+
+div.NavBar-MainNavLeft {
+    display: flex;
+    width: 100%;
+}
+
+div.MainNavLeft-Category {
+    width: 48px;
+    height: 51px;
+}
+
+div.IconWrapper {
+    display: flex;
+    align-items: flex-end;
+    -webkit-box-pack: center;
+    justify-content: center;
+    width: 100%;
+    height: 34px;
+}
+
+img {
+    border-style: none;
+    overflow-clip-margin: content-box;
+    overflow: clip;
+    vertical-align: middle;
+}
+
+span.MainNav {
+    display: block;
+    margin-top: 3px;
+    font-size: 10px;
+    line-height: 14px;
+    letter-spacing: -0.3px;
+    text-align: center;
+    color: rgb(170, 170, 170);
+}
+
+span.MainNav-Pipe {
+    width: 1px;
+    height: 38px;
+    background-color: rgb(238, 238, 238);
+    margin-top: 10px;
+    margin-left: 20px;
+    display: inline-block;
+}
+
+img.MainNav-Logo {
+    margin: 17px 0px 17px 20px;
+    width: 68px;
+    height: 24px;
+}
+
+div.MainNav-SearchWrapper {
+    height: 38px;
+    padding: 0px 14px;
+    margin-top: 10px;
+    -webkit-box-flex: 1;
+    flex: 1 1 auto;
+}
+
+div.SearchWrapper {
+    width: 100%;
+}
+
+form {
+    display: block;
+    margin-top: 0em;
+}
+
+form.SearchForm {
+    position: relative;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    width: 100%;
+    height: 38px;
+    padding: 0px 12px;
+    border-radius: 19px;
+    background-color: rgb(244, 244, 244);
+    border: none;
+}
+
+img.SearchBar-Icon {
+    margin-right: 5px;
+    user-select: none;
+}
+
+input.SearchInput {
+    width: 100%;
+    color: rgb(51, 51, 51);
+    height: 24px;
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 700;
+    overflow: visible;
+    background-color: transparent;
+    border-style: none;
+    margin: 0;
+    touch-action: manipulation;
+    text-rendering: auto;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    -webkit-rtl-ordering: logical;
+    cursor: text;
+    border-width: 2px;
+    /*border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));*/
+    border-image: initial;
+}
+
+input::placeholder {
+    color:rgb(200, 200, 200);
+}
+
+[type="search"] {
+    -webkit-appearance: textfield;
+    outline-offset: -2px;
+    padding: 1px 2px;
+    writing-mode: horizontal-tb;
+}
+
+div.NavBar-MainNavRight {
+    display: flex;
+    width: 168px;
+}
+
+div.MainNavRight-Community, div.MainNavRight-Wishlist,
+div.MainNavRight-Mypage {
+    width: 48px;
+    height: 51px;
+}
+/*==============================================================================*/
+
+.loginPage-Wrapper {
+    display: flex;
+    flex-flow: column;
+    align-content: flex-start;  /*이거 flex-wrap: nowrap 때문에 막혀서 안 써지는데 정확히 뭔지 모름 */
+    margin: 0px auto;
+    max-width: 808px;
+    width: 100%;
+    padding: 0px;
+    min-height: 653px;
+}
+
+.login-Text {
+    width: 100%;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    height: 50px;
+    position: relative;
+}
+
+.login-Text h3 {   /*사용자 에이전트 스타일시트가 있는데 이건 뭘까요??*/
+    font-size: 18px;
+    line-height: 26px;
+    letter-spacing: -0.54px;
+    color: rgb(51, 51, 51);
+    text-align: center;
+    font-weight: bold;
+    margin: 0px;
+}
+
+.login-Register {
+    width: 100%;
+    max-width: 400px;
+    margin: 0px auto 12px;
+    padding: 24px 20px;
+}
+
+.inputId-Password /*로그인 할 때 아이디 비번 입력할 때 클래스 id*/ {
+    width: 100%; /*얘도 원래 100%*/
+    padding: 14px 14px 12px;
+    color: rgb(17, 17, 17);
+    font-size: 14px;
+    line-height: 22px;
+    letter-spacing: -0.42px;
+    border-radius: 3px;
+    background-color: rgb(250, 250, 250);
+    border: 1px solid rgb(238, 238, 238);
+    margin: 4px 0px 8px;
+}
+
+input:focus {
+    background-color: rgb(255, 255, 255);
+    border-color:rgb(0, 117, 239);
+}
+.invalid-input {
+    border: 2px solid #ff0000; /* 빨간색 테두리 추가 */
+}
+
+.error-message {
+    color: #ff0000; /* 빨간색 글씨 색상 */
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+input {
+    touch-action: manipulation;
+}
+
+button, input {
+    overflow: visible;
+}
+
+.find-Password {
+    color: rgb(170, 170, 170);
+    line-height: 20px;
+    float: right;
+    border-bottom: 1px solid rgb(170, 170, 170);
+}
+
+/* .find-join {
+    padding-top: 5px;
+    font-size: 14px;
+    font-weight: 100;
+    color: #ccc;
+    text-align: center;
+} */
+
+/* .find-join>a {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.2;
+    color: #767676;
+    padding: 18px 4px;
+    text-decoration: none;
+    border: none;
+    outline: none;
+} */
+
+/* .find-join>a.join { 건친
+    font-weight: 400 !important;
+} */
+
+/* .gray-01 {    건친 회원가입
+    color: #333 !important;
+} */
+button:disabled {
+    background-color: rgb(181, 197, 214);
+    cursor: not-allowed;
+}
+
+.login-Btn {
+    width: 100%;
+    height: 56px;
+    line-height: 24px;
+    padding: 16px;
+    background-color: rgb(0, 117, 239);
+    text-align: center;
+    /* 기본 커서는 아래처럼 pointer 로 해주셔야 합니다. */
+    /* button:disabled가 현재 속성을 덮어씌우므로 */
+    /* 비활성화 시 cursor는 not-allowed, */
+    /* disabled가 false가 될 시 button:disabled는 적용되지 않음과 동시에 */
+    /* cursor가 pointer로 돌아옵니다. */
+    cursor: pointer;
+    border-radius: 10px;
+    color: rgb(244, 244, 244);
+    font-size: 16px;
+    margin: 33px 0px 0px;
+    border: none;
+}
+
+.kakao-Btn {
+    padding: 16px;
+    line-height: 24px;
+    height: 56px;
+    font-size: 16px;
+    width: 100%;
+    margin-top: 12px;
+    border-color: #fee500;
+    background-color: #fee500;
+    position: relative;
+    transition-property: background-color,border-color,color,opacity;
+    transition-duration: .15s;
+    border: 1px solid #cdd3d8;
+    border-radius: 10px;
+    vertical-align: middle;
+    text-decoration: none;
+    white-space: nowrap;
+    color: #495057;
+    font-weight: 500;
+    -webkit-appearance: none;
+}
+
+.kakao-Btn span {
+    display: inline-flex;
+    align-items: center;
+    vertical-align: top;
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+
+.kakao-Btn .kakao-ImgBox {
+    vertical-align: top;
+}
+
+.kakao-Btn span svg {
+    display: inline-block;
+}
+
+.kakao-Icon {
+    position: absolute;
+    left: 16px;
+    width: 22px;
+    height: 22px;
+    transform: scale(1);
+    transition: transform .3s ease-out;
+    fill: currentColor;
+}
+
+button, html [type="submit"] {
+    -webkit-appearance: button;
+}
+
+.snsLogin-Wrapper {
+    padding-bottom: 60px;
+    text-align: center;
+    color: rgb(204, 204, 204);
+    line-height: 22px;
+}
+
+.snsLogin-IconBtn {
+    padding-top: 16px;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+
+.snsLogin-IconBtn > button {
+    margin: 0px 16px;
+    border: none;
+    background-color: white;
+}
+button {
+    touch-action: manipulation;
+    text-transform: none;
+    background-color: transparent;
+    border-style: none;
+    color: inherit;
+    font-size: 1em;
+}
+
+/* mobile */
+
+.mobile {
+    background-color: white;
+    min-height: 100%;
+    min-width: 100%;
+}
+
+.rootWrapper-mobile {
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    min-height: 100vh;
+}
+
+.loginPage-Wrapper-mobile {
+    display: flex;
+    flex-flow: column;
+    align-content: flex-start;
+    margin: 0px auto;
+    max-width: 808px;
+    width: 100%;
+    padding: 0px;
+    min-height: 653px;
+}
+
+.login-Text-mobile {
+    width: 100%;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    height: 50px;
+    position: relative;
+}
+
+.login-Text-mobile h3 {
+    font-size: 18px;
+    line-height: 26px;
+    letter-spacing: -0.54px;
+    color: rgb(51, 51, 51);
+    text-align: center;
+    font-weight: bold;
+    margin: 0px;
+}
+
+.backBtn-mobile {
+    position: absolute;
+    left: 10px;
+    cursor: pointer;
+    padding: 0px;
+}
+
+.loginPage-Logo {
+    margin: 18px auto 0px;
+    width: 90px;
+}
+
+/* 모바일 버전 css 추가 */
+.login-Btn-Mobile {
+    width: 100%;
+    height: 56px;
+    line-height: 24px;
+    padding: 16px;
+    background-color: rgb(0, 117, 239);
+    text-align: center;
+    cursor: pointer;
+    border-radius: 10px;
+    color: rgb(244, 244, 244);
+    font-size: 16px;
+    margin: 33px 0px 0px;
+    border: none;
+}
+
+.inputId-Email-Mobile, .inputId-Password-Mobile {
+    width: 100%;
+    padding: 14px 14px 12px;
+    color: rgb(17, 17, 17);
+    font-size: 14px;
+    line-height: 22px;
+    letter-spacing: -0.42px;
+    border-radius: 3px;
+    background-color: rgb(250, 250, 250);
+    border: 1px solid rgb(238, 238, 238);
+    margin: 4px 0px 8px;
+}
+
+
+
+
+
+/* 미디어 쿼리 */
+.pc {
+    display: block;
+}
+
+.mobile {
+    display: none;
+}
+
+@media (max-width: 768px){
+    .pc {
+        display: none;
+    }
+
+    .mobile {
+        display: block;
+    }
+}

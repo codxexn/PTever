@@ -17,8 +17,10 @@ import java.io.IOException;
 @RequiredArgsConstructor
 public class MyBatisConfiguration {
 
-//    resources까지의 경로를 매핑하기 위해서 ApplicationContext객체 주입
+    //    resources까지의 경로를 매핑하기 위해서 ApplicationContext객체 주입
     private final ApplicationContext applicationContext;
+
+
 
 //    yml파일의 connection정보를 가져오기 위한 작업
     @Bean
@@ -28,12 +30,16 @@ public class MyBatisConfiguration {
     }
 
 //    DataSource객체에 미리 설정해놓은 connection설정을 넣어준다.
+
     @Bean
     public DataSource dataSource() {
         return new HikariDataSource(hikariConfig());
     }
 
+    //    SqlSession을 만들기 위한 SqlSessionFactory를 제작한다.
+
 //    SqlSession을 만들기 위한 SqlSessionFactory를 제작한다.
+
     @Bean
     public SqlSessionFactory sqlSessionFactory() throws IOException {
         SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
