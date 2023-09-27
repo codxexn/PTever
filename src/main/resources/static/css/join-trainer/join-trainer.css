@@ -1,0 +1,1447 @@
+/* 기본 CSS */
+* {
+    outline: none;
+    background-repeat: no-repeat;
+    font-family: inherit;
+    box-sizing: inherit;
+}
+
+html,
+body {
+    width: 100%;
+    font-size: 14px;
+    color: black;
+    word-break: normal;
+    overflow-wrap: break-word;
+}
+
+html {
+    display: block;
+    box-sizing: border-box;
+    cursor: default;
+    font-family: sans-serif;
+    line-height: 1.5;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+}
+
+div.root {
+    background-color: white;
+    min-height: 100%;
+    min-width: 100%;
+}
+
+div.RootWrapper {
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    min-height: 100vh;
+}
+
+div {
+    display: block;
+}
+
+input {
+    text-rendering: auto;
+    letter-spacing: normal;
+    word-spacing: normal;
+    line-height: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    appearance: auto;
+    -webkit-rtl-ordering: logical;
+    cursor: text;
+    border-width: 2px;
+    /*border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));*/
+    border-image: initial;
+}
+
+section {
+    display: block;
+    font-family: "SUIT", sans-serif;
+}
+
+h1 {
+    display: block;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+form {
+    display: block;
+    margin-top: 0em;
+}
+
+img {
+    border-style: none;
+    overflow-clip-margin: content-box;
+    overflow: clip;
+}
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+a,
+area,
+button,
+input,
+label,
+select,
+textarea,
+[tabindex] {
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+}
+
+button,
+input {
+    overflow: visible;
+}
+
+button,
+input,
+select,
+textarea {
+    background-color: transparent;
+    border-style: none;
+    color: inherit;
+    font-size: 1em;
+    margin: 0;
+}
+
+button,
+select {
+    text-transform: none;
+}
+
+button,
+html [type="button"],
+[type="reset"],
+[type="submit"] {
+    -webkit-appearance: button;
+}
+
+input:not([type="range"]):not([type="color"]):not([type="button"]):not([type="reset"]):not([type="submit"]):not(
+        [type="file"]
+    ) {
+    writing-mode: horizontal-tb !important;
+}
+
+input[type="text" i] {
+    padding: 1px 2px;
+}
+
+ul {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+menu,
+nav,
+section,
+summary {
+    display: block;
+}
+
+button {
+    text-rendering: auto;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-indent: 0px;
+    text-shadow: none;
+    writing-mode: horizontal-tb !important;
+    padding-block: 1px;
+    padding-inline: 6px;
+    border-width: 2px;
+    border-image: initial;
+}
+
+hr {
+    overflow: visible;
+    display: block;
+    unicode-bidi: isolate;
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+p,
+label {
+    margin: 0px;
+}
+
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+b,
+strong {
+    font-weight: bolder;
+}
+
+/* 트레이너 지원 페이지 css */
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, main, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    vertical-align: baseline;
+}
+
+.JoinTrainerWrapper {
+    margin-top: 65px;
+    color: rgb(51, 51, 51);
+}
+
+.JoinTrainer-HeaderWrapper {
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    position: fixed;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    height: 65px;
+    padding: 0px 20px;
+    z-index: 99;
+    border-bottom: 1px solid rgb(221, 221, 221);
+    background-color: rgb(255, 255, 255);
+}
+
+.JoinTrainer-HeaderContentWrapper {
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1100px;
+}
+
+.JoinTrainer-HeaderLogoWrapper {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    width: 90px;
+}
+
+.JoinTrainer-HeaderLogoWrapper-Mobile {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    width: 65px;
+}
+
+.JoinTrainer-LogoImage {
+    width: 100%;
+}
+
+.JoinTrainer-HeaderButtonWrapper {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.JoinTrainer-HeaderButton:first-child {
+    margin-left: 0px;
+}
+
+.JoinTrainer-HeaderButton {
+    font-size: 16px;
+    letter-spacing: -0.4px;
+    font-weight: bold;
+    color: rgb(51, 51, 51);
+}
+
+.JoinTrainer-HeaderButton-Mobile:first-child {
+    margin-left: 0px;
+}
+
+.JoinTrainer-HeaderButton-Mobile {
+    font-size: 14px;
+    letter-spacing: -0.4px;
+    font-weight: bold;
+    color: rgb(51, 51, 51);
+}
+
+.JoinTrainer-MainBannerWrapper {
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    height: 500px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    text-align: center;
+    word-break: keep-all;
+    background-image: url("/static/image/join-trainer/mainBannerImage.jpg");
+}
+
+.JoinTrainer-MainBannerContentWrapper {
+    padding: 0px 20px 50px;
+    display: flex;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    justify-content: center;
+    max-width: 1100px;
+    width: 100%;
+}
+
+.JoinTrainer-MainBannerContentWrapper-Mobile {
+    padding: 0px 20px;
+    display: flex;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    justify-content: center;
+    max-width: 1100px;
+    width: 100%;
+}
+
+.MainBanner-TitleWrapper {
+    text-align: left;
+}
+
+.MainBanner-TitleContentTop {
+    font-size: 45px;
+    font-weight: normal;
+    line-height: 1.3;
+    letter-spacing: -1.15px;
+    color: rgb(255, 255, 255);
+}
+
+.MainBanner-TitleContentTop-Mobile {
+    font-size: 26px;
+    font-weight: normal;
+    line-height: 1.3;
+    letter-spacing: -1.15px;
+    color: rgb(255, 255, 255);
+}
+
+.MainBanner-TitleContentBold {
+    font-size: 45px;
+    letter-spacing: -1.15px;
+    color: rgb(255, 255, 255);
+    line-height: 1.3;
+    font-weight: bold;
+}
+
+.MainBanner-TitleContentBold-Mobile {
+    font-size: 26px;
+    letter-spacing: -1.15px;
+    color: rgb(255, 255, 255);
+    line-height: 1.3;
+    font-weight: bold;
+}
+
+.MainBanner-TitleContentSmall {
+    margin: 16px 0px 40px;
+    font-size: 16px;
+    line-height: 1.6;
+    letter-spacing: -0.4px;
+    color: rgb(255, 255, 255);
+}
+
+.MainBanner-TitleContentSmall-Mobile {
+    margin: 16px 0px 160px;
+    font-size: 16px;
+    line-height: 1.6;
+    letter-spacing: -0.4px;
+    color: rgb(255, 255, 255);
+}
+
+.MainBanner-ApplyButtonWrapper {
+    text-align: left;
+}
+
+.MainBanner-ApplyButtonWrapper-Mobile {
+    text-align: center;
+}
+
+.MainBanner-ApplyButton {
+    display: inline-block;
+    padding: 13px 24px 13px 30px;
+    margin-top: 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.5;
+    letter-spacing: -0.4px;
+    background-color: rgb(1, 76, 156);
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+}
+
+.MainBanner-ApplyButton:hover {
+    background-color: rgb(3, 51, 103);
+}
+
+.MainBanner-ApplyButtonContent {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.MainBanner-ApplyButtonImage {
+    width: 16px;
+    padding-left: 6px;
+    padding-top: 2px;
+}
+
+.MainBanner-ApplyButtonImage-Mobile {
+    width: 16px;
+    padding-left: 6px;
+    padding-top: 2px;
+}
+
+
+.JoinTrainer-FirstDetailWrapper {
+    padding: 60px 0px 50px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0px auto;
+    text-align: center;
+    color: rgb(51, 51, 51);
+}
+
+.JoinTrainer-FirstDetailWrapper-Mobile {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0px auto;
+    text-align: center;
+    color: rgb(51, 51, 51);
+    padding: 60px 0px 40px;
+}
+
+.FirstDetailTitle {
+    font-size: 36px;
+    font-weight: normal;
+    line-height: 1.36;
+    letter-spacing: -1px;
+    display: block;
+}
+
+.FirstDetailTitle-Mobile {
+    font-size: 26px;
+    line-height: 1.36;
+    letter-spacing: -1px;
+    display: block;
+    font-weight: normal;
+}
+
+.FirstDetailContent {
+    font-weight: normal;
+    margin-top: 24px;
+    font-size: 18px;
+    line-height: 1.7;
+    letter-spacing: -0.45px;
+    color: rgb(102, 102, 102);
+    display: block;
+    padding: 0px 20px;
+}
+
+.FirstDetailContent-Mobile {
+    font-weight: normal;
+    margin-top: 24px;
+    font-size: 15px;
+    line-height: 1.7;
+    letter-spacing: -0.6px;
+    color: rgb(102, 102, 102);
+    display: block;
+    padding: 0px 20px;
+}
+
+.JoinTrainer-CurrentCountsWrapper {
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 100px;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0px auto;
+}
+
+.JoinTrainer-CurrentCountsWrapper-Mobile {
+    display: block;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0px auto;
+    padding-bottom: 0px;
+}
+
+.CurrentCounts-ContentWrapper {
+    padding: 0px;
+    text-align: center;
+    flex-direction: column;
+    position: relative;
+    color: rgb(51, 51, 51);
+    flex-basis: 33%;
+}
+
+.CurrentCounts-ContentWrapper-Mobile {
+    text-align: center;
+    flex-direction: column;
+    position: relative;
+    color: rgb(51, 51, 51);
+    padding-bottom: 50px;
+    flex-basis: 33%;
+}
+
+.CurrentCounts-Title {
+    font-size: 55px;
+    line-height: 1.2;
+    font-weight: 800;
+    letter-spacing: -2px;
+}
+
+.CurrentCounts-Title-Mobile {
+    font-size: 55px;
+    line-height: 1.2;
+    font-weight: 800;
+    letter-spacing: -2px;
+}
+
+.CurrentCounts-Content {
+    font-size: 16px;
+    padding-top: 10px;
+    letter-spacing: -0.4px;
+}
+
+.JoinTrainer-BorderLine {
+    max-width: 1600px;
+    border-bottom: 1px solid rgb(221, 221, 221);
+    margin: 0px auto;
+    width: 90%;
+}
+
+.JoinTrainer-PointsWrapper {
+    width: 100%;
+    max-width: 1100px;
+    background-color: rgb(255, 255, 255);
+    margin: 0px auto;
+}
+
+.JoinTrainer-PointsTopContentWrapper {
+    -webkit-box-pack: center;
+    justify-content: center;
+    flex-direction: row;
+    padding: 0px 50px;
+    margin-top: 0px;
+    display: flex;
+    width: 100%;
+}
+
+.JoinTrainer-PointsTopContentWrapper-Mobile {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.FirstPointWrapper {
+    border: none;
+    display: inline-block;
+    padding: 25px 50px 50px;
+    border-right: 1px solid rgb(244, 244, 244);
+    border-bottom: 1px solid rgb(244, 244, 244);
+}
+
+.FirstPointWrapper-Mobile {
+    border: none;
+    padding: 12px 20px;
+}
+
+.FirstPointContents {
+    width: 272px;
+    padding: 0px;
+    margin-bottom: 10px;
+}
+
+.FirstPointContents-Mobile {
+    width: 100%;
+    padding: 10px 0px;
+    margin-bottom: 10px;
+}
+
+.FirstPointPoint {
+    padding-bottom: 30px;
+    display: block;
+    font-size: 47px;
+    font-weight: 300;
+    line-height: 0.7;
+    letter-spacing: -0.33px;
+    color: rgb(1, 76, 156);
+    padding-right: 10px;
+}
+
+.FirstPointPoint-Mobile {
+    padding-bottom: 30px;
+    display: block;
+    text-align: center;
+    font-size: 47px;
+    font-weight: 300;
+    line-height: 0.7;
+    letter-spacing: -0.33px;
+    color: rgb(1, 76, 156);
+    padding-right: 10px;
+}
+
+.FirstPointContentBold {
+    display: block;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: -0.4px;
+    color: rgb(51, 51, 51);
+    padding-bottom: 6px;
+}
+
+.FirstPointContentBold-Mobile {
+    display: block;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: -0.4px;
+    color: rgb(51, 51, 51);
+    padding-bottom: 6px;
+}
+
+
+.FirstPointContentNormal {
+    max-width: 230px;
+    line-height: 1.63;
+    font-size: 16px;
+    letter-spacing: -0.3px;
+    color: rgb(102, 102, 102);
+    padding-left: 2px;
+    word-break: break-all;
+}
+
+.FirstPointContentNormal-Mobile {
+    width: 100%;
+    grid-column-start: 2;
+    grid-column-end: 6;
+    text-align: center;
+    line-height: 1.63;
+    font-size: 16px;
+    letter-spacing: -0.3px;
+    color: rgb(102, 102, 102);
+    padding-left: 2px;
+    word-break: break-all;
+}
+
+.MobilePointContentWrapper {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+}
+
+.RightPointWrapper {
+    border: none;
+    display: inline-block;
+    padding: 25px 50px 50px;
+    border-bottom: 1px solid rgb(244, 244, 244);
+}
+
+.Middle-ApplyButtonWrapper {
+    display: block;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    width: 100%;
+    text-align: center;
+}
+
+.Middle-ApplyLinkWrapper {
+    display: inline-block;
+    padding: 13px 24px 13px 30px;
+    margin-top: 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.5;
+    letter-spacing: -0.4px;
+    background-color: rgb(1, 76, 156);
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+}
+
+.Middle-ApplyLinkWrapper:hover {
+    background-color: rgb(3, 51, 103);
+}
+
+.Middle-ApplyButtonContent {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.Middle-ApplyButtonImage {
+    width: 16px;
+    padding-left: 6px;
+    padding-top: 2px;
+}
+
+.Middle-ApplyButtonImage-Mobile {
+    width: 16px;
+    padding-left: 6px;
+    padding-top: 2px;
+}
+
+.JoinTrainer-ProcessWrapper {
+    padding-bottom: 100px;
+    width: 100%;
+    background-color: rgb(246, 246, 246);
+}
+
+.ProcessTitleWrapper {
+    padding: 60px 0px 50px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0px auto;
+    text-align: center;
+    color: rgb(51, 51, 51);
+}
+
+.ProcessTitleWrapper-Mobile {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0px auto;
+    text-align: center;
+    color: rgb(51, 51, 51);
+    padding: 60px 0px 40px;
+}
+
+.ProcessTitle {
+    font-size: 36px;
+    line-height: 1.36;
+    letter-spacing: -1px;
+    display: block;
+}
+
+.ProcessTitle-Mobile {
+    font-size: 26px;
+    line-height: 1.36;
+    letter-spacing: -1px;
+    display: block;
+}
+
+.ProcessContent {
+    margin-top: 24px;
+    font-size: 18px;
+    line-height: 1.7;
+    letter-spacing: -0.45px;
+    color: rgb(102, 102, 102);
+    display: block;
+    padding: 0px 20px;
+}
+
+.ProcessContent-Mobile {
+    margin-top: 24px;
+    font-size: 15px;
+    line-height: 1.7;
+    letter-spacing: -0.6px;
+    color: rgb(102, 102, 102);
+    display: block;
+    padding: 0px 20px;
+}
+
+.ProcessContentsWrapper {
+    margin: 0px auto;
+    width: 100%;
+    max-width: 1250px;
+}
+
+.ProcessProcessWrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.ProcessProcessWrapper-Mobile {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.ProcessEachWrapper {
+    text-align: center;
+    display: inline-block;
+    margin-bottom: 0px;
+}
+
+.ProcessEachWrapper-Mobile {
+    text-align: center;
+    display: inline-block;
+    margin-bottom: 45px;
+}
+
+.ProcessEachTitleWrapper {
+    width: 100%;
+    text-align: center;
+    display: inline-block;
+}
+
+.ProcessEachTitleWrapper-Mobile {
+    width: 100%;
+    text-align: center;
+    display: block;
+}
+
+.ProcessImageWrapper {
+    width: 104px;
+    padding-bottom: 11px;
+    margin: 0px auto;
+}
+
+.ProcessImageWrapper img {
+    width: 100%;
+}
+
+.ProcessImageDesc {
+    font-weight: normal;
+    letter-spacing: -0.45px;
+    text-align: center;
+    color: rgb(51, 51, 51);
+    padding-bottom: 11px;
+    font-size: 18px;
+}
+
+.ProcessEachContentWrapper {
+    line-height: 1.7;
+    letter-spacing: -0.4px;
+    margin: 0px auto;
+    color: rgb(102, 102, 102);
+    font-size: 16px;
+}
+
+.ProcessArrowWrapper {
+    display: flex;
+    width: 53px;
+    height: 140px;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.ProcessArrowImage {
+    width: 100%;
+    padding-top: 50px;
+}
+
+.TrainerReviewWrapper {
+    margin: 0px auto;
+    padding: 0px 20px;
+}
+
+.TrainerReviewTitleWrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0px auto;
+    text-align: center;
+    color: rgb(51, 51, 51);
+    padding: 60px 0px 50px;
+}
+
+.TrainerReviewTitleWrapper-Mobile {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0px auto;
+    text-align: center;
+    color: rgb(51, 51, 51);
+    padding: 60px 0px 40px;
+}
+
+.TrainerReviewTitle {
+    font-size: 36px;
+    line-height: 1.36;
+    letter-spacing: -1px;
+    display: block;
+    font-weight: normal;
+}
+
+.TrainerReviewTitle-Mobile {
+    font-size: 26px;
+    line-height: 1.36;
+    letter-spacing: -1px;
+    display: block;
+    font-weight: normal;
+}
+
+.TrainerReviewTitleContent {
+    padding: 0px 20px;
+    margin-top: 24px;
+    font-size: 18px;
+    line-height: 1.7;
+    letter-spacing: -0.45px;
+    color: rgb(102, 102, 102);
+    display: block;
+}
+
+.TrainerReviewTitleContent-Mobile {
+    margin-top: 24px;
+    font-size: 15px;
+    line-height: 1.7;
+    letter-spacing: -0.6px;
+    color: rgb(102, 102, 102);
+    display: block;
+    padding: 0px 20px;
+}
+
+.TrainerReviewContentsWrapper {
+    display: flex;
+    max-width: 1100px;
+    padding-top: 14px;
+    margin: 0px auto;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.TrainerReviewContentsWrapper-Mobile {
+    display: flex;
+    flex-direction: column;
+    max-width: 1100px;
+    padding-top: 14px;
+    margin: 0px auto;
+}
+
+.TrainerReviewContent {
+    position: relative;
+    width: 250px;
+    line-height: 1;
+    cursor: pointer;
+    display: block;
+    margin: 0px auto;
+    padding-bottom: 14px;
+}
+
+.TrainerReviewContent-Mobile {
+    position: relative;
+    width: 250px;
+    line-height: 1;
+    cursor: pointer;
+    display: block;
+    margin: 0px auto;
+    padding-bottom: 40px;
+}
+
+.TrainerImage {
+    width: 100%;
+    border-radius: 3px;
+}
+
+.TrainerReviewDetailWrapper {
+    position: relative;
+    width: 100%;
+}
+
+.TrainerReviewDetail {
+    position: absolute;
+    padding: 10px;
+    text-align: center;
+    color: rgb(255, 248, 248);
+    bottom: 2px;
+    border-radius: 3px;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0));
+    left: 0px;
+    right: 0px;
+}
+
+.TrainerReviewQuote {
+    line-height: 1.5;
+    letter-spacing: -0.33px;
+    font-weight: 500;
+    text-align: center;
+    font-size: 15px;
+    text-shadow: 1px 1px 1px #000;
+}
+
+.TrainerName {
+    margin-top: 9px;
+    font-size: 12px;
+    line-height: 1.42;
+    letter-spacing: -0.33px;
+    text-align: center;
+}
+
+.JoinTrainer-FAQWrapper {
+    position: relative;
+    max-width: 980px;
+    width: 100%;
+    margin: 100px auto;
+}
+
+.JoinTrainer-FAQWrapper-Mobile {
+    position: relative;
+    max-width: 980px;
+    width: 90%;
+    margin: 50px auto;
+}
+
+.FAQTitle {
+    /* 원래는 폰트가 프립의 UI Frip 이라는 폰트인데 otf파일을 링크로 받아올 수가 없습니다.. */
+    font-size: 40px;
+    line-height: 1.18;
+    text-align: center;
+    letter-spacing: -1px;
+    padding-bottom: 30px;
+    border-bottom: 3px solid rgb(51, 51, 51);
+    color: rgb(51, 51, 51);
+    font-weight: normal;
+}
+
+.FAQQuestion {
+    cursor: pointer;
+}
+
+.QuestionWrapper {
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    font-size: 22px;
+    padding: 30px 0px;
+    border-bottom: 1px solid rgb(204, 204, 204);
+}
+
+.QuestionWrapper-Mobile {
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    font-size: 22px;
+    padding: 30px 0px;
+    border-bottom: 1px solid rgb(204, 204, 204);
+}
+
+.QuestionTitle {
+    font-weight: bold;
+    letter-spacing: -0.55px;
+    color: rgb(51, 51, 51);
+    font-size: 22px;
+    line-height: 1.14;
+    max-width: 945px;
+}
+
+.ReplyArrowImgWrapper {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    width: 25px;
+}
+
+.ReplyArrowImg {
+    width: 100%;
+    transform: rotate(90deg);
+}
+
+.ReplyArrowImg-Mobile {
+    width: 100%;
+    transform: rotate(90deg);
+}
+
+.ReplyArrowImg-Clicked {
+    width: 100%;
+    transform: rotate(-90deg);
+}
+
+.ReplyArrowImg-Mobile-Clicked {
+    width: 100%;
+    transform: rotate(-90deg);
+}
+
+.ReplyFadeWrapper {
+    padding: 10px 0px 30px;
+    font-size: 18px;
+    line-height: 1.7;
+    letter-spacing: -0.4px;
+    color: rgb(102, 102, 102);
+    border-bottom: 1px solid rgb(204, 204, 204);
+}
+
+.HiddenReply {
+    transform: translateY(-2px) scale(1, 0);
+    transition: all 0.3s ease 0s;
+    height: 0px;
+    padding: 0px;
+}
+
+.ShowReply {
+    transition: all 0.3s ease 0s;
+}
+
+.LastApplyWrapper {
+    width: 100%;
+}
+
+.LastApplyContent {
+    text-align: center;
+    color: rgb(51, 51, 51);
+    padding: 10px;
+    width: 100%;
+    font-weight: 300;
+    font-size: 30px;
+    line-height: 1.3;
+    letter-spacing: -0.75px;
+}
+
+.Last-ApplyButtonWrapper {
+    width: 100%;
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 80px;
+}
+
+.JoinTrainer-Footer {
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    min-height: 333px;
+    background-color: rgb(248, 248, 248);
+    padding: 40px 20px;
+}
+
+.JoinTrainer-Footer-Mobile {
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    min-height: 333px;
+    background-color: rgb(248, 248, 248);
+    padding: 30px 20px;
+}
+
+.JT-FooterContentWrapper {
+    display: flex;
+    flex-direction: column;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1100px;
+}
+
+.JT-FooterTop {
+    width: 100%;
+    padding-bottom: 30px;
+}
+
+.JT-FooterTop-Mobile {
+    width: 100%;
+    padding-bottom: 40px;
+}
+
+.JT-FooterTopContent {
+    margin-right: 30px;
+    font-size: 16px;
+    line-height: 1.25;
+    letter-spacing: -0.4px;
+    color: rgb(51, 51, 51);
+}
+
+.JT-FooterTopContent-Mobile {
+    margin-right: 30px;
+    font-size: 15px;
+    line-height: 1.25;
+    letter-spacing: -0.4px;
+    color: rgb(51, 51, 51);
+}
+
+.JT-FooterTopContent:last-child {
+    margin-right: 0px;
+}
+
+.JT-FooterTopContent-Mobile:last-child {
+    margin-right: 0px;
+}
+
+.JT-FooterMainWrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.JT-FooterMainWrapper-Mobile {
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.JT-FooterMainLeftWrapper {
+    display: flex;
+    flex-direction: column;
+    padding-top: initial;
+    max-width: 505px;
+}
+
+.JT-FooterMainLeftWrapper-Mobile {
+    display: flex;
+    flex-direction: column;
+    padding-top: 30px;
+}
+
+.JT-FooterName {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.25;
+    color: rgb(51, 51, 51);
+    padding-bottom: 20px;
+}
+
+.JT-FooterDetail {
+    width: 100%;
+}
+
+.JT-FooterDetailSpan1 {
+    display: inline-block;
+    font-size: 11px;
+    line-height: 1.36;
+    color: rgb(153, 153, 153);
+    padding-bottom: 5px;
+}
+
+.JT-FooterDetailSpan1-Mobile {
+    display: block;
+    font-size: 11px;
+    line-height: 1.36;
+    color: rgb(153, 153, 153);
+    padding-bottom: 5px;
+}
+
+.FooterDetailBorder {
+    color: rgb(224, 224, 224);
+    font-size: 11px;
+    line-height: 1.7;
+    display: inline-block;
+    padding: 0px 5px;
+}
+
+.FooterBorder {
+    display: inline-block;
+    padding: 0px 5px;
+    color: rgb(224, 224, 224);
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+.JT-FooterAgreeWrapper {
+    width: 100%;
+    letter-spacing: -0.33px;
+    padding-top: 20px;
+}
+
+.JT-FooterAgreeWrapper-Mobile {
+    width: 100%;
+    letter-spacing: -0.33px;
+    padding-top: 15px;
+}
+
+.FooterAgreementsA {
+    line-height: 1.7;
+    letter-spacing: -0.33px;
+    color: rgb(51, 51, 51);
+    margin-top: 14px;
+    padding-bottom: 44px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.FooterAgreementsA-Mobile {
+    line-height: 1.7;
+    letter-spacing: -0.33px;
+    color: rgb(51, 51, 51);
+    margin-top: 14px;
+    padding-bottom: 44px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.AgreementsBorder {
+    color: rgb(224, 224, 224);
+    font-size: 11px;
+    line-height: 1.7;
+    display: inline-block;
+    padding: 0px 15px;
+}
+
+.FooterAgreementsB {
+    line-height: 1.7;
+    letter-spacing: -0.33px;
+    color: rgb(51, 51, 51);
+    margin-top: 14px;
+    padding-bottom: 44px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.FooterAgreementsB-Mobile {
+    line-height: 1.7;
+    letter-spacing: -0.33px;
+    color: rgb(51, 51, 51);
+    margin-top: 14px;
+    padding-bottom: 44px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.FooterAppLink {
+    height: 45px;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    background-color: rgb(51, 51, 51);
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: -0.33px;
+    margin-top: 20px;
+}
+
+.FooterAppLinkImage {
+    width: 16px;
+    height: 18px;
+    margin-right: 5px;
+}
+
+.FooterShortcutIconWrapper {
+    padding-top: 20px;
+}
+
+.FooterShortcutIconWrapper-Mobile {
+    padding-top: 5px;
+}
+
+.FooterShortcutIconWrapper > * {
+    margin-right: 30px;
+}
+
+.FooterShortcutIconWrapper-Mobile > * {
+    margin-right: 30px;
+}
+
+.FooterShortcutIconWrapper > :last-child {
+    margin-right: 0px;
+}
+
+.FooterShortcutIconWrapper-Mobile > :last-child {
+    margin-right: 0px;
+}
+
+.FooterShortcutIconImage {
+    width: 24px;
+    height: 24px;
+}
+
+.FooterMainRightWrapper {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 30px;
+    font-size: 12px;
+    margin-left: 180px;
+    border-bottom: none;
+}
+
+.FooterMainRightWrapper-Mobile {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 30px;
+    font-size: 12px;
+    margin-left: 0px;
+    border-bottom: 1px solid rgb(221, 221, 221);
+}
+
+.FooterRightTitle {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.25;
+    letter-spacing: -0.4px;
+    color: rgb(51, 51, 51);
+    padding: 0px 0px 20px;
+}
+
+.FooterRightTitle-Mobile {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.25;
+    letter-spacing: -0.4px;
+    color: rgb(51, 51, 51);
+    padding-bottom: 20px;
+}
+
+.FooterRightContent {
+    width: 100%;
+    padding-bottom: 15px;
+}
+
+.FooterRightContentDetail {
+    line-height: 1.7;
+    letter-spacing: -0.33px;
+    color: rgb(102, 102, 102);
+}
+
+.FooterRightContentA {
+    font-weight: bold;
+    line-height: 1.7;
+    letter-spacing: -0.33px;
+    color: rgb(102, 102, 102);
+    padding-left: 2.5px;
+}
+
+/* 미디어 쿼리 */
+.pc {
+    display: block;
+}
+
+.mobile {
+    display: none;
+}
+
+@media(max-width: 768px) {
+    .pc {
+        display: none;
+    }
+
+    .mobile {
+        display: block;
+    }
+}
