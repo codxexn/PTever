@@ -20,10 +20,18 @@ heartButtonContainer.forEach((container) => {
 
 
 // 다시 해야함
-// 프레임
-const DescriptionSectionDescriptionContainer = document.querySelector(".DescriptionSectionDescriptionContainer");
-// 버튼
-const DescriptSectionButton = document.querySelectorAll(".ButtonMoreButton");
-// 내용
-const ProductDescription = document.querySelectorAll(".ProductDescription");
 
+
+const toggleButton = document.getElementById('expandButton');
+const content = document.getElementById('content');
+
+
+function toggleContent() {
+    if (content.style.height == '657px') {
+        content.style.height = 'auto';
+    } else {
+        content.style.height = '657px';
+    }
+}
+
+toggleButton.addEventListener('click', toggleContent);

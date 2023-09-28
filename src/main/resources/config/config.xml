@@ -1,4 +1,65 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0/EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+        <?xml version="1.0" encoding="UTF-8"?>
+        <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0/EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
+<typeAliases>
+    <typeAlias type="com.app.ptever.domain.vo.CategoryAVO" alias="categoryAVO" />
+    <typeAlias type="com.app.ptever.domain.vo.CategoryBVO" alias="categoryBVO" />
+    <typeAlias type="com.app.ptever.domain.vo.CommentVO" alias="commentVO" />
+    <typeAlias type="com.app.ptever.domain.vo.CommunityCommentVO" alias="communityCommentVO" />
+    <typeAlias type="com.app.ptever.domain.vo.CommunityVO" alias="communityVO" />
+    <typeAlias type="com.app.ptever.domain.vo.CouponVO" alias="couponVO" />
+    <typeAlias type="com.app.ptever.domain.vo.CourseImgVO" alias="courseImgVO" />
+    <typeAlias type="com.app.ptever.domain.vo.CourseOrderVO" alias="courseOrderVO" />
+    <typeAlias type="com.app.ptever.domain.vo.CourseReviewVO" alias="courseReviewVO" />
+    <typeAlias type="com.app.ptever.domain.vo.CourseVO" alias="courseVO" />
+    <typeAlias type="com.app.ptever.domain.vo.EventVO" alias="eventVO" />
+    <typeAlias type="com.app.ptever.domain.vo.ImgVO" alias="imgVO" />
+    <typeAlias type="com.app.ptever.domain.vo.NoticeVO" alias="noticeVO" />
+    <typeAlias type="com.app.ptever.domain.vo.OrderViewVO" alias="orderViewVO" />
+    <typeAlias type="com.app.ptever.domain.vo.OrderVO" alias="orderVO" />
+    <typeAlias type="com.app.ptever.domain.vo.PackageVO" alias="packageVO" />
+    <typeAlias type="com.app.ptever.domain.vo.PaymentVO" alias="paymentVO" />
+    <typeAlias type="com.app.ptever.domain.vo.PostVO" alias="postVO" />
+    <typeAlias type="com.app.ptever.domain.vo.ProductCartVO" alias="productCartVO" />
+    <typeAlias type="com.app.ptever.domain.vo.ProductImgVO" alias="productImgVO" />
+    <typeAlias type="com.app.ptever.domain.vo.ProductOrderVO" alias="productOrderVO" />
+    <typeAlias type="com.app.ptever.domain.vo.ProductReviewVO" alias="productReviewVO" />
+    <typeAlias type="com.app.ptever.domain.vo.ProductViewVO" alias="productViewVO" />
+    <typeAlias type="com.app.ptever.domain.vo.ReviewCommentVO" alias="reviewCommentVO" />
+    <typeAlias type="com.app.ptever.domain.vo.ReviewImgVO" alias="reviewImgVO" />
+    <typeAlias type="com.app.ptever.domain.vo.ReviewVO" alias="reviewVO" />
+    <typeAlias type="com.app.ptever.domain.vo.ShipmentVO" alias="shipmentVO" />
+    <typeAlias type="com.app.ptever.domain.vo.ShoppingMallProductVO" alias="shoppingMallProductVO" />
+    <typeAlias type="com.app.ptever.domain.vo.TrainerImgVO" alias="trainerImgVO" />
+    <typeAlias type="com.app.ptever.domain.vo.TrainerReviewVO" alias="trainerReviewVO" />
+    <typeAlias type="com.app.ptever.domain.vo.TrainerVO" alias="trainerVO" />
+    <typeAlias type="com.app.ptever.domain.vo.UserAddressVO" alias="userAddressVO" />
+    <typeAlias type="com.app.ptever.domain.vo.UserProfileVO" alias="userProfileVO" />
+    <typeAlias type="com.app.ptever.domain.vo.UserVO" alias="userVO" />
+    <typeAlias type="com.app.ptever.domain.vo.WishlistCourseVO" alias="wishlistCourseVO" />
+    <typeAlias type="com.app.ptever.domain.vo.WishlistProductVO" alias="wishlistProductVO" />
+    <typeAlias type="com.app.ptever.domain.vo.WishlistTrainerVO" alias="wishlistTrainerVO" />
+    <typeAlias type="com.app.ptever.domain.vo.WishlistVO" alias="wishlistVO" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</typeAliases>
 </configuration>
