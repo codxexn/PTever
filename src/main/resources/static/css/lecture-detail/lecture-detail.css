@@ -834,12 +834,12 @@ style{
 }
 
 .DescriptionSectionDescriptionContainer > .ProductDescription{
-    height: 657px;
+    height: auto;
     overflow: hidden;
 }
 
 .showstep1{
-    max-height: 657px;
+    max-height: auto;
     overflow: hidden;
 }
 
@@ -1279,12 +1279,12 @@ div.CardProductWish{
 }
 
 button.ButtonWish img.NoHeart{
-    /*filter: rgba(0, 0, 0, 0.4) 0px 1px 1px 3px;*/
+    filter: drop-shadow(rgba(0, 0, 0, 0.4) 1px 1px 3px);
     display: none;
 }
 
 button.ButtonWish img.RedHeart {
-    /*filter: drop-shadow(rgba(0, 0, 0, 0.4) 1px 1px 3px);*/
+    filter: drop-shadow(rgba(0, 0, 0, 0.4) 1px 1px 3px);
     display: block;
 }
 
