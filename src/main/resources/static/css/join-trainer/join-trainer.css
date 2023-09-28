@@ -314,7 +314,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     background-position: center center;
     text-align: center;
     word-break: keep-all;
-    background-image: url("/static/image/join-trainer/mainBannerImage.jpg");
+    background-image: url("/image/join-trainer/mainBannerImage.jpg");
 }
 
 .JoinTrainer-MainBannerContentWrapper {
