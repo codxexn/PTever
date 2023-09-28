@@ -9,8 +9,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @Slf4j
 @RequiredArgsConstructor
+@RequestMapping("/lecture/*")
+public class LectureController {
+//    강의 목록
+    @GetMapping("lecture-list")
+    public void GoToLectureList(){;}
 
-public class MainController {
-    @GetMapping("/")
-    public String GoToMain(){ return "mainpage/mainpage"; }
+//    강의 상세보기
+    @GetMapping("lecture-detailpage")
+    public void GoToLectureDetail(){;}
 }

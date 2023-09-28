@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,11 +10,14 @@
         body {font-family: 'SUIT', sans-serif;}
     </style>
     <link rel="stylesheet" href="/css/mainpage/mainpage.css">
+    <th:block th:replace="~{fix/header-login :: my-header-head}"></th:block>
+    <th:block th:replace="~{fix/footer :: my-footer-head}"></th:block>
 </head>
 <body>
-<div class="root pc">
+<div class="root pc" th:action="@{/}">
     <div class="RootWrapper">
         <div class="MainPageWrapper">
+            <header th:replace="~{fix/header-login :: my-header}"></header>
             <div class="Main-Wrapper">
                 <!-- 메인 슬라이드 배너입니다. -->
                 <div class="Main-Banner-Wrapper">
@@ -57,52 +60,52 @@
                         </header>
                         <div class="MainBannerViewer-Container">
                             <div>
-                                <a href="" class="MainBannerViewer-ContainerA">
+                                <a th:href="@{/}" class="MainBannerViewer-ContainerA">
                                     <div class="MainBannerViewer-ImageWrapper">
                                         <img alt="광고배너" src="/image/mainpage/bannerImages/mainbanner_top1.png">
                                     </div>
                                 </a>
-                                <a href="" class="MainBannerViewer-ContainerA">
+                                <a th:href="@{/}" class="MainBannerViewer-ContainerA">
                                     <div class="MainBannerViewer-ImageWrapper">
                                         <img alt="광고배너" src="/image/mainpage/bannerImages/mainbanner_top2.png">
                                     </div>
                                 </a>
-                                <a href="" class="MainBannerViewer-ContainerA">
+                                <a th:href="@{/}" class="MainBannerViewer-ContainerA">
                                     <div class="MainBannerViewer-ImageWrapper">
                                         <img alt="광고배너" src="/image/mainpage/bannerImages/mainbanner_top3.png">
                                     </div>
                                 </a>
-                                <a href="" class="MainBannerViewer-ContainerA">
+                                <a th:href="@{/}" class="MainBannerViewer-ContainerA">
                                     <div class="MainBannerViewer-ImageWrapper">
                                         <img alt="광고배너" src="/image/mainpage/bannerImages/mainbanner_top4.png">
                                     </div>
                                 </a>
-                                <a href="" class="MainBannerViewer-ContainerA">
+                                <a th:href="@{/}" class="MainBannerViewer-ContainerA">
                                     <div class="MainBannerViewer-ImageWrapper">
                                         <img alt="광고배너" src="/image/mainpage/bannerImages/mainbanner_top5.png">
                                     </div>
                                 </a>
-                                <a href="" class="MainBannerViewer-ContainerA">
+                                <a th:href="@{/}" class="MainBannerViewer-ContainerA">
                                     <div class="MainBannerViewer-ImageWrapper">
                                         <img alt="광고배너" src="/image/mainpage/bannerImages/mainbanner_top6.png">
                                     </div>
                                 </a>
-                                <a href="" class="MainBannerViewer-ContainerA">
+                                <a th:href="@{/}" class="MainBannerViewer-ContainerA">
                                     <div class="MainBannerViewer-ImageWrapper">
                                         <img alt="광고배너" src="/image/mainpage/bannerImages/mainbanner_top7.png">
                                     </div>
                                 </a>
-                                <a href="" class="MainBannerViewer-ContainerA">
+                                <a th:href="@{/}" class="MainBannerViewer-ContainerA">
                                     <div class="MainBannerViewer-ImageWrapper">
                                         <img alt="광고배너" src="/image/mainpage/bannerImages/mainbanner_top8.png">
                                     </div>
                                 </a>
-                                <a href="" class="MainBannerViewer-ContainerA">
+                                <a th:href="@{/}" class="MainBannerViewer-ContainerA">
                                     <div class="MainBannerViewer-ImageWrapper">
                                         <img alt="광고배너" src="/image/mainpage/bannerImages/mainbanner_top9.png">
                                     </div>
                                 </a>
-                                <a href="" class="MainBannerViewer-ContainerA">
+                                <a th:href="@{/}" class="MainBannerViewer-ContainerA">
                                     <div class="MainBannerViewer-ImageWrapper">
                                         <img alt="광고배너" src="/image/mainpage/bannerImages/mainbanner_top10.png">
                                     </div>
@@ -122,35 +125,35 @@
                                     <span>강의</span>
                                 </div>
                             </a>
-                            <a href="">
+                            <a href="/shopping/shopping">
                                 <div class="Shortcut-ItemWrapper Shortcut2">
                                     <div class="Shortcut-BackgroundDeemed"></div>
                                     <div class="Shortcut-TextDeemed"></div>
                                     <span>스토어</span>
                                 </div>
                             </a>
-                            <a href="">
+                            <a href="/login/sign-up">
                                 <div class="Shortcut-ItemWrapper Shortcut6">
                                     <div class="Shortcut-BackgroundDeemed"></div>
                                     <div class="Shortcut-TextDeemed"></div>
                                     <span>장바구니</span>
                                 </div>
                             </a>
-                            <a href="">
+                            <a href="/community/full-page">
                                 <div class="Shortcut-ItemWrapper Shortcut3">
                                     <div class="Shortcut-BackgroundDeemed"></div>
                                     <div class="Shortcut-TextDeemed"></div>
                                     <span>커뮤니티</span>
                                 </div>
                             </a>
-                            <a href="">
+                            <a href="/event/event">
                                 <div class="Shortcut-ItemWrapper Shortcut7">
                                     <div class="Shortcut-BackgroundDeemed"></div>
                                     <div class="Shortcut-TextDeemed"></div>
                                     <span>이벤트</span>
                                 </div>
                             </a>
-                            <a href="">
+                            <a href="/login/sign-up">
                                 <div class="Shortcut-ItemWrapper Shortcut4">
                                     <div class="Shortcut-BackgroundDeemed"></div>
                                     <div class="Shortcut-TextDeemed"></div>
@@ -184,6 +187,7 @@
                             </div>
                             <div class="CardGroup-ProductContent">
                                 <div class="CardGroup-ProductWrapper">
+                                    <!--강의에 대한 정보를 가져온 후 그 정보 id랑 맞게 가져와야됨-->
                                     <a href="">
                                         <div class="CardProduct-InfoWrapper">
                                             <div class="CardProduct-ImageContainer">
@@ -207,7 +211,7 @@
                                             </div>
                                             <div class="CardProduct-DetailContainer">
                                                     <span class="CardProduct-Location">
-                                                        강남/서초
+                                                        난이도 - 중
                                                     </span>
                                                 <div class="CardProduct-Title">
                                                     자세교정 요가클리닉💐 90분 프로그램(일일프립) &108배
@@ -266,7 +270,7 @@
                                             </div>
                                             <div class="CardProduct-DetailContainer">
                                                     <span class="CardProduct-Location">
-                                                        강남/서초
+                                                        난이도 - 상
                                                     </span>
                                                 <div class="CardProduct-Title">
                                                     [선릉] 1:1 프라이빗 체형교정 클래스(예약 가능)
@@ -325,7 +329,7 @@
                                             </div>
                                             <div class="CardProduct-DetailContainer">
                                                     <span class="CardProduct-Location">
-                                                        마포/서대문/은평
+                                                        난이도 - 하
                                                     </span>
                                                 <div class="CardProduct-Title">
                                                     ◆ [1:1] 체형분석상담 및 교정운동 ◆
@@ -384,7 +388,7 @@
                                             </div>
                                             <div class="CardProduct-DetailContainer">
                                                     <span class="CardProduct-Location">
-                                                        송파/강동
+                                                        난이도 - 상
                                                     </span>
                                                 <div class="CardProduct-Title">
                                                     즐겁고 안전한 프리다이빙 AIDA 1 자격증 과정 (예약 가능)
@@ -455,6 +459,7 @@
                             </div>
                             <div class="CardGroup-ProductContent">
                                 <div class="CardGroup-ProductWrapper">
+                                    <!--강의에 대한 정보를 가져온 후 그 정보 id랑 맞게 가져와야됨-->
                                     <a href="">
                                         <div class="CardProduct-InfoWrapper">
                                             <div class="CardProduct-ImageContainer">
@@ -478,7 +483,7 @@
                                             </div>
                                             <div class="CardProduct-DetailContainer">
                                                     <span class="CardProduct-Location">
-                                                        강남/서초
+                                                        난이도 - 중
                                                     </span>
                                                 <div class="CardProduct-Title">
                                                     자세교정 요가클리닉💐 90분 프로그램(일일프립) &108배
@@ -537,7 +542,7 @@
                                             </div>
                                             <div class="CardProduct-DetailContainer">
                                                     <span class="CardProduct-Location">
-                                                        강남/서초
+                                                        난이도 - 상
                                                     </span>
                                                 <div class="CardProduct-Title">
                                                     [선릉] 1:1 프라이빗 체형교정 클래스(예약 가능)
@@ -596,7 +601,7 @@
                                             </div>
                                             <div class="CardProduct-DetailContainer">
                                                     <span class="CardProduct-Location">
-                                                        마포/서대문/은평
+                                                        난이도 - 하
                                                     </span>
                                                 <div class="CardProduct-Title">
                                                     ◆ [1:1] 체형분석상담 및 교정운동 ◆
@@ -655,7 +660,7 @@
                                             </div>
                                             <div class="CardProduct-DetailContainer">
                                                     <span class="CardProduct-Location">
-                                                        송파/강동
+                                                        난이도 - 상
                                                     </span>
                                                 <div class="CardProduct-Title">
                                                     즐겁고 안전한 프리다이빙 AIDA 1 자격증 과정 (예약 가능)
@@ -742,11 +747,12 @@
                                 </div>
                                 <div class="ProductSection-HeaderLinkWrapper">
                                     <!-- 상품 목록으로 연결됩니다. -->
-                                    <a href="" class="ProductSection-HeaderLink">전체보기</a>
+                                    <a href="/shopping/shopping" class="ProductSection-HeaderLink">전체보기</a>
                                 </div>
                             </div>
                             <div class="CardGroup-ProductContent">
                                 <div class="CardGroup-ProductWrapper">
+                                    <!--상품 대한 정보를 가져온 후 그 정보 id랑 맞게 가져와야됨-->
                                     <a href="">
                                         <div class="CardProduct-InfoWrapper">
                                             <div class="CardProduct-ImageContainer">
@@ -998,11 +1004,12 @@
                                 </div>
                                 <div class="ProductSection-HeaderLinkWrapper">
                                     <!-- 소도구 거래장터로 연결됩니다. -->
-                                    <a href="" class="ProductSection-HeaderLink">전체보기</a>
+                                    <a href="/community/transaction" class="ProductSection-HeaderLink">전체보기</a>
                                 </div>
                             </div>
                             <div class="CardGroup-ProductContent">
                                 <div class="CardGroup-ProductWrapper">
+                                    <!--소도구게시판에 대한 정보를 가져온 후 그 정보 id랑 맞게 가져와야됨-->
                                     <a href="">
                                         <div class="CardProduct-InfoWrapper">
                                             <div class="CardProduct-ImageContainer">
@@ -1282,7 +1289,7 @@
                                             </div>
                                             <div class="CardProduct-DetailContainer">
                                                     <span class="CardProduct-Location">
-                                                        강남/서초
+                                                        난이도 - 중
                                                     </span>
                                                 <div class="CardProduct-Title">
                                                     자세교정 요가클리닉💐 90분 프로그램(일일프립) &108배
@@ -1341,7 +1348,7 @@
                                             </div>
                                             <div class="CardProduct-DetailContainer">
                                                     <span class="CardProduct-Location">
-                                                        강남/서초
+                                                        난이도 - 상
                                                     </span>
                                                 <div class="CardProduct-Title">
                                                     [선릉] 1:1 프라이빗 체형교정 클래스(예약 가능)
@@ -1400,7 +1407,7 @@
                                             </div>
                                             <div class="CardProduct-DetailContainer">
                                                     <span class="CardProduct-Location">
-                                                        마포/서대문/은평
+                                                        난이도 - 하
                                                     </span>
                                                 <div class="CardProduct-Title">
                                                     ◆ [1:1] 체형분석상담 및 교정운동 ◆
@@ -1459,7 +1466,7 @@
                                             </div>
                                             <div class="CardProduct-DetailContainer">
                                                     <span class="CardProduct-Location">
-                                                        송파/강동
+                                                        난이도 - 상
                                                     </span>
                                                 <div class="CardProduct-Title">
                                                     즐겁고 안전한 프리다이빙 AIDA 1 자격증 과정 (예약 가능)
@@ -1499,13 +1506,16 @@
                     </div>
                 </div>
                 <!-- 트레이너 지원하기 광고 배너입니다. -->
-                <a href="" target="_blank" class="TrainerBannerWrapper">
+                <a href="/join-trainer/joinTrainer" target="_blank" class="TrainerBannerWrapper">
                     <img alt="트레이너지원배너" class="TrainerBannerImg" src="/image/mainpage/bannerImages/trainerBannerImage.png">
                 </a>
             </div>
         </div>
+        <footer th:replace="~{fix/footer :: my-footer}"></footer>
     </div>
 </div>
+
+
 <div class="root mobile">
     <div class="RootWrapper">
         <div class="MainPageWrapper">
@@ -2985,4 +2995,5 @@
 </div>
 </body>
 <script src="/js/mainpage/mainpage.js"></script>
+<script src="/js/mainpage/mainpage-header.js"></script>
 </html>
