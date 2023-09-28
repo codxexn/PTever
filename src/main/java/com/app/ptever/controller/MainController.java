@@ -12,5 +12,5 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 public class MainController {
     @GetMapping("/")
-    public void GoToMain(){;}
+    public String GoToMain(){ return "mainpage/mainpage"; }
 }
