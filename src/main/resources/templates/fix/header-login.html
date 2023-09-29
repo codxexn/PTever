@@ -168,7 +168,9 @@
                                 </div>
                             </a>
                             <!-- 로그아웃 -->
-                                <button type="button" onclick="location.href='/login/logout'" class="TopNavMenu-LogoutButton">로그아웃</button>
+                            <form th:action="@{login/logout}">
+                                <button type="submit" class="TopNavMenu-LogoutButton">로그아웃</button>
+                            </form>
                             <!-- 장바구니 -->
                             <a href="/shoppingbasket/shoppingbasket-off" class="Help TopNavMenu-A">
                                 <div class="TopNavMenu-Text">장바구니</div>
