@@ -306,7 +306,7 @@ div.MainNavRight-Mypage {
 
 .inputId-Password /*로그인 할 때 아이디 비번 입력할 때 클래스 id*/ {
     width: 100%; /*얘도 원래 100%*/
-    padding: 14px 14px 12px;
+    padding: 14px 14px 12px !important;
     color: rgb(17, 17, 17);
     font-size: 14px;
     line-height: 22px;
