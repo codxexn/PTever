@@ -37,28 +37,36 @@ public class LoginController {
         return new RedirectView("/login/login");
     }
 
+//    로그아웃
 
-//    회원가입
+    @GetMapping("logout")
+    public RedirectView logout(HttpSession session){
+        session.invalidate();
+        return new RedirectView("/login/login");
+    }
+
+
+    //    회원가입
     @GetMapping("sign-up")
-   public void GoToSignUp(){;}
+    public void GoToSignUp(){;}
 
-//    이메일 회원가입
+    //    이메일 회원가입
     @GetMapping("sign-up-email")
     public void GoToSignUpEmail(){;}
 
     //    이메일 회원 가입 다음 페이지
-        @GetMapping("sign-up-email2")
+    @GetMapping("sign-up-email2")
     public void GoToSignUpEmail2(){;}
 
-//    비밀번호 찾기
+    //    비밀번호 찾기
     @GetMapping("find-password")
     public void GoToFindPassword(){;}
 
-//    인증번호 메일로 보내기
+    //    인증번호 메일로 보내기
     @GetMapping("find-passwordToSendEmail")
     public void GoToFindPasswordToSendEmail(){;}
 
-//    비밀번호 변경
+    //    비밀번호 변경
     @GetMapping("changePassword")
     public void GoToChangePassword(){;}
 
