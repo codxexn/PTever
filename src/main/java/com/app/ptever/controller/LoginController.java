@@ -37,6 +37,14 @@ public class LoginController {
         return new RedirectView("/login/login");
     }
 
+//    로그아웃
+
+    @GetMapping("logout")
+    public RedirectView logout(HttpSession session){
+        session.invalidate();
+        return new RedirectView("/login/login");
+    }
+
 
 //    회원가입
     @GetMapping("sign-up")

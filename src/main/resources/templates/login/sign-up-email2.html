@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,11 +13,14 @@
     </style>
     <!--====================================================-->
     <link rel="stylesheet" href="/css/sign-up-email2/sign-up-email2.css">
+    <th:block th:replace="~{fix/header-login :: my-header-head}"></th:block>
+    <th:block th:replace="~{fix/footer :: my-footer-head}"></th:block>
 </head>
 <body>
 <!-- DOM TREE를 하나로 구성하기 위해서 전체를 감싸는 div태그입니다. -->
 <div class="root pc">
     <div class="RootWrapper">
+        <header th:replace="~{fix/header-login :: header-login}"></header>
         <div class="page-Wrapper">
             <div class="register-Page-Wrapper">
                 <div class="center-Wrapper">
@@ -113,6 +116,7 @@
                 </form>
             </div>
         </div>
+        <footer th:replace="~{fix/footer :: my-footer}"></footer>
     </div>
 </div>
 
