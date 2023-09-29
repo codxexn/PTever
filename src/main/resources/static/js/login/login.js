@@ -1,7 +1,7 @@
 globalThis.flag = new Array([false, false]);
 
-const inputId = document.querySelector("input[name=email]");
-const inputPassword = document.querySelector("input[name=password]");
+const inputId = document.querySelector("input[name='userEmail']");
+const inputPassword = document.querySelector("input[name='userPassword']");
 const loginBtn = document.querySelector(".login-Btn");
 
 inputId.addEventListener("keyup", (e) => {
