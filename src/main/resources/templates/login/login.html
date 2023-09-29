@@ -22,7 +22,7 @@
 <!-- DOM TREE를 하나로 구성하기 위해서 전체를 감싸는 div태그입니다. -->
 <div class="root pc">
     <div class="rootWrapper">
-        <header th:replace="~{fix/header-login :: my-header}"></header>
+        <header th:replace="~{fix/header-login :: header-login}"></header>
         <div class="loginPage-Wrapper">
             <br>
             <!-- "로그인" 텍스트 있는 div -->
@@ -30,18 +30,18 @@
                 <h3>로그인</h3>
             </div>
             <!-- Id, Pw 입력 하는 form -->
-            <form class="login-Register">
+            <form method="post" th:action="@{/login/login}" class="login-Register" th:object="${userVO}">
                 <div>
                     <!-- iRBMai -> hYhAPw -->
                     <!-- 로그인 창에 알맞은 형식이 아니면 className이 바뀜-->
-                    <input type="text" name="email" placeholder="아이디 (이메일)" class="inputId-Password">
+                    <input type="text" th:field="*{userEmail}" name="email" placeholder="아이디 (이메일)" class="inputId-Password">
                 </div>
                 <div>
                     <!-- iRBMai -> hYhAPw -->
                     <!-- 비밀번호 창에 썼다 빈칸으로 지우면 className이 바뀜 p태그도 추가-->
-                    <input type="password" name="password" placeholder="비밀번호" class="inputId-Password">
+                    <input type="password" th:field="*{userPassword}" name="password" placeholder="비밀번호" class="inputId-Password">
                 </div>
-                <a href="" class="find-Password">비밀번호 찾기</a>
+                <a href="/login/find-password" class="find-Password">비밀번호 찾기</a>
                 <!-- iikbgZ -> dDCuWg -->
                 <button type="submit" width="100%" height="56px" font-size="16px" color="#f4f4f4" disabled
                         class="login-Btn">로그인
@@ -110,5 +110,5 @@
     </div>
 </div>
 </body>
-<script src="/js/login/login.js"></script>
+<script type="text/javascript" th:src="@{'/js/login/login.js'}"></script>
 </html>

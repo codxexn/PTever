@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.app.PTever.mapper.UserMapper">
-    <select id="selectById" resultType="userVO">
-        SELECT * FROM TBL_USER
-        WHERE USER_EMAIL = #{userEmail}
+<mapper namespace="com.app.ptever.mapper.UserMapper">
+    <select id="selectByLogin" resultType="userVO">
+        SELECT USER_ID, USER_EMAIL, USER_PASSWORD, USER_NAME, USER_TYPE, USER_STATE, USER_BIRTH, USER_PHONE, USER_NICKNAME, USER_GENDER, USER_LOGIN_CODE, CREATE_DATE, UPDATE_DATE
+        FROM TBL_USER
+        WHERE USER_EMAIL = #{userEmail} AND USER_PASSWORD = #{userPassword}
     </select>
 </mapper>
