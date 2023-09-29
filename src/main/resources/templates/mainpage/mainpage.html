@@ -2996,4 +2996,8 @@
 </body>
 <script src="/js/mainpage/mainpage.js"></script>
 <script src="/js/mainpage/mainpage-header.js"></script>
+<script th:inline="javascript">
+    const user = [[${session.user}]];
+    console.log(user);
+</script>
 </html>
