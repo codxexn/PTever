@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/like/*")
 public class LikeController {
 //    찜한 강의
-    @GetMapping("like-lectures")
+    @GetMapping("like-lecture")
     public void GoToLikeLectures(){;}
 
 //    찜한 상품
