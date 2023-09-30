@@ -523,32 +523,30 @@ strong {
     border-radius: 5px;
 }
 
+
 .Shortcut1 {
-    background-image: url(./shortcutIcons/shortcut_lectureImage.jpg);
+    background-image: url(/image/mainpage/shortcutIcons/shortcut_lectureImage.jpg);
 }
 
 .Shortcut2 {
-    background-image: url(./shortcutIcons/shortcut_shoppingmallImage.jpg);
+    background-image: url(/image/mainpage/shortcutIcons/shortcut_shoppingmallImage.jpg);
 }
-
 .Shortcut3 {
-    background-image: url(./shortcutIcons/shortcut_communityImage.jpg);
+    background-image: url(/image/mainpage/shortcutIcons/shortcut_communityImage.jpg);
 }
-
 .Shortcut4 {
-    background-image: url(./shortcutIcons/shortcut_myLectureImage.jpg);
+    background-image: url(/image/mainpage/shortcutIcons/shortcut_myLectureImage.jpg);
 }
 
-/* .Shortcut5 {
-    background-image: url(./shortcutIcons/shortcut_mypageImage.jpg);
-} */
+/*.Shortcut5 {*/
+/*    background-image: url(/image/mainpage/shortcutIcons/shortcut_mypageImage.jpg);*/
+/*}*/
 
 .Shortcut6 {
-    background-image: url(./shortcutIcons/shortcut_purchaseListImage.jpg);
+    background-image: url(/image/mainpage/shortcutIcons/shortcut_purchaseListImage.jpg);
 }
-
 .Shortcut7 {
-    background-image: url(./shortcutIcons/shortcut_eventImage.jpg);
+    background-image: url(/image/mainpage/shortcutIcons/shortcut_eventImage.jpg);
 }
 
 .Shortcut-ItemWrapper span {

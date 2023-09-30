@@ -31,11 +31,11 @@ function autoSlide() {
 }
 
 // 가장 마지막에 첫 번째 배너를 이어 붙인다.
-firstDiv.innerHTML = `<img src="./bannerImages/mainbanner_top1.png">`;
+firstDiv.innerHTML = `<img src="/image/mainpage/bannerImages/mainbanner_top1.png">`;
 mainBanner.appendChild(firstDiv);
 
 // 가장 첫 번째에 마지막 배너를 이어 붙인다.
-lastDiv.innerHTML = `<img src="./bannerImages/mainbanner_top10.png">`;
+lastDiv.innerHTML = `<img src="/image/mainpage/bannerImages/mainbanner_top10.png">`;
 mainBanner.insertBefore(lastDiv, document.querySelector(".ImageSlider-ImageTrack div"));
 
 // 첫 번째 배너는 10번이니까 왼쪽으로 한 번 밀어서 1번이 보이게 한다.
@@ -154,11 +154,11 @@ function autoSlideAd() {
 }
 
 // 가장 마지막에 첫 번째 배너를 이어 붙인다.
-firstDivAd.innerHTML = `<img src="./bannerImages/adBanner_1.png">`;
+firstDivAd.innerHTML = `<img src="/image/mainpage/bannerImages/adBanner_1.png">`;
 adBanner.appendChild(firstDivAd);
 
 // 가장 첫 번째에 마지막 배너를 이어 붙인다.
-lastDivAd.innerHTML = `<img src="./bannerImages/adBanner_2.png">`;
+lastDivAd.innerHTML = `<img src="/image/mainpage/bannerImages/adBanner_2.png">`;
 adBanner.insertBefore(lastDivAd, document.querySelector(".ImageSlider-ImageTrack-Ad div"));
 
 // 첫 번째 배너는 2번이니까 왼쪽으로 한 번 밀어서 1번이 보이게 한다.
@@ -249,11 +249,11 @@ function autoSlideEx() {
 }
 
 // 가장 마지막에 첫 번째 배너를 이어 붙인다.
-firstDivEx.innerHTML = `<img src="./bannerImages/exbanner_1.png">`;
+firstDivEx.innerHTML = `<img src="/image/mainpage/bannerImages/exbanner_1.png">`;
 exBanner.appendChild(firstDivEx);
 
 // 가장 첫 번째에 마지막 배너를 이어 붙인다.
-lastDivEx.innerHTML = `<img src="./bannerImages/exbanner_5.png">`;
+lastDivEx.innerHTML = `<img src="/image/mainpage/bannerImages/exbanner_5.png">`;
 exBanner.insertBefore(lastDivEx, document.querySelector(".ImageSlider-ImageTrack-ex div"));
 
 // 첫 번째 버튼이 무조건 첫 번째 배너니까 색 변경하고 시작
@@ -373,11 +373,11 @@ function autoSlideMobile() {
 }
 
 // 가장 마지막에 첫 번째 배너를 이어 붙인다.
-firstDivMobile.innerHTML = `<img src="./bannerImages/mainbanner_top1.png">`;
+firstDivMobile.innerHTML = `<img src="/image/mainpage/bannerImages/mainbanner_top1.png">`;
 mainBannerMobile.appendChild(firstDivMobile);
 
 // 가장 첫 번째에 마지막 배너를 이어 붙인다.
-lastDivMobile.innerHTML = `<img src="./bannerImages/mainbanner_top10.png">`;
+lastDivMobile.innerHTML = `<img src="/image/mainpage/bannerImages/mainbanner_top10.png">`;
 mainBannerMobile.insertBefore(lastDivMobile, document.querySelector(".SlickTrack-Mobile div"));
 
 // 첫 번째 배너는 8번이니까 왼쪽으로 한 번 밀어서 1번이 보이게 한다.
@@ -433,11 +433,11 @@ function autoSlideAdM() {
 }
 
 // 가장 마지막에 첫 번째 배너를 이어 붙인다.
-firstDivAdM.innerHTML = `<img src="./bannerImages/adBanner_1.png">`;
+firstDivAdM.innerHTML = `<img src="/image/mainpage/bannerImages/adBanner_1.png">`;
 adBannerM.appendChild(firstDivAdM);
 
 // 가장 첫 번째에 마지막 배너를 이어 붙인다.
-lastDivAdM.innerHTML = `<img src="./bannerImages/adBanner_2.png">`;
+lastDivAdM.innerHTML = `<img src="/image/mainpage/bannerImages/adBanner_2.png">`;
 adBannerM.insertBefore(lastDivAdM, document.querySelector(".ImageSlider-ImageTrack-Ad-Mobile div"));
 
 // 첫 번째 배너는 2번이니까 왼쪽으로 한 번 밀어서 1번이 보이게 한다.
@@ -486,11 +486,11 @@ function autoSlideExM() {
 }
 
 // 가장 마지막에 첫 번째 배너를 이어 붙인다.
-firstDivExM.innerHTML = `<img src="./bannerImages/exbanner_mobile_1.png">`;
+firstDivExM.innerHTML = `<img src="/image/mainpage/bannerImages/exbanner_mobile_1.png">`;
 exBannerM.appendChild(firstDivExM);
 
 // 가장 첫 번째에 마지막 배너를 이어 붙인다.
-lastDivExM.innerHTML = `<img src="./bannerImages/exbanner_mobile_5.png">`;
+lastDivExM.innerHTML = `<img src="/image/mainpage/bannerImages/exbanner_mobile_5.png">`;
 exBannerM.insertBefore(lastDivExM, document.querySelector(".ExSlick-Track div"));
 
 // 첫 번째 버튼이 무조건 첫 번째 배너니까 색 변경하고 시작
