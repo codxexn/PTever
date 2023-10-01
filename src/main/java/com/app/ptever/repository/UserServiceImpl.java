@@ -19,4 +19,9 @@ public class UserServiceImpl implements UserService {
     public Optional<UserVO> login(UserVO userVO) {
         return userDAO.login(userVO);
     }
+
+    @Override
+    public void save(UserVO userVO) {
+        userDAO.write(userVO);
+    }
 }

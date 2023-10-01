@@ -1,8 +1,8 @@
 NodeList.prototype.map = Array.prototype.map;
 globalThis.flag = new Array([false, false, false, false, false, false, false, false]);
 
-const inputNickName = document.querySelector("input[name=nickname]");
-const inputPhoneNum = document.querySelector("input[name=mobileNumber]");
+const inputNickName = document.querySelector("input[name=userNickname]");
+const inputPhoneNum = document.querySelector("input[name=userPhone]");
 const certificationBtn = document.querySelector(".certification-Btn");
 const inputCertificationNum = document.querySelector("input[name=verificationCode]");
 const certificationBtn2 = document.querySelector(".certification-Btn2");

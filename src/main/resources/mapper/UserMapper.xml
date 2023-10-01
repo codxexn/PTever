@@ -6,4 +6,10 @@
         FROM TBL_USER
         WHERE USER_EMAIL = #{userEmail} AND USER_PASSWORD = #{userPassword}
     </select>
+
+    <insert id="insert">
+        INSERT INTO TBL_USER(USER_ID, USER_EMAIL, USER_PASSWORD, USER_PHONE, USER_NICKNAME)
+        VALUES(SEQ_USER.NEXTVAL, #{userEmail}, #{userPassword}, #{userPhone}, #{userNickname})
+    </insert>
+
 </mapper>
