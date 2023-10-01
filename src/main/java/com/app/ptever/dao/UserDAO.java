@@ -19,4 +19,9 @@ public class UserDAO {
     public Optional<UserVO> login(UserVO userVO) {
         return userMapper.selectByLogin(userVO);
     }
+
+    // 회원가입
+    public void write(UserVO userVO){
+        userMapper.insert(userVO);
+    }
 }

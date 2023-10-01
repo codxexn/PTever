@@ -26,13 +26,15 @@
                 <div class="center-Wrapper">
                     <h3>회원가입</h3>
                 </div>
-                <form autocomplete="false" class="form-RegisterPage">
+                <form method="post" th:action="@{/login/sign-up-email2}" th:object="${userVO}" autocomplete="false" class="form-RegisterPage">
+                    <input type="hidden" th:value="${session.user.userEmail}" th:name="userEmail">
+                    <input type="hidden" th:value="${session.user.userPassword}" th:name="userPassword">
                     <div>
-                        <input type="text" name="nickname" placeholder="닉네임" class="form-Input">
+                        <input type="text"  th:field="*{userNickname}" name="nickname" placeholder="닉네임" class="form-Input">
                     </div>
                     <div class="certification-Input-PhoneNum-Btn-Wrapper">
                         <div>
-                            <input type="tel" name="mobileNumber" placeholder="휴대폰 번호 ( - 없이 입력)" class="form_Input">
+                            <input type="tel" th:field="*{userPhone}" name="mobileNumber" placeholder="휴대폰 번호 ( - 없이 입력)" class="form_Input">
                         </div>
                         <button type="button" width="136px" height="50px" color="#aaa" font-size="14px" disabled class="certification-Btn">인증번호 전송</button>
                     </div>
@@ -109,7 +111,7 @@
                             </div>
                         </div>
                     </div>
-                    <button width="100%" color="white" font-size="16px" height="56px" disabled class="agreement-Btn">
+                    <button type="submit" width="100%" color="white" font-size="16px" height="56px" disabled class="agreement-Btn">
                         모두 동의하고 가입하기
                     </button>
                     <!-- <button type="button" width="100%" height="56px" color="#f4f4f4" font-size="16px" disabled class="signUp-Btn">가입하기</button> -->
@@ -223,5 +225,9 @@
 </div>
 
 </body>
-<script src="/js/sign-up-email2"></script>
+<script src="/js/sign-up-email2/sign-up-email2.js"></script>
+<script th:inline="javascript">
+    const user = [[${session.user}]];
+    console.log(user);
+</script>
 </html>

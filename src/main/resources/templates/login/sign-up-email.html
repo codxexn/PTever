@@ -31,11 +31,11 @@
                 <!-- autocomlete="false"
                 자동 완성 기능 해제
                 -->
-                <form autocomplete="false" class="registerPage-Form">
+                <form method="post" th:action="@{/login/sign-up-email}" th:object="${userVO}" autocomplete="false" class="registerPage-Form">
                     <!-- 아래4가지는 클래스가 바뀜 -->
                     <div>
                         <!-- 바뀌는 클래스명 iRBMai -> hYhAPw -->
-                        <input type="text" name="email" placeholder="아이디 (이메일)" class="correct-Input-Form">
+                        <input type="text" th:field="*{userEmail}" name="email" placeholder="아이디 (이메일)" class="correct-Input-Form">
                     </div>
                     <div>
                         <!-- 바뀌는 클래스명 iRBMai -> hYhAPw -->
@@ -46,7 +46,7 @@
                         <!-- aria-autocomplete="list"
                          이 속성은 접근성(웹 접근성)을 개선하기 위해 사용됩니다.
                          "list" 값은 입력 요소의 자동완성 옵션을 목록 형태로 제공한다는 것을 의미합니다. -->
-                        <input type="password" name="password" placeholder="비밀번호" autocomplete="new-password"
+                        <input type="password" th:field="*{userPassword}" name="password" placeholder="비밀번호" autocomplete="new-password"
                                aria-autocomplete="list" class="correct-Input-Form">
                         <!-- 바뀌는 클래스명 cIOZzg -> bViOzS -->
                         <p class="correct-Form-Description">대/소문자, 숫자, 특수문자 중 2가지 이상의 조합으로 10자 이상</p>
@@ -101,4 +101,8 @@
 </div>
 </body>
 <script src="/js/sign-up-email/sign-up-email.js"></script>
+<script th:inline="javascript">
+    const user = [[${session.user}]];
+    console.log(user);
+</script>
 </html>

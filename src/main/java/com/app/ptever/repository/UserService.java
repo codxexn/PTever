@@ -8,4 +8,7 @@ public interface UserService {
     
     // 로그인
     public Optional<UserVO> login(UserVO userVO);
+
+    // 회원가입
+    public void save(UserVO userVO);
 }
