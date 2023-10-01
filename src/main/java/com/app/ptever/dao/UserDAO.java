@@ -24,4 +24,14 @@ public class UserDAO {
     public void write(UserVO userVO){
         userMapper.insert(userVO);
     }
+
+    // 비밀번호 찾기를 위한 이메일주소 확인
+    public Optional<UserVO> findByEmail(String userEmail) {
+        return userMapper.selectByEmail(userEmail);
+    }
+
+    // 회원탈퇴
+    public void modifyUserState(UserVO userVO){
+        userMapper.updateToWithdraw(userVO);
+    }
 }

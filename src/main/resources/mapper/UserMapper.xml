@@ -12,4 +12,15 @@
         VALUES(SEQ_USER.NEXTVAL, #{userEmail}, #{userPassword}, #{userPhone}, #{userNickname})
     </insert>
 
+    <select id="selectByEmail" resultType="userVO">
+        SELECT USER_ID, USER_EMAIL, USER_PASSWORD
+        FROM TBL_USER
+        WHERE USER_EMAIL = #{userEmail}
+    </select>
+
+    <update id="updateToWithdraw">
+        UPDATE TBL_USER
+        SET USER_STATE = 'WITHDRAWN'
+        WHERE USER_EMAIL = #{userEmail}
+    </update>
 </mapper>
