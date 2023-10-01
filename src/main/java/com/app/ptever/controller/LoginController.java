@@ -32,6 +32,10 @@ public class LoginController {
     public RedirectView login(UserVO userVO, HttpSession session){
         Optional<UserVO> foundUser = userService.login(userVO);
         if(foundUser.isPresent()){
+            UserVO user = foundUser.get();
+            if (user.getUserState().equals("WITHDRAWN")){
+                return new RedirectView("/login/login");
+            }
             session.setAttribute("user", foundUser.get());
             return new RedirectView("/");
         }
@@ -85,7 +89,16 @@ public class LoginController {
 
     //    비밀번호 찾기
     @GetMapping("find-password")
-    public void GoToFindPassword(){;}
+    public void GoToFindPassword(String userEmail){;}
+
+    @PostMapping("find-password")
+    public RedirectView checkByEmail(@RequestParam("userEmail") String userEmail){
+        Optional<UserVO> foundUser = userService.checkByEmail(userEmail);
+        if (foundUser.isPresent()){
+            return new RedirectView("/login/find-passwordToSendEmail");
+        }
+        return new RedirectView("/login/find-password");
+    }
 
     //    인증번호 메일로 보내기
     @GetMapping("find-passwordToSendEmail")
