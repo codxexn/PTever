@@ -11,4 +11,7 @@ public interface UserMapper {
 
     // 로그인
     public Optional<UserVO> selectByLogin(UserVO userVO);
+
+    // 회원가입
+    public void insert(UserVO userVO);
 }
