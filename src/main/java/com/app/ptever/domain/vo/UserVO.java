@@ -25,9 +25,9 @@ public class UserVO implements Serializable {
     // 생년월일
     private LocalDate userBirth;
     // 휴대전화
-    private String userPhoneNum;
+    private String userPhone;
     // 닉네임
-    private String userNickName;
+    private String userNickname;
     // 성별( false: Male, true: female)
     // default: false
     private String userGender;

@@ -317,7 +317,7 @@ div.MainNavRight-Mypage {
 
 .form-Input {
     width: 100%;
-    padding: 14px 14px 12px;
+    padding: 14px 14px 12px !important;
     color: rgb(17, 17, 17);
     font-size: 14px;
     line-height: 22px;
