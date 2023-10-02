@@ -264,13 +264,7 @@ button, input, select, textarea{
     object-fit: cover;
 }
 
-.FloatingActionBarWrapper{
-    display:flex;
-    flex-direction: column;
-    -webkit-box-pack: justify;
-    justify-content: space-between;
-    padding:0px 0px 0px 6px;
-}
+
 
 .HeadInfoSEctionWrapper{
     display:flex;
@@ -1107,6 +1101,7 @@ style{
 }
 
 .LinkAccordionLink{
+    text-decoration: none;
     line-height:24px;
     display:flex;
     -webkit-box-pack:justify;
@@ -1154,13 +1149,13 @@ style{
 .AccordionContent{
     margin:0px;
     padding:0px;
-    overflow: hidden auto;
+    overflow: auto;
     transform-origin: left top;
     white-space: pre-line;
     font-size: 14px;
     line-height: 22px;
     height:0px;
-    transform:translate(-2px) scale(1,0);
+    /*transform:translate(-2px) scale(1,0);*/
 }
 
 .AssociatedSectionContainer{
@@ -1175,6 +1170,7 @@ style{
 }
 
 .CardContainer{
+    text-decoration: none;
     cursor: pointer;
 }
 
@@ -1191,6 +1187,7 @@ style{
     font-size: 10px;
     font-weight: 400;
     line-height: 14px;
+    text-decoration: none;
 }
 
 .CardTitle{
@@ -1223,7 +1220,7 @@ style{
     -webkit-box-align: center;
     align-items: center;
     margin: 0px auto;
-    max-width: 800px;
+    max-width: 768px;
 }
 
 
@@ -1257,6 +1254,11 @@ style{
     color: white;
     font-size: 16px;
     margin: 0px;
+    margin-left: 10px;
+}
+
+.CardText{
+    text-decoration: none;
 }
 
 .StyledSubmitButton{
