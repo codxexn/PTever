@@ -1,6 +1,6 @@
 globalThis.flag = new Array([false, false]);
 
-const inputId = document.querySelector("input[name=email]");
+const inputId = document.querySelector(".input-Email-Form");
 const loginBtn = document.querySelector(".send-Email-Btn");
 
 inputId.addEventListener("keyup", (e) => {

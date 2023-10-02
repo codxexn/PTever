@@ -34,7 +34,15 @@
                                     <span class="Footer-FirstSectionSubjectTitle">
                                         1:1문의:
                                     </span>
-                                <a role="button" href="/login/sign-up" target="_blank" class="Footer-FirstSectionButton">
+                                <a role="button" th:if="${session.user == null}" href="/login/sign-up" target="_blank" class="Footer-FirstSectionButton">
+                                    <img class="Footer-FirstSectionIcon" src="
+                                        data:image/svg+xml,%3Csvg width='13' height='13' viewBox='0 0 13 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cpath d='M8.84643 1.08334H4.1536C2.45797 1.08334 1.08334 2.42851 1.08334 4.08781V6.51342C1.08334 8.17272 2.45797 9.51788 4.1536 9.51788H7.15366V9.75674C7.15366 10.6087 8.15098 11.0705 8.80063 10.5192L10.6946 8.91221V8.90829C11.375 8.12501 11.9167 7.49276 11.9167 6.51342V4.08781C11.9167 2.42851 10.5421 1.08334 8.84643 1.08334Z' fill='%23333333'/%3E %3Ccircle cx='4.44166' cy='5.25416' r='0.65' fill='white'/%3E %3Cellipse cx='6.60834' cy='5.25416' rx='0.65' ry='0.65' fill='white'/%3E %3Cellipse cx='8.775' cy='5.25416' rx='0.65' ry='0.65' fill='white'/%3E %3C/svg%3E"
+                                         alt="Talk-Icon">
+                                    <span class="Footer-FirstSectionButtonText">
+                                            피테버 1:1 문의하기
+                                        </span>
+                                </a>
+                                <a role="button" th:if="${session.user != null}" href="/notices/personal-faq-ask" target="_blank" class="Footer-FirstSectionButton">
                                     <img class="Footer-FirstSectionIcon" src="
                                         data:image/svg+xml,%3Csvg width='13' height='13' viewBox='0 0 13 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cpath d='M8.84643 1.08334H4.1536C2.45797 1.08334 1.08334 2.42851 1.08334 4.08781V6.51342C1.08334 8.17272 2.45797 9.51788 4.1536 9.51788H7.15366V9.75674C7.15366 10.6087 8.15098 11.0705 8.80063 10.5192L10.6946 8.91221V8.90829C11.375 8.12501 11.9167 7.49276 11.9167 6.51342V4.08781C11.9167 2.42851 10.5421 1.08334 8.84643 1.08334Z' fill='%23333333'/%3E %3Ccircle cx='4.44166' cy='5.25416' r='0.65' fill='white'/%3E %3Cellipse cx='6.60834' cy='5.25416' rx='0.65' ry='0.65' fill='white'/%3E %3Cellipse cx='8.775' cy='5.25416' rx='0.65' ry='0.65' fill='white'/%3E %3C/svg%3E"
                                          alt="Talk-Icon">
@@ -54,7 +62,15 @@
                                     <span class="Footer-FirstSectionSubjectTitle">
                                         1:1문의:
                                     </span>
-                                <a role="button" href="/login/sign-up" target="_blank" class="Footer-FirstSectionButton">
+                                <a role="button" th:if="${session.user == null}" href="/login/sign-up" target="_blank" class="Footer-FirstSectionButton">
+                                    <img class="Footer-FirstSectionIcon" src="
+                                        data:image/svg+xml,%3Csvg width='13' height='13' viewBox='0 0 13 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cpath d='M8.84643 1.08334H4.1536C2.45797 1.08334 1.08334 2.42851 1.08334 4.08781V6.51342C1.08334 8.17272 2.45797 9.51788 4.1536 9.51788H7.15366V9.75674C7.15366 10.6087 8.15098 11.0705 8.80063 10.5192L10.6946 8.91221V8.90829C11.375 8.12501 11.9167 7.49276 11.9167 6.51342V4.08781C11.9167 2.42851 10.5421 1.08334 8.84643 1.08334Z' fill='%23333333'/%3E %3Ccircle cx='4.44166' cy='5.25416' r='0.65' fill='white'/%3E %3Cellipse cx='6.60834' cy='5.25416' rx='0.65' ry='0.65' fill='white'/%3E %3Cellipse cx='8.775' cy='5.25416' rx='0.65' ry='0.65' fill='white'/%3E %3C/svg%3E"
+                                         alt="Talk-Icon">
+                                    <span class="Footer-FirstSectionButtonText">
+                                            피테버 1:1 문의하기
+                                        </span>
+                                </a>
+                                <a role="button" th:if="${session.user != null}" href="/notices/personal-faq-ask" target="_blank" class="Footer-FirstSectionButton">
                                     <img class="Footer-FirstSectionIcon" src="
                                         data:image/svg+xml,%3Csvg width='13' height='13' viewBox='0 0 13 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cpath d='M8.84643 1.08334H4.1536C2.45797 1.08334 1.08334 2.42851 1.08334 4.08781V6.51342C1.08334 8.17272 2.45797 9.51788 4.1536 9.51788H7.15366V9.75674C7.15366 10.6087 8.15098 11.0705 8.80063 10.5192L10.6946 8.91221V8.90829C11.375 8.12501 11.9167 7.49276 11.9167 6.51342V4.08781C11.9167 2.42851 10.5421 1.08334 8.84643 1.08334Z' fill='%23333333'/%3E %3Ccircle cx='4.44166' cy='5.25416' r='0.65' fill='white'/%3E %3Cellipse cx='6.60834' cy='5.25416' rx='0.65' ry='0.65' fill='white'/%3E %3Cellipse cx='8.775' cy='5.25416' rx='0.65' ry='0.65' fill='white'/%3E %3C/svg%3E"
                                          alt="Talk-Icon">
@@ -96,7 +112,7 @@
                         </div>
                         <p>㈜피테버는 통신판매중개자로서 거래당사자가 아니며, 호스트가 등록한 상품정보 및 거래에 대해 ㈜피테버는 일체의 책임을 지지 않습니다.</p>
                         <p>NICEPAY 안전거래 서비스 : 고객님의 안전거래를 위해 현금 결제 시, 저희 사이트에서 가입한 구매안전 서비스를 이용할 수 있습니다.&nbsp;
-                            <a href="" target="_blank">가입 확인</a>
+                            <a href="/join-trainer/joinTrainer" target="_blank">가입 확인</a>
                         </p>
                     </div>
                     <div class="Footer-ContractWrapper">
@@ -139,7 +155,7 @@
                             <img alt="피테버 앱스토어 링크" width="24px" height="24px"
                                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath fill='none' d='M0 0h24v24H0z'/%3E %3Cpath fill='%23CCC' d='M6 3h12a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V6a3 3 0 0 1 3-3zm10.659 6.321l-.026-.037a3.442 3.442 0 0 0-.987-.918 2.408 2.408 0 0 0-.999-.352 2.357 2.357 0 0 0-.978.098c-.231.074-.457.17-.684.26-.185.072-.37.144-.565.174-.26.04-.515.01-.764-.075-.25-.086-.497-.186-.746-.279a2.695 2.695 0 0 0-.885-.188 2.304 2.304 0 0 0-1.174.305 3.275 3.275 0 0 0-.96.814c-.3.366-.533.778-.674 1.252-.132.44-.196.89-.213 1.352-.02.564.03 1.12.135 1.671.107.565.27 1.115.483 1.64a8.79 8.79 0 0 0 1.19 2.092c.195.252.415.474.676.641.32.207.662.277 1.027.197.19-.042.368-.125.542-.215.33-.172.673-.285 1.04-.3.336-.014.666.022.98.16.18.08.352.174.53.255.287.13.582.172.886.089.256-.07.477-.22.68-.404.256-.23.471-.504.668-.796.426-.636.801-1.307 1.084-2.039.024-.064.05-.128.075-.188-.98-.474-1.555-1.296-1.643-2.488-.09-1.204.382-2.101 1.302-2.72zM12.023 8h.035c.17 0 .341-.025.503-.073.354-.103.656-.277.897-.524.324-.334.522-.715.541-1.157.004-.081-.006-.164-.01-.245h-.04c-.069.009-.14.015-.207.029-.525.113-.964.346-1.295.716-.254.285-.418.605-.445.97-.006.095.001.19.021.284z'/%3E %3C/g%3E %3C/svg%3E">
                         </a>
-                        <a th:href="@{/}" target="_blank" class="Footer-FooterIcon">
+                        <a th:href="@{/}" target="_blank" class="Footer-FooterIcon"></a>
                         <a th:href="@{/}" target="_blank" class="Footer-FooterIcon">
                             <img alt="피테버 구글 플레이 링크" width="24px" height="24px"
                                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath fill='none' d='M0 0h24v24H0z'/%3E %3Cpath fill='%23CCC' d='M6 3h12a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V6a3 3 0 0 1 3-3zm2 14.538l5.5-5.535L8 6.462v11.076zm6.135-6l1.365-1.38-1.074-.666a1062.651 1062.651 0 0 0-4.772-2.965c-.237-.147-.473-.296-.71-.442A.547.547 0 0 0 8.5 6.02l5.635 5.517zm.017.924L8.5 17.985c.162.037.304.007.494-.112.38-.239.762-.477 1.144-.714a2224.476 2224.476 0 0 0 5.103-3.166c.092-.057.183-.116.259-.164l-1.348-1.367zm.348-.466l1.629 1.389c.122-.07.28-.163.439-.253.392-.225.789-.445 1.174-.679a.564.564 0 0 0 .21-.247c.12-.278.012-.535-.271-.698-.342-.196-.687-.389-1.03-.584-.188-.107-.375-.215-.537-.309l-1.614 1.38z'/%3E %3C/g%3E %3C/svg%3E">

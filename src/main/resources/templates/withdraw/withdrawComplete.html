@@ -14,10 +14,13 @@
     <!-- 아래 링크 태그를 꼭 넣어주세요. (경로 조심) -->
     <link rel="stylesheet" href="/css/default-common/defaultCommon.css">
     <link rel="stylesheet" href="/css/withdraw/withdrawComplete.css">
+    <th:block th:replace="~{fix/header-login :: my-header-head}"></th:block>
+    <th:block th:replace="~{fix/footer :: my-footer-head}"></th:block>
 </head>
 <body>
 <div class="root pc withdraw">
     <div class="RootWrapper">
+        <header th:replace="~{fix/header-login :: header-login}"></header>
         <div class="BaseStyle">
             <div class="PageWrapper gfRTxr">
                 <div class="AllContentWrapper igEDuG">
@@ -49,7 +52,7 @@
                                 <div class="InlineButtonWrapper LlaGz">
                                     <div class="AnimateStyled jPHXjX">
                                         <div class="InlineButtonInnerWrapper kUbtJC">
-                                            <a class="SubmitWrapper hWDZbk" href="">
+                                            <a class="SubmitWrapper hWDZbk" href="/">
                                                 <button type="button" class="ButtonWrapper jXWOEn">
                           <span class="FlexWrapper lnoWON">
                             <span class="ButtonTextWrapper ffdgGn">
@@ -67,6 +70,7 @@
                 </div>
             </div>
         </div>
+        <footer th:replace="~{fix/footer :: my-footer}"></footer>
     </div>
 </div>
 

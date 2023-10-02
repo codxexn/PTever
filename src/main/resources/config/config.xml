@@ -40,7 +40,5 @@
         <typeAlias type="com.app.ptever.domain.vo.WishlistProductVO" alias="wishlistProductVO"/>
         <typeAlias type="com.app.ptever.domain.vo.WishlistTrainerVO" alias="wishlistTrainerVO"/>
         <typeAlias type="com.app.ptever.domain.vo.WishlistVO" alias="wishlistVO"/>
-
-
     </typeAliases>
 </configuration>

@@ -11,4 +11,10 @@ public interface UserService {
 
     // 회원가입
     public void save(UserVO userVO);
+
+    // 비밀번호 찾기를 위한 이메일주소 확인
+    public Optional<UserVO> checkByEmail(String userEmail);
+
+    // 회원탈퇴
+    public void deactivateUser(UserVO userVO);
 }
