@@ -1,0 +1,1549 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- 페이지 타이틀은 프립처럼 상세설명 추가해도 되고, -->
+  <!-- 깔끔하게 PTever만 넣어도 될 것 같습니다. -->
+  <title>강의 상세 페이지</title>
+  <!-- SUIT 폰트 링크입니다. 프립과 동일한 폰트입니다. -->
+  <link href="https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/static/woff2/SUIT.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'SUIT', sans-serif;
+    }
+  </style>
+  <!-- 아래 링크 태그를 꼭 넣어주세요. (경로 조심) -->
+  <link rel="stylesheet" href="./detail.css">
+</head>
+
+<body>
+  <!-- body -->
+  <div id="root">
+    <div class="AppWrapper">
+      <div class="ProductDetailPageWrapper">
+        <div class="FadeWrapper" style="opacity: 1; display:block;">
+          <div class="ProductDetailPageContentWrapper">
+            <!-- 내용이 있는 div -->
+            <div class="ProductDetailPageContainer">
+              <!-- 페이지의 사진이랑 제목 있는 부분 -->
+              <div class="HeadSectionWrapper">
+                <!-- 사진있는 div -->
+                <div class="RepresentationImageSectionWrapper">
+                  <div class="ImageSliderWrapper">
+                    <div class="SlickSlider ImageSlider SlickInitialized">
+                      <div class="SlickList">
+                        <div class="SlickTrack" style="opacity:1; transform:translate3d(0px, 0px, 0px); width:375px">
+                          <div data-index="0" class="SlickSlide SlickActive SlickCurrent" tabindex="-1"
+                            aria-hidden="false" style="outline:none; width:375px;">
+                            <div>
+                              <div class="ImgWrapper">
+                                <img class="StyledImgLoader" width="768"
+                                  src="https://res.cloudinary.com/frientrip/image/upload/ar_1:1,c_fill,dpr_2,f_auto,q_auto,w_375/product_banner_1592887555895_114991">
+                                <div class="FadeWrapper" style="opacity:1; display:block;">
+                                  <div class="Ratio" style="display:block;">
+                                    <div class="RatioRatio"
+                                      style="height:0px; position:relative; width:100%; padding-top: 100%;">
+                                      <div class="RatioContent"
+                                        style="height: 100%; left:0px; position: absolute; top:0px; width:100%;">
+                                        <img alt="상품 이미지" class="ImageStyledImage" width="768"
+                                          src="https://res.cloudinary.com/frientrip/image/upload/ar_1:1,c_fill,dpr_2,f_auto,q_auto,w_375/product_banner_1592887555895_114991">
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- 제목있는 div -->
+                <div class="HeadInfoSEctionWrapper">
+                  <!-- 제목, 가격있는 div -->
+                  <section class="BasicInfoSection SectionWrapper ">
+                    <div class="BasicInfoSectionTitleWrapper">
+                      <div class="BasicInfoSectionRow">
+                        <!-- 제목있는 칸 -->
+                        <hgroup class="BasicInfoSectionTitleContainer">
+                          <h1 class="BasicInfoSectionTitle">자세교정 요가클리닉💐 90분 프로그램(일일프립) &108배</h1>
+                        </hgroup>
+                        <!-- 공유버튼 있는 칸 -->
+                        <div class="BasicInfoSectionActionButtonContainer">
+                          <button name="ShareBtn" type="button" class="ButtonShareButton">
+                            <img
+                              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none' viewBox='0 0 24 24'%3E %3Cpath stroke='%23333' stroke-width='1.5' d='M3 10v7c0 2.21 1.79 4 4 4h10c2.21 0 4-1.79 4-4v-7M8.25 7L12 3.25 15.75 7M12 4v9'/%3E %3C/svg%3E"
+                              alt="공유 아이콘">
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- 가격있는 div -->
+                    <div class="PriceInfoWrapper">
+                      <!-- 할인율 있는 div -->
+                      <div class="PriceInfoDiscountRate">
+                        34%
+                      </div>
+                      <!-- 할인된 가격 있는 div -->
+                      <div class="PriceInfoPrice">
+                        29,000
+                        <span class="PriceInfoPriceUnit">원</span>
+                      </div>
+                      <!-- 원가 있는 div -->
+                      <div class="PriceInfoFakedPrice">
+                        44,000원
+                      </div>
+                    </div>
+                  </section>
+                  <!-- 호스트 정보 있는 div -->
+                  <section class="HostProfileSection SectionWrapper ">
+                    <div class="ProfileWrapper">
+                      <div class="Profile">
+                        <div class="ProfileInfo">
+                          <!-- 프사있는 div -->
+                          <div class="ProfileImage">
+                            <a href="">
+                              <div class="ImgWrapper">
+                                <img class="StyledImgLoader" width="56" height="56"
+                                  src="https://res.cloudinary.com/frientrip/image/upload/ar_1:1,c_fill,dpr_2,f_auto,q_auto,w_56/265_Senseyoga_1478855230503">
+                                <div class="FadeWrapper" style="opacity:1; display: block;">
+                                  <div class="Ratio" style="display:block;">
+                                    <div class="RatioRatio"
+                                      style="height: 0px; position:relative; width:100%; padding-top: 100%;">
+                                      <div class="RatioContent"
+                                        style="height:100%; left:0px; position:absolute; top:0px; width:100%;">
+                                        <img alt="호스트 이미지" class="ImageStyleImage" width="56" height="56"
+                                          src="https://res.cloudinary.com/frientrip/image/upload/ar_1:1,c_fill,dpr_2,f_auto,q_auto,w_56/265_Senseyoga_1478855230503">
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                          <!-- 프로필 이름 div -->
+                          <div class="ProfileContent">
+                            <!-- 이름 있는 div, 슈퍼호스트는 생략 -->
+                            <div class="ProfileHostNameWrapper">
+                              <a href="">
+                                <span class="ProfileNickname">
+                                  <span>센스요가</span>
+                                </span>
+                              </a>
+                            </div>
+                            <!-- 후기랑 찜 개수 있는 span -->
+                            <span class="ProfileStat">
+                              <span>|</span>
+                              후기 1339
+                              <span>|</span>
+                              찜 677
+                            </span>
+                          </div>
+                        </div>
+                        <!-- 찜 누르는 버튼 -->
+                        <div class="CardProductWishContainer">
+                          <button onclick="toggleImg()" class="ButtonWish" width="24px" height="24px">
+                            <img class="RedHeart" src="data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cg clip-path='url(%23clip0_2517_457)'%3E %3Cpath d='M15.4448 27.0641L15.4368 27.0593L15.4064 27.0433C14.775 26.6998 14.1549 26.3359 13.5472 25.9521C12.0981 25.0404 10.7174 24.0243 9.41595 22.9121C6.47195 20.3729 3.19995 16.5633 3.19995 12.0001C3.20009 10.5112 3.66179 9.05903 4.52147 7.84344C5.38115 6.62785 6.59654 5.70866 8.00027 5.21244C9.40401 4.71622 10.9271 4.66737 12.3597 5.07263C13.7924 5.47788 15.0641 6.31729 16 7.4753C16.9358 6.31729 18.2075 5.47788 19.6402 5.07263C21.0728 4.66737 22.5959 4.71622 23.9996 5.21244C25.4034 5.70866 26.6187 6.62785 27.4784 7.84344C28.3381 9.05903 28.7998 10.5112 28.8 12.0001C28.8 16.5633 25.5296 20.3729 22.584 22.9121C20.7349 24.492 18.7274 25.8764 16.5936 27.0433L16.5632 27.0593L16.5552 27.0641H16.552C16.3819 27.1542 16.1925 27.2014 16.0001 27.2017C15.8078 27.2019 15.6182 27.1553 15.448 27.0657L15.4448 27.0641Z' fill='%23FD2748'/%3E %3C/g%3E %3Cdefs%3E %3CclipPath id='clip0_2517_457'%3E %3Crect width='32' height='32' fill='white'/%3E %3C/clipPath%3E %3C/defs%3E %3C/svg%3E" alt="찜하기">
+                            <img class="NoHeart" src="data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cg clip-path='url(%23clip0_2514_433)'%3E %3Cmask id='mask0_2514_433' style='mask-type:luminance' maskUnits='userSpaceOnUse' x='0' y='0' width='32' height='32'%3E %3Cpath d='M32 0H0V32H32V0Z' fill='white'/%3E %3C/mask%3E %3Cg mask='url(%23mask0_2514_433)'%3E %3Cmask id='mask1_2514_433' style='mask-type:luminance' maskUnits='userSpaceOnUse' x='0' y='0' width='32' height='32'%3E %3Cpath d='M32 0H0V32H32V0Z' fill='white'/%3E %3C/mask%3E %3Cg mask='url(%23mask1_2514_433)'%3E %3Cpath d='M28 12C28 16.1889 24.9781 19.7916 22.063 22.3047C20.2579 23.8469 18.2982 25.1986 16.2154 26.3381C16.2027 26.3441 16.1898 26.3505 16.1774 26.357C16.1226 26.3861 16.0613 26.4013 15.999 26.4015C15.9401 26.4015 15.882 26.3881 15.8293 26.362L15.8094 26.3511L15.784 26.3378C15.1694 26.0033 14.5659 25.649 13.9743 25.2754C12.5586 24.3847 11.2086 23.3914 9.93704 22.3049C7.02334 19.7914 4.00003 16.1887 4 12C4.00014 10.6766 4.41054 9.38568 5.17469 8.30517C5.93885 7.22466 7.01918 6.4076 8.26696 5.96651C9.51472 5.52542 10.8685 5.482 12.142 5.84222C13.4155 6.20245 14.546 6.94859 15.3778 7.97794C15.5297 8.16589 15.7584 8.2751 16 8.2751C16.2416 8.2751 16.4704 8.16589 16.6222 7.97794C17.4541 6.94859 18.5845 6.20245 19.8579 5.84222C21.1315 5.482 22.4853 5.52542 23.7331 5.96651C24.9808 6.4076 26.0611 7.22466 26.8253 8.30517C27.5894 9.38568 27.9998 10.6766 28 12Z' stroke='white' stroke-width='1.5' stroke-linejoin='round'/%3E %3C/g%3E %3C/g%3E %3C/g%3E %3Cdefs%3E %3CclipPath id='clip0_2514_433'%3E %3Crect width='32' height='32' fill='white'/%3E %3C/clipPath%3E %3C/defs%3E %3C/svg%3E" alt="찜하기">
+                          </button>
+                        </div>                         
+                      </div>
+                    </div>
+                  </section>
+                </div>
+              </div>
+              <!-- 후기가 있는 div -->
+              <section class="ProductDetailPageSectionContainer">
+                <article>
+                  <h2 class="ReviewSectionHiddenText">후기</h2>
+                  <!-- 평점이랑 후기 개수 나와있는 div -->
+                  <div class="ReviewSummaryWrapper">
+                    <div class="ReviewSummaryInfoSection">
+                      <div class="ReadOnlyWrapper">
+                        <img
+                          src="data:image/svg+xml,%3Csvg width='16' height='14' viewBox='0 0 16 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cpath d='M12.293 8.6189L15.7442 6.00968C16.2325 5.63914 15.9799 4.9135 15.3402 4.88263L10.8957 4.6356C10.6263 4.62016 10.3906 4.46577 10.2896 4.23418L8.65658 0.405277C8.42088 -0.135092 7.59595 -0.135092 7.36026 0.405277L5.72724 4.21874C5.62623 4.45033 5.39053 4.60472 5.12117 4.62016L0.659819 4.86719C0.0200779 4.89806 -0.232451 5.6237 0.255772 5.99424L3.707 8.58802C3.90903 8.74241 4.01004 9.00487 3.9427 9.23646L2.81473 13.2043C2.66322 13.7601 3.31979 14.2079 3.85852 13.8991L7.61279 11.6913C7.84848 11.5523 8.13468 11.5523 8.35354 11.6913L12.1246 13.8991C12.6634 14.2079 13.3199 13.7601 13.1684 13.2043L12.0405 9.2519C11.99 9.02031 12.0741 8.77329 12.293 8.6189Z' fill='%237A29FA'/%3E %3C/svg%3E"
+                          alt="평점 icon">
+                        <img
+                          src="data:image/svg+xml,%3Csvg width='16' height='14' viewBox='0 0 16 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cpath d='M12.293 8.6189L15.7442 6.00968C16.2325 5.63914 15.9799 4.9135 15.3402 4.88263L10.8957 4.6356C10.6263 4.62016 10.3906 4.46577 10.2896 4.23418L8.65658 0.405277C8.42088 -0.135092 7.59595 -0.135092 7.36026 0.405277L5.72724 4.21874C5.62623 4.45033 5.39053 4.60472 5.12117 4.62016L0.659819 4.86719C0.0200779 4.89806 -0.232451 5.6237 0.255772 5.99424L3.707 8.58802C3.90903 8.74241 4.01004 9.00487 3.9427 9.23646L2.81473 13.2043C2.66322 13.7601 3.31979 14.2079 3.85852 13.8991L7.61279 11.6913C7.84848 11.5523 8.13468 11.5523 8.35354 11.6913L12.1246 13.8991C12.6634 14.2079 13.3199 13.7601 13.1684 13.2043L12.0405 9.2519C11.99 9.02031 12.0741 8.77329 12.293 8.6189Z' fill='%237A29FA'/%3E %3C/svg%3E"
+                          alt="평점 icon">
+                        <img
+                          src="data:image/svg+xml,%3Csvg width='16' height='14' viewBox='0 0 16 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cpath d='M12.293 8.6189L15.7442 6.00968C16.2325 5.63914 15.9799 4.9135 15.3402 4.88263L10.8957 4.6356C10.6263 4.62016 10.3906 4.46577 10.2896 4.23418L8.65658 0.405277C8.42088 -0.135092 7.59595 -0.135092 7.36026 0.405277L5.72724 4.21874C5.62623 4.45033 5.39053 4.60472 5.12117 4.62016L0.659819 4.86719C0.0200779 4.89806 -0.232451 5.6237 0.255772 5.99424L3.707 8.58802C3.90903 8.74241 4.01004 9.00487 3.9427 9.23646L2.81473 13.2043C2.66322 13.7601 3.31979 14.2079 3.85852 13.8991L7.61279 11.6913C7.84848 11.5523 8.13468 11.5523 8.35354 11.6913L12.1246 13.8991C12.6634 14.2079 13.3199 13.7601 13.1684 13.2043L12.0405 9.2519C11.99 9.02031 12.0741 8.77329 12.293 8.6189Z' fill='%237A29FA'/%3E %3C/svg%3E"
+                          alt="평점 icon">
+                        <img
+                          src="data:image/svg+xml,%3Csvg width='16' height='14' viewBox='0 0 16 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cpath d='M12.293 8.6189L15.7442 6.00968C16.2325 5.63914 15.9799 4.9135 15.3402 4.88263L10.8957 4.6356C10.6263 4.62016 10.3906 4.46577 10.2896 4.23418L8.65658 0.405277C8.42088 -0.135092 7.59595 -0.135092 7.36026 0.405277L5.72724 4.21874C5.62623 4.45033 5.39053 4.60472 5.12117 4.62016L0.659819 4.86719C0.0200779 4.89806 -0.232451 5.6237 0.255772 5.99424L3.707 8.58802C3.90903 8.74241 4.01004 9.00487 3.9427 9.23646L2.81473 13.2043C2.66322 13.7601 3.31979 14.2079 3.85852 13.8991L7.61279 11.6913C7.84848 11.5523 8.13468 11.5523 8.35354 11.6913L12.1246 13.8991C12.6634 14.2079 13.3199 13.7601 13.1684 13.2043L12.0405 9.2519C11.99 9.02031 12.0741 8.77329 12.293 8.6189Z' fill='%237A29FA'/%3E %3C/svg%3E"
+                          alt="평점 icon">
+                        <img
+                          src="data:image/svg+xml,%3Csvg width='16' height='14' viewBox='0 0 16 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cpath d='M12.293 8.6189L15.7442 6.00968C16.2325 5.63914 15.9799 4.9135 15.3402 4.88263L10.8957 4.6356C10.6263 4.62016 10.3906 4.46577 10.2896 4.23418L8.65658 0.405277C8.42088 -0.135092 7.59595 -0.135092 7.36026 0.405277L5.72724 4.21874C5.62623 4.45033 5.39053 4.60472 5.12117 4.62016L0.659819 4.86719C0.0200779 4.89806 -0.232451 5.6237 0.255772 5.99424L3.707 8.58802C3.90903 8.74241 4.01004 9.00487 3.9427 9.23646L2.81473 13.2043C2.66322 13.7601 3.31979 14.2079 3.85852 13.8991L7.61279 11.6913C7.84848 11.5523 8.13468 11.5523 8.35354 11.6913L12.1246 13.8991C12.6634 14.2079 13.3199 13.7601 13.1684 13.2043L12.0405 9.2519C11.99 9.02031 12.0741 8.77329 12.293 8.6189Z' fill='%237A29FA'/%3E %3C/svg%3E"
+                          alt="평점 icon">
+                      </div>
+                      <strong class="ReviewSummaryAverage">
+                        4.9
+                      </strong>
+                      <span class="ReviewSummaryCount">
+                        1090개 후기
+                      </span>
+                    </div>
+                    <span class="ReviewSummaryComment">경험한 크루의 90%가 5점을 줬어요!</span>
+                  </div>
+                  <!-- 후기(사진이랑 아이디, 글) 있는 div -->
+                  <div class="ReviewSectionWrapper">
+                    <!-- 몇개 후개 더보기의 윗부분이면서 사진이랑 글만 있는부분 -->
+                    <div class="CoverReviewCardListWrapper">
+                      <div class="SlickSlider CoverReviewSliderStyledSlider SlickInitialized">
+                        <img data-role="none" class="CoverReviewSliderPrevArrow SlickArrow SlickPrev SlickDisabled"
+                          src="data:image/png;base64,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"
+                          style="display:block;">
+                        <div class="SlickList">
+                          <div class="SlickTrack"
+                            style="opacity:1; transform:translate3d(0px, 0px, 0px); width:2928px;">
+                            <!-- 일단 전부 slickactive를 붙인 상태이고 첫번째가 slickcurrent이다.
+                            화살표 버튼을 눌렀을때 화면에 나오는것만 slickcurrent 클래스가 되도록 바꿔야한다. -->
+                            <!-- 첫번째 후기 div -->
+                            <div data-index="0" class="SlickSlide SlickActive SlickCurrent" tabindex="-1"
+                              aria-hidden="false" style="outline:none; width:244px;">
+                              <div>
+                                <div class="CoverReviewCardWrapper">
+                                  <!-- 사진 -->
+                                  <div class="CoverReviewCardImageSection">
+                                    <a href="">
+                                      <div class="ImgWrapper">
+                                        <img class="StyledImgLoader" width="220"
+                                          src="https://res.cloudinary.com/frientrip/image/upload/ar_1:1,c_fill,dpr_2,f_auto,q_auto,w_220/photo_1693266871146_b401d05cc290591cc01b788f8d8ce5aff57890c5622083e709b7fa564e86b73f">
+                                        <div class="FadeWrapper" style="opacity: 1; display:block;">
+                                          <div class="Ratio" style="display: block;">
+                                            <div class="Ratioratio"
+                                              style="height:0px; position:relative; width:100%; padding-top:100%;">
+                                              <div class="RatioContent"
+                                                style="height:100%; left:0px; position:absolute; top:0px; width:100%;">
+                                                <img alt="reivew-thumbnail" class="ImageStyledImage" width="220"
+                                                  src="https://res.cloudinary.com/frientrip/image/upload/ar_1:1,c_fill,dpr_2,f_auto,q_auto,w_220/photo_1693266871146_b401d05cc290591cc01b788f8d8ce5aff57890c5622083e709b7fa564e86b73f">
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </a>
+                                  </div>
+                                  <!-- 정보 -->
+                                  <div class="CoverReviewCardInfoSection">
+                                    <div class="CoverReviewCardUserProfileSection">
+                                      <!-- 프사 -->
+                                      <div class="CoverReviewCardProfileImage">
+                                        <div class="ImgWrapper">
+                                          <img class="StyledImgLoader" width="40" height="40"
+                                            src="https://res.cloudinary.com/frientrip/image/upload/ar_1:1,c_fill,dpr_2,f_auto,q_auto,w_40/photo_1688877353502_2c61143a9c19cb246d8b111429f692fa6cb29ef77314b6d5df74bd12471f1a63">
+                                          <div class="FadeWrapper" style="opacity: 1; display:block;">
+                                            <div class="Ratio" style="display: block;">
+                                              <div class="Ratioratio"
+                                                style="height:0px; position:relative; width:100%; padding-top:100%;">
+                                                <div class="RatioContent"
+                                                  style="height:100%; left:0px; position:absolute; top:0px; width:100%;">
+                                                  <img alt="reivew-thumbnail" class="ImageStyledImage" width="40"
+                                                    height="40"
+                                                    src="https://res.cloudinary.com/frientrip/image/upload/ar_1:1,c_fill,dpr_2,f_auto,q_auto,w_40/photo_1688877353502_2c61143a9c19cb246d8b111429f692fa6cb29ef77314b6d5df74bd12471f1a63">
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <!-- 아이디 -->
+                                      <div class="CoverReviewCardUserInfo">
+                                        <span class="CoverReviewCardUsername">
+                                          kbj1000595
+                                        </span>
+                                      </div>
+                                    </div>
+                                    <p class="CoverReviewCardProductTitle"></p>
+                                    <span class="SpanLineClamp CoverReviewCardReviewContent">
+                                      테스트 문자
+                                    </span>
+                                    <button type="button" class="CoverReviewCardLikeButton">
+                                      <img
+                                        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='15' height='14' fill='none' viewBox='0 0 15 14'%3E %3Cpath stroke='%23FF3F33' stroke-miterlimit='10' stroke-width='1.5' d='M3.14 5.3l.645.382h0l.002-.003.004-.007.016-.028.062-.105.225-.385c.189-.323.447-.768.723-1.254.528-.929 1.145-2.042 1.461-2.725.015-.01.037-.025.07-.043.111-.063.273-.13.47-.192.406-.128.812-.19.967-.19.268 0 .488.217.488.492V6h5.332c.355 0 .645.287.645.65 0 .02-.001.04-.005.094l-.696 5.934s0 0 0 0c-.04.325-.314.572-.642.572h0H.75v-7.2h2.817l.218-.368L3.14 5.3z'/%3E %3Cpath fill='%23FF3F33' d='M3 6h1.5v7H3V6z'/%3E %3C/svg%3E"
+                                        alt="thumbs-icon">
+                                      1
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- 두번째 후기 div -->
+                            <div data-index="1" class="SlickSlide SlickActive" tabindex="-1" aria-hidden="false"
+                              style="outline:none; width:244px;">
+                              <div>
+                                <div class="CoverReviewCardWrapper">
+                                  <div class="CoverReviewCardImageSection">
+                                    <a href="">
+                                      <div class="ImgWrapper">
+                                        <img class="StyledImgLoader" width="220"
+                                          src="https://res.cloudinary.com/frientrip/image/upload/ar_1:1,c_fill,dpr_2,f_auto,q_auto,w_220/ios_image_780550_20230824142516404_b7fa3ab0c2ea3d24cfc9ec3cb765ae37ca3f6f46e018b843d01a4f445df6e125">
+                                        <div class="FadeWrapper" style="opacity:1; display:block;">
+                                          <div class="Ratio" style="display:block;">
+                                            <div class="Ratioratio"
+                                              style="height:0px; position:relative; width:100%; padding-top:100%;">
+                                              <div class="RatioContent"
+                                                style="height:100%; left:0px; position:absolute; top:0px; width:100%;">
+                                                <img alt="reivew-thumbnail" class="ImageStyledImage" width="220"
+                                                  src="https://res.cloudinary.com/frientrip/image/upload/ar_1:1,c_fill,dpr_2,f_auto,q_auto,w_220/ios_image_780550_20230824142516404_b7fa3ab0c2ea3d24cfc9ec3cb765ae37ca3f6f46e018b843d01a4f445df6e125">
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </a>
+                                  </div>
+                                  <div class="CoverReviewCardInfoSection">
+                                    <div class="CoverReviewCardUserProfileSection">
+                                      <!-- 프사 -->
+                                      <div class="CoverReviewCardProfileImage">
+                                        <div class="ImgWrapper">
+                                          <img class="StyledImgLoader" width="40" height="40"
+                                            src="https://res.cloudinary.com/frientrip/image/fetch/ar_1:1,c_fill,dpr_2,f_auto,q_auto,w_40/https://k.kakaocdn.net/dn/bCnD7p/btqy9eylBle/DRKPIllCpvUm11hPgurPH1/profile_110x110c.jpg">
+                                          <div class="FadeWrapper" style="opacity: 1; display:block;">
+                                            <div class="Ratio" style="display: block;">
+                                              <div class="Ratioratio"
+                                                style="height:0px; position:relative; width:100%; padding-top:100%;">
+                                                <div class="RatioContent"
+                                                  style="height:100%; left:0px; position:absolute; top:0px; width:100%;">
+                                                  <img alt="reivew-thumbnail" class="ImageStyledImage" width="40"
+                                                    height="40"
+                                                    src="https://res.cloudinary.com/frientrip/image/fetch/ar_1:1,c_fill,dpr_2,f_auto,q_auto,w_40/https://k.kakaocdn.net/dn/bCnD7p/btqy9eylBle/DRKPIllCpvUm11hPgurPH1/profile_110x110c.jpg">
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <!-- 아이디 -->
+                                      <div class="CoverReviewCardUserInfo">
+                                        <span class="CoverReviewCardUsername">
+                                          kbj1000595
+                                        </span>
+                                      </div>
+                                    </div>
+                                    <p class="CoverReviewCardProductTitle"></p>
+                                    <span class="SpanLineClamp CoverReviewCardReviewContent">
+                                      테스트 문자
+                                    </span>
+                                    <button type="button" class="CoverReviewCardLikeButton">
+                                      <img
+                                        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='15' height='14' fill='none' viewBox='0 0 15 14'%3E %3Cpath stroke='%23FF3F33' stroke-miterlimit='10' stroke-width='1.5' d='M3.14 5.3l.645.382h0l.002-.003.004-.007.016-.028.062-.105.225-.385c.189-.323.447-.768.723-1.254.528-.929 1.145-2.042 1.461-2.725.015-.01.037-.025.07-.043.111-.063.273-.13.47-.192.406-.128.812-.19.967-.19.268 0 .488.217.488.492V6h5.332c.355 0 .645.287.645.65 0 .02-.001.04-.005.094l-.696 5.934s0 0 0 0c-.04.325-.314.572-.642.572h0H.75v-7.2h2.817l.218-.368L3.14 5.3z'/%3E %3Cpath fill='%23FF3F33' d='M3 6h1.5v7H3V6z'/%3E %3C/svg%3E"
+                                        alt="thumbs-icon">
+                                      1
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- 세번째 후기 div -->
+                            <div data-index="2" class="SlickSlide SlickActive" tabindex="-1" aria-hidden="false"
+                              style="outline:none; width:244px;">
+                              <div>
+                                <div class="CoverReviewCardWrapper">
+                                  <div class="CoverReviewCardImageSection">
+                                    <a href="">
+                                      <div class="ImgWrapper">
+                                        <img class="StyledImgLoader" width="220"
+                                          src="https://res.cloudinary.com/frientrip/image/upload/ar_1:1,c_fill,dpr_2,f_auto,q_auto,w_220/ios_image_780550_20230824142516404_b7fa3ab0c2ea3d24cfc9ec3cb765ae37ca3f6f46e018b843d01a4f445df6e125">
+                                        <div class="FadeWrapper" style="opacity:1; display:block;">
+                                          <div class="Ratio" style="display:block;">
+                                            <div class="Ratioratio"
+                                              style="height:0px; position:relative; width:100%; padding-top:100%;">
+                                              <div class="RatioContent"
+                                                style="height:100%; left:0px; position:absolute; top:0px; width:100%;">
+                                                <img alt="reivew-thumbnail" class="ImageStyledImage" width="220"
+                                                  src="https://res.cloudinary.com/frientrip/image/upload/ar_1:1,c_fill,dpr_2,f_auto,q_auto,w_220/ios_image_780550_20230824142516404_b7fa3ab0c2ea3d24cfc9ec3cb765ae37ca3f6f46e018b843d01a4f445df6e125">
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </a>
+                                  </div>
+                                  <div class="CoverReviewCardInfoSection">
+                                    <div class="CoverReviewCardUserProfileSection">
+                                      <!-- 프사 -->
+                                      <div class="CoverReviewCardProfileImage">
+                                        <div class="ImgWrapper">
+                                          <img class="StyledImgLoader" width="40" height="40"
+                                            src="https://res.cloudinary.com/frientrip/image/fetch/ar_1:1,c_fill,dpr_2,f_auto,q_auto,w_40/https://k.kakaocdn.net/dn/bCnD7p/btqy9eylBle/DRKPIllCpvUm11hPgurPH1/profile_110x110c.jpg">
+                                          <div class="FadeWrapper" style="opacity: 1; display:block;">
+                                            <div class="Ratio" style="display: block;">
+                                              <div class="Ratioratio"
+                                                style="height:0px; position:relative; width:100%; padding-top:100%;">
+                                                <div class="RatioContent"
+                                                  style="height:100%; left:0px; position:absolute; top:0px; width:100%;">
+                                                  <img alt="reivew-thumbnail" class="ImageStyledImage" width="40"
+                                                    height="40"
+                                                    src="https://res.cloudinary.com/frientrip/image/fetch/ar_1:1,c_fill,dpr_2,f_auto,q_auto,w_40/https://k.kakaocdn.net/dn/bCnD7p/btqy9eylBle/DRKPIllCpvUm11hPgurPH1/profile_110x110c.jpg">
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <!-- 아이디 -->
+                                      <div class="CoverReviewCardUserInfo">
+                                        <span class="CoverReviewCardUsername">
+                                          kbj1000595
+                                        </span>
+                                      </div>
+                                    </div>
+                                    <p class="CoverReviewCardProductTitle"></p>
+                                    <span class="SpanLineClamp CoverReviewCardReviewContent">
+                                      테스트 문자
+                                    </span>
+                                    <button type="button" class="CoverReviewCardLikeButton">
+                                      <img
+                                        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='15' height='14' fill='none' viewBox='0 0 15 14'%3E %3Cpath stroke='%23FF3F33' stroke-miterlimit='10' stroke-width='1.5' d='M3.14 5.3l.645.382h0l.002-.003.004-.007.016-.028.062-.105.225-.385c.189-.323.447-.768.723-1.254.528-.929 1.145-2.042 1.461-2.725.015-.01.037-.025.07-.043.111-.063.273-.13.47-.192.406-.128.812-.19.967-.19.268 0 .488.217.488.492V6h5.332c.355 0 .645.287.645.65 0 .02-.001.04-.005.094l-.696 5.934s0 0 0 0c-.04.325-.314.572-.642.572h0H.75v-7.2h2.817l.218-.368L3.14 5.3z'/%3E %3Cpath fill='%23FF3F33' d='M3 6h1.5v7H3V6z'/%3E %3C/svg%3E"
+                                        alt="thumbs-icon">
+                                      1
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- 네번째 후기 div -->
+                            <div data-index="3" class="SlickSlide SlickActive" tabindex="-1" aria-hidden="false"
+                              style="outline:none; width:244px;">
+                              <div>
+                                <div class="CoverReviewCardWrapper">
+                                  <div class="CoverReviewCardImageSection">
+                                    <a href="">
+                                      <div class="ImgWrapper">
+                                        <img class="StyledImgLoader" width="220"
+                                          src="https://res.cloudinary.com/frientrip/image/upload/ar_1:1,c_fill,dpr_2,f_auto,q_auto,w_220/ios_image_780550_20230824142516404_b7fa3ab0c2ea3d24cfc9ec3cb765ae37ca3f6f46e018b843d01a4f445df6e125">
+                                        <div class="FadeWrapper" style="opacity:1; display:block;">
+                                          <div class="Ratio" style="display:block;">
+                                            <div class="Ratioratio"
+                                              style="height:0px; position:relative; width:100%; padding-top:100%;">
+                                              <div class="RatioContent"
+                                                style="height:100%; left:0px; position:absolute; top:0px; width:100%;">
+                                                <img alt="reivew-thumbnail" class="ImageStyledImage" width="220"
+                                                  src="https://res.cloudinary.com/frientrip/image/upload/ar_1:1,c_fill,dpr_2,f_auto,q_auto,w_220/ios_image_780550_20230824142516404_b7fa3ab0c2ea3d24cfc9ec3cb765ae37ca3f6f46e018b843d01a4f445df6e125">
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </a>
+                                  </div>
+                                  <div class="CoverReviewCardInfoSection">
+                                    <div class="CoverReviewCardUserProfileSection">
+                                      <!-- 프사 -->
+                                      <div class="CoverReviewCardProfileImage">
+                                        <div class="ImgWrapper">
+                                          <img class="StyledImgLoader" width="40" height="40"
+                                            src="https://res.cloudinary.com/frientrip/image/fetch/ar_1:1,c_fill,dpr_2,f_auto,q_auto,w_40/https://k.kakaocdn.net/dn/bCnD7p/btqy9eylBle/DRKPIllCpvUm11hPgurPH1/profile_110x110c.jpg">
+                                          <div class="FadeWrapper" style="opacity: 1; display:block;">
+                                            <div class="Ratio" style="display: block;">
+                                              <div class="Ratioratio"
+                                                style="height:0px; position:relative; width:100%; padding-top:100%;">
+                                                <div class="RatioContent"
+                                                  style="height:100%; left:0px; position:absolute; top:0px; width:100%;">
+                                                  <img alt="reivew-thumbnail" class="ImageStyledImage" width="40"
+                                                    height="40"
+                                                    src="https://res.cloudinary.com/frientrip/image/fetch/ar_1:1,c_fill,dpr_2,f_auto,q_auto,w_40/https://k.kakaocdn.net/dn/bCnD7p/btqy9eylBle/DRKPIllCpvUm11hPgurPH1/profile_110x110c.jpg">
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <!-- 아이디 -->
+                                      <div class="CoverReviewCardUserInfo">
+                                        <span class="CoverReviewCardUsername">
+                                          kbj1000595
+                                        </span>
+                                      </div>
+                                    </div>
+                                    <p class="CoverReviewCardProductTitle"></p>
+                                    <span class="SpanLineClamp CoverReviewCardReviewContent">
+                                      테스트 문자
+                                    </span>
+                                    <button type="button" class="CoverReviewCardLikeButton">
+                                      <img
+                                        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='15' height='14' fill='none' viewBox='0 0 15 14'%3E %3Cpath stroke='%23FF3F33' stroke-miterlimit='10' stroke-width='1.5' d='M3.14 5.3l.645.382h0l.002-.003.004-.007.016-.028.062-.105.225-.385c.189-.323.447-.768.723-1.254.528-.929 1.145-2.042 1.461-2.725.015-.01.037-.025.07-.043.111-.063.273-.13.47-.192.406-.128.812-.19.967-.19.268 0 .488.217.488.492V6h5.332c.355 0 .645.287.645.65 0 .02-.001.04-.005.094l-.696 5.934s0 0 0 0c-.04.325-.314.572-.642.572h0H.75v-7.2h2.817l.218-.368L3.14 5.3z'/%3E %3Cpath fill='%23FF3F33' d='M3 6h1.5v7H3V6z'/%3E %3C/svg%3E"
+                                        alt="thumbs-icon">
+                                      1
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- 다섯번째 후기 div -->
+                            <div data-index="4" class="SlickSlide SlickActive" tabindex="-1" aria-hidden="false"
+                              style="outline:none; width:244px;">
+                              <div>
+                                <div class="CoverReviewCardWrapper">
+                                  <div class="CoverReviewCardImageSection">
+                                    <a href="">
+                                      <div class="ImgWrapper">
+                                        <img class="StyledImgLoader" width="220"
+                                          src="https://res.cloudinary.com/frientrip/image/upload/ar_1:1,c_fill,dpr_2,f_auto,q_auto,w_220/ios_image_780550_20230824142516404_b7fa3ab0c2ea3d24cfc9ec3cb765ae37ca3f6f46e018b843d01a4f445df6e125">
+                                        <div class="FadeWrapper" style="opacity:1; display:block;">
+                                          <div class="Ratio" style="display:block;">
+                                            <div class="Ratioratio"
+                                              style="height:0px; position:relative; width:100%; padding-top:100%;">
+                                              <div class="RatioContent"
+                                                style="height:100%; left:0px; position:absolute; top:0px; width:100%;">
+                                                <img alt="reivew-thumbnail" class="ImageStyledImage" width="220"
+                                                  src="https://res.cloudinary.com/frientrip/image/upload/ar_1:1,c_fill,dpr_2,f_auto,q_auto,w_220/ios_image_780550_20230824142516404_b7fa3ab0c2ea3d24cfc9ec3cb765ae37ca3f6f46e018b843d01a4f445df6e125">
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </a>
+                                  </div>
+                                  <div class="CoverReviewCardInfoSection">
+                                    <div class="CoverReviewCardUserProfileSection">
+                                      <!-- 프사 -->
+                                      <div class="CoverReviewCardProfileImage">
+                                        <div class="ImgWrapper">
+                                          <img class="StyledImgLoader" width="40" height="40"
+                                            src="https://res.cloudinary.com/frientrip/image/fetch/ar_1:1,c_fill,dpr_2,f_auto,q_auto,w_40/https://k.kakaocdn.net/dn/bCnD7p/btqy9eylBle/DRKPIllCpvUm11hPgurPH1/profile_110x110c.jpg">
+                                          <div class="FadeWrapper" style="opacity: 1; display:block;">
+                                            <div class="Ratio" style="display: block;">
+                                              <div class="Ratioratio"
+                                                style="height:0px; position:relative; width:100%; padding-top:100%;">
+                                                <div class="RatioContent"
+                                                  style="height:100%; left:0px; position:absolute; top:0px; width:100%;">
+                                                  <img alt="reivew-thumbnail" class="ImageStyledImage" width="40"
+                                                    height="40"
+                                                    src="https://res.cloudinary.com/frientrip/image/fetch/ar_1:1,c_fill,dpr_2,f_auto,q_auto,w_40/https://k.kakaocdn.net/dn/bCnD7p/btqy9eylBle/DRKPIllCpvUm11hPgurPH1/profile_110x110c.jpg">
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <!-- 아이디 -->
+                                      <div class="CoverReviewCardUserInfo">
+                                        <span class="CoverReviewCardUsername">
+                                          kbj1000595
+                                        </span>
+                                      </div>
+                                    </div>
+                                    <p class="CoverReviewCardProductTitle"></p>
+                                    <span class="SpanLineClamp CoverReviewCardReviewContent">
+                                      테스트 문자
+                                    </span>
+                                    <button type="button" class="CoverReviewCardLikeButton">
+                                      <img
+                                        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='15' height='14' fill='none' viewBox='0 0 15 14'%3E %3Cpath stroke='%23FF3F33' stroke-miterlimit='10' stroke-width='1.5' d='M3.14 5.3l.645.382h0l.002-.003.004-.007.016-.028.062-.105.225-.385c.189-.323.447-.768.723-1.254.528-.929 1.145-2.042 1.461-2.725.015-.01.037-.025.07-.043.111-.063.273-.13.47-.192.406-.128.812-.19.967-.19.268 0 .488.217.488.492V6h5.332c.355 0 .645.287.645.65 0 .02-.001.04-.005.094l-.696 5.934s0 0 0 0c-.04.325-.314.572-.642.572h0H.75v-7.2h2.817l.218-.368L3.14 5.3z'/%3E %3Cpath fill='%23FF3F33' d='M3 6h1.5v7H3V6z'/%3E %3C/svg%3E"
+                                        alt="thumbs-icon">
+                                      1
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <img data-role="none" class="CoverReviewSliderNextArrow SlickArrow SlickNext"
+                          src="data:image/png;base64,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"
+                          style="display:block;">
+                      </div>
+                    </div>
+                    <!-- n개 후기 더보기 div, css부터 해야함 -->
+                    <div class="ReviewSectionLinkWrapper">
+                      <a href="" class="ReviewSectionStyledLink">
+                        1090개 후기 더보기
+                        <img
+                          src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' viewBox='0 0 12 12'%3E %3Cpath fill='%230075EF' fill-rule='evenodd' d='M3.97 1.72c.293-.293.767-.293 1.06 0L9.31 6l-4.28 4.28c-.293.293-.767.293-1.06 0-.293-.293-.293-.767 0-1.06L7.19 6 3.97 2.78c-.293-.293-.293-.767 0-1.06z' clip-rule='evenodd'/%3E %3C/svg%3E"
+                          alt="arrow-blue">
+                      </a>
+                    </div>
+                  </div>
+                </article>
+              </section>
+              <!-- 프립 정보 div -->
+              <section class="ProductDetailPageSectionContainer2">
+                <article>
+                  <header class="ArticleHeader">
+                    <hgroup>
+                      <h2 class="ArticleTitle">프립 정보</h2>
+                    </hgroup>
+                  </header>
+                  <dl class="InfoSectionInfoContainer"></dl>
+                </article>
+              </section>
+              <!-- 프립 소개가 있는 div 
+                추후에 js로 상세정보 눌렀을때 확장되는것으로 변경필요 -->
+              <div class="ProductDetailPageSectionWrapper">
+                <section class="ProductDetailPageSectionContainer2">
+                  <article>
+                    <!-- 프립 소개 글씨 -->
+                    <header class="ArticleHeader">
+                      <hgroup>
+                        <h2 class="ArticleTitle">프립 소개</h2>
+                      </hgroup>
+                    </header>
+                    <!-- 소개 내용 -->
+                    <div class="DescriptionSectionDescriptionContainer showstep1">
+                      <!-- CSS -->
+                      <style type="text/css">
+                        .ProductDescription {
+                          padding: 0 20px;
+                          margin: 0;
+                          height:auto;
+                        }
+
+                        .ProductDescription img {
+                          width: calc(100% + 40px);
+                          max-width: calc(100% + 40px);
+                          margin-left: -20px;
+                        }
+
+                        .ProductDescription li {
+                          list-style-position: inside;
+                        }
+
+                        .ProductDescription p {
+                          margin: 0;
+                        }
+
+                        .ProductDescription span.fr-emoticon.fr-emoticon-img {
+                          min-width: 20px;
+                          min-height: 20px;
+                          display: inline-block;
+                        }
+                      </style>
+                      <!-- 내용 -->
+                      <div class="ProductDescription">
+                        <p style="text-align:center;">
+                          <strong>자세교정 전문 요가클리닉
+                          </strong>
+
+                        </p>
+                        <p style="text-align:center;">효과적 개별관리 지도가능한 프로그램&nbsp;</p>
+                        <p style="text-align:center;">차별화된 자세교정 수련클래스입니다&nbsp;</p>
+                        <p style="text-align:center;">
+                          <span
+                            style="color: rgb(65, 65, 65); font-family: sans-serif; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: -0.5px; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">설명으로
+                            프로그램 이해불가하니 체험바랍니다 ~💕
+                          </span>
+                        </p>
+                        <p style="text-align:center;">
+                          <span
+                            style="color: rgb(65, 65, 65); font-family: sans-serif; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: -0.5px; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">A체험후에는
+                            ABCD 자유롭게 참가하세요&nbsp;
+                          </span>
+                        </p>
+                        <p style="text-align:center;"><br>
+                        </p>
+                        <p style="text-align:center;">📍
+                          <strong
+                            style="box-sizing: border-box; font-weight: 700; color: rgb(65, 65, 65); font-family: sans-serif; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: -0.5px; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">7월
+                            주말 저녁반 더 밀도있는 프로그램으로 개편됨
+                          </strong>📍
+                        </p>
+                        <p style="text-align:center;">
+                          <span
+                            style="color: rgb(65, 65, 65); font-family: sans-serif; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: -0.5px; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">목요일
+                            =15분 특별수련 &amp; 75분 A프로그램 - 선택참가 가능
+                          </span>
+                        <p style="text-align:center;">
+                        </p>
+                        <p style="text-align:center;">
+                          <span
+                            style="color: rgb(65, 65, 65); font-family: sans-serif; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: -0.5px; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">
+                            <strong>8월 정오반 프로그램 개편&nbsp;
+                            </strong>(8/ 29~ 9/ 8) 2주간 추가할인
+                          </span>
+                        </p>
+                        <p style="text-align:center;">
+                          <span
+                            style="color: rgb(65, 65, 65); font-family: sans-serif; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: -0.5px; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">추석&amp;10월
+                            공휴일 오픈 프로그램 (9월 29일 휴강)
+                          </span>
+                        </p>
+                        <p style="text-align:center;">
+                          <span
+                            style="color: rgb(65, 65, 65); font-family: sans-serif; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: -0.5px; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">&nbsp;&lt;
+                            9/28. A A &nbsp;9/30. A C &nbsp;10/1. B A &nbsp;10/2. A D &nbsp;10/3. A A &gt;
+                          </span>
+                        </p>
+                        <p style="text-align:center;"><br>
+                        </p>
+                        <p style="text-align:center;">
+                          <span
+                            style="color: rgb(65, 65, 65); font-family: sans-serif; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: -0.5px; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">
+                            <strong>주말--1타임 75분 AB, &nbsp;2타임 90분 ACD 프로그램
+                            </strong>
+                          </span>
+                        </p>
+                        <p style="text-align:center;">
+                          <span
+                            style="color: rgb(65, 65, 65); font-family: sans-serif; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: -0.5px; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">
+                            <strong>저녁반 90분 프로그램, 정오반 70분 프로그램&nbsp;
+                            </strong>
+                          </span>
+                        </p>
+                        <p style="text-align:center;">
+                          <span
+                            style="color: rgb(65, 65, 65); font-family: sans-serif; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: -0.5px; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">
+                            <span
+                              style="color: rgb(65, 65, 65); font-family: sans-serif; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: -0.5px; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">정기권과
+                              동시 예약,&nbsp;
+                            </span>
+                          </span>
+                          <span
+                            style="color: rgb(65, 65, 65); font-family: sans-serif; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: -0.5px; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">
+                            <span
+                              style="color: rgb(65, 65, 65); font-family: sans-serif; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: -0.5px; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">마감된
+                              클래스는 품절 or 오프상태 됨
+                            </span>
+                          </span>
+                        </p>
+                        <p style="text-align:center;">
+                          <strong>
+                            <img
+                              src="https://res.cloudinary.com/frientrip/image/upload/c_limit,dpr_3.0,f_auto,q_auto:best,w_500/Screenshot_20230823_161507_NAVER_itv96x.jpg"
+                              class="fr-fic fr-dib">
+                            <img
+                              src="https://res.cloudinary.com/frientrip/image/upload/c_limit,dpr_3.0,f_auto,q_auto:best,w_500/Screenshot_20230805_141522_Gallery_bdsphj.jpg"
+                              class="fr-fic fr-dib">
+                          </strong>
+                        </p>
+                        <p style="text-align:center;">
+                          <span class="fr-inner" contenteditable="true">
+                          </span>
+                        </p>
+                        <p class="fr-img-space-wrap2" style="text-align: center;">&nbsp;개개인의 몸을 쓰는 습관이 다른만큼
+                        </p>
+                        <p style="text-align:center;">불균형 진행상태도 통증도 다르게 나타납니다</p>
+                        <p style="text-align:center;">각 증상에 따라 바른운동 교정법이 구분됩니다.</p>
+                        <p style="text-align:center;">센스요가 지도는 개인의 상태를 파악하고</p>
+                        <p style="text-align:center;">그에 맞는 바른 움직임 호흡 교정수련으로</p>
+                        <p style="text-align:center;">인체 기본의 저항력과 면역력을 활성화하여</p>
+                        <p style="text-align:center;">스스로 질병을 고치고 예방하도록 합니다.</p>
+                        <p style="text-align:center;">체내외 환경을 변화시키는 교정수련 !</p>
+                        <p style="text-align:center;">건강하고 아름다운 심신의 균형이 회복됩니다</p>
+                        <p style="text-align:center;"><br></p>
+                        <p style="text-align:center;">자세통증 교정전문 센스요가 프로그램을 통해&nbsp;</p>
+                        <p style="text-align:center;">내 안에 굳고 막히고 닫힌 몸이 풀리고 열리는</p>
+                        <p style="text-align:center;">&nbsp;심신의 자유로움 편안함을 나에게 선물하세요</p>
+                        <p style="text-align:center;">
+                          <img
+                            src="https://res.cloudinary.com/frientrip/image/upload/c_limit,dpr_3.0,f_auto,q_auto:best,w_500/jkmn3rkbrbf9dizx7mbp.jpg"
+                            class="fr-fic fr-dii">
+                          <img
+                            src="https://res.cloudinary.com/frientrip/image/upload/c_limit,dpr_3.0,f_auto,q_auto:best,w_500/o8uezvf33cbsian11x7m.jpg"
+                            class="fr-fic fr-dii">
+                        </p>
+                        <p style="text-align:center;">삶의 질을 높이는 지혜로운 방법!</p>
+                        <p style="text-align:center;">나를 위한 하루 한 시간 요가!</p>
+                        <p style="text-align:center;">
+                          <img
+                            src="https://res.cloudinary.com/frientrip/image/upload/c_limit,dpr_3.0,f_auto,q_auto:best,w_500/mkrmjjf8x0lkq5rwnryk.jpg"
+                            class="fr-fic fr-dii">👌
+                          <strong>개인매트 보관 / 공용도구 보관👌
+                          </strong>
+                        </p>
+                        <p style="text-align:center;">
+                          <img
+                            src="https://res.cloudinary.com/frientrip/image/upload/c_limit,dpr_3.0,f_auto,q_auto:best,w_500/cgcb5corkafreriw86bo.jpg"
+                            class="fr-fic fr-dii">
+                        </p>
+                        <p>
+                          <strong>ㅣ&nbsp;이런 점이 좋아요</strong><br>
+                          <strong>&nbsp;·&nbsp;</strong>일반개인지도 교정효과 이상을 목적으로&nbsp;
+                        </p>
+                        <p>&nbsp; &nbsp;개발된 센스요가 교정프로그램.<br>ㆍ각자 신체 문제의 교정법을 알게되요<br>ㆍ정기적 점검 받으며 바른관리가 되요<br><br>
+                          <strong>ㅣ 이런 분들에게 추천드려요</strong>
+                        </p>
+                        <p>ㆍ필라테스 요가 도수치료를 오래해도</p>
+                        <p>&nbsp; &nbsp;자세교정이 안되는 분&nbsp;</p>
+                        <p>ㆍ내몸에 지속적 관심가져줄 전문가 필요<br><strong>&nbsp;·</strong> 교정수련하며 정기점검 받고 싶은
+                          분<br><strong>&nbsp;·</strong> 체계적인 자세교정을 하고자 하는 분<br>ㆍ골반흉곽이 닫혀있고 유연성 부족</p>
+                        <p>ㆍ요가아사나는 잘 되지만 불균형한 분<br>ㆍ중급ㆍ고급 레벨업 교정받고 싶은 분</p>
+                        <p># 장점 : 비교불가 프로그램 대체불가 지도원장</p>
+                        <p># 단점 : 대리강사 수업불가 지도자부재시 휴강</p>
+                        <p><br></p>
+                        <p style="text-align:justify;">
+                          <strong style="color:#333333;">[신청시 유의사항]
+                          </strong>
+                          <span
+                            style="color: rgb(65, 65, 65); font-family: sans-serif; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: -0.5px; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">
+                            <strong>&nbsp;
+                            </strong>
+                          </span>
+                        </p>
+                        <p>
+                          <strong style="color:#333333;">·&nbsp;
+                          </strong>
+                          <span style="color:#333333;">프립 마감후 취소ㆍ예약변
+                          </span>
+                          <span style="color:#333333;">경 불가합니다.
+                          </span><br>
+                          <strong style="color:#333333;">·&nbsp;
+                          </strong>
+                          <span style="color:#333333;">6명~12명 진행중 (
+                            <span
+                              style="color: rgb(65, 65, 65); font-family: sans-serif; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: -0.5px; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">전용면적
+                              190㎡ )
+                            </span>
+                          </span><br>
+                          <span style="color:#333333;">ㆍ5분전까지 출석, 자리안내 받으세요
+                          </span>
+                        </p>
+                        <p>
+                          <span style="color:#333333;">
+                            <span
+                              style="color: rgb(65, 65, 65); font-family: sans-serif; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: -0.5px; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">수련자리는
+                              원할한 진행위해 첫참가자 선착순 중앙&nbsp;
+                            </span>
+                          </span>
+                        </p>
+                        <p>
+                          <span style="color:#333333;">
+                            <span
+                              style="color: rgb(65, 65, 65); font-family: sans-serif; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: -0.5px; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">토일연일참가자,
+                              연강참가자순 고려하여 배치됩니다
+                            </span>
+                          </span>
+                        </p>
+                        <p>
+                          <span style="color:#333333;">ㆍ무료주차 : 평일&nbsp;
+                          </span>
+                          <span style="color:#333333;">주말 2시간, 연강 4시간
+                          </span><br>
+                          <span style="color:#333333;">ㆍ남여 탈의실 네임택 그린색 락커 무료사용
+                          </span><br>
+                          <span style="color:#333333;">ㆍ땀이 많은분 개인매트 지참 사용해주세요.
+                          </span><br>
+                          <strong style="color:#333333;">·&nbsp;
+                          </strong>
+                          <span style="color:#333333;">귀중품 가져오지 마세요. 소지시 지참하세요
+                          </span><br>
+                          <span style="color:#333333;">&nbsp;(분실시 책임지지 않습니다)
+                          </span>
+                        </p>
+                        <p>
+                          <span style="color:#333333;">ㆍ예약취소변경은 크루님이 직접 진행 가능
+                          </span>
+                        </p>
+                        <p>
+                          <span
+                            style="color: rgb(65, 65, 65); font-family: sans-serif; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: -0.5px; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">ㆍ예약취소시
+                            위약금은 프립중앙 센터로 귀속되고
+                          </span>
+                        </p>
+                        <p>
+                          <span
+                            style="color: rgb(65, 65, 65); font-family: sans-serif; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: -0.5px; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">호스트와
+                            무관, 고객센터 (512 3662)로 문의해주세요
+                          </span>
+                        </p>
+                        <p>
+                          <span style="color:#333333;">* 교정도구는 주문제작하여 시중구매 안됨
+                          </span>
+                        </p>
+                        <p>
+                          <span style="color:#333333;">(롤러 스틱 교정스트랩 각 4만원 구매가능)
+                          </span>
+                        </p>
+                        <p>
+                          <strong style="color:#333333;">※ 수업 20분전 요가원 오픈! 출입가능 ※
+                          </strong>
+                        </p>
+                      </div>
+                    </div>
+                    <!-- 상세정보 더보기 -->
+                    <div class="DescriptionSectionButtonContainer">
+                      <button type="button" class="ButtonMoreButton">
+                        <span>
+                          상세정보 더보기
+                        </span>
+                        <div class="ButtonMoreIconContainer">
+                          <img
+                            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' viewBox='0 0 16 16'%3E %3Cpath fill='%23333' fill-rule='evenodd' d='M3.21 5.203c.28-.27.735-.27 1.015 0L8.5 9.329l4.275-4.126c.28-.27.735-.27 1.015 0 .28.27.28.708 0 .979l-4.783 4.615c-.28.27-.734.27-1.014 0L3.21 6.182c-.28-.27-.28-.709 0-.98z' clip-rule='evenodd'/%3E %3C/svg%3E"
+                            alt="상세정보 arrow icon">
+                        </div>
+                      </button>
+                    </div>
+                  </article>
+                </section>
+              </div>
+              <!-- 커리큘럼 div -->
+              <section class="ProductDetailPageSectionContainer2">
+                <article>
+                  <!-- 제목 -->
+                  <header class="ArticleHeader">
+                    <hgroup>
+                      <h2 class="ArticleTitle">
+                        커리큘럼
+                      </h2>
+                      <h3 class="ArticleSubTitle">
+                        당일 진행상황에 따라 일정이 변동될 수 있습니다.
+                      </h3>
+                    </hgroup>
+                  </header>
+                  <div class="CurriculumSectionWrapper">
+                    <!-- 내용 -->
+                    <div class="CurriculumSectionContainer">
+                      <h6 class="CurriculumSectionHeader">
+                        요가클리닉 센스요가 자세교정 프로그램
+                      </h6>
+                      <ul class="CurriculumSectionContent">
+                        <li>
+                          <div class="CurriculumSectionCurriculumItem">
+                            <div class="CurriculumSectionTime">
+                              주말 공휴일
+                            </div>
+                            <div class="CurriculumSectionDescription">
+                              ● 1타임 75분 프로그램 / 2타임 90분 프로그램
+                            </div>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="CurriculumSectionCurriculumItem">
+                            <div class="CurriculumSectionTime">
+                              평일 저녁반
+                            </div>
+                            <div class="CurriculumSectionDescription">
+                              ● 자세교정 90분 ABCD 프로그램
+                            </div>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="CurriculumSectionCurriculumItem">
+                            <div class="CurriculumSectionTime">
+                              평일 정오반
+                            </div>
+                            <div class="CurriculumSectionDescription">
+                              ● 자세교정 70분 ABCD 프로그램
+                            </div>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="CurriculumSectionCurriculumItem">
+                            <div class="CurriculumSectionTime">
+                              주말 120분 특별수련
+                            </div>
+                            <div class="CurriculumSectionDescription">
+                              ● 자세교정 90분 프로그램 & 108배
+                            </div>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="CurriculumSectionCurriculumItem">
+                            <div class="CurriculumSectionTime">
+                              단체ㆍ동호희
+                            </div>
+                            <div class="CurriculumSectionDescription">
+                              ● 그룹요가 예약 진행 (요일시간 조율)
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                      <div class="CurriculumSectionEtcContainer">
+                        <h6 class="CurriculumSectionEtcTitle">
+                          기타사항
+                        </h6>
+                        <p class="CurriculumSectionEtcDescription">
+                          ✔️정규반 정기권 참가자는 프로그램 변동일정등 별도안내
+                          ✔️교정관리 시작하실 분은 정기권ㆍ정규반 이용하세요.
+                          ✔️주말클래스 연강참가자 다수로 1타임 2타임간 15분 쉼
+                          ✔️단체참가 희망시 사전연락 좌석조율(010 3945 1234)
+                          ✔️70분 29,000원 / 90분 34,000원 / 120분 39,000원
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              </section>
+              <!-- 진행하는 장소 div -->
+              <section class="ProductDetailPageSectionContainer2">
+                <article>
+                  <header class="ArticleHeader">
+                    <hgroup>
+                      <h2 class="ArticleTitle">
+                        진행하는 장소
+                      </h2>
+                    </hgroup>
+                  </header>
+                  <div class="PlaceSectionPlaceContainer">
+                    <div class="PlaceContainer">
+                      <div class="PlaceMapContainer">
+                        <!-- 지도 div -->
+                        <div class="MapMapWrapper">
+
+                          <div id="93625-1320"
+                            style="width: 100%; height: 100%; position: relative; overflow: hidden; background: rgb(248, 249, 250);"
+                            tabindex="0">
+                            <div
+                              style="position: absolute; display: block; margin: 0px; padding: 0px; border: 0px none; top: 0px; left: 0px; overflow: visible; width: 100%; height: 100%; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); z-index: 0; cursor: url(&quot;https://ssl.pstatic.net/static/maps/mantle/1x/openhand.cur&quot;), default;">
+                              <div
+                                style="position: absolute; display: block; margin: 0px; padding: 0px; border: 0px none; top: 0px; left: 0px; overflow: visible; width: 100%; height: 100%; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); z-index: 0;">
+                                <div
+                                  style="overflow: visible; width: 100%; height: 0px; position: absolute; display: block; margin: 0px; padding: 0px; border: 0px none; top: 0px; left: 0px; z-index: 1;">
+                                  <div
+                                    style="overflow: visible; width: 100%; height: 0px; position: absolute; display: none; margin: 0px; padding: 0px; border: 0px none; top: 0px; left: 0px; z-index: 0; user-select: none;">
+                                  </div>
+                                  <div
+                                    style="overflow: visible; width: 100%; height: 0px; position: absolute; display: block; margin: 0px; padding: 0px; border: 0px none; top: 0px; left: 0px; z-index: 1; user-select: none;">
+                                    <div
+                                      style="position: absolute; top: 0px; left: 0px; z-index: 0; margin: 0px; padding: 0px; border: 0px solid transparent; display: block; width: 0px; height: 0px; overflow: visible; box-sizing: content-box !important;">
+                                      <div draggable="false" unselectable="on"
+                                        style="position: absolute; top: 13px; left: 327px; z-index: 0; margin: 0px; padding: 0px; border: 0px solid transparent; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; opacity: 1; width: 256px; height: 256px;">
+                                        <img draggable="false" unselectable="on" alt="" crossorigin="anonymous"
+                                          width="256" height="256"
+                                          src="https://nrbe.pstatic.net/styles/basic/1693547540/19/447153/203156.png?mt=bg.ol.sw.ar.lko"
+                                          style="margin: 0px; padding: 0px; border: 0px solid transparent; display: block; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; max-width: none !important; max-height: none !important; min-width: 0px !important; min-height: 0px !important; opacity: 1; position: absolute; left: 0px; top: 0px; z-index: 0; width: 256px; height: 256px;">
+                                      </div>
+                                      <div draggable="false" unselectable="on"
+                                        style="position: absolute; top: 269px; left: 327px; z-index: 0; margin: 0px; padding: 0px; border: 0px solid transparent; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; opacity: 1; width: 256px; height: 256px;">
+                                        <img draggable="false" unselectable="on" alt="" crossorigin="anonymous"
+                                          width="256" height="256"
+                                          src="https://nrbe.pstatic.net/styles/basic/1693547540/19/447153/203157.png?mt=bg.ol.sw.ar.lko"
+                                          style="margin: 0px; padding: 0px; border: 0px solid transparent; display: block; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; max-width: none !important; max-height: none !important; min-width: 0px !important; min-height: 0px !important; opacity: 1; position: absolute; left: 0px; top: 0px; z-index: 0; width: 256px; height: 256px;">
+                                      </div>
+                                      <div draggable="false" unselectable="on"
+                                        style="position: absolute; top: -243px; left: 327px; z-index: 0; margin: 0px; padding: 0px; border: 0px solid transparent; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; opacity: 1; width: 256px; height: 256px;">
+                                        <img draggable="false" unselectable="on" alt="" crossorigin="anonymous"
+                                          width="256" height="256"
+                                          src="https://nrbe.pstatic.net/styles/basic/1693547540/19/447153/203155.png?mt=bg.ol.sw.ar.lko"
+                                          style="margin: 0px; padding: 0px; border: 0px solid transparent; display: block; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; max-width: none !important; max-height: none !important; min-width: 0px !important; min-height: 0px !important; opacity: 1; position: absolute; left: 0px; top: 0px; z-index: 0; width: 256px; height: 256px;">
+                                      </div>
+                                      <div draggable="false" unselectable="on"
+                                        style="position: absolute; top: -243px; left: 583px; z-index: 0; margin: 0px; padding: 0px; border: 0px solid transparent; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; opacity: 1; width: 256px; height: 256px;">
+                                        <img draggable="false" unselectable="on" alt="" crossorigin="anonymous"
+                                          width="256" height="256"
+                                          src="https://nrbe.pstatic.net/styles/basic/1693547540/19/447154/203155.png?mt=bg.ol.sw.ar.lko"
+                                          style="margin: 0px; padding: 0px; border: 0px solid transparent; display: block; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; max-width: none !important; max-height: none !important; min-width: 0px !important; min-height: 0px !important; opacity: 1; position: absolute; left: 0px; top: 0px; z-index: 0; width: 256px; height: 256px;">
+                                      </div>
+                                      <div draggable="false" unselectable="on"
+                                        style="position: absolute; top: 269px; left: 71px; z-index: 0; margin: 0px; padding: 0px; border: 0px solid transparent; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; opacity: 1; width: 256px; height: 256px;">
+                                        <img draggable="false" unselectable="on" alt="" crossorigin="anonymous"
+                                          width="256" height="256"
+                                          src="https://nrbe.pstatic.net/styles/basic/1693547540/19/447152/203157.png?mt=bg.ol.sw.ar.lko"
+                                          style="margin: 0px; padding: 0px; border: 0px solid transparent; display: block; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; max-width: none !important; max-height: none !important; min-width: 0px !important; min-height: 0px !important; opacity: 1; position: absolute; left: 0px; top: 0px; z-index: 0; width: 256px; height: 256px;">
+                                      </div>
+                                      <div draggable="false" unselectable="on"
+                                        style="position: absolute; top: 13px; left: 583px; z-index: 0; margin: 0px; padding: 0px; border: 0px solid transparent; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; opacity: 1; width: 256px; height: 256px;">
+                                        <img draggable="false" unselectable="on" alt="" crossorigin="anonymous"
+                                          width="256" height="256"
+                                          src="https://nrbe.pstatic.net/styles/basic/1693547540/19/447154/203156.png?mt=bg.ol.sw.ar.lko"
+                                          style="margin: 0px; padding: 0px; border: 0px solid transparent; display: block; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; max-width: none !important; max-height: none !important; min-width: 0px !important; min-height: 0px !important; opacity: 1; position: absolute; left: 0px; top: 0px; z-index: 0; width: 256px; height: 256px;">
+                                      </div>
+                                      <div draggable="false" unselectable="on"
+                                        style="position: absolute; top: 13px; left: 71px; z-index: 0; margin: 0px; padding: 0px; border: 0px solid transparent; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; opacity: 1; width: 256px; height: 256px;">
+                                        <img draggable="false" unselectable="on" alt="" crossorigin="anonymous"
+                                          width="256" height="256"
+                                          src="https://nrbe.pstatic.net/styles/basic/1693547540/19/447152/203156.png?mt=bg.ol.sw.ar.lko"
+                                          style="margin: 0px; padding: 0px; border: 0px solid transparent; display: block; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; max-width: none !important; max-height: none !important; min-width: 0px !important; min-height: 0px !important; opacity: 1; position: absolute; left: 0px; top: 0px; z-index: 0; width: 256px; height: 256px;">
+                                      </div>
+                                      <div draggable="false" unselectable="on"
+                                        style="position: absolute; top: 269px; left: 583px; z-index: 0; margin: 0px; padding: 0px; border: 0px solid transparent; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; opacity: 1; width: 256px; height: 256px;">
+                                        <img draggable="false" unselectable="on" alt="" crossorigin="anonymous"
+                                          width="256" height="256"
+                                          src="https://nrbe.pstatic.net/styles/basic/1693547540/19/447154/203157.png?mt=bg.ol.sw.ar.lko"
+                                          style="margin: 0px; padding: 0px; border: 0px solid transparent; display: block; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; max-width: none !important; max-height: none !important; min-width: 0px !important; min-height: 0px !important; opacity: 1; position: absolute; left: 0px; top: 0px; z-index: 0; width: 256px; height: 256px;">
+                                      </div>
+                                      <div draggable="false" unselectable="on"
+                                        style="position: absolute; top: -243px; left: 71px; z-index: 0; margin: 0px; padding: 0px; border: 0px solid transparent; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; opacity: 1; width: 256px; height: 256px;">
+                                        <img draggable="false" unselectable="on" alt="" crossorigin="anonymous"
+                                          width="256" height="256"
+                                          src="https://nrbe.pstatic.net/styles/basic/1693547540/19/447152/203155.png?mt=bg.ol.sw.ar.lko"
+                                          style="margin: 0px; padding: 0px; border: 0px solid transparent; display: block; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; max-width: none !important; max-height: none !important; min-width: 0px !important; min-height: 0px !important; opacity: 1; position: absolute; left: 0px; top: 0px; z-index: 0; width: 256px; height: 256px;">
+                                      </div>
+                                      <div draggable="false" unselectable="on"
+                                        style="position: absolute; top: 269px; left: -185px; z-index: 0; margin: 0px; padding: 0px; border: 0px solid transparent; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; opacity: 1; width: 256px; height: 256px;">
+                                        <img draggable="false" unselectable="on" alt="" crossorigin="anonymous"
+                                          width="256" height="256"
+                                          src="https://nrbe.pstatic.net/styles/basic/1693547540/19/447151/203157.png?mt=bg.ol.sw.ar.lko"
+                                          style="margin: 0px; padding: 0px; border: 0px solid transparent; display: block; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; max-width: none !important; max-height: none !important; min-width: 0px !important; min-height: 0px !important; opacity: 1; position: absolute; left: 0px; top: 0px; z-index: 0; width: 256px; height: 256px;">
+                                      </div>
+                                      <div draggable="false" unselectable="on"
+                                        style="position: absolute; top: 13px; left: -185px; z-index: 0; margin: 0px; padding: 0px; border: 0px solid transparent; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; opacity: 1; width: 256px; height: 256px;">
+                                        <img draggable="false" unselectable="on" alt="" crossorigin="anonymous"
+                                          width="256" height="256"
+                                          src="https://nrbe.pstatic.net/styles/basic/1693547540/19/447151/203156.png?mt=bg.ol.sw.ar.lko"
+                                          style="margin: 0px; padding: 0px; border: 0px solid transparent; display: block; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; max-width: none !important; max-height: none !important; min-width: 0px !important; min-height: 0px !important; opacity: 1; position: absolute; left: 0px; top: 0px; z-index: 0; width: 256px; height: 256px;">
+                                      </div>
+                                      <div draggable="false" unselectable="on"
+                                        style="position: absolute; top: -243px; left: -185px; z-index: 0; margin: 0px; padding: 0px; border: 0px solid transparent; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; opacity: 1; width: 256px; height: 256px;">
+                                        <img draggable="false" unselectable="on" alt="" crossorigin="anonymous"
+                                          width="256" height="256"
+                                          src="https://nrbe.pstatic.net/styles/basic/1693547540/19/447151/203155.png?mt=bg.ol.sw.ar.lko"
+                                          style="margin: 0px; padding: 0px; border: 0px solid transparent; display: block; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; max-width: none !important; max-height: none !important; min-width: 0px !important; min-height: 0px !important; opacity: 1; position: absolute; left: 0px; top: 0px; z-index: 0; width: 256px; height: 256px;">
+                                      </div>
+                                      <div draggable="false" unselectable="on"
+                                        style="position: absolute; top: -243px; left: 839px; z-index: 0; margin: 0px; padding: 0px; border: 0px solid transparent; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; opacity: 1; width: 256px; height: 256px;"
+                                        data-ntranid="NTran-4">
+                                        <img draggable="false" unselectable="on" alt="" crossorigin="anonymous"
+                                          width="256" height="256"
+                                          src="https://nrbe.pstatic.net/styles/basic/1693547540/19/447155/203155.png?mt=bg.ol.sw.ar.lko"
+                                          style="margin: 0px; padding: 0px; border: 0px solid transparent; display: block; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; max-width: none !important; max-height: none !important; min-width: 0px !important; min-height: 0px !important; opacity: 1; position: absolute; left: 0px; top: 0px; z-index: 0; width: 256px; height: 256px;">
+                                      </div>
+                                      <div draggable="false" unselectable="on"
+                                        style="position: absolute; top: 13px; left: 839px; z-index: 0; margin: 0px; padding: 0px; border: 0px solid transparent; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; opacity: 1; width: 256px; height: 256px;"
+                                        data-ntranid="NTran-5">
+                                        <img draggable="false" unselectable="on" alt="" crossorigin="anonymous"
+                                          width="256" height="256"
+                                          src="https://nrbe.pstatic.net/styles/basic/1693547540/19/447155/203156.png?mt=bg.ol.sw.ar.lko"
+                                          style="margin: 0px; padding: 0px; border: 0px solid transparent; display: block; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; max-width: none !important; max-height: none !important; min-width: 0px !important; min-height: 0px !important; opacity: 1; position: absolute; left: 0px; top: 0px; z-index: 0; width: 256px; height: 256px;">
+                                      </div>
+                                      <div draggable="false" unselectable="on"
+                                        style="position: absolute; top: 269px; left: 839px; z-index: 0; margin: 0px; padding: 0px; border: 0px solid transparent; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; opacity: 1; width: 256px; height: 256px;"
+                                        data-ntranid="NTran-6">
+                                        <img draggable="false" unselectable="on" alt="" crossorigin="anonymous"
+                                          width="256" height="256"
+                                          src="https://nrbe.pstatic.net/styles/basic/1693547540/19/447155/203157.png?mt=bg.ol.sw.ar.lko"
+                                          style="margin: 0px; padding: 0px; border: 0px solid transparent; display: block; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; max-width: none !important; max-height: none !important; min-width: 0px !important; min-height: 0px !important; opacity: 1; position: absolute; left: 0px; top: 0px; z-index: 0; width: 256px; height: 256px;">
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div
+                                    style="overflow: visible; width: 100%; height: 0px; position: absolute; display: block; margin: 0px; padding: 0px; border: 0px none; top: 0px; left: 0px; z-index: 100;">
+                                    <div
+                                      style="overflow: visible; width: 100%; height: 0px; position: absolute; display: block; margin: 0px; padding: 0px; border: 0px none; top: 0px; left: 0px; z-index: 101;">
+                                    </div>
+                                    <div
+                                      style="overflow: visible; width: 100%; height: 0px; position: absolute; display: block; margin: 0px; padding: 0px; border: 0px none; top: 0px; left: 0px; z-index: 103;">
+                                      <div title=""
+                                        style="position: absolute; overflow: hidden; box-sizing: content-box !important; cursor: inherit; width: 32px; height: 43px; left: 397px; top: 39px;">
+                                        <img draggable="false" unselectable="on"
+                                          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAArCAMAAAAuY3oFAAAASFBMVEVHcEwAf/8Aff8Afv8AgP8Jgv8Phf8Aff8Bf/8NhP8Afv8Hgf8Af/8Df/8Afv8Aff8zl/////8rk/8djP/B3/9jr//r9P+UyP/2LrjhAAAAEHRSTlMARZxnBt/xGLntgtCPxFUtECF3nwAAARVJREFUOMuFlN0CwxAMhcNoBd06uu7933RqzL+dO3KaL0gK8BMjWihEJTRh0GqlaM3uZSzStQoziSEaPCiLLOtWhL1ly5I8eBN3Dv74fc/3rnjIwTbTN5jtW4ccxJ1DesCyD7VcEGrGBkNdBbhPhAyIzdav4zyPV7ZhSUF4P73eBUNk3z+DshwCVFoc0XCkPQVZjWc0nFmVsMwNC/A5gv8vUs+Pqf9fFOOzq+buwfXssfT13JPXQt9T0o7iVn57To0MKrQ+GaRwRwjqN9XVTnGu+OiIUfcOxN7z2RPt6IlytrF/BUm3CmJv9f+hhFSAFlIDakgLKCEdwHVbaYqXFbqKkD4gQfoASL+KESBCxgDfGpSScucDG1I6q3UhKQAAAAAASUVORK5CYII="
+                                          alt=""
+                                          style="margin: 0px; padding: 0px; border: 0px solid transparent; display: block; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; max-width: none !important; max-height: none !important; min-width: 0px !important; min-height: 0px !important; position: absolute; cursor: pointer; width: 32px; height: 43px; left: 0px; top: 0px;">
+                                      </div>
+                                    </div>
+                                    <div
+                                      style="overflow: visible; width: 100%; height: 0px; position: absolute; display: block; margin: 0px; padding: 0px; border: 0px none; top: 0px; left: 0px; z-index: 106;">
+                                    </div>
+                                  </div>
+                                </div>
+                                <div
+                                  style="position: absolute; display: none; margin: 0px; padding: 0px; border: 0px none; top: 0px; left: 0px; overflow: visible; width: 100%; height: 100%; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); background-color: rgb(255, 255, 255); z-index: 10000; opacity: 0.5;">
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              style="position: absolute; z-index: 100; margin: 0px; padding: 0px; pointer-events: none; bottom: 0px; right: 0px;">
+                              <div
+                                style="border: 0px none; margin: -3px 0px 0px; padding: 0px; pointer-events: none; float: right; height: 20px;">
+                                <div
+                                  style="position: relative; width: 84px; height: 14px; margin: 0px 12px 6px 2px; overflow: hidden; pointer-events: auto;">
+                                  <span
+                                    style="display: block; margin: 0px; padding: 0px 4px; text-align: center; font-size: 10px; line-height: 11px; font-family: Helvetica, AppleSDGothicNeo-Light, nanumgothic, NanumGothic, 나눔고딕, Dotum, 돋움, sans-serif; font-weight: 700; color: rgb(34, 34, 37); text-shadow: rgba(255, 255, 255, 0.8) -1px 0px, rgba(255, 255, 255, 0.8) 0px 1px, rgba(255, 255, 255, 0.8) 1px 0px, rgba(255, 255, 255, 0.8) 0px -1px;">20m</span>
+                                  <img src="https://ssl.pstatic.net/static/maps/mantle/1x/new-scale-normal-b.png"
+                                    width="78" height="3" alt=""
+                                    style="position: absolute; left: 3px; bottom: 0px; z-index: 2; display: block; width: 78px; height: 3px; overflow: hidden; margin: 0px; padding: 0px; border: 0px none; max-width: none !important; max-height: none !important; min-width: 0px !important; min-height: 0px !important;">
+                                  <img src="https://ssl.pstatic.net/static/maps/mantle/1x/new-scale-normal-l.png"
+                                    width="3" height="8" alt=""
+                                    style="position:absolute;left:0;bottom:0;z-index:2;display:block;width:3px;height:8px;overflow:hidden;margin:0;padding:0;border:0 none;max-width:none !important;max-height:none !important;min-width:0 !important;min-height:0 !important;">
+                                  <img src="https://ssl.pstatic.net/static/maps/mantle/1x/new-scale-normal-r.png"
+                                    width="3" height="8" alt=""
+                                    style="position:absolute;right:0;bottom:0;z-index:2;display:block;width:3px;height:8px;overflow:hidden;margin:0;padding:0;border:0 none;max-width:none !important;max-height:none !important;min-width:0 !important;min-height:0 !important;">
+                                </div>
+                              </div>
+                              <div
+                                style="border: 0px none; margin: 0px; padding: 0px; pointer-events: none; float: right;">
+                                <a href="https://ssl.pstatic.net/static/maps/mantle/notice/legal.html" target="_blank"
+                                  style="display: block; width: 45px; height: 10px; overflow: hidden; margin: 0px 5px 7px 12px; pointer-events: auto;">
+                                  <img src="https://ssl.pstatic.net/static/maps/mantle/1x/naver-logo-normal-new.png"
+                                    width="45" height="10" alt="NAVER"
+                                    style="display:block;width:45px;height:10px;overflow:hidden;border:0 none;margin:0;padding:0;max-width:none !important;max-height:none !important;min-width:0 !important;min-height:0 !important;"></a>
+                              </div>
+                            </div>
+                            <div
+                              style="position: absolute; z-index: 100; margin: 0px; padding: 0px; pointer-events: none; bottom: 0px; left: 0px;">
+                              <div
+                                style="border: 0px none; margin: 0px; padding: 0px; pointer-events: none; float: left; height: 19px;">
+                                <div class="map_copyright"
+                                  style="margin: 0px; padding: 0px 0px 2px 10px; height: 19px; line-height: 19px; color: rgb(68, 68, 68); font-family: Helvetica, AppleSDGothicNeo-Light, nanumgothic, NanumGothic, 나눔고딕, Dotum, 돋움, sans-serif; font-size: 11px; clear: both; white-space: nowrap; pointer-events: none;">
+                                  <div style="float: left;"><span style="white-space: pre; color: rgb(68, 68, 68);">©
+                                      NAVER Corp.</span>
+                                  </div><a href="#"
+                                    style="font-family: Helvetica, AppleSDGothicNeo-Light, nanumgothic, NanumGothic, 나눔고딕, Dotum, 돋움, sans-serif; font-size: 11px; line-height: 19px; margin: 0px 0px 0px 5px; padding: 0px; color: rgb(68, 68, 68); float: left; pointer-events: auto; text-decoration: underline; display: none;">더보기</a>
+                                  <div style="float: left;"><a target="_blank"
+                                      href="http://www.openstreetmap.org/copyright"
+                                      style="pointer-events: auto; white-space: pre; display: none; color: rgb(68, 68, 68);">
+                                      /OpenStreetMap</a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              style="border: 1px solid rgb(41, 41, 48); background: rgb(255, 255, 255); padding: 15px; color: rgb(51, 51, 51); position: absolute; font-size: 11px; line-height: 1.5; clear: both; display: none; max-width: 350px !important; max-height: 300px !important;">
+                              <h5 style="font-size: 12px; margin-top: 0px; margin-bottom: 10px;">지도 데이터</h5><a href="#"
+                                style="position: absolute; top: 8px; right: 8px; width: 14px; height: 14px; font-size: 14px; line-height: 14px; display: block; overflow: hidden; color: rgb(68, 68, 68); text-decoration: none; font-weight: bold; text-align: center;">x</a>
+                              <div><span style="white-space: pre; color: rgb(68, 68, 68); float: left;">© NAVER
+                                  Corp.</span><a target="_blank" href="http://www.openstreetmap.org/copyright"
+                                  style="pointer-events: auto; white-space: pre; color: rgb(68, 68, 68); float: left; display: none;">
+                                  /OpenStreetMap</a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- 전체보기 버튼 div -->
+                        <div class="PlaceFullScreenIconContainer">
+                          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none' viewBox='0 0 24 24'%3E %3Cpath stroke='%23333' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M17 3h4v4M15 9l6-6M7 21H3v-4M9 15l-6 6M4 11V6c0-1.105.895-2 2-2h5M20 13v5c0 1.105-.895 2-2 2h-6'/%3E %3C/svg%3E" alt="Map Fullscreen">
+                        </div>
+                      </div>
+                      <!-- 위치가 나와있는 글씨 div -->
+                      <div class="PlacePlaceContainer">
+                        <div class="PlaceLocationContainer">
+                          <div class="PlaceLocationTitleContainer">
+                            <strong class="PlaceLocationTitle">
+                              센스요가 (서울시 강남구 논현로85길 25)
+                            </strong>
+                            <span class="PlaceLocationTitleDetail">
+                              센스요가 (서울시 강남구 논현로85길 25)
+                            </span>
+                          </div>
+                          <!-- 클립보드 복사하기 버튼이 있는 div -->
+                          <div class="PlaceClipBoardIconContainer">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none' viewBox='0 0 24 24'%3E %3Cpath stroke='%23333' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M16 18h2c1.105 0 2-.895 2-2V5c0-1.105-.895-2-2-2H9c-1.105 0-2 .895-2 2v2'/%3E %3Cpath fill-rule='evenodd' stroke='%23333' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M15.36 9.47l-1.83-1.83c-.41-.41-.967-.64-1.547-.64H6c-1.105 0-2 .895-2 2v10c0 1.105.895 2 2 2h8c1.105 0 2-.895 2-2v-7.983c0-.58-.23-1.136-.64-1.547z' clip-rule='evenodd'/%3E %3Cpath stroke='%23333' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M16 11.5h-3c-.828 0-1.5-.672-1.5-1.5V7'/%3E %3C/svg%3E" alt="Copy Clipboard">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              </section>
+              <!-- 포함 사항, 불포함 사항, 준비물 -->
+              <section class="ProductDetailPageSectionContainer3">
+                <!-- 포함 사항 -->
+                <article>
+                  <header class="ArticleHeader2">
+                    <hgroup>
+                      <h2 class="ArticleTitle">
+                        포함 사항
+                      </h2>
+                    </hgroup>
+                  </header>
+                  <div class="StuffStuffContainer">
+                    <span type="Round" class="TagRoundTag">
+                      자세교정프로그램 지도강습
+                    </span>
+                    <span type="Round" class="TagRoundTag">
+                      맞춤교정도구 매트
+                    </span>
+                    <span type="Round" class="TagRoundTag">
+                      프로그램별 수업전부터 10~15분 도구마사지
+                    </span>
+                    <span type="Round" class="TagRoundTag">
+                      남여 탈의실
+                    </span>
+                    <span type="Round" class="TagRoundTag">
+                      무료주차
+                    </span>
+                  </div>
+                </article>
+                <!-- 불포함 사항 -->
+                <article>
+                  <header class="ArticleHeader2">
+                    <hgroup>
+                      <h2 class="ArticleTitle">
+                        불포함 사항
+                      </h2>
+                    </hgroup>
+                  </header>
+                  <div class="StuffStuffContainer">
+                    <span type="Round" class="TagRoundTag2">
+                      샤워시설
+                    </span>
+                  </div>
+                </article>
+                <!-- 준비물 -->
+                <article>
+                  <header class="ArticleHeader2">
+                    <hgroup>
+                      <h2 class="ArticleTitle">
+                        준비물
+                      </h2>
+                    </hgroup>
+                  </header>
+                  <div class="StuffStuffContainer">
+                    <span type="Round" class="TagRoundTag3">
+                      즐거운 마음
+                    </span>
+                    <span type="Round" class="TagRoundTag3">
+                      땀이 많거나 너무 건조하면 (미끌림) 요가삭스 글러브 도움됩니다
+                    </span>
+                    <span type="Round" class="TagRoundTag3">
+                      자세점검시 너무 두껍고 박시하지 않는 밝은색 운동복이 좋습니다
+                    </span>
+                  </div>
+                </article>
+              </section>
+              <!-- 1:1문의, 유의사항, 환불정책 div -->
+              <section class="ProductDetailPageSectionContainer2">
+                <!-- 1:1 문의 -->
+                <article>
+                  <a href="" class="LinkAccordionLink">
+                    1:1 문의
+                    <img src="data:image/svg+xml,%3Csvg width='7' height='12' viewBox='0 0 7 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cpath d='M1 11L6 6L1 1' stroke='%23CCCCCC' stroke-linecap='round' stroke-linejoin='round'/%3E %3C/svg%3E" alt="/product/qnas" class="LinkAccordionRight">
+                  </a>
+                </article>
+                <!-- 유의 사항 -->
+                <article>
+                  <div class="LinkAccordionAccordionContainer">
+                    <div class="AccordionContainer">
+                      <div>
+                        유의사항
+                      </div>
+                      <div class="AccordionIconContainer">
+                        <img src="data:image/svg+xml,%3Csvg width='7' height='12' viewBox='0 0 7 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cpath d='M1 11L6 6L1 1' stroke='%23CCCCCC' stroke-linecap='round' stroke-linejoin='round'/%3E %3C/svg%3E" alt="AccordionArrow" class="AccordionIconArrow">
+                      </div>
+                    </div>
+                    <div class="AccordionContent">
+                      [신청 시 유의사항]· 최소 인원 미달로 인해 진행이 취소될 경우, 신청 마감 일시에 진행 취소 안내를 드리며 참가비는 전액 환불해 드립니다.
+                    </div>
+                  </div>
+                </article>
+                <!-- 환불 정책 -->
+                <article>
+                  <div class="LinkAccordionAccordionContainer">
+                    <div class="AccordionContainer">
+                      <div>
+                        환불 정책
+                      </div>
+                    </div>
+                    <div class="AccordionContent">
+                      1. 결제 후 1시간 이내에는 무료 취소가 가능합니다.
+                      (단, 신청마감 이후 취소 시, 프립 진행 당일 결제 후 취소 시 취소 및 환불 불가)
+                      2. 결제 후 1시간이 초과한 경우, 아래의 환불규정에 따라 취소수수료가 부과됩니다.
+                      - 신청마감 2일 이전 취소시 : 전액 환불
+                      - 신청마감 1일 ~ 신청마감 이전 취소시 : 상품 금액의 50% 취소 수수료 배상 후 환불
+                      - 신청마감 이후 취소시, 또는 당일 불참 : 환불 불가
+                      ※ 다회권의 경우, 1회라도 사용시 부분 환불이 불가하며, 기간 내 호스트와 예약 확정 되지 않은 프립은 프립 에너지로 환불 됩니다.
+                      ※ 여행사 상품의 경우 상품 상세 페이지의 여행사 환불 규정이 우선 적용 됩니다.
+                      ※ 여행사 상품, 숙박, 이벤트 상품 등 객실, 버스 등 사전 예약 확정이 필요한 프립은 예약 확정 이후 신청마감일 이전이라도 취소 및 환불 불가합니다.
+                      ※ 취소 수수료는 신청 마감일을 기준으로 산정됩니다.
+                      ※ 신청 마감일은 무엇인가요?
+                      호스트님들이 장소 대관, 강습, 재료 구비 등 프립 진행을 준비하기 위해, 프립 진행일보다 일찍 신청을 마감합니다.
+                      환불은 진행일이 아닌 신청 마감일 기준으로 이루어집니다. 프립마다 신청 마감일이 다르니, 꼭 날짜와 시간을 확인 후 결제해주세요! : )
+                      ※신청 마감일 기준 환불 규정 예시
+                      - 프립 진행일 : 10월 27일
+                      - 신청 마감일 : 10월 26일
+                      10월 25일에 취소 할 경우, 신청마감일 1일 전에 해당하며 50%의 수수료가 발생합니다.
+                      [환불 신청 방법]
+                      1. 해당 프립 결제한 계정으로 로그인
+                      2. 마이프립 - 신청내역 or 결제내역
+                      3. 취소를 원하는 프립 상세 정보 버튼 - 취소
+                      ※ 결제 수단에 따라 예금주, 은행명, 계좌번호 입력
+                    </div>
+                  </div>
+                </article>
+              </section>
+              <!-- 이런 프립 어때요? -->
+              <section class="ProductDetailPageSectionContainer2">
+                <article>
+                  <header class="ArticleHeader2">
+                    <hgroup>
+                      <h2 class="ArticleTitle">
+                        이런 프립 어때요?
+                      </h2>
+                    </hgroup>
+                  </header>
+                  <!-- 사진 div -->
+                  <div class="AssociatedSectionContainer">
+                    <!-- 첫번째 사진 div -->
+                    <div class="CardContainer">
+                      <a href="">
+                        <div class="CardImageContainer">
+                          <div class="ImgWrapper">
+                            <img src="https://res.cloudinary.com/frientrip/image/upload/ar_1:1,c_fill,dpr_2,f_auto,q_auto,w_310/%ED%9B%84%ED%94%84_c18ad43a8101ac930c852bf19792cb863cc543dda1ea28a94739bec6695612c6" width="500" class="StyledImgLoader">
+                            <div class="FadeWrapper" style="opacity: 1; display:block;">
+                              <div class="Ratio" style="display: block;">
+                                <div class="RatioRatio" style="height:0px; position:relative; width:100%; padding-top:100%">
+                                  <div class="RatioContent" style="height:100%; left:0px; position:absolute; top:0px; width:100%;">
+                                    <img class="ImageStyledImage" width="500" src="https://res.cloudinary.com/frientrip/image/upload/ar_1:1,c_fill,dpr_2,f_auto,q_auto,w_310/%ED%9B%84%ED%94%84_c18ad43a8101ac930c852bf19792cb863cc543dda1ea28a94739bec6695612c6" alt="[면목] 몸과 마음 건강하게, 아름다운 에어리얼 후프 card">
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- 글씨 -->
+                        <div>
+                          <div class="CardLocation">
+                            노원/강북/도봉/중랑
+                          </div>
+                          <div class="CardTitle">
+                            [면목] 몸과 마음 건강하게, 아름다운 에어리얼 후프
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                    <!-- 두번째 사진 div -->
+                    <div class="CardContainer">
+                      <a href="">
+                        <div class="CardImageContainer">
+                          <div class="ImgWrapper">
+                            <img src="https://res.cloudinary.com/frientrip/image/upload/ar_1:1,c_fill,dpr_2,f_auto,q_auto,w_310/KakaoTalk_20211217_174503312_261bec2d8685e6e3440b5c770b10fbbf4ece6bad172a15771ca033c3e58133e2" width="500" class="StyledImgLoader">
+                            <div class="FadeWrapper" style="opacity: 1; display:block;">
+                              <div class="Ratio" style="display: block;">
+                                <div class="RatioRatio" style="height:0px; position:relative; width:100%; padding-top:100%">
+                                  <div class="RatioContent" style="height:100%; left:0px; position:absolute; top:0px; width:100%;">
+                                    <img class="ImageStyledImage" width="500" src="https://res.cloudinary.com/frientrip/image/upload/ar_1:1,c_fill,dpr_2,f_auto,q_auto,w_310/KakaoTalk_20211217_174503312_261bec2d8685e6e3440b5c770b10fbbf4ece6bad172a15771ca033c3e58133e2" alt="소규모 플라잉요가 그룹레슨 7:1 수업 card">
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- 글씨 -->
+                        <div>
+                          <div class="CardLocation">
+                            성남/분당
+                          </div>
+                          <div class="CardTitle">
+                            소규모 플라잉요가 그룹레슨 7:1 수업
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                    <!-- 세번째 사진 div -->
+                    <div class="CardContainer">
+                      <a href="">
+                        <div class="CardImageContainer">
+                          <div class="ImgWrapper">
+                            <img src="https://res.cloudinary.com/frientrip/image/upload/ar_1:1,c_fill,dpr_2,f_auto,q_auto,w_310/D99E36DF-030D-4B91-9781-3641CF207CE9_95c4969df03f7672ff2905ae499d59d34d2750bdf8495f91a62fc4a9ae86dcf8" width="500" class="StyledImgLoader">
+                            <div class="FadeWrapper" style="opacity: 1; display:block;">
+                              <div class="Ratio" style="display: block;">
+                                <div class="RatioRatio" style="height:0px; position:relative; width:100%; padding-top:100%">
+                                  <div class="RatioContent" style="height:100%; left:0px; position:absolute; top:0px; width:100%;">
+                                    <img class="ImageStyledImage" width="500" src="https://res.cloudinary.com/frientrip/image/upload/ar_1:1,c_fill,dpr_2,f_auto,q_auto,w_310/D99E36DF-030D-4B91-9781-3641CF207CE9_95c4969df03f7672ff2905ae499d59d34d2750bdf8495f91a62fc4a9ae86dcf8" alt="에너지를 채워주는 요가 card">
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- 글씨 -->
+                        <div>
+                          <div class="CardLocation">
+                            온라인
+                          </div>
+                          <div class="CardTitle">
+                            에너지를 채워주는 요가
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                    <!-- 네번째 사진 div -->
+                    <div class="CardContainer">
+                      <a href="">
+                        <div class="CardImageContainer">
+                          <div class="ImgWrapper">
+                            <img src="https://res.cloudinary.com/frientrip/image/upload/ar_1:1,c_fill,dpr_2,f_auto,q_auto,w_310/IMG_20190721_6_xfsk4k" width="500" class="StyledImgLoader">
+                            <div class="FadeWrapper" style="opacity: 1; display:block;">
+                              <div class="Ratio" style="display: block;">
+                                <div class="RatioRatio" style="height:0px; position:relative; width:100%; padding-top:100%">
+                                  <div class="RatioContent" style="height:100%; left:0px; position:absolute; top:0px; width:100%;">
+                                    <img class="ImageStyledImage" width="500" src="https://res.cloudinary.com/frientrip/image/upload/ar_1:1,c_fill,dpr_2,f_auto,q_auto,w_310/IMG_20190721_6_xfsk4k" alt="[송파] 몸 불균형을 바로잡는 교정테라피 요가 (예약 가능) card">
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- 글씨 -->
+                        <div>
+                          <div class="CardLocation">
+                            송파/강동
+                          </div>
+                          <div class="CardTitle">
+                            [송파] 몸 불균형을 바로잡는 교정테라피 요가 (예약 가능)
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                    <!-- 다섯번째 사진 div -->
+                    <div class="CardContainer">
+                      <a href="">
+                        <div class="CardImageContainer">
+                          <div class="ImgWrapper">
+                            <img src="https://res.cloudinary.com/frientrip/image/upload/ar_1:1,c_fill,dpr_2,f_auto,q_auto,w_310/IMG_7589_ebb6b033808c92d408b177395bbea06ebbb0f1270607201171ff8a8fcd0ef3e9" width="500" class="StyledImgLoader">
+                            <div class="FadeWrapper" style="opacity: 1; display:block;">
+                              <div class="Ratio" style="display: block;">
+                                <div class="RatioRatio" style="height:0px; position:relative; width:100%; padding-top:100%">
+                                  <div class="RatioContent" style="height:100%; left:0px; position:absolute; top:0px; width:100%;">
+                                    <img class="ImageStyledImage" width="500" src="https://res.cloudinary.com/frientrip/image/upload/ar_1:1,c_fill,dpr_2,f_auto,q_auto,w_310/IMG_7589_ebb6b033808c92d408b177395bbea06ebbb0f1270607201171ff8a8fcd0ef3e9" alt="[제주] 너랑 나랑, 요가랑 떡볶이 card">
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- 글씨 -->
+                        <div>
+                          <div class="CardLocation">
+                            제주시
+                          </div>
+                          <div class="CardTitle">
+                            [제주] 너랑 나랑, 요가랑 떡볶이
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                    <!-- 여섯번째 사진 div -->
+                    <div class="CardContainer">
+                      <a href="">
+                        <div class="CardImageContainer">
+                          <div class="ImgWrapper">
+                            <img src="https://res.cloudinary.com/frientrip/image/upload/ar_1:1,c_fill,dpr_2,f_auto,q_auto,w_310/84D3870D-8548-4E6E-9D98-0DD441702239_2ea34ed519bccc7fb89322d9a940797c5d25db12b7f063b50e6d9dabeb37f7de" width="500" class="StyledImgLoader">
+                            <div class="FadeWrapper" style="opacity: 1; display:block;">
+                              <div class="Ratio" style="display: block;">
+                                <div class="RatioRatio" style="height:0px; position:relative; width:100%; padding-top:100%">
+                                  <div class="RatioContent" style="height:100%; left:0px; position:absolute; top:0px; width:100%;">
+                                    <img class="ImageStyledImage" width="500" src="https://res.cloudinary.com/frientrip/image/upload/ar_1:1,c_fill,dpr_2,f_auto,q_auto,w_310/84D3870D-8548-4E6E-9D98-0DD441702239_2ea34ed519bccc7fb89322d9a940797c5d25db12b7f063b50e6d9dabeb37f7de" alt="[서울] 플라잉요가 프라이빗 1:1 원데이 클래스 card">
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- 글씨 -->
+                        <div>
+                          <div class="CardLocation">
+                            마포/서대문/은평
+                          </div>
+                          <div class="CardTitle">
+                            [서울] 플라잉요가 프라이빗 1:1 원데이 클래스
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </article>
+              </section>
+            </div>
+            <!-- 참여하기 버튼 있는 div -->
+            <div class="FloatingActionBarWrapper">
+              <div class="FloatingActionBarFloatingButtonWrapper">
+                <!-- 찜 버튼 -->
+                <div class="CardProductWishContainer">
+                  <button onclick="toggleImg()" class="ButtonWish" width="24px" height="24px">
+                    <img class="RedHeart" src="data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cg clip-path='url(%23clip0_2517_457)'%3E %3Cpath d='M15.4448 27.0641L15.4368 27.0593L15.4064 27.0433C14.775 26.6998 14.1549 26.3359 13.5472 25.9521C12.0981 25.0404 10.7174 24.0243 9.41595 22.9121C6.47195 20.3729 3.19995 16.5633 3.19995 12.0001C3.20009 10.5112 3.66179 9.05903 4.52147 7.84344C5.38115 6.62785 6.59654 5.70866 8.00027 5.21244C9.40401 4.71622 10.9271 4.66737 12.3597 5.07263C13.7924 5.47788 15.0641 6.31729 16 7.4753C16.9358 6.31729 18.2075 5.47788 19.6402 5.07263C21.0728 4.66737 22.5959 4.71622 23.9996 5.21244C25.4034 5.70866 26.6187 6.62785 27.4784 7.84344C28.3381 9.05903 28.7998 10.5112 28.8 12.0001C28.8 16.5633 25.5296 20.3729 22.584 22.9121C20.7349 24.492 18.7274 25.8764 16.5936 27.0433L16.5632 27.0593L16.5552 27.0641H16.552C16.3819 27.1542 16.1925 27.2014 16.0001 27.2017C15.8078 27.2019 15.6182 27.1553 15.448 27.0657L15.4448 27.0641Z' fill='%23FD2748'/%3E %3C/g%3E %3Cdefs%3E %3CclipPath id='clip0_2517_457'%3E %3Crect width='32' height='32' fill='white'/%3E %3C/clipPath%3E %3C/defs%3E %3C/svg%3E" alt="찜하기">
+                    <img class="NoHeart" src="data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cg clip-path='url(%23clip0_2514_433)'%3E %3Cmask id='mask0_2514_433' style='mask-type:luminance' maskUnits='userSpaceOnUse' x='0' y='0' width='32' height='32'%3E %3Cpath d='M32 0H0V32H32V0Z' fill='white'/%3E %3C/mask%3E %3Cg mask='url(%23mask0_2514_433)'%3E %3Cmask id='mask1_2514_433' style='mask-type:luminance' maskUnits='userSpaceOnUse' x='0' y='0' width='32' height='32'%3E %3Cpath d='M32 0H0V32H32V0Z' fill='white'/%3E %3C/mask%3E %3Cg mask='url(%23mask1_2514_433)'%3E %3Cpath d='M28 12C28 16.1889 24.9781 19.7916 22.063 22.3047C20.2579 23.8469 18.2982 25.1986 16.2154 26.3381C16.2027 26.3441 16.1898 26.3505 16.1774 26.357C16.1226 26.3861 16.0613 26.4013 15.999 26.4015C15.9401 26.4015 15.882 26.3881 15.8293 26.362L15.8094 26.3511L15.784 26.3378C15.1694 26.0033 14.5659 25.649 13.9743 25.2754C12.5586 24.3847 11.2086 23.3914 9.93704 22.3049C7.02334 19.7914 4.00003 16.1887 4 12C4.00014 10.6766 4.41054 9.38568 5.17469 8.30517C5.93885 7.22466 7.01918 6.4076 8.26696 5.96651C9.51472 5.52542 10.8685 5.482 12.142 5.84222C13.4155 6.20245 14.546 6.94859 15.3778 7.97794C15.5297 8.16589 15.7584 8.2751 16 8.2751C16.2416 8.2751 16.4704 8.16589 16.6222 7.97794C17.4541 6.94859 18.5845 6.20245 19.8579 5.84222C21.1315 5.482 22.4853 5.52542 23.7331 5.96651C24.9808 6.4076 26.0611 7.22466 26.8253 8.30517C27.5894 9.38568 27.9998 10.6766 28 12Z' stroke='white' stroke-width='1.5' stroke-linejoin='round'/%3E %3C/g%3E %3C/g%3E %3C/g%3E %3Cdefs%3E %3CclipPath id='clip0_2514_433'%3E %3Crect width='32' height='32' fill='white'/%3E %3C/clipPath%3E %3C/defs%3E %3C/svg%3E" alt="찜하기">
+                  </button>
+                </div>
+                <!-- 참여하기 버튼 -->
+                <button class="Buttonbutton StyledSubmitButton" width="100%" height="56px"  color="white" font-size="16px">
+                  <div class="DefaultButtonActionLabel">
+                    참여하기
+                  </div>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="./detail.js"></script>
+</body>
+
+</html>

@@ -2,6 +2,7 @@
 // 찜 누르면 하트 빨간색 변경
 const heartButtonContainer = document.querySelectorAll(".CardProductWishContainer");
 
+
 heartButtonContainer.forEach((container) => {
     let firstImg = container.firstElementChild.children[0];
     let secondImg = container.firstElementChild.children[1];
@@ -35,3 +36,31 @@ function toggleContent() {
 }
 
 toggleButton.addEventListener('click', toggleContent);
+
+
+
+
+
+const accordionContainers = document.querySelectorAll('.LinkAccordionAccordionContainer');
+
+// 각 AccordionContainer에 대해 클릭 이벤트 리스너를 추가합니다.
+accordionContainers.forEach((container) => {
+    const accordionContent = container.querySelector('.AccordionContent');
+
+    container.addEventListener('click', () => {
+        // 현재 상태를 확인하고 토글합니다.
+        if (accordionContent.style.height === '0px' || !accordionContent.style.height) {
+            // 텍스트가 포함된 전체 높이를 가져옵니다.
+            const autoHeight = accordionContent.scrollHeight + 'px';
+            accordionContent.style.height = autoHeight;
+        } else {
+            // 닫힌 상태로 변경합니다.
+            accordionContent.style.height = '0px';
+        }
+    });
+});
+
+
+
+
+
