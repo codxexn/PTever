@@ -30,7 +30,6 @@ public class ReviewImgVO implements Serializable {
     // 업데이트 날짜
     private LocalDate updateDate;
     // ============================
-    private Long courseId; // 강의 id
-    private Long productId; // 상품 id
-    private Long reviewId; // 리뷰 id
+    private Long courseReviewId; // 강의 리뷰 id
+    private Long productReviewId; // 상품 리뷰 id
 }
