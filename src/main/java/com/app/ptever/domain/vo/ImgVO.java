@@ -23,8 +23,11 @@ public class ImgVO implements Serializable {
     private LocalDate createFileDate;
     // 파일 삭제 여부(default: false(삭제 x), true(삭제 됨))
     private Boolean fileDeleteCheck;
+    // 이미지 경로
+    private String imagePath;
     // 생성 날짜
     private LocalDate createDate;
     // 업데이트 날짜
     private LocalDate updateDate;
+
 }
