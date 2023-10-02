@@ -16,6 +16,19 @@ function deleteAccount(seq){
     }).then((result) => {
         if (result.value) {
             //"삭제" 버튼을 눌렀을 때 작업할 내용을 이곳에 넣어주면 된다.
+            let f = document.createElement('form');
+
+            let obj;
+            obj = document.createElement('input');
+            obj.setAttribute('type', 'hidden');
+            obj.setAttribute('name', 'userPassword');
+            obj.setAttribute('value', inputField.value);
+
+            f.appendChild(obj);
+            f.setAttribute('method', 'post');
+            f.setAttribute('action', '/withdraw/withdrawNext');
+            document.body.appendChild(f);
+            f.submit();
         }
     })
 }

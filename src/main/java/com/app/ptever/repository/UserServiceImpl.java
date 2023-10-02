@@ -19,4 +19,21 @@ public class UserServiceImpl implements UserService {
     public Optional<UserVO> login(UserVO userVO) {
         return userDAO.login(userVO);
     }
+
+    @Override
+    public void save(UserVO userVO) {
+        userDAO.write(userVO);
+    }
+
+    @Override
+    public Optional<UserVO> checkByEmail(String userEmail) {
+        return userDAO.findByEmail(userEmail);
+    }
+
+    @Override
+    public void deactivateUser(UserVO userVO) {
+        userDAO.modifyUserState(userVO);
+    }
+
+
 }
