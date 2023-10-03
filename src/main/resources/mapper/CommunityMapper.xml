@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.app.ptever.mapper.CommunityMapper">
-
+    <select id="selectAll" resultType="postDTO">
+        SELECT P.POST_ID, P.COMMUNITY_ID, P.USER_ID, P.POST_TITLE, P.POST_CONTENT, P.POST_DATE, P.POST_UPDATE_DATE, C.COMMUNITY_TYPE
+        FROM TBL_POST P
+        JOIN TBL_COMMUNITY C
+        ON P.COMMUNITY_ID = C.COMMUNITY_ID
+        ORDER BY P.POST_ID DESC
+    </select>
 </mapper>
