@@ -7,6 +7,7 @@ import java.util.Optional;
 
 @Mapper
 public interface CourseMapper {
+
 //    강의 아이디로 강의 상세정보 조회
     public Optional<CourseDTO> selectById(Long courseId);
 }

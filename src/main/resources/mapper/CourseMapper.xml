@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.app.ptever.mapper.CourseMapper">
     <select id="selectById" resultType="courseDTO">
-        SELECT C.COURSE_TITLE, C.COURSE_DESCRIPTION, C.COURSE_PRICE, C.COURSE_DISCOUNT, CR.REVIEW_CONTENT, CR.USER_ID
+        SELECT C.COURSE_ID, C.COURSE_TITLE, C.COURSE_DESCRIPTION, C.COURSE_PRICE, C.COURSE_DISCOUNT, CR.REVIEW_CONTENT, CR.USER_ID
         FROM TBL_COURSE C
         LEFT OUTER JOIN TBL_COURSE_REVIEW CR
         ON C.COURSE_ID = CR.COURSE_ID
