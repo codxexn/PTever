@@ -13,7 +13,7 @@
     </insert>
 
     <select id="selectByEmail" resultType="userVO">
-        SELECT USER_ID, USER_EMAIL, USER_PASSWORD
+        SELECT USER_ID, USER_EMAIL, USER_PASSWORD, USER_STATE
         FROM TBL_USER
         WHERE USER_EMAIL = #{userEmail}
     </select>
@@ -21,6 +21,12 @@
     <update id="updateToWithdraw">
         UPDATE TBL_USER
         SET USER_STATE = 'WITHDRAWN'
+        WHERE USER_EMAIL = #{userEmail}
+    </update>
+
+    <update id="rejoin">
+        UPDATE TBL_USER
+        SET USER_PASSWORD = #{userPassword}, USER_NICKNAME = #{userNickname}, USER_PHONE = #{userPhone}, USER_STATE = 'ACTIVE'
         WHERE USER_EMAIL = #{userEmail}
     </update>
 </mapper>

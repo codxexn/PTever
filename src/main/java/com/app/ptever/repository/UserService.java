@@ -1,6 +1,7 @@
 package com.app.ptever.repository;
 
 import com.app.ptever.domain.vo.UserVO;
+import org.apache.catalina.User;
 
 import java.util.Optional;
 
@@ -17,4 +18,7 @@ public interface UserService {
 
     // 회원탈퇴
     public void deactivateUser(UserVO userVO);
+
+    // 탈퇴 회원 재가입
+    public void resave(UserVO userVO);
 }

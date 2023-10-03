@@ -35,5 +35,10 @@ public class UserServiceImpl implements UserService {
         userDAO.modifyUserState(userVO);
     }
 
+    @Override
+    public void resave(UserVO userVO) {
+        userDAO.reWrite(userVO);
+    }
+
 
 }

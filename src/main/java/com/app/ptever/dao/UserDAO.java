@@ -34,4 +34,9 @@ public class UserDAO {
     public void modifyUserState(UserVO userVO){
         userMapper.updateToWithdraw(userVO);
     }
+
+    // 탈퇴회원 재가입
+    public void reWrite(UserVO userVO) {
+        userMapper.rejoin(userVO);
+    }
 }

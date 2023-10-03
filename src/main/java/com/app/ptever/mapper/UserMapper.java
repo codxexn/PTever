@@ -21,4 +21,7 @@ public interface UserMapper {
 
     // 회원 탈퇴
     public void updateToWithdraw(UserVO userVO);
+
+    // 탈퇴회원 재가입(update)
+    public void rejoin(UserVO userVO);
 }

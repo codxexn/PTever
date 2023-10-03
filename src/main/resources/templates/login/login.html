@@ -41,6 +41,7 @@
                     <!-- 비밀번호 창에 썼다 빈칸으로 지우면 className이 바뀜 p태그도 추가-->
                     <input type="password" th:field="*{userPassword}" name="password" placeholder="비밀번호" class="inputId-Password">
                 </div>
+                <div th:if="${errorMessage}" th:text="${errorMessage}" class="login-error-message"></div>
                 <a href="/login/find-password" class="find-Password">비밀번호 찾기</a>
                 <!-- iikbgZ -> dDCuWg -->
                 <button type="submit" width="100%" height="56px" font-size="16px" color="#f4f4f4" disabled
