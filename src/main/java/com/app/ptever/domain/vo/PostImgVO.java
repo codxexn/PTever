@@ -8,9 +8,9 @@ import java.time.LocalDate;
 
 @Component
 @Data
-public class ProductImgVO implements Serializable {
-    // 상품 이미지 id
-    private Long productImgId;
+public class PostImgVO implements Serializable {
+    //게시글 이미지 Id
+    private Long postImgId;
     // 원본 파일 이름
     private String originFileName;
     // 서버에 저장된 파일 이름
@@ -29,6 +29,7 @@ public class ProductImgVO implements Serializable {
     private LocalDate createDate;
     // 업데이트 날짜
     private LocalDate updateDate;
-    // ============================
-    private Long productId; // 상품 id
+    //===============================
+    // 게시물 id
+    private Long postId;
 }
