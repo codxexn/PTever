@@ -61,7 +61,7 @@
                 <div class="Fade_Wrapper" style="opacity: 1; display: block;">
                     <ul class="FullPage_Wrapper" >
                         <li th:each="List:${allPosts}">
-                            <a th:href="@{'/community/detail/' + ${List.postId}}">
+                            <a th:href="@{'/community/detail?postId=' + ${List.postId}}">
                                 <div class="NoticeEntity_TitleWrapper">
                                     <div th:text="${List.communityType}" class="FreePost_Badge"></div>
     

@@ -6,21 +6,19 @@ import com.app.ptever.repository.CommunityService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
 
 import javax.servlet.http.HttpSession;
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 @Slf4j
 @RequiredArgsConstructor
 @RequestMapping("/community/*")
-@RestController
 public class CommunityController {
     private final CommunityService communityService;
 
@@ -30,7 +28,7 @@ public class CommunityController {
         ModelAndView mav = new ModelAndView();
         List<PostDTO> allPosts = communityService.findAll();
         mav.addObject("allPosts", allPosts);
-        log.info(mav.toString());
+//        log.info(mav.toString());
         return mav;
     }
 
@@ -39,8 +37,16 @@ public class CommunityController {
     public void GoToFreePost(){;}
 
 //    자유 게시판 상세보기
+
     @GetMapping("detail")
-    public void GoToDetail(){;}
+    public void showDetail(@RequestParam(value="postId", required = false) Long postId, Model model){
+        Optional<PostDTO> foundPost = communityService.findByPostId(postId);
+        if (foundPost.isPresent()){
+            model.addAttribute("post", foundPost.get());
+        } else {
+            model.addAttribute("post", null);
+        }
+    }
 
 //    내가 쓴 글
     @GetMapping("iWrite")
