@@ -1,6 +1,7 @@
 package com.app.ptever.controller;
 
 import com.app.ptever.domain.dto.CourseSelectDTO;
+import com.app.ptever.repository.MainService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
@@ -14,9 +15,11 @@ import java.util.List;
 @RequiredArgsConstructor
 
 public class MainController {
-
+    private final MainService mainService;
     @GetMapping("/")
-    public String GoToMain(){
+    public String GoToMain(Model model){
+        List<CourseSelectDTO> courseList = mainService.getScoreCourseList();
+        model.addAttribute("courseAvgScoreList", courseList);
         return "mainpage/mainpage";
     }
 }

@@ -14,7 +14,7 @@ public class CourseSelectDTO {
     private Integer coursePrice;
     // 강의 상태(default: active, 반대: inactive(강의 삭제(?) 사라지게)
     private String courseState;
-    // 강의 평균 별정
+    // 강의 평균 별점
     private Double courseAvgScore;
     // 강의 난이도(쉬움, 보통, 어려움으로 분류 우리 페이지에 있나? 근데?)
     private String courseLevelDifficulty;
