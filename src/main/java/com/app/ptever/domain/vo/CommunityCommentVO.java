@@ -9,11 +9,19 @@ import java.time.LocalDate;
 @Component
 @Data
 public class CommunityCommentVO implements Serializable {
+    // 게시물 댓글
+    private Long communityCommentId;
+    // 내용
+    private String commentContent;
+    // 작성일
+    private LocalDate commentDate;
+    // 수정일
+    private LocalDate commentUpdateDate;
     // 생성 날짜
     private LocalDate createDate;
     // 업데이트 날짜
     private LocalDate updateDate;
     // ==============================
-    private Integer commentId; // 댓글 id
-    private Integer communityId; // 커뮤니티 id
+    private Long userId; // 유저 id
+    private Long communityId; // 커뮤니티 id
 }
