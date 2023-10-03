@@ -56,6 +56,8 @@
                         <input type="password" name="passwordConfirm" placeholder="비밀번호 한 번 더"
                                class="correct-Input-Form">
                     </div>
+                    <div th:if="${errorMessage}" th:text="${errorMessage}" class="join-error-message"></div>
+                    <a th:if="${errorMessage}" href="/login/find-password" class="find-Password">비밀번호 찾기</a>
                     <!-- chSrfn -> foCOgK -->
                     <button type="submit" width="100%" height="56px" color="#f4f4f4" font-size="16px" disabled
                             class="correct-RegisterPage-Submit-Btn">다음

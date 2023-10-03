@@ -21,4 +21,10 @@ public interface UserMapper {
 
     // 회원 탈퇴
     public void updateToWithdraw(UserVO userVO);
+
+    // 탈퇴회원 재가입(update)
+    public void rejoin(UserVO userVO);
+
+    // 비밀번호 재설정을 위한 임시비밀번호로의 업데이트
+    public void updatePassword(String userEmail, String userPassword);
 }
