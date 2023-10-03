@@ -11,13 +11,13 @@ import java.time.LocalDate;
 @Data
 public class CommunityVO implements Serializable {
     // 커뮤니티 id
-    private Integer communityId;
+    private Long communityId;
     // 커뮤니티 종류
     private String communityType;
     // 생성 날짜
     private LocalDate createDate;
     // 업데이트 날짜
     private LocalDate updateDate;
-    // ============================
-    private Integer userId; // 유저 id
+//    // ============================
+//    private Long userId; // 유저 id
 }
