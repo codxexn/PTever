@@ -1,6 +1,6 @@
 package com.app.ptever;
 
-import com.app.ptever.domain.vo.CourseVO;
+import com.app.ptever.domain.dto.CourseDTO;
 import com.app.ptever.mapper.CourseMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
@@ -15,8 +15,8 @@ public class CourseMapperTests {
 
     @Test
     public void selectByIdTest() {
-//        CourseVO courseVO = new CourseVO();
-        courseMapper.selectById(1L).map(CourseVO::toString).ifPresent(log::info);
+
+        courseMapper.selectById(3L).map(CourseDTO::toString).ifPresent(log::info);
 
     }
 }
