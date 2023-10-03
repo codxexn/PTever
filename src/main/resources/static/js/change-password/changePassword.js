@@ -1,7 +1,7 @@
 globalThis.flag = false;
 
-const inputOldPw = document.querySelector("input[name=oldPw]");
-const inputNewPassword = document.querySelector("input[name=newPw]");
+const inputOldPw = document.querySelector("input[name=oldPassword]");
+const inputNewPassword = document.querySelector("input[name=newPassword]");
 const correctDescription = document.querySelector(
     "input[name=passwordConfirm]"
 );

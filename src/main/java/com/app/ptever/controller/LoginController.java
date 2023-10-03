@@ -1,6 +1,7 @@
 package com.app.ptever.controller;
 
 
+import com.app.ptever.domain.dto.PasswordMailDTO;
 import com.app.ptever.domain.vo.UserVO;
 import com.app.ptever.repository.UserService;
 import lombok.RequiredArgsConstructor;
@@ -106,7 +107,7 @@ public class LoginController {
     public RedirectView signUp(UserVO userVO, @RequestParam("userEmail") String inputEmail, @RequestParam("userPassword") String inputPassword, @RequestParam("userState") String inputState, HttpSession session){
         userVO.setUserEmail(inputEmail);
         userVO.setUserPassword(inputPassword);
-        if (inputState == null){
+        if (inputState.isEmpty()){
             // 완전히 새로운 회원일 경우
             userService.save(userVO);
         } else {
@@ -133,9 +134,18 @@ public class LoginController {
     public RedirectView checkByEmail(@RequestParam("userEmail") String userEmail){
         Optional<UserVO> foundUser = userService.checkByEmail(userEmail);
         if (foundUser.isPresent()){
+            PasswordMailDTO passwordMailDTO = userService.createMailAndChangePassword(userEmail);
+            userService.sendEmail(passwordMailDTO);
             return new RedirectView("/login/find-passwordToSendEmail");
         }
-        return new RedirectView("/login/find-password");
+        return new RedirectView("/login/find-password-error");
+    }
+
+    @GetMapping("find-password-error")
+    public String checkEmailError(String userEmail, Model model){
+        String errorMessage = "등록되지 않은 이메일입니다.";
+        model.addAttribute("errorMessage", errorMessage);
+        return "login/find-password";
     }
 
     //    인증번호 메일로 보내기
@@ -144,7 +154,17 @@ public class LoginController {
 
     //    비밀번호 변경
     @GetMapping("changePassword")
-    public void GoToChangePassword(){;}
+    public void GoToChangePassword(HttpSession session, String oldPassword, String newPassword){;}
+
+    @PostMapping("changePassword")
+    public RedirectView changePassword(HttpSession session, @RequestParam("oldPassword") String oldPassword, @RequestParam("newPassword") String newPassword){
+        UserVO currentUser = (UserVO) session.getAttribute("user");
+        if (!currentUser.getUserPassword().equals(oldPassword)) {
+            return new RedirectView("/login/changePassword-error");
+        }
+        userService.saveNewPassword(currentUser.getUserEmail(), newPassword);
+        return new RedirectView("/login/login");
+    }
 
 
 

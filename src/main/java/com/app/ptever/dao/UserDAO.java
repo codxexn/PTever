@@ -39,4 +39,7 @@ public class UserDAO {
     public void reWrite(UserVO userVO) {
         userMapper.rejoin(userVO);
     }
+
+    // 비밀번호 재설정을 위한 임시비밀번호로의 업데이트
+    public void changePassword(String userEmail, String userPassword){ userMapper.updatePassword(userEmail, userPassword);}
 }

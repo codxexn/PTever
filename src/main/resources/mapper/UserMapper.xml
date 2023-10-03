@@ -29,4 +29,10 @@
         SET USER_PASSWORD = #{userPassword}, USER_NICKNAME = #{userNickname}, USER_PHONE = #{userPhone}, USER_STATE = 'ACTIVE'
         WHERE USER_EMAIL = #{userEmail}
     </update>
+
+    <update id="updatePassword">
+        UPDATE TBL_USER
+        SET USER_PASSWORD = #{userPassword}
+        WHERE USER_EMAIL = #{userEmail}
+    </update>
 </mapper>
