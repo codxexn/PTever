@@ -15,6 +15,23 @@ html, body {
     overflow-wrap: break-word;
 }
 
+hr{
+    height: 0;
+    overflow: visible;
+}
+
+hr{
+    display: block;
+    unicode-bidi: isolate;
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    overflow: hidden;
+    border-style: inset;
+    border-width: 1px;
+}
+
 html {
     display: block;
     box-sizing: border-box;
@@ -36,16 +53,53 @@ button,input{
     overflow: visible;
 }
 
+button:disabled{
+    background-color: -internal-light-dark(rgba(239, 239, 239, 0.3), rgba(19, 1, 1, 0.3));
+    color: -internal-light-dark(rgba(16, 16, 16, 0.3), rgba(255, 255, 255, 0.3));
+    border-color: -internal-light-dark(rgba(118, 118, 118, 0.3), rgba(195, 195, 195, 0.3));
+}
 
+
+button, input, select, textarea {
+    background-color: transparent;
+    border-style: none;
+    color: inherit;
+    font-size: 1em;
+    margin: 0;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a {
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+}
+
+audio, canvas, iframe, img, svg, video {
+    vertical-align: middle;
+}
+
+/*a:-webkit-any-link{*/
+/*    color: -webkit-link;*/
+/*    cursor: pointer;*/
+/*    text-decoration: underline;*/
+/*}*/
 
 body {
     margin: 0;
 }
 
-#root {
-    background-color: white;
-    min-height: 100%;
-    min-width: 100%;
+::before, ::after{
+    text-decoration: inherit;
+    vertical-align: inherit;
+}
+
+*, ::before, ::after{
+    background-repeat: no-repeat;
+    box-sizing: inherit;
 }
 
 button, html [type="button"], [type="reset"], [type="submit"]{
@@ -55,6 +109,11 @@ button, html [type="button"], [type="reset"], [type="submit"]{
 a, area, button, input, label, select, textarea, [tabindex] {
     -ms-touch-action: manipulation;
     touch-action: manipulation;
+}
+
+img {
+    overflow-clip-margin: content-box;
+    overflow: clip;
 }
 
 button {
@@ -101,33 +160,49 @@ button, input, select, textarea {
 
 /* body부분 */
 
-div.RootWrapper{
-    position:relative;
-    display:flex;
-    flex-flow:column;
-    min-height:100vh;
+.NoHeart{
+    filter: drop-shadow(rgba(0, 0, 0, 0.4) 1px 1px 3px);
+    display: block;
+}
+
+.RedHeart {
+    filter: drop-shadow(rgba(0, 0, 0, 0.4) 1px 1px 3px);
+    display: none;
 }
 
 
-div.PageWrapper{
-    display:flex;
-    flex-flow:column;
+#root{
+    background-color: white;
+    min-height: 100%;
+    min-width: 100%;
+}
+
+.RootWrapper{
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    min-height: 100vh;
+}
+
+.PageWrapper{
+    display: flex;
+    flex-flow: column;
     align-content: flex-start;
-    margin:0px auto;
-    max-width:808px;
-    width:100%;
-    padding:0px 20px;
-    min-height:1px;
+    margin: 0px auto;
+    max-width: 808px;
+    width: 100%;
+    padding: 0px 20px;
+    min-height: 1px;
 }
 
-div.FadeWrapper{
-    width:auto;
-    height:auto;
-    transition:opacity 200ms ease-in-out 0s;
-    display:none;
-    opacity:0;
-    min-width:0px;
-    min-height:1px;
+.FadeWrapper{
+    width: auto;
+    height: auto;
+    transition: opacity 200ms ease-in-out 0s;
+    display: none;
+    opacity: 0;
+    min-width: 0px;
+    min-height: 1px;
 }
 
 div.CategoryWrapper{
@@ -156,6 +231,10 @@ div.ItemListWrapper{
 a{
     color:inherit;
     text-decoration: none;
+}
+
+.FilterWrapper{
+    position: relative;
 }
 
 div.FilterWrapper{
@@ -222,287 +301,648 @@ button.FilteringButton{
     font-weight: 500;
 }
 
-div.ProductSectionHeader{
-    display:flex;
-    -webkit-box-pack:justify;
-    justify-content:space-between;
-    margin-bottom:30px;
-    line-height:18px;
-    font-size:14px;
-}
-
-div.SectionHeader{
-    display:flex;
-    max-width: calc(100% - 62px);
-    font-size:18px;
-    line-height:22px;
-}
-
-h2{
-    margin:0px;
-    padding:0px;
-}
-
-h2.SectionTitle{
-    display:block;
-    margin-right:8px;
-    font-weight: bold;
-    color:black;
-    font-size:inherit;
-    overflow:hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-}
-
-span.CountNumber{
+.ProductListTitleWrapper{
+    display: flex;
     font-weight: 300;
-}
-
-div.LinkSectionHeader{
-    min-width: 52px;
-}
-
-a.link{
-    color:black;
-    width:52px;
-}
-
-section.CardGroupProductWrapper{
-    position:relative;
-    display:flex;
-    flex-flow:column;
-    min-height:1px;
-    padding-bottom: 18px;
-}
-
-div.CardGroupProductContent{
-    display:flex;
-    flex-flow:wrap;
-    min-height:1px;
-}
-
-.CardGroupProductContent > * {
-    margin-right: 10px;
+    margin-top: 23px;
     margin-bottom: 30px;
-    width: calc(25% - 11.25px) !important;
+    line-height: 18px;
+    font-size: 18px;
 }
 
-div.CardProductWrapper{
-    display:flex;
+.ProductListTitle{
+    margin-right: 4px;
+    font-weight: bold;
+}
+
+.ProductListProductWrapper{
+    display: flex;
+    flex-flow: wrap;
+}
+
+.ProductListProductWrapper > :nth-child(4n){
+    margin-right: 0px;
+}
+
+.ProductListProductWrapper > * {
+    margin-right: 15px;
+    -webkit-box-flex: 0;
+    flex: 0 1 calc(25% - 11.25px);
+    width: calc(25% - 11.25px);
+    margin-bottom: 60px;
+}
+
+.CardProductWrapper{
+    display: flex;
     flex-flow: column;
-    width:100%;
+    /*width: 100%;*/
     background-color: white;
     min-height: 1px;
 }
 
-a.withLink{
+.WithLinkStyledLink{
     min-height: 1px;
 }
 
-div.CardProductInfo{
+.CardProductInfoWrapper{
     overflow: hidden;
 }
 
-div.CardProductImg{
-    position:relative;
+.CardProductImageContainer{
+    position: relative;
 }
 
-div.ImgWrapper{
-    min-height:1px;
+.ImageWrapper{
+    min-height: 1px;
 }
 
-img.StyledImage{
-    display:initial;
+.ImageStyledImageLoader{
+    display: none !important;
+}
+
+.ImageStyledImage{
+    display: initial;
     border-radius: 5px;
-    width:100%;
-    height:100%;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
 }
 
-div.CardProductWish{
-    position:absolute;
-    right:15px;
-    bottom:13px;
+.CardProductWishWrapper{
+    position: absolute;
+    right: 15px;
+    bottom: 13px;
 }
 
-button.ButtonWish{
-    width:24px;
-    height:24px;
-    line-height:normal;
-    padding:0px;
+.ButtonWishStyledButton{
+    width: 24px;
+    height: 24px;
+    line-height: normal;
+    padding: 0px;
     background-color: transparent;
     text-align: center;
-    cursor:pointer;
+    cursor: pointer;
     border-radius: 5px;
-    font-size:14px;
-    outline:none;
+    font-size: 14px;
+    outline: none;
 }
 
-.ButtonWish > img{
-    /*filter:drop-shadow(rgba(0,0,0,0.4) 1px 1px 3px);*/
+.ButtonWishStyledButton > img{
+    filter: drop-shadow(rgba(0, 0, 0, 0.4) 1px 1px 3px);
 }
 
-div.CardProductDetailContainer{
-    padding:10px 13px 0px 11px;
+.CardProductDetailContainer{
+    padding: 10px 13px 0px 11px;
 }
 
-span.CardProductLocation{
-    display:block;
-    color:rgb(119,119,119);
-    font-size:10px;
+.CardProductLocation{
+    display: block;
+    color: rgb(119, 119, 119);
+    font-size: 10px;
     font-weight: 400;
     line-height: 14px;
-    margin:0px 0px 8px;
+    margin: 0px 0px 8px;
 }
 
-div.CardProductTitle{
-    height:auto;
-    margin:0px 0px 9px;
+.CardProductTitle{
+    height: auto;
+    margin: 0px 0px 9px;
     font-weight: 400;
-    word-break:keep-all;
-    overflow-wrap:break-word;
-    overflow:hidden;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+    overflow: hidden;
     text-overflow: ellipsis;
     -webkit-line-clamp: 2;
-    display:-webkit-box;
+    display: -webkit-box;
     -webkit-box-orient: vertical;
     max-height: 40px;
-    line-height:20px;
-    font-size:14px;
+    line-height: 20px;
+    font-size: 14px;
 }
 
-div.CardProductReview{
-    display:flex;
+.CardProductReviewContainer{
+    display: flex;
     -webkit-box-align: center;
     align-items: center;
 }
 
-div.ReadonlyWrapper{
-    display:flex;
+.ReadOnlyWrapper{
+    display: flex;
     flex-flow: row;
 }
 
-.ReadonlyWrapper > img{
+.ReadOnlyWrapper > img {
     margin-right: 1px;
 }
 
-span.CardProductReviewGo{
-    display:block;
-    margin:0px 0px 0px 4px;
-    color:rgb(51,51,51);
-    font-size:10px;
-    font-weight:400;
+.CardProductReview{
+    display: block;
+    margin: 0px 0px 0px 4px;
+    color: rgb(51, 51, 51);
+    font-size: 10px;
+    font-weight: 400;
     line-height: 14px;
     letter-spacing: -0.03em;
 }
 
-hr.BorderLine{
-    height:1px;
-    background-color: rgb(255,255,255);
-    margin:8px 0px;
-    border-top:1px solid rgb(238,238,238);
+.Border{
+    height: 1px;
+    background-color: rgb(255, 255, 255);
+    margin: 8px 0px;
+    border-top: 1px solid rgb(238, 238, 238);
     border-left: none;
-    border-right:none;
-    border-bottom:none;
+    border-right: none;
+    border-bottom: none;
 }
 
-hr{
-    overflow:visible;
-}
-
-div.CardProductPriceContainer{
-    display:flex;
+.CardProductPriceContainer{
+    display: flex;
     flex-direction: column;
 }
 
-div.CardProductPrice{
-    color:rgb(204,204,204);
-    font-size:10px;
+.CardProductPrice{
+    color: rgb(204, 204, 204);
+    font-size: 10px;
     line-height: 14px;
     letter-spacing: -0.48px;
     text-decoration: line-through;
 }
 
-div.CardProductDiscountPrice{
-    display:flex;
+.CardProductDiscountRateContainer{
+    display: flex;
 }
 
-div.CardProductDiscountRate{
-    margin:0px 2px 0px 0px;
-    color:rgb(255, 63, 51);
-    font-size:14px;
+.CardProductDiscountRate{
+    margin: 0px 2px 0px 0px;
+    color: rgb(255, 63, 51);
+    font-size: 14px;
     font-weight: 700;
     line-height: 22px;
 }
 
-div.CardProductSalePrice{
-    color:rgb(51,51,51);
-    font-size:14px;
+.CardProductSalePrice{
+    color: rgb(51, 51, 51);
+    font-size: 14px;
     font-weight: 700;
     line-height: 22px;
 }
 
-div.CardProductTagContainer{
-    display:flex;
-    flex-wrap:wrap;
-    margin:8px 0px 0px;
+.WrapperPaginationWrapper{
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-flex: 0;
+    flex: 0 0 auto;
+    width: 100%;
+    padding: 30px 0px;
+    background-color: white;
 }
 
-span.CardProductTagComponent{
-    padding:4px 6px;
-    font-size:10px;
-    font-weight: 500;
-    line-height: 14px;
-    border-radius: 5px;
-    color:rgb(255,63,51);
-    background-color: rgb(244,244,244);
+.PaginationButtonGroupPrevButtonWrapper{
+    display: flex;
+    margin-right: 10px;
 }
 
-img.RefreshIcon{
-    cursor:pointer;
-    vertical-align: top;
-    margin-left: 8px;
+button:disabled{
+    cursor: not-allowed;
 }
 
-div.ProductCardGroupWrapper{
-    position:relative;
-    display:flex;
+.ButtonPageStyledButton{
+    width: 40px;
+    height: 40px;
+    line-height: normal;
+    padding: 0px;
+    background-color: white;
+    text-align: center;
+    cursor: not-allowed;
+    border-radius: 50%;
+    font-size: 18px;
+    display: flex;
     -webkit-box-pack: center;
     justify-content: center;
     -webkit-box-align: center;
-    align-items:center;
-    height:184px;
-    border:1px solid rgb(238,238,238);
-    border-radius:5px;
-    text-align:center;
+    align-items: center;
+    outline: none;
 }
 
-div.NearByProductCardGroupExtendedPlaceHolderWrapper{
-    cursor:pointer;
-    margin-bottom:31px;
+.PaginationButtonGroupIcon{
+    transform: rotate(180deg);
 }
 
-img.NearByProductCardGroup{
-    margin-bottom: 14px;
-    width:50px;
-    height:50px;
+.ButtonPageStyledNumberButton{
+    width: 40px;
+    height: 40px;
+    line-height: normal;
+    padding: 0px;
+    background-color: white;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 50%;
+    color: rgb(51, 151, 255);
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    outline: none;
 }
 
-div.NearByProductCardGroupTextWrapper{
-    font-size:14px;
-    font-weight:300;
-    line-height: 22px;
-    color:rgb(187,187,187);
+.ButtonPageStyledNumberButtons{
+    width: 40px;
+    height: 40px;
+    line-height: normal;
+    padding: 0px;
+    background-color: white;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 50%;
+    color: black;
+    font-size: 18px;
+    font-weight: normal;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    outline: none;
 }
 
-button.ButtonWish img.NoHeart{
-    /*filter: drop-shadow(rgba(0, 0, 0, 0.4) 1px 1px 3px);*/
-    display: none;
+.PaginationButtonGroupNextButtonWrapper{
+    display: flex;
+    margin-left: 10px;
 }
 
-button.ButtonWish img.RedHeart {
-    /*filter: drop-shadow(rgba(0, 0, 0, 0.4) 1px 1px 3px);*/
-    display: block;
+.ButtonPageStyledButtonToRight{
+    width: 40px;
+    height: 40px;
+    line-height: normal;
+    padding: 0px;
+    background-color: white;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 18px;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    outline: none;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
