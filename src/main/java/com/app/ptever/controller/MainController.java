@@ -18,8 +18,10 @@ public class MainController {
     private final MainService mainService;
     @GetMapping("/")
     public String GoToMain(Model model){
-        List<CourseSelectDTO> courseList = mainService.getScoreCourseList();
-        model.addAttribute("courseAvgScoreList", courseList);
+        List<CourseSelectDTO> courseAvgScoreList = mainService.getScoreCourseList();
+        List<CourseSelectDTO> courseLatestDateList = mainService.getLatestDateCourseList();
+        model.addAttribute("courseAvgScoreList", courseAvgScoreList);
+        model.addAttribute("courseLatestDateList", courseLatestDateList);
         return "mainpage/mainpage";
     }
 }

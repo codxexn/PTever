@@ -16,9 +16,15 @@ public class MainServiceImpl implements MainService {
     private final MainDAO mainDAO;
 
 
-    // 강의 목록
+    // 강의 인기순 목록
     @Override
     public List<CourseSelectDTO> getScoreCourseList() {
+        return mainDAO.findAllCourse();
+    }
+
+    // 강의 최신순 목록
+    @Override
+    public List<CourseSelectDTO> getLatestDateCourseList() {
         return mainDAO.findAllCourse();
     }
 }
