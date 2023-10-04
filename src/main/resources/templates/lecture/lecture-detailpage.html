@@ -94,12 +94,12 @@
                                             34%
                                         </div>
                                         <!-- 할인된 가격 있는 div -->
-                                        <div class="PriceInfoPrice">
+                                        <div class="PriceInfoPrice" th:text="|${#numbers.formatInteger(courseDTO.coursePrice - (courseDTO.coursePrice * 0.01 *courseDTO.courseDiscount),0,'COMMA')}원|">
                                             29,000
-                                            <span class="PriceInfoPriceUnit">원</span>
+<!--                                            <span class="PriceInfoPriceUnit">원</span>-->
                                         </div>
                                         <!-- 원가 있는 div -->
-                                        <div class="PriceInfoFakedPrice" th:text="|${courseDTO.coursePrice}원|">
+                                        <div class="PriceInfoFakedPrice" th:text="|${#numbers.formatInteger(courseDTO.coursePrice,0,'COMMA')}원|">
                                             44,000원
                                         </div>
                                     </div>
