@@ -88,6 +88,11 @@ div.Fade_Wrapper{
 
 }
 
+.List-link-wrapper {
+    font-size: 15px;
+    margin-right: 20px;
+}
+
 .detailPageContent_Wrapper{
     padding: 0px;
 }
