@@ -23,4 +23,5 @@ public class PostDTO {
     private LocalDate createDate;
     private LocalDate updateDate;
     private String userProfilePath;
+    private String userNickname;
 }

@@ -46,7 +46,12 @@
                             </div>
                         </a>
                         
-                        <a href="/community/iWrite" class="FreePostPage_Link">
+                        <a th:if="${session.user == null}" href="/login/login" class="FreePostPage_Link">
+                            <div class="FreePostPage_Link_Wrapper">
+                                <span class="FreePostPage_Link_Element">내가 쓴 게시글</span>
+                            </div>
+                        </a>
+                        <a th:if="${session.user != null}" href="/community/iWrite" class="FreePostPage_Link">
                             <div class="FreePostPage_Link_Wrapper">
                                 <span class="FreePostPage_Link_Element">내가 쓴 게시글</span>
                             </div>
@@ -79,6 +84,7 @@
                                     class="ButtonPage_StyledOff" id="prevprev_button">
                                 <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath fill='%23FFF' fill-opacity='0' fill-rule='nonzero' d='M0 0h40v40H0z'/%3E %3Cpath stroke='%23DDD' stroke-width='1.5' d='M16 16l4 4-4 4M21 16l4 4-4 4'/%3E %3C/g%3E %3C/svg%3E"
                                      class="PaginationButtonGroup_Icon">
+                            </button>
                                 
                                 <button width="40px" height="40px" font-size="18px" disabled
                                         class="ButtonPage_StyledOff" id="prev_button">

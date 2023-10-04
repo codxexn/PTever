@@ -44,8 +44,13 @@
                                 <span class="FreePostPage_Link_Element">소도구 거래 장터</span>
                             </div>
                         </a>
-
-                        <a href="/community/iWrite" class="FreePostPage_Link">
+                        
+                        <a th:if="${session.user == null}" href="/login/login" class="FreePostPage_Link">
+                            <div class="FreePostPage_Link_Wrapper">
+                                <span class="FreePostPage_Link_Element">내가 쓴 게시글</span>
+                            </div>
+                        </a>
+                        <a th:if="${session.user != null}" href="/community/iWrite" class="FreePostPage_Link">
                             <div class="FreePostPage_Link_Wrapper">
                                 <span class="FreePostPage_Link_Element">내가 쓴 게시글</span>
                             </div>

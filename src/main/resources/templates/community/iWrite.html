@@ -13,6 +13,15 @@
         body {
             font-family: 'SUIT', sans-serif;
         }
+        
+        .if-no-posts {
+            margin-top: 80px;
+            text-align: center;
+            vertical-align: center;
+            font-size: 16px;
+            margin-bottom: 50px;
+            color: #c0c0c0;
+        }
     </style>
     <!-- 아래 링크 태그를 꼭 넣어주세요. (경로 조심) -->
     <link rel="stylesheet" href="/css/transaction/transaction.css">
@@ -29,219 +38,51 @@
                 <div class="FreePostPage_Header">
                     <!--구독권 양도 게시판, 소도구 거래 게시판, 내가 쓴 게시판 추가 div입니다.-->
                     <div class="FreePostPage_Bar">
-                        <a href="" class="FreePostPage_Link">
+                        <a href="/community/full-page" class="FreePostPage_Link">
                             <div class="FreePostPage_Link_Wrapper">
                                 <span class="FreePostPage_Link_Element">전체</span>
                             </div>
                         </a>
                         
-                        <a href="" class="FreePostPage_Link">
+                        <a href="/community/free-post" class="FreePostPage_Link">
                             <div class="FreePostPage_Link_Wrapper">
                                 <span class="FreePostPage_Link_Element">자유게시판</span>
                             </div>
                         </a>
                         
-                        <a href="" class="FreePostPage_Link">
+                        <a href="/community/transaction" class="FreePostPage_Link">
                             <div class="FreePostPage_Link_Wrapper">
-                                <span class="FreePostPage_Link_Element">자유게시판</span>
+                                <span class="FreePostPage_Link_Element">소도구 거래 장터</span>
                             </div>
                         </a>
                         
-                        <a href="" class="FreePostPage_Link">
+                        <a href="/community/iWrite" class="FreePostPage_Link">
                             <div class="FreePostPage_Link_Wrapper">
                                 <span class="FreePostPage_Link_Element">내가 쓴 게시글</span>
                             </div>
                         </a>
                     </div>
                     
-                    <button width="210px" font-size="14px" class="ButtonWrite">글쓰기</button>
+                    <button onclick="location.href='/community/write'" width="210px" font-size="14px" class="ButtonWrite">글쓰기</button>
                 </div>
                 
                 <hr class="Hr">
                 
                 <div class="Fade_Wrapper" style="opacity: 1; display: block;">
-                    <ul class="iWrite_Wrapper">
-                        <li>
-                            <div class="iWrite_TitleWrapper">
-                                <div class="iWrite_Bage">내가 쓴 글</div>
-                                
-                                <div class="iWrite_Title">광복절(8/15) 고객센터 운영시간 안내</div>
-                                
-                                <div class="iWrite_Date">2023-08-08 16:05</div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="iWrite_TitleWrapper">
-                                <div class="iWrite_Bage">내가 쓴 글</div>
-                                
-                                <div class="iWrite_Title">현충일(6/6) 고객센터 운영시간 안내</div>
-                                
-                                <div class="iWrite_Date">2023-06-01 08:31</div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="iWrite_TitleWrapper">
-                                <div class="iWrite_Bage">내가 쓴 글</div>
-                                
-                                <div class="iWrite_Title">코로나19 확진자 관련 환불 규정 변경 안내 (6/1 ~ )</div>
-                                
-                                <div class="iWrite_Date">2023-05-30 09:25</div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="iWrite_TitleWrapper">
-                                <div class="iWrite_Bage">내가 쓴 글</div>
-                                
-                                <div class="iWrite_Title">부처님 오신 날(5/27)과 대체 휴무일(5/29) 고객센터 운영시간 안내</div>
-                                
-                                <div class="iWrite_Date">2023-05-24 08:49</div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="iWrite_TitleWrapper">
-                                <div class="iWrite_Bage">내가 쓴 글</div>
-                                
-                                <div class="iWrite_Title">이용 약관 개정 안내
+                    <div th:if="${#lists.isEmpty(foundMyPosts)}" class="if-no-posts">
+                        작성하신 게시물이 없습니다.
+                    </div>
+                    <ul th:if="${foundMyPosts != null}" class="iWrite_Wrapper">
+                        <li th:each="Post:${foundMyPosts}">
+                            <a th:href="@{'/community/detail?postId=' + ${Post.postId}}">
+                                <div class="iWrite_TitleWrapper">
+                                    <div class="iWrite_Bage">내가 쓴 글</div>
+                                    
+                                    <div class="iWrite_Title" th:text="${Post.postTitle}"></div>
+                                    
+                                    <div class="iWrite_Date" th:text="${#temporals.format(Post.postDate, 'yyyy-MM-dd HH:mm')}"></div>
                                 </div>
-                                
-                                <div class="iWrite_Date">2023-05-24 08:49</div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="iWrite_TitleWrapper">
-                                <div class="iWrite_Bage">내가 쓴 글</div>
-                                
-                                <div class="iWrite_Title">5월 17일 (수요일) 고객센터 단축 운영 안내</div>
-                                
-                                <div class="iWrite_Date">2023-05-12 09:53</div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="iWrite_TitleWrapper">
-                                <div class="iWrite_Bage">내가 쓴 글</div>
-                                
-                                <div class="iWrite_Title">위치기반 서비스 이용약관 변경 안내</div>
-                                
-                                <div class="iWrite_Date">2023-04-26 14:47</div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="iWrite_TitleWrapper">
-                                <div class="iWrite_Bage">내가 쓴 글</div>
-                                
-                                <div class="iWrite_Title">근로자의 날(5/1), 어린이날(5/5) 고객센터 운영시간 안내</div>
-                                
-                                <div class="iWrite_Date">2023-04-26 29:34</div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="iWrite_TitleWrapper">
-                                <div class="iWrite_Bage">내가 쓴 글</div>
-                                
-                                <div class="iWrite_Title">삼일절(3/1) 고객센터 운영시간 안내</div>
-                                
-                                <div class="iWrite_Date">2023-02-23 13:21</div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="iWrite_TitleWrapper">
-                                <div class="iWrite_Bage">내가 쓴 글</div>
-                                
-                                <div class="iWrite_Title">설 연휴 기간 (1/21~1/24) 고객센터 운영시간 안내</div>
-                                
-                                <div class="iWrite_Date">2023-01-18 11:31</div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="iWrite_TitleWrapper">
-                                <div class="iWrite_Bage">내가 쓴 글</div>
-                                
-                                <div class="iWrite_Title">공휴일(12/25, 1/1) 고객센터 단축 운영 안내</div>
-                                
-                                <div class="iWrite_Date">2022-12-22 13:26</div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="iWrite_TitleWrapper">
-                                <div class="iWrite_Bage">내가 쓴 글</div>
-                                
-                                <div class="iWrite_Title">프립톡 서비스 종료 안내 (11/23 종료)</div>
-                                
-                                <div class="iWrite_Date">2022-11-17 16:41</div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="iWrite_TitleWrapper">
-                                <div class="iWrite_Bage">내가 쓴 글</div>
-                                
-                                <div class="iWrite_Title">고객센터 상담 서비스 일부 변경 안내</div>
-                                
-                                <div class="iWrite_Date">2022-10-20 10:15</div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="iWrite_TitleWrapper">
-                                <div class="iWrite_Bage">내가 쓴 글</div>
-                                
-                                <div class="iWrite_Title">카카오톡 연계 서비스 장애 관련 안내 (10/17 18:00 정상화)</div>
-                                
-                                <div class="iWrite_Date">2022-10-15 18:34</div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="iWrite_TitleWrapper">
-                                <div class="iWrite_Bage">내가 쓴 글</div>
-                                
-                                <div class="iWrite_Title">10월 공휴일 (10/3, 9, 10) 고객센터 운영시간 안내</div>
-                                
-                                <div class="iWrite_Date">2022-09-28 29:05</div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="iWrite_TitleWrapper">
-                                <div class="iWrite_Bage">내가 쓴 글</div>
-                                
-                                <div class="iWrite_Title">9월 23일 (금요일) 고객센터 단축 운영 안내</div>
-                                
-                                <div class="iWrite_Date">2022-09-32 13:16</div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="iWrite_TitleWrapper">
-                                <div class="iWrite_Bage">내가 쓴 글</div>
-                                
-                                <div class="iWrite_Title">iOS 최소 지원 버전 업데이트 안내</div>
-                                
-                                <div class="iWrite_Date">2023-08-08 16:05</div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="iWrite_TitleWrapper">
-                                <div class="iWrite_Bage">내가 쓴 글</div>
-                                
-                                <div class="iWrite_Title">시스템 점검으로 인한 서비스 일시 중단 안내 (9월 8일, 오전 00:30 ~ 오전 01:30)</div>
-                                
-                                <div class="iWrite_Date">2023-08-08 16:05</div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="iWrite_TitleWrapper">
-                                <div class="iWrite_Bage">내가 쓴 글</div>
-                                
-                                <div class="iWrite_Title">추석 연휴 기간 (9/9~9/12) 고객센터 운영시간 안내</div>
-                                
-                                <div class="iWrite_Date">2023-08-08 16:05</div>
-                            </div>
-                        </li>
-                        
-                        <li>
-                            <div class="iWrite_TitleWrapper">
-                                <div class="iWrite_Bage">내가 쓴 글</div>
-                                
-                                <div class="iWrite_Title">8월 공휴일 (8/15) 고객센터 운영시간 안내</div>
-                                
-                                <div class="iWrite_Date">2023-08-08 16:05</div>
-                            </div>
+                            </a>
                         </li>
                     </ul>
                     
@@ -251,6 +92,7 @@
                                     class="ButtonPage_StyledOff" id="prevprev_button">
                                 <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath fill='%23FFF' fill-opacity='0' fill-rule='nonzero' d='M0 0h40v40H0z'/%3E %3Cpath stroke='%23DDD' stroke-width='1.5' d='M16 16l4 4-4 4M21 16l4 4-4 4'/%3E %3C/g%3E %3C/svg%3E"
                                      class="PaginationButtonGroup_Icon">
+                            </button>
                                 
                                 <button width="40px" height="40px" font-size="18px" disabled
                                         class="ButtonPage_StyledOff" id="prev_button">
@@ -300,4 +142,7 @@
 </div>
 </body>
 <script src="/js/i-write/iWrite.js"></script>
+<script th:inline="javascript">
+    const foundMyPosts = [[${foundMyPosts}]];
+</script>
 </html>
