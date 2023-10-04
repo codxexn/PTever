@@ -10,7 +10,7 @@ import java.time.LocalDate;
 @Data
 public class PostVO implements Serializable {
     // 게시물 id
-    private Integer postId;
+    private Long postId;
     // 제목
     private String postTitle;
     // 내용
@@ -24,6 +24,6 @@ public class PostVO implements Serializable {
     // 업데이트 날짜
     private LocalDate UpdateDate;
     // ==========================
-    private Integer communityId; // 커뮤니티 id
-    private Integer UserId; // 유저 id
+    private Long communityId; // 커뮤니티 id
+    private Long UserId; // 유저 id
 }

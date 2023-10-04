@@ -339,6 +339,12 @@ button, input {
     overflow: visible;
 }
 
+.login-error-message {
+    color: #cc0000;
+    line-height: 20px;
+    float: left;
+}
+
 .find-Password {
     color: rgb(170, 170, 170);
     line-height: 20px;

@@ -40,7 +40,7 @@
         <typeAlias type="com.app.ptever.domain.vo.WishlistProductVO" alias="wishlistProductVO"/>
         <typeAlias type="com.app.ptever.domain.vo.WishlistTrainerVO" alias="wishlistTrainerVO"/>
         <typeAlias type="com.app.ptever.domain.vo.WishlistVO" alias="wishlistVO"/>
-        <!--DTO-->
-        <typeAlias type="com.app.ptever.domain.dto.CourseDTO" alias="courseDTO"/>
+        <typeAlias type="com.app.ptever.domain.dto.PostDTO" alias="postDTO" />
+        <typeAlias type="com.app.ptever.domain.dto.CourseSelectDTO" alias="courseSelectDTO"/>
     </typeAliases>
 </configuration>

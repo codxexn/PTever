@@ -468,7 +468,18 @@ button, [type="submit"] {
     border: none;
 }
 
+.join-error-message {
+    color: #cc0000;
+    line-height: 20px;
+    float: left;
+}
 
+.find-Password {
+    color: rgb(170, 170, 170);
+    line-height: 20px;
+    float: right;
+    border-bottom: 1px solid rgb(170, 170, 170);
+}
 
 /* 미디어 쿼리 */
 .pc {

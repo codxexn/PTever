@@ -29,6 +29,7 @@
                 <form method="post" th:action="@{/login/sign-up-email2}" th:object="${userVO}" autocomplete="false" class="form-RegisterPage">
                     <input type="hidden" th:value="${session.user.userEmail}" th:name="userEmail">
                     <input type="hidden" th:value="${session.user.userPassword}" th:name="userPassword">
+                    <input type="hidden" th:value="${session.user.userState}" th:name="userState">
                     <div>
                         <input type="text"  th:field="*{userNickname}" name="nickname" placeholder="닉네임" class="form-Input">
                     </div>
