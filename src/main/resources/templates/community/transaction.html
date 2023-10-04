@@ -52,8 +52,8 @@
                             </div>
                         </a>
                     </div>
-                    
-                    <button onclick="location.href='/community/write'" width="210px" font-size="14px" class="ButtonWrite">글쓰기</button>
+                    <button th:if="${session.user == null}" onclick="location.href='/login/login'" width="210px" font-size="14px" class="ButtonWrite">글쓰기</button>
+                    <button th:if="${session.user != null}" onclick="location.href='/community/write'" width="210px" font-size="14px" class="ButtonWrite">글쓰기</button>
                 </div>
                 
                 <hr class="Hr">
