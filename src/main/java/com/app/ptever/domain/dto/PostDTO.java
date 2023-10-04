@@ -14,6 +14,7 @@ public class PostDTO {
     private Long postId;
     private Long communityId;
     private Long userId;
+    private String userName;
     private String postTitle;
     private String postContent;
     private LocalDateTime postDate;
@@ -21,4 +22,5 @@ public class PostDTO {
     private String communityType;
     private LocalDate createDate;
     private LocalDate updateDate;
+    private String userProfilePath;
 }

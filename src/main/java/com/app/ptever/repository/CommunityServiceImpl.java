@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Optional;
 
 
 @Service
@@ -20,5 +21,15 @@ public class CommunityServiceImpl implements CommunityService {
     @Override
     public List<PostDTO> findAll() {
         return communityDAO.readAll();
+    }
+
+    @Override
+    public Optional<PostDTO> findByPostId(Long postId) {
+        return communityDAO.readByPostId(postId);
+    }
+
+    @Override
+    public List<PostDTO> findAllByCommunityId(Long communityId) {
+        return communityDAO.readAllByCommunityId(communityId);
     }
 }

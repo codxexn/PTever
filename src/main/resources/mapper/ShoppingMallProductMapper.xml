@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.app.ptever.mapper.ShoppingMallProductMapper">
-
+    <select id="selectProduct" resultType="shoppingMallDTO">
+        SELECT S.PRODUCT_ID, S.PRODUCT_TITLE, S.PRODUCT_DESCRIPTION,
+               S.PRODUCT_PRICE, S.PRODUCT_AVG_SCORE, S.PRODUCT_DISCOUNT
+        FROM TBL_SHOPPING_MALL_PRODUCT S
+    </select>
 </mapper>
