@@ -48,4 +48,9 @@ public class CourseMapperTests {
         courseDAO.findAllReviewByCourseId(39L).stream().map(ReviewDTO::toString).forEach(log::info);
     }
 
+    @Test
+    public void findAllReviewByCourseId() {
+        courseService.findAllReviewByCourseId(39L).stream().map(ReviewDTO::toString).forEach(log::info);
+    }
+
 }

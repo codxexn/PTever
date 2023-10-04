@@ -2,10 +2,12 @@ package com.app.ptever.repository;
 
 import com.app.ptever.dao.CourseDAO;
 import com.app.ptever.domain.dto.CourseDTO;
+import com.app.ptever.domain.dto.ReviewDTO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -17,5 +19,10 @@ public class CourseServiceImpl implements CourseService {
     @Override
     public Optional<CourseDTO> findCourseById(Long courseId) {
         return courseDAO.findCourseById(courseId);
+    }
+
+    @Override
+    public List<ReviewDTO> findAllReviewByCourseId(Long courseId) {
+        return courseDAO.findAllReviewByCourseId(courseId);
     }
 }

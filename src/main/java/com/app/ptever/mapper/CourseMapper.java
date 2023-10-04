@@ -12,6 +12,6 @@ public interface CourseMapper {
 
 //    강의 아이디로 강의 상세정보 조회
     public Optional<CourseDTO> selectById(Long courseId);
-
+//    강의 아이디에 해당하는 모든 리뷰 조회
     public List<ReviewDTO> selectAllReview(Long courseId);
 }

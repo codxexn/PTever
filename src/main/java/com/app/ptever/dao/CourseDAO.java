@@ -16,11 +16,11 @@ import java.util.Optional;
 public class CourseDAO {
     private final CourseMapper courseMapper;
 
-    //강의 상세보기
+    //    강의 상세보기
     public Optional<CourseDTO> findCourseById(Long courseId) {
         return courseMapper.selectById(courseId);
     }
-
+    //    강의 아이디에 해당하는 모든 리뷰 조회
     public List<ReviewDTO> findAllReviewByCourseId(Long courseId) {
         return courseMapper.selectAllReview(courseId);
     }
