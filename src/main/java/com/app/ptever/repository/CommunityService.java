@@ -13,4 +13,7 @@ public interface CommunityService {
 
     // 게시물(1개) 상세 조회
     public Optional<PostDTO> findByPostId(Long postId);
+
+    // 개별 게시판 전체 게시물 최신순으로 가져오기
+    public List<PostDTO> findAllByCommunityId(Long communityId);
 }

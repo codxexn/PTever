@@ -26,4 +26,9 @@ public class CommunityDAO {
     public Optional<PostDTO> readByPostId(Long postId) {
         return communityMapper.selectByPostId(postId);
     }
+
+    // 개별 게시판 전체 게시물 최신순으로 가져오기
+    public List<PostDTO> readAllByCommunityId(Long communityId) {
+        return communityMapper.selectAllByCommunityId(communityId);
+    }
 }
