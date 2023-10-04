@@ -20,4 +20,7 @@ public interface CommunityMapper {
     // 개별 게시판 전체 게시물 최신순으로 조회
     public List<PostDTO> selectAllByCommunityId(Long communityId);
 
+    // 내가 쓴 게시물 목록 조회
+    public List<PostDTO> selectAllByUserId(Long userId);
+
 }
