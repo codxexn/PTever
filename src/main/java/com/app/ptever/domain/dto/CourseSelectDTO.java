@@ -3,6 +3,8 @@ package com.app.ptever.domain.dto;
 import lombok.Data;
 import org.springframework.stereotype.Component;
 
+import java.time.LocalDate;
+
 @Component
 @Data
 public class CourseSelectDTO {
@@ -20,4 +22,6 @@ public class CourseSelectDTO {
     private String courseLevelDifficulty;
     // 강의 할인율
     private Integer courseDiscount;
+    // 강의 생성 일자
+    private LocalDate courseDate;
 }
