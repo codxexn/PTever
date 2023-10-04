@@ -1,28 +1,28 @@
 package com.app.ptever.controller;
 
 import com.app.ptever.domain.dto.PostDTO;
-import com.app.ptever.domain.vo.PostVO;
+import com.app.ptever.domain.dto.CommunityCommentDTO;
+import com.app.ptever.repository.CommunityCommentService;
 import com.app.ptever.repository.CommunityService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
 
 import javax.servlet.http.HttpSession;
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 @Slf4j
 @RequiredArgsConstructor
 @RequestMapping("/community/*")
-@RestController
 public class CommunityController {
     private final CommunityService communityService;
+    private final CommunityCommentService communityCommentService;
 
 //    전체 게시판
     @GetMapping("full-page")
@@ -30,17 +30,43 @@ public class CommunityController {
         ModelAndView mav = new ModelAndView();
         List<PostDTO> allPosts = communityService.findAll();
         mav.addObject("allPosts", allPosts);
-        log.info(mav.toString());
+//        log.info(mav.toString());
         return mav;
     }
 
 //    자유 게시판
     @GetMapping("free-post")
-    public void GoToFreePost(){;}
+    public ModelAndView GoToFreePost(){
+        ModelAndView mav = new ModelAndView();
+        List<PostDTO> freePosts = communityService.findAllByCommunityId(1L);
+        mav.addObject("freePosts", freePosts);
+        return mav;
+    }
 
 //    자유 게시판 상세보기
+
     @GetMapping("detail")
-    public void GoToDetail(){;}
+    public void showDetail(@RequestParam(value="postId", required = false) Long postId, Model model, HttpSession session, CommunityCommentDTO communityCommentDTO){
+        Optional<PostDTO> foundPost = communityService.findByPostId(postId);
+        List<CommunityCommentDTO> foundComments = communityCommentService.findAllByPostId(postId);
+        if (foundPost.isPresent()){
+            model.addAttribute("post", foundPost.get());
+            model.addAttribute("comments", foundComments);
+        } else {
+            model.addAttribute("post", null);
+            model.addAttribute("comments", null);
+        }
+        session.setAttribute("postId", postId);
+    }
+
+    @PostMapping("detail")
+    public RedirectView showDetailAfterComment(@RequestParam("userId") Long userId, @RequestParam("postId") Long postId, CommunityCommentDTO communityCommentDTO){
+        communityCommentDTO.setCommunityId(1L);
+        communityCommentDTO.setUserId(userId);
+        communityCommentDTO.setPostId(postId);
+        communityCommentService.saveComment(communityCommentDTO);
+        return new RedirectView("/community/detail?postId=" + postId);
+    }
 
 //    내가 쓴 글
     @GetMapping("iWrite")
