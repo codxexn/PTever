@@ -79,7 +79,12 @@ public class CommunityController {
 
 //    소도구 거래 게시판
     @GetMapping("transaction")
-    public void GoToTransaction(){;}
+    public ModelAndView GoToTransaction(){
+        ModelAndView mav = new ModelAndView();
+        List<PostDTO> transPosts = communityService.findAllByCommunityId(2L);
+        mav.addObject("transPosts", transPosts);
+        return mav;
+    }
 
 
 
