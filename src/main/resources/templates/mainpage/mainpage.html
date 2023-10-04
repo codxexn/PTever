@@ -209,7 +209,7 @@
                             <div class="CardGroup-ProductContent">
                                 <div class="CardGroup-ProductWrapper" th:each="courseAvgScore : ${courseAvgScoreList}"> <!--th:each="course : ${courseList}"-->
                                     <!--강의에 대한 정보를 가져온 후 그 정보 id랑 맞게 가져와야됨 일단 상세 페이지로 이동하게끔만 함-->
-                                    <a th:href=""> <!--th:href="@{/lecture/lecture-detailpage/{id}(id=${course.courseId})}"-->
+                                    <a href=""> <!--th:href="@{/lecture/lecture-detailpage/{id}(id=${course.courseId})}"-->
                                         <div class="CardProduct-InfoWrapper">
                                             <div class="CardProduct-ImageContainer">
                                                 <div class="CardProduct-ImageWrapper">
@@ -268,17 +268,17 @@
                                                 <hr type="Line" size="16" class="CardProduct-BottomBorder">
                                                 <!--별점순강의할인율이 0%이 아닐 때 쓰는 div-->
                                                 <div class="CardProduct-PriceContainer" th:if="${courseAvgScore.courseDiscount != 0}">
-                                                    <div class="CardProduct-Price" th:text="|${courseAvgScore.coursePrice}원|">원</div> <!--th:text="|${course.coursePrice}원|"-->
+                                                    <div class="CardProduct-Price" th:text="|${#numbers.formatInteger(courseAvgScore.coursePrice,0,'COMMA')}원|">원</div> <!--th:text="|${course.coursePrice}원|"-->
                                                     <div class="CardProduct-DiscountRateContainer"> <!-- th:if="${course.courseDiscount != 0}"-->
                                                         <div class="CardProduct-DiscountRate" th:text="|${courseAvgScore.courseDiscount}%|">50%</div> <!--th:text="|${course.courseDiscount}%|"-->
                                                         <!-- 강의 할인율 계산-->
-                                                        <div class="CardProduct-SalePrice" th:text="|${courseAvgScore.coursePrice - (courseAvgScore.coursePrice * courseAvgScore.courseDiscount / 100)}원|">10원</div> <!--th:text="|${course.coursePrice - (course.coursePrice * course.courseDiscount / 100)}원|"-->
+                                                        <div class="CardProduct-SalePrice" th:text="|${#numbers.formatInteger(courseAvgScore.coursePrice - (courseAvgScore.coursePrice * courseAvgScore.courseDiscount / 100),0,'COMMA')}원|">10원</div> <!--th:text="|${course.coursePrice - (course.coursePrice * course.courseDiscount / 100)}원|"-->
                                                     </div>
                                                 </div>
 <!--                                                별점순강의할인율이 0%일 때 쓰는 div-->
                                                 <div class="CardProduct-PriceContainer" th:if="${courseAvgScore.courseDiscount == 0}">
                                                     <!-- 강의 할인율 계산-->
-                                                    <div class="CardProduct-SalePrice" th:text="|${(courseAvgScore.coursePrice)}원|">10원</div> <!--th:text="|${course.coursePrice - (course.coursePrice * course.courseDiscount / 100)}원|"-->
+                                                    <div class="CardProduct-SalePrice" th:text="|${#numbers.formatInteger(courseAvgScore.coursePrice,0,'COMMA')}원|">10원</div> <!--th:text="|${course.coursePrice - (course.coursePrice * course.courseDiscount / 100)}원|"-->
                                                 </div>
                                             </div>
                                         </div>
