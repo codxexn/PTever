@@ -18,4 +18,13 @@
         ON P.USER_ID = U.USER_ID
         WHERE P.POST_ID = #{postId}
     </select>
+
+    <select id="selectAllByCommunityId" resultType="postDTO">
+        SELECT P.POST_ID, P.COMMUNITY_ID, P.USER_ID, P.POST_TITLE, P.POST_CONTENT, P.POST_DATE, P.POST_UPDATE_DATE, U.USER_NAME
+        FROM TBL_POST P
+        JOIN TBL_USER U
+        ON P.USER_ID = U.USER_ID
+        WHERE P.COMMUNITY_ID = #{communityId}
+        ORDER BY P.POST_ID DESC
+    </select>
 </mapper>

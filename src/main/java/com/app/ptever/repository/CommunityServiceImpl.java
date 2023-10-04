@@ -27,4 +27,9 @@ public class CommunityServiceImpl implements CommunityService {
     public Optional<PostDTO> findByPostId(Long postId) {
         return communityDAO.readByPostId(postId);
     }
+
+    @Override
+    public List<PostDTO> findAllByCommunityId(Long communityId) {
+        return communityDAO.readAllByCommunityId(communityId);
+    }
 }

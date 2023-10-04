@@ -17,4 +17,7 @@ public interface CommunityMapper {
     // 게시물(1개) 상세 조회
     public Optional<PostDTO> selectByPostId(Long postId);
 
+    // 개별 게시판 전체 게시물 최신순으로 조회
+    public List<PostDTO> selectAllByCommunityId(Long communityId);
+
 }

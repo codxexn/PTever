@@ -1,7 +1,10 @@
 package com.app.ptever.controller;
 
 import com.app.ptever.domain.dto.PostDTO;
+import com.app.ptever.domain.vo.CommunityCommentDTO;
+import com.app.ptever.domain.vo.CommunityCommentVO;
 import com.app.ptever.domain.vo.PostVO;
+import com.app.ptever.repository.CommunityCommentService;
 import com.app.ptever.repository.CommunityService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -21,6 +24,7 @@ import java.util.Optional;
 @RequestMapping("/community/*")
 public class CommunityController {
     private final CommunityService communityService;
+    private final CommunityCommentService communityCommentService;
 
 //    전체 게시판
     @GetMapping("full-page")
@@ -34,17 +38,25 @@ public class CommunityController {
 
 //    자유 게시판
     @GetMapping("free-post")
-    public void GoToFreePost(){;}
+    public ModelAndView GoToFreePost(){
+        ModelAndView mav = new ModelAndView();
+        List<PostDTO> freePosts = communityService.findAllByCommunityId(1L);
+        mav.addObject("freePosts", freePosts);
+        return mav;
+    }
 
 //    자유 게시판 상세보기
 
     @GetMapping("detail")
     public void showDetail(@RequestParam(value="postId", required = false) Long postId, Model model){
         Optional<PostDTO> foundPost = communityService.findByPostId(postId);
+        List<CommunityCommentDTO> foundComments = communityCommentService.findAllByPostId(postId);
         if (foundPost.isPresent()){
             model.addAttribute("post", foundPost.get());
+            model.addAttribute("comments", foundComments);
         } else {
             model.addAttribute("post", null);
+            model.addAttribute("comments", null);
         }
     }
 
