@@ -9,5 +9,5 @@
         WHERE C.COURSE_ID = #{courseId}
     </select>
 
-    <select id="selectReviewById" resultType="reviewDTO"
+    
 </mapper>
