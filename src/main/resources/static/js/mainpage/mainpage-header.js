@@ -16,6 +16,7 @@ function checkMobile() {
     }
 }
 
+
 // 페이지 로드 및 브라우저 크기 변화 시 함수 호출
 window.addEventListener("load", checkMobile);
 window.addEventListener("resize", checkMobile);
@@ -58,3 +59,4 @@ function hideKeywordSearchMobile(){
     fadeWrapperMobile.style.display = "none";
     cancelButton.style.display = "none";
 }
+
