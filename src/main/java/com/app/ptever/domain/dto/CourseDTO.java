@@ -11,7 +11,7 @@ import java.time.LocalDate;
 public class CourseDTO implements Serializable {
     // ============================= 강의 테이블 속성
     // 강의 id
-    private Integer courseId;
+    private Long courseId;
     // 강의명
     private String courseTitle;
     // 강의 설명
@@ -66,5 +66,14 @@ public class CourseDTO implements Serializable {
     private Integer categoryAId;
     // 카테고리A 제목
     private String categoryTitle;
+    // ============================ 강의후기 테이블
+    // 강의 후기 id
+    private Long courseReviewId;
+    // 후기 내용
+    private String reviewContent;
+    // 후기 작성일
+    private LocalDate reviewDate;
+    // 후기 수정일
+    private LocalDate reviewUpdateDate;
 
 }
