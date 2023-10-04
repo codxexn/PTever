@@ -4,6 +4,7 @@ import lombok.Data;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Component
 @Data
@@ -23,5 +24,5 @@ public class CourseSelectDTO {
     // 강의 할인율
     private Integer courseDiscount;
     // 강의 생성 일자
-    private LocalDate courseDate;
+    private LocalDateTime courseCreateDate;
 }

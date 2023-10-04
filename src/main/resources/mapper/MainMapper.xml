@@ -24,4 +24,20 @@
         WHERE C2.RN < 5
         ]]>
     </select>
+    <select id="selectAllLatestDateByCourse" resultType="courseSelectDTO">
+        <![CDATA[
+        SELECT * FROM
+            (
+                SELECT ROWNUM AS RN, COURSE_ID, COURSE_TITLE, COURSE_PRICE, COURSE_DISCOUNT, COURSE_AVG_SCORE, COURSE_LEVEL_DIFFICULTY, COURSE_STATE, COURSE_CREATE_DATE
+                FROM
+                    (
+                        SELECT *
+                        FROM TBL_COURSE
+                        WHERE COURSE_STATE = 'ACTIVE'
+                        ORDER BY COURSE_CREATE_DATE DESC NULLS LAST
+                    ) C1
+            ) C2
+        WHERE C2.RN < 5
+        ]]>
+    </select>
 </mapper>

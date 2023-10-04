@@ -8,4 +8,5 @@ import java.util.List;
 @Mapper
 public interface MainMapper {
     public List<CourseSelectDTO> selectAllByCourse();
+    public List<CourseSelectDTO> selectAllLatestDateByCourse();
 }

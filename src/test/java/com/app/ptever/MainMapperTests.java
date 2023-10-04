@@ -18,4 +18,9 @@ public class MainMapperTests {
     public void selectByCourseTest() {
         mainMapper.selectAllByCourse().stream().map(CourseSelectDTO :: toString).forEach(log::info);
     }
+
+    @Test
+    public void selectLatestDateByCourseTest() {
+        mainMapper.selectAllLatestDateByCourse().stream().map(CourseSelectDTO :: toString).forEach(log::info);
+    }
 }
