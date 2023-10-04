@@ -9,5 +9,15 @@
         WHERE C.COURSE_ID = #{courseId}
     </select>
 
-    
+    <select id="selectAllReview" resultType="reviewDTO">
+        SELECT *
+        FROM
+            (SELECT CR.COURSE_ID, CR.COURSE_REVIEW_ID, CR.REVIEW_CONTENT, CR.USER_ID, RI.IMAGE_PATH
+             FROM TBL_COURSE_REVIEW CR
+                      LEFT OUTER JOIN TBL_REVIEW_IMG RI
+                                      ON CR.COURSE_REVIEW_ID = RI.COURSE_REVIEW_ID) R
+                LEFT OUTER JOIN TBL_USER U
+                                ON R.USER_ID = U.USER_ID
+                WHERE R.COURSE_ID = #{courseId}
+    </select>
 </mapper>
