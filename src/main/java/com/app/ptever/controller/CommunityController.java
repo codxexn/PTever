@@ -1,9 +1,7 @@
 package com.app.ptever.controller;
 
 import com.app.ptever.domain.dto.PostDTO;
-import com.app.ptever.domain.vo.CommunityCommentDTO;
-import com.app.ptever.domain.vo.CommunityCommentVO;
-import com.app.ptever.domain.vo.PostVO;
+import com.app.ptever.domain.dto.CommunityCommentDTO;
 import com.app.ptever.repository.CommunityCommentService;
 import com.app.ptever.repository.CommunityService;
 import lombok.RequiredArgsConstructor;
@@ -48,7 +46,7 @@ public class CommunityController {
 //    자유 게시판 상세보기
 
     @GetMapping("detail")
-    public void showDetail(@RequestParam(value="postId", required = false) Long postId, Model model){
+    public void showDetail(@RequestParam(value="postId", required = false) Long postId, Model model, HttpSession session, CommunityCommentDTO communityCommentDTO){
         Optional<PostDTO> foundPost = communityService.findByPostId(postId);
         List<CommunityCommentDTO> foundComments = communityCommentService.findAllByPostId(postId);
         if (foundPost.isPresent()){
@@ -58,6 +56,16 @@ public class CommunityController {
             model.addAttribute("post", null);
             model.addAttribute("comments", null);
         }
+        session.setAttribute("postId", postId);
+    }
+
+    @PostMapping("detail")
+    public RedirectView showDetailAfterComment(@RequestParam("userId") Long userId, @RequestParam("postId") Long postId, CommunityCommentDTO communityCommentDTO){
+        communityCommentDTO.setCommunityId(1L);
+        communityCommentDTO.setUserId(userId);
+        communityCommentDTO.setPostId(postId);
+        communityCommentService.saveComment(communityCommentDTO);
+        return new RedirectView("/community/detail?postId=" + postId);
     }
 
 //    내가 쓴 글

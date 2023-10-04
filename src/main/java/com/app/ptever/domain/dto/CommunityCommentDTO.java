@@ -1,4 +1,4 @@
-package com.app.ptever.domain.vo;
+package com.app.ptever.domain.dto;
 
 
 import lombok.Data;
@@ -15,7 +15,7 @@ public class CommunityCommentDTO {
     // 내용
     private String commentContent;
     // 작성일
-    private LocalDateTime commentDate;
+    private LocalDateTime commentWriteDate;
     // 수정일
     private LocalDateTime commentUpdateDate;
     // 생성 날짜

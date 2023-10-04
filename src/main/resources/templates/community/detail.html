@@ -88,7 +88,7 @@
                         </div>
                     </div>
     
-                    <div class="button_Wrapper">
+                    <div class="button_Wrapper" th:if="${session.user != null}">
                         <button width="210px" font-size="14px" class="ButtonWrite">댓글쓰기</button>
                     </div>
     
@@ -120,14 +120,15 @@
                     </div>
                 </div>
             </div>
-            <form class="commentwrite" id="commentForm">
+            <form th:if="${session.user != null}" method="post" th:action="@{/community/detail}" th:object="${communityCommentDTO}" class="commentwrite" id="commentForm">
                 <div class="backdrop"></div>
             
                 <div class="wrap">
-                    <p class="profile" style="background-image: url(https://res.cloudinary.com/frientrip/image/upload/ar_1:1,c_fill,dpr_2,f_auto,q_auto,w_36/profile-3_e46ec3186ca68d32186d751d56faac64aced55b786f6526ac02bbd04d4f3f3de);">
-                        마스터플랜</p>
+                    <p th:text="${session.user.userNickname}" class="profile" style="background-image: url(https://res.cloudinary.com/frientrip/image/upload/ar_1:1,c_fill,dpr_2,f_auto,q_auto,w_36/profile-3_e46ec3186ca68d32186d751d56faac64aced55b786f6526ac02bbd04d4f3f3de);"></p>
+                    <input type="hidden" th:value="${session.user.userId}" th:name="userId">
+                    <input type="hidden" th:value="${session.postId}" th:name="postId">
             
-                    <textarea placeholder="댓글을 입력하세요."></textarea>
+                    <textarea th:field="*{commentContent}" placeholder="댓글을 입력하세요."></textarea>
             
                     <input type="submit" value="완료" class="submit">
                     <input type="button" value="취소" class="cancel">

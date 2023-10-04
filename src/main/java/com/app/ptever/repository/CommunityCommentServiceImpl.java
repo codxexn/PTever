@@ -1,8 +1,7 @@
 package com.app.ptever.repository;
 
 import com.app.ptever.dao.CommunityCommentDAO;
-import com.app.ptever.domain.vo.CommunityCommentDTO;
-import com.app.ptever.domain.vo.CommunityCommentVO;
+import com.app.ptever.domain.dto.CommunityCommentDTO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -20,5 +19,10 @@ public class CommunityCommentServiceImpl implements CommunityCommentService {
     @Override
     public List<CommunityCommentDTO> findAllByPostId(Long postId) {
         return communityCommentDAO.readAllByPostId(postId);
+    }
+
+    @Override
+    public void saveComment(CommunityCommentDTO communityCommentDTO) {
+        communityCommentDAO.writeComment(communityCommentDTO);
     }
 }

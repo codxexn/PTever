@@ -405,6 +405,7 @@ textarea{
     border: 1px solid rgba(0,0,0,0);
     color: #fff;
     background-color: rgb(51, 151, 255);
+    cursor: pointer;
 }
 
 .cancel{
@@ -412,6 +413,7 @@ textarea{
     border: 1px solid #d6d6d6;
     color: #737373;
     background-color: #fff;
+    cursor: pointer;
 }
 
 input.cancel,
