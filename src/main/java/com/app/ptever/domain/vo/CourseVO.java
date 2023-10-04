@@ -10,7 +10,7 @@ import java.time.LocalDate;
 @Data
 public class CourseVO implements Serializable {
     // 강의 id
-    private Integer courseId;
+    private Long courseId;
     // 강의명
     private String courseTitle;
     // 강의 설명

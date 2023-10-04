@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,246 +13,143 @@
     </style>
     <!-- 아래 링크 태그를 꼭 넣어주세요. (경로 조심) -->
     <link rel="stylesheet" href="/css/mainpage/mainpage-header.css">
-    <link rel="stylesheet" href="/css/detail/detail.css">
-
+    <link rel="stylesheet" href="/css/details/details.css">
+    <th:block th:replace="~{fix/header-login :: my-header-head}"></th:block>
+    <th:block th:replace="~{fix/footer :: my-footer-head}"></th:block>
 </head>
 <body>
-<style>
-    @media screen and (max-width: 767px){
-        div.wrap{
-            position: relative;
-            top: 50%;
-            left: 50%;
-            z-index: 13;
-            box-sizing: border-box;
-            padding: 16px 0;
-            border-radius: 3px;
-            width: 100%;
-            max-width: 440px;
-            background-color: #fff;
-            transform: translate(-50%, -50%);
-            height: 26.3%;
-        }
-
-        .imageBox_Styled{
-            position: relative;
-            top: 50%;
-            left: 50%;
-            z-index: 13;
-            box-sizing: border-box;
-            border-radius: 3px;
-            max-width: 300px;
-            background-color: #fff;
-            transform: translate(-50%, -50%);
-        }
-
-        .imageWrap{
-            position: relative;
-            top: 50%;
-            left: 50%;
-            z-index: 13;
-            box-sizing: border-box;
-            border-radius: 3px;
-            max-width: 200px;
-            background-color: #fff;
-            transform: translate(-50%, -50%);
-        }
-    }
-</style>
-<!-- DOM TREE를 하나로 구성하기 위해서 전체를 감싸는 div태그입니다. -->
-<div id="root">
-    <div class="RootWrapper">
-
-
-
-        <div class="PageWrapper">
-            <div class="Fade_Wrapper">
-                <header class="detailPage_Header">
-                    <div class="detailPage_Wrapper">
-                        <div class="detailPage_Title">
-                            <div>자유게시판</div>
-                        </div>
-                    </div>
-                </header>
-
-                <div class="detailPageContent_Wrapper">
-                    <div class="detailContent_wrapper">
-                        <div class="detailContent_Header">
-                            <div class="detailContent_ProfileImageWrapper">
-                                <div class="Image_Wrapper">
-                                    <div class="Fade_Wrapper" style="opacity: 1; display: block;">
-                                        <div class="Rataio" style="display: block;">
-                                            <div class="Ratio-ratio" style="height: 0px; position: relative; width: 100%; padding-top: 100%;">
-                                                <div class="Ratio-Content" style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;">
-                                                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E %3Cg fill='none' fill-rule='nonzero'%3E %3Ccircle cx='24' cy='24' r='24' fill='%23C2E0FF'/%3E %3Cpath fill='%23FFF' d='M19 24.5h10a4 4 0 0 1 4 4v4H15v-4a4 4 0 0 1 4-4zm5-1.5a4.5 4.5 0 1 1 0-9 4.5 4.5 0 0 1 0 9z'/%3E %3C/g%3E %3C/svg%3E" alt="프로필"
-                                                         class="Image_Default">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="detailContent_MetaData">
-                                <div class="detailContent_Name">김얘승</div>
-                                <div class="detailContent_Row">
-                                    <div class="detailContent_Created">
-                                        2023년 8월 22일 0:15 작성
-                                    </div>
-                                </div>
+    <!-- DOM TREE를 하나로 구성하기 위해서 전체를 감싸는 div태그입니다. -->
+    <div id="root">
+        <div class="RootWrapper">
+            <header th:replace="~{fix/header-login :: header-login}"></header>
+            <div class="PageWrapper">
+                <div class="Fade_Wrapper">
+                    <header class="detailPage_Header">
+                        <div class="detailPage_Wrapper">
+                            <div class="detailPage_Title">
+                                <div>자유게시판</div>
                             </div>
                         </div>
-
-                        <div class="detailContent_Title">
-                            재미있는 운동 추천 해줘
-                        </div>
-
-                        <div class="detailContent_Body">
-                            <div class="detailContent_Content">
-                                요기 프로그램 많은데 초보이고 뭐부터 해야할지 몰라서
-                                추천 플리즈
-                            </div>
-                        </div>
-
-                        <div class="detailContent_LikeButton">
-                            <button class="like_Button">
-                                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath fill='none' d='M0 0h24v24H0z'/%3E %3Cpath fill='%23FFCD00' fill-rule='nonzero' d='M12 3h1v3h-1V3zm5.207 1.086l.707.707-2.121 2.121-.707-.707 2.121-2.121zm-10.121.707l.707-.707 2.121 2.121-.707.707-2.121-2.121z'/%3E %3Cpath fill='%23BBB' stroke='%23BBB' d='M4 22h4v-9H4z'/%3E %3Cpath stroke='%23BBB' d='M17.936 12h-3.958V9.388A1.38 1.38 0 0 0 12.6 8c-.497 0-.965.267-1.212.697L9 13H8v9h9.153a2 2 0 0 0 1.983-1.741l.783-6A2 2 0 0 0 17.936 12z'/%3E %3C/g%3E %3C/svg%3E"
-                                     class="like_Button_Icon" >
-                                <span>0</span>
-                            </button>
-                        </div>
-
-                        <div class="detailContent_ImageWrapper">
-                            <div class="Image_StyledWrapper">
-                                <img class="Image_StyledImage Image" src="https://res.cloudinary.com/frientrip/image/upload/ar_1:1,c_fill,dpr_2,f_auto,q_auto,w_600/photo_1692630896586_b1be811dd1857e7810d2931249a1abd3c68ef28bf58f37d884d555c6f4ce1d9e"
-                                >
-                            </div>
-
-                            <div class="Image_StyledWrapper">
-                                <img class="Image_StyledImage Image" src="https://res.cloudinary.com/frientrip/image/upload/ar_1:1,c_fill,dpr_2,f_auto,q_auto,w_600/photo_1692630897020_9fa2aad18562fc4742896abd0bd6512c2c752ff61b0c42e03fa99d380f117ae8"
-                                >
-                            </div>
-
-                            <div class="Image_StyledWrapper">
-                                <img class="Image_StyledImage Image" src="https://res.cloudinary.com/frientrip/image/upload/ar_1:1,c_fill,dpr_2,f_auto,q_auto,w_600/photo_1692630897435_79fd91cc530fd59631fd0703321a22b679e154fbaac3967abdeb0947c01e0dc8"
-                                >
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="button_Wrapper">
-                    <button width="210px" font-size="14px" class="ButtonWrite">댓글쓰기</button>
-                </div>
-
-                <div class="comment">
-                    <div class="comment_Wrapper">
-                        <div class="commentInner_Wrapper">
-                            <div class="commentInner_Author">
-                                <div class="commentInner_ImageWrapper">
+                    </header>
+                    <div class="detailPageContent_Wrapper">
+                        <div class="detailContent_wrapper">
+                            <div class="detailContent_Header">
+                                <div class="detailContent_ProfileImageWrapper">
                                     <div class="Image_Wrapper">
-                                        <img class="Image_StyledLoader" width="36" src="https://res.cloudinary.com/frientrip/image/upload/ar_1:1,c_fill,dpr_2,f_auto,q_auto,w_36/profile-3_e46ec3186ca68d32186d751d56faac64aced55b786f6526ac02bbd04d4f3f3de" alt="프로필">
-
                                         <div class="Fade_Wrapper" style="opacity: 1; display: block;">
                                             <div class="Ratio" style="display: block;">
                                                 <div class="Ratio-ratio" style="height: 0px; position: relative; width: 100%; padding-top: 100%;">
-                                                    <div class="Ratio-content" style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;">
-                                                        <img src="https://res.cloudinary.com/frientrip/image/upload/ar_1:1,c_fill,dpr_2,f_auto,q_auto,w_36/profile-3_e46ec3186ca68d32186d751d56faac64aced55b786f6526ac02bbd04d4f3f3de" alt="프로필" class="Image_StyledImage">
+                                                    <div class="Ratio-Content" style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;">
+<!--                                                        <img th:src="${post.userProfilePath}" style="width: 48px; height: 48px;" alt="프로필"-->
+<!--                                                             class="Image_Default">-->
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-
-                                <div>
-                                    <div class="InnerCard_Label">마스터플랜</div>
-
-                                    <div class="InnerCard_SubLabel">2023-08-13 14:46 작성</div>
+    
+                                <div class="detailContent_MetaData">
+                                    <div class="detailContent_Name" th:text="${post.userName}"></div>
+                                    <div class="detailContent_Row">
+                                        <div class="detailContent_Created" th:text="${#temporals.format(post.postDate, 'yyyy년 MM월 dd일 HH:mm 작성')}"></div>
+                                    </div>
                                 </div>
                             </div>
-
-                            <div class="InnerCard_Body">한동석 강사님의 덤벨홈트 좋아요╰(*°▽°*)╯</div>
+    
+                            <div class="detailContent_Title" th:text="${post.postTitle}"></div>
+                            <div class="detailContent_Body">
+                                <div class="detailContent_Content" th:text="${post.postContent}"></div>
+                            </div>
+<!--                            <div class="detailContent_LikeButton">-->
+<!--                                <button class="like_Button">-->
+<!--                                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath fill='none' d='M0 0h24v24H0z'/%3E %3Cpath fill='%23FFCD00' fill-rule='nonzero' d='M12 3h1v3h-1V3zm5.207 1.086l.707.707-2.121 2.121-.707-.707 2.121-2.121zm-10.121.707l.707-.707 2.121 2.121-.707.707-2.121-2.121z'/%3E %3Cpath fill='%23BBB' stroke='%23BBB' d='M4 22h4v-9H4z'/%3E %3Cpath stroke='%23BBB' d='M17.936 12h-3.958V9.388A1.38 1.38 0 0 0 12.6 8c-.497 0-.965.267-1.212.697L9 13H8v9h9.153a2 2 0 0 0 1.983-1.741l.783-6A2 2 0 0 0 17.936 12z'/%3E %3C/g%3E %3C/svg%3E"-->
+<!--                                         class="like_Button_Icon" >-->
+<!--                                    <span>0</span>-->
+<!--                                </button>-->
+<!--                            </div>-->
+    
+<!--                            <div class="detailContent_ImageWrapper">-->
+<!--                                <div class="Image_StyledWrapper">-->
+<!--                                    <img class="Image_StyledImage Image" src="https://res.cloudinary.com/frientrip/image/upload/ar_1:1,c_fill,dpr_2,f_auto,q_auto,w_600/photo_1692630896586_b1be811dd1857e7810d2931249a1abd3c68ef28bf58f37d884d555c6f4ce1d9e"-->
+<!--                                    >-->
+<!--                                </div>-->
+<!--    -->
+<!--                                <div class="Image_StyledWrapper">-->
+<!--                                    <img class="Image_StyledImage Image" src="https://res.cloudinary.com/frientrip/image/upload/ar_1:1,c_fill,dpr_2,f_auto,q_auto,w_600/photo_1692630897020_9fa2aad18562fc4742896abd0bd6512c2c752ff61b0c42e03fa99d380f117ae8"-->
+<!--                                    >-->
+<!--                                </div>-->
+<!--    -->
+<!--                                <div class="Image_StyledWrapper">-->
+<!--                                    <img class="Image_StyledImage Image" src="https://res.cloudinary.com/frientrip/image/upload/ar_1:1,c_fill,dpr_2,f_auto,q_auto,w_600/photo_1692630897435_79fd91cc530fd59631fd0703321a22b679e154fbaac3967abdeb0947c01e0dc8"-->
+<!--                                    >-->
+<!--                                </div>-->
+<!--                            </div>-->
                         </div>
                     </div>
-
-                    <div class="comment_Wrapper">
-                        <div class="commentInner_Wrapper">
-                            <div class="commentInner_Author">
-                                <div class="commentInner_ImageWrapper">
-                                    <div class="Image_Wrapper">
-                                        <img class="Image_StyledLoader" width="36" src="https://res.cloudinary.com/frientrip/image/upload/ar_1:1,c_fill,dpr_2,f_auto,q_auto,w_36/profile-3_e46ec3186ca68d32186d751d56faac64aced55b786f6526ac02bbd04d4f3f3de" alt="프로필">
-
-                                        <div class="Fade_Wrapper" style="opacity: 1; display: block;">
-                                            <div class="Ratio" style="display: block;">
-                                                <div class="Ratio-ratio" style="height: 0px; position: relative; width: 100%; padding-top: 100%;">
-                                                    <div class="Ratio-content" style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;">
-                                                        <img src="https://res.cloudinary.com/frientrip/image/upload/ar_1:1,c_fill,dpr_2,f_auto,q_auto,w_36/profile-3_e46ec3186ca68d32186d751d56faac64aced55b786f6526ac02bbd04d4f3f3de" alt="프로필" class="Image_StyledImage">
+    
+                    <div class="button_Wrapper" th:if="${session.user != null}">
+                        <button width="210px" font-size="14px" class="ButtonWrite">댓글쓰기</button>
+                    </div>
+    
+                    <div class="comment">
+                        <div class="comment_Wrapper" th:each="Comment:${comments}">
+                            <div class="commentInner_Wrapper">
+                                <div class="commentInner_Author">
+                                    <div class="commentInner_ImageWrapper">
+                                        <div class="Image_Wrapper">
+                                            <div class="Fade_Wrapper" style="opacity: 1; display: block;">
+                                                <div class="Ratio" style="display: block;">
+                                                    <div class="Ratio-ratio" style="height: 0px; position: relative; width: 100%; padding-top: 100%;">
+                                                        <div class="Ratio-content" style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;">
+<!--                                                            <img src="https://res.cloudinary.com/frientrip/image/upload/ar_1:1,c_fill,dpr_2,f_auto,q_auto,w_36/profile-3_e46ec3186ca68d32186d751d56faac64aced55b786f6526ac02bbd04d4f3f3de" alt="프로필" class="Image_StyledImage">-->
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+                                    <div>
+                                        <div class="InnerCard_Label" th:text="${Comment.userNickname}"></div>
+                                        <div class="InnerCard_SubLabel" th:text="${#temporals.format(Comment.commentWriteDate, 'yyyy-MM-dd HH:mm 작성')}"></div>
+                                    </div>
                                 </div>
-
-                                <div>
-                                    <div class="InnerCard_Label">마스터플랜</div>
-
-                                    <div class="InnerCard_SubLabel">2023-08-13 14:46 작성</div>
-                                </div>
+                                <div class="InnerCard_Body" th:text="${Comment.commentContent}"></div>
                             </div>
-
-                            <div class="InnerCard_Body">한동석 강사님의 덤벨홈트 좋아요╰(*°▽°*)╯</div>
                         </div>
                     </div>
                 </div>
-
-
-
             </div>
-
-
+            <form th:if="${session.user != null}" method="post" th:action="@{/community/detail}" th:object="${communityCommentDTO}" class="commentwrite" id="commentForm">
+                <div class="backdrop"></div>
+            
+                <div class="wrap">
+                    <p th:text="${session.user.userNickname}" class="profile" style="background-image: url(https://res.cloudinary.com/frientrip/image/upload/ar_1:1,c_fill,dpr_2,f_auto,q_auto,w_36/profile-3_e46ec3186ca68d32186d751d56faac64aced55b786f6526ac02bbd04d4f3f3de);"></p>
+                    <input type="hidden" th:value="${session.user.userId}" th:name="userId">
+                    <input type="hidden" th:value="${session.postId}" th:name="postId">
+            
+                    <textarea th:field="*{commentContent}" placeholder="댓글을 입력하세요."></textarea>
+            
+                    <input type="submit" value="완료" class="submit">
+                    <input type="button" value="취소" class="cancel">
+                </div>
+            </form>
+            <form class="imageStyled_Box" id="imageForm">
+                <div class="backdrop"></div>
+                <div class="header">
+                    <span></span>
+            
+                    <button class="close">
+                        <div class="closeButton"></div>
+                    </button>
+                </div>
+                <div class="imageWrap">
+                    <img class="imageBox_Styled">
+                </div>
+            </form>
+            <footer th:replace="~{fix/footer :: my-footer}"></footer>
         </div>
-
     </div>
-
-
-</div>
-<form class="commentwrite" id="commentForm">
-    <div class="backdrop"></div>
-
-    <div class="wrap">
-        <p class="profile" style="background-image: url(https://res.cloudinary.com/frientrip/image/upload/ar_1:1,c_fill,dpr_2,f_auto,q_auto,w_36/profile-3_e46ec3186ca68d32186d751d56faac64aced55b786f6526ac02bbd04d4f3f3de);">
-            마스터플랜</p>
-
-        <textarea placeholder="댓글을 입력하세요."></textarea>
-
-        <input type="submit" value="완료" class="submit">
-        <input type="button" value="취소" class="cancel">
-    </div>
-</form>
-
-<form class="imageStyled_Box" id="imageForm">
-    <div class="backdrop"></div>
-
-    <div class="header">
-        <span></span>
-
-        <button class="close">
-            <div class="closeButton"></div>
-        </button>
-    </div>
-
-    <div class="imageWrap">
-
-        <img class="imageBox_Styled">
-    </div>
-</form>
-
-
-
-
-</div>
 </body>
 <script src="/js/details/details.js"></script>
 </html>

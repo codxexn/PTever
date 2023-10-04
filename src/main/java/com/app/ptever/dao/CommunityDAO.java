@@ -9,6 +9,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 @Slf4j
@@ -19,5 +20,15 @@ public class CommunityDAO {
     // 전체 게시판에서 게시물 최신순으로 가져오기
     public List<PostDTO> readAll(){
         return communityMapper.selectAll();
+    }
+
+    // 게시물(1개) 상세 조회
+    public Optional<PostDTO> readByPostId(Long postId) {
+        return communityMapper.selectByPostId(postId);
+    }
+
+    // 개별 게시판 전체 게시물 최신순으로 가져오기
+    public List<PostDTO> readAllByCommunityId(Long communityId) {
+        return communityMapper.selectAllByCommunityId(communityId);
     }
 }
