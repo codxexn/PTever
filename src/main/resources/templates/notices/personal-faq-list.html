@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>고객 센터 -피테버(PTever)</title>
+  <title>고객 센터 - 1:1문의 목록</title>
   <!-- SUIT 폰트 링크입니다. 프립과 동일한 폰트입니다. -->
   <link href="https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/static/woff2/SUIT.css" rel="stylesheet" />
   <style>
@@ -12,10 +12,13 @@
     }
   </style>
   <link rel="stylesheet" href="/css/personal-faq/personal_faq_list.css" />
+  <th:block th:replace="~{fix/header-login :: my-header-head}"></th:block>
+  <th:block th:replace="~{fix/footer :: my-footer-head}"></th:block>
 </head>
 <body>
 <div class="root pc">
   <div class="RootWrapper">
+    <header th:replace="~{fix/header-login :: header-login}"></header>
     <div class="PersonalWrapper">
       <section>
         <div class="PersonalHelpPageWrapper">
@@ -23,7 +26,9 @@
             1:1 문의 목록
           </h1>
           <div class="DoHelpButtonWrapper">
-            <button class="DoPersonalHelpButton">1:1 문의하기</button>
+            <a href="./personal-faq-ask">
+              <button class="DoPersonalHelpButton">1:1 문의하기</button>
+            </a>
           </div>
           <ul class="FAQListWrapper">
             <li>
@@ -128,6 +133,7 @@
         </div>
       </section>
     </div>
+    <footer th:replace="~{fix/footer :: my-footer}"></footer>
   </div>
 </div>
 <div class="root mobile">

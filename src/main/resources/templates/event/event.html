@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,22 +10,27 @@
         body {font-family: 'SUIT', sans-serif;}
     </style>
     <link rel="stylesheet" href="/css/event/event.css">
+    <th:block th:replace="~{fix/header-login :: my-header-head}"></th:block>
+    <th:block th:replace="~{fix/footer :: my-footer-head}"></th:block>
 </head>
 <body>
+
 <div class="root pc">
     <div class="RootWrapper">
+        <header th:replace="~{fix/header-login :: header-login}"></header>
         <div class="page-Wrapper">
             <h1 font-size="24px" class="event-Page-Title">이벤트</h1>
             <div class="event-Fade-Wrapper" style="opacity: 1; display: block;">
                 <ul class="eventList-Page-Wrapper">
-                    <li>
+                    <th:block th:if="${#lists.size(event) != 0}">
+                    <li th:each="event:${event}">
                         <!-- 클래스명 바뀜 -->
                         <div class="event-Entity-Wrapper">
                             <div class="event-Badge">이벤트</div>
-                            <div class="event-Title">2019 만우절 이벤트 당첨자 발표</div>
-                            <div class="event-Entity-Date">2019-04-03 18:27</div>
+                            <div class="event-Title" th:text="${event.eventTitle}">2019 만우절 이벤트 당첨자 발표</div>
+                            <div class="event-Entity-Date" th:text="${event.createDate}">2019-04-03 18:27</div>
                         </div>
-                        <div font-size="14px" class="event-Entity-Content">
+                        <div font-size="14px" class="event-Entity-Content" th:utext="${event.eventContent}">
                             <p>안녕하세요, 피테버입니다. :)</p>
                             <p>4월 1일 진행된 만우절 이벤트 당첨자를 발표합니다!</p>
                             <p>
@@ -44,6 +49,7 @@
                             <p>감사합니다.</p>
                         </div>
                     </li>
+                    </th:block>
                     <li>
                         <!-- 클래스명 바뀜 -->
                         <div class="event-Entity-Wrapper">
@@ -172,7 +178,7 @@
                                 1회만 응모 가능하니 신중히 정답을 택할 것! <strong>&nbsp;&nbsp;</strong>
                             </p>
                             <p>
-                                <strong><span style="color: rgb(0, 0, 0);">▶시험 보러 가기&nbsp;</span>&nbsp; &nbsp;</strong>
+                                <strong><span style="color: rgb(0, 0, 0);">▶시험 보러 가기&nbsp;</span>&nbsp;</strong>
                                 <a href="https://goo.gl/forms/UyJCObVruq6SifZT2">https://goo.gl/forms/UyJCObVruq6SifZT2</a>&nbsp;
                             </p>
                         </div>
@@ -421,6 +427,7 @@
                 </footer>
             </div>
         </div>
+        <footer th:replace="~{fix/footer :: my-footer}"></footer>
     </div>
 </div>
 

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,16 +10,18 @@
     body {font-family: 'SUIT', sans-serif;}
   </style>
   <link rel="stylesheet" href="/css/notices/notices.css">
+  <th:block th:replace="~{fix/header-login :: my-header-head}"></th:block>
+  <th:block th:replace="~{fix/footer :: my-footer-head}"></th:block>
 </head>
 <body>
 <div class="root pc">
   <div class="RootWrapper">
+    <header th:replace="~{fix/header-login :: header-login}"></header>
     <div class="NoticesWrapper">
       <h1 class="NoticesPageTitle">공지사항</h1>
       <div class="TabLabelsWrapper">
         <span class="TabLabel-Selected AllLabel"><a>전체</a></span>
         <span class="TabLabel-Unselected NoticeLabel"><a>공지</a></span>
-        <span class="TabLabel-Unselected LinkToEventPage"><a href="">이벤트</a></span>
         <span class="TabLabel-Unselected NormalLabel"><a>일반</a></span>
       </div>
       <div class="FadeWrapper1">
@@ -1011,6 +1013,7 @@
         </footer>
       </div>
     </div>
+    <footer th:replace="~{fix/footer :: my-footer}"></footer>
   </div>
 </div>
 </body>
