@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,12 +15,14 @@
     </style>
     <!-- 아래 링크 태그를 꼭 넣어주세요. (경로 조심) -->
     <link rel="stylesheet" href="/css/mainpage/mainpage-header.css">
+    <th:block th:replace="~{fix/header-login :: my-header-head}"></th:block>
+    <th:block th:replace="~{fix/footer :: my-footer-head}"></th:block>
 </head>
 <body>
 <!-- DOM TREE를 하나로 구성하기 위해서 전체를 감싸는 div태그입니다. -->
 <div id="root">
     <div class="RootWrapper">
-
+        <header th:replace="~{fix/header-login :: header-login}"></header>
         <div class="Padded">
             <div class="WritePage_Wrapper">
                 <div class="WritePage_Header">
@@ -48,6 +50,7 @@
 
 
                 <div class="Fade_Wrapper" style="opacity: 1; display: block;">
+                    <form action="">
                 <textarea placeholder="제목을 입력하세요." id="title"
                           class="WritePage_TitleArea"></textarea>
                     <hr class="Hr">
@@ -58,9 +61,11 @@
                         <button width="100%" color="white" font-size="13px" disabled
                                 class="buttonOff">등록하기</button>
                     </div>
+                    </form>
                 </div>
             </div>
         </div>
+        <footer th:replace="~{fix/footer :: my-footer}"></footer>
     </div>
 </div>
 

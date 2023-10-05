@@ -84,7 +84,12 @@ public class CommunityController {
 //    글쓰기
 
     @GetMapping("write")
-    public void GoToWrite(HttpSession session){;}
+    public String GoToWrite(HttpSession session, UserVO userVO){
+        if (session.getAttribute("user") == null) {
+            return "/login/login";
+        }
+        return "/community/write";
+    }
 
 //    소도구 거래 게시판
     @GetMapping("transaction")
