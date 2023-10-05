@@ -26,7 +26,7 @@ public class CommunityController {
     private final CommunityCommentService communityCommentService;
 
 //    전체 게시판
-    @GetMapping("full-page")
+    @GetMapping("full-pagefull-page")
     public ModelAndView GoToFullPage(){
         ModelAndView mav = new ModelAndView();
         List<PostDTO> allPosts = communityService.findAll();

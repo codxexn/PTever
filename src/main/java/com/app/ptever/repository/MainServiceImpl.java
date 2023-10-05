@@ -2,6 +2,7 @@ package com.app.ptever.repository;
 
 import com.app.ptever.dao.MainDAO;
 import com.app.ptever.domain.dto.CourseSelectDTO;
+import com.app.ptever.domain.dto.PostDTO;
 import com.app.ptever.mapper.MainMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -27,5 +28,10 @@ public class MainServiceImpl implements MainService {
     @Override
     public List<CourseSelectDTO> getLatestDateCourseList() {
         return mainDAO.findAllLatestDateCourse();
+    }
+
+    @Override
+    public List<PostDTO> getLatestDateCommunityList() {
+        return mainDAO.findAllLatestDateCommunity();
     }
 }

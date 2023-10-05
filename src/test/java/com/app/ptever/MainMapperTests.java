@@ -1,6 +1,7 @@
 package com.app.ptever;
 
 import com.app.ptever.domain.dto.CourseSelectDTO;
+import com.app.ptever.domain.dto.PostDTO;
 import com.app.ptever.mapper.MainMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
@@ -22,5 +23,10 @@ public class MainMapperTests {
     @Test
     public void selectLatestDateByCourseTest() {
         mainMapper.selectAllLatestDateByCourse().stream().map(CourseSelectDTO :: toString).forEach(log::info);
+    }
+
+    @Test
+    public void selectLatestDateByCommunityTest() {
+        mainMapper.selectAllLatestDateByCommunity(2L).stream().map(PostDTO::toString).forEach(log::info);
     }
 }

@@ -1,6 +1,7 @@
 package com.app.ptever.dao;
 
 import com.app.ptever.domain.dto.CourseSelectDTO;
+import com.app.ptever.domain.dto.PostDTO;
 import com.app.ptever.mapper.MainMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -23,4 +24,7 @@ public class MainDAO {
     public List<CourseSelectDTO> findAllLatestDateCourse() {
         return mainMapper.selectAllLatestDateByCourse();
     }
+
+    // 최신순으로 소도구 거래 목록 조회
+    public List<PostDTO> findAllLatestDateCommunity() { return mainMapper.selectAllLatestDateByCommunity(2L); }
 }

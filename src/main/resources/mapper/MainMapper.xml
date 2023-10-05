@@ -40,4 +40,27 @@
         WHERE C2.RN < 5
         ]]>
     </select>
+    <select id="selectAllLatestDateByCommunity" resultType="postDTO">
+        <![CDATA[
+        SELECT *
+        FROM (
+                 SELECT ROWNUM AS RN, TBL_POST.*
+                 FROM (
+                          SELECT P.POST_ID,
+                                 P.COMMUNITY_ID,
+                                 P.USER_ID,
+                                 P.POST_TITLE,
+                                 P.POST_CONTENT,
+                                 P.POST_DATE,
+                                 P.POST_UPDATE_DATE,
+                                 U.USER_NICKNAME
+                          FROM TBL_POST P
+                                   JOIN TBL_USER U ON P.USER_ID = U.USER_ID
+                          WHERE P.COMMUNITY_ID = #{communityId}
+                          ORDER BY P.POST_ID DESC
+                      ) TBL_POST
+                 WHERE ROWNUM <= 4
+             )
+        ]]>
+    </select>
 </mapper>
