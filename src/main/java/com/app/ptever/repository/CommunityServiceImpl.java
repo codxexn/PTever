@@ -32,4 +32,9 @@ public class CommunityServiceImpl implements CommunityService {
     public List<PostDTO> findAllByCommunityId(Long communityId) {
         return communityDAO.readAllByCommunityId(communityId);
     }
+
+    @Override
+    public List<PostDTO> findAllByUserId(Long userId) {
+        return communityDAO.readAllByUserId(userId);
+    }
 }

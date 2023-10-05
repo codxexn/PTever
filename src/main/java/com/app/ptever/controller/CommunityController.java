@@ -2,6 +2,7 @@ package com.app.ptever.controller;
 
 import com.app.ptever.domain.dto.PostDTO;
 import com.app.ptever.domain.dto.CommunityCommentDTO;
+import com.app.ptever.domain.vo.UserVO;
 import com.app.ptever.repository.CommunityCommentService;
 import com.app.ptever.repository.CommunityService;
 import lombok.RequiredArgsConstructor;
@@ -70,7 +71,15 @@ public class CommunityController {
 
 //    내가 쓴 글
     @GetMapping("iWrite")
-    public void GoToIWrite(){;}
+    public String GoToIWrite(HttpSession session, Model model){
+        if (session.getAttribute("user") == null) {
+            return "/login/login";
+        }
+        UserVO userVO = (UserVO) session.getAttribute("user");
+        List<PostDTO> foundMyPosts = communityService.findAllByUserId(userVO.getUserId());
+        model.addAttribute("foundMyPosts", foundMyPosts);
+        return "/community/iWrite";
+    }
 
 //    글쓰기
 
@@ -79,7 +88,12 @@ public class CommunityController {
 
 //    소도구 거래 게시판
     @GetMapping("transaction")
-    public void GoToTransaction(){;}
+    public ModelAndView GoToTransaction(){
+        ModelAndView mav = new ModelAndView();
+        List<PostDTO> transPosts = communityService.findAllByCommunityId(2L);
+        mav.addObject("transPosts", transPosts);
+        return mav;
+    }
 
 
 

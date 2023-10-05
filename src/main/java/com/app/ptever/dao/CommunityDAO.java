@@ -31,4 +31,9 @@ public class CommunityDAO {
     public List<PostDTO> readAllByCommunityId(Long communityId) {
         return communityMapper.selectAllByCommunityId(communityId);
     }
+
+    // 내가 쓴 게시물 목록 조회
+    public List<PostDTO> readAllByUserId(Long userId){
+        return communityMapper.selectAllByUserId(userId);
+    }
 }
