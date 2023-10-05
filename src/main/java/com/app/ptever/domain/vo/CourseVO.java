@@ -31,6 +31,7 @@ public class CourseVO implements Serializable {
     private LocalDate createDate;
     // 업데이트 날짜
     private LocalDate updateDate;
+    private String courseImgPath;
     // ============================
     private Integer userId; // 유저 id
     private Integer categoryAId; // 카테고리A id 카테고리B가 A의 PK를 식별자로 받아서 A id를 받게 됨(수정해야 될지도)

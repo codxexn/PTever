@@ -53,10 +53,10 @@
                                                                              style="height:0px; position:relative; width:100%; padding-top: 100%;">
                                                                             <div class="RatioContent"
                                                                                  style="height: 100%; left:0px; position: absolute; top:0px; width:100%;">
-                                                                                <img alt="상품 이미지"
+                                                                                <img alt="강의 이미지"
                                                                                      class="ImageStyledImage"
                                                                                      width="768"
-                                                                                     src=" https://res.cloudinary.com/frientrip/image/upload/ar_1:1,c_fill,dpr_2,f_auto,q_auto,w_375/product_banner_1592887555895_114991">
+                                                                                     th:src="${courseVO.courseImgPath}">
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -78,7 +78,7 @@
                                                 <!-- 제목있는 칸 -->
                                                 <hgroup class="BasicInfoSectionTitleContainer">
                                                     <h1 class="BasicInfoSectionTitle"
-                                                        th:text="${courseDTO.courseTitle}">자세교정 요가클리닉💐 90분 프로그램(일일프립)
+                                                        th:text="${courseVO.courseTitle}">자세교정 요가클리닉💐 90분 프로그램(일일프립)
                                                         &108배</h1>
                                                 </hgroup>
                                                 <!-- 공유버튼 있는 칸 -->
@@ -94,18 +94,18 @@
                                         <!-- 가격있는 div -->
                                         <div class="PriceInfoWrapper">
                                             <!-- 할인율 있는 div -->
-                                            <div class="PriceInfoDiscountRate" th:text="|${courseDTO.courseDiscount}%|">
+                                            <div class="PriceInfoDiscountRate" th:text="|${courseVO.courseDiscount}%|">
                                                 34%
                                             </div>
                                             <!-- 할인된 가격 있는 div -->
                                             <div class="PriceInfoPrice"
-                                                 th:text="|${#numbers.formatInteger(courseDTO.coursePrice - (courseDTO.coursePrice * 0.01 *courseDTO.courseDiscount),0,'COMMA')}원|">
+                                                 th:text="|${#numbers.formatInteger(courseVO.coursePrice - (courseVO.coursePrice * 0.01 *courseVO.courseDiscount),0,'COMMA')}원|">
                                                 29,000
                                                 <!--                                            <span class="PriceInfoPriceUnit">원</span>-->
                                             </div>
                                             <!-- 원가 있는 div -->
                                             <div class="PriceInfoFakedPrice"
-                                                 th:text="|${#numbers.formatInteger(courseDTO.coursePrice,0,'COMMA')}원|">
+                                                 th:text="|${#numbers.formatInteger(courseVO.coursePrice,0,'COMMA')}원|">
                                                 44,000원
                                             </div>
                                         </div>
@@ -502,7 +502,7 @@
                                                 }
                                             </style>
                                             <!-- 내용 -->
-                                            <div class="ProductDescription" th:text="${courseDTO.courseDescription}">
+                                            <div class="ProductDescription" th:text="${courseVO.courseDescription}">
                                                 <p style="text-align:center;">
                                                     <strong>자세교정 전문 요가클리닉
                                                     </strong>

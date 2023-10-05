@@ -1,7 +1,8 @@
 package com.app.ptever.controller;
 
-import com.app.ptever.domain.dto.CourseDTO;
+
 import com.app.ptever.domain.dto.ReviewDTO;
+import com.app.ptever.domain.vo.CourseVO;
 import com.app.ptever.repository.CourseService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -39,12 +40,12 @@ public class LectureController {
     @GetMapping("lecture-detailpage/{id}")
     public ModelAndView findCourseDetailById(@PathVariable("id") Long courseId, ReviewDTO reviewDTO){
         ModelAndView mv = new ModelAndView();
-        Optional<CourseDTO> foundCourse = courseService.findCourseById(courseId);
+        Optional<CourseVO> foundCourse = courseService.findCourseById(courseId);
         List<ReviewDTO> foundReviews = courseService.findAllReviewByCourseId(courseId);
         if(foundCourse.isPresent()) {
             log.info(foundCourse.toString());
             foundReviews.stream().map(ReviewDTO::toString).forEach(log::info);
-            mv.addObject("courseDTO", foundCourse.get());
+            mv.addObject("courseVO", foundCourse.get());
             mv.addObject("reviewDTOS", foundReviews);
             mv.setViewName("/lecture/lecture-detailpage");
             return mv;
