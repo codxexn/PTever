@@ -90,7 +90,7 @@ div.Fade_Wrapper{
 
 .List-link-wrapper {
     font-size: 15px;
-    margin-right: 20px;
+    margin-right: 5px;
 }
 
 .detailPageContent_Wrapper{
@@ -113,6 +113,8 @@ div.Fade_Wrapper{
 
 .detailContent_Body{
     display: inline-block;
+    margin-left: 20px;
+    margin-bottom: 70px;
 }
 
 .detailContent_LikeButton{
@@ -135,9 +137,37 @@ div.Fade_Wrapper{
     overflow: hidden;
 }
 
-.detailContent_Header > div:last-child{
+.detailContent_MetaData{
     -webkit-box-flex: 1;
     flex: 1 1 auto;
+}
+
+.detailContent-ButtonWrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 60px;
+    height: 30px;
+    margin-right: 5px;
+}
+
+.detailContent-UpdateButton {
+    padding: 5px 5px;
+    cursor: pointer;
+}
+
+.detailContent-UpdateButton:hover {
+    color: rgb(51, 151, 255);
+}
+
+.detailContent-DeleteButton {
+    padding: 5px 5px;
+    cursor: pointer;
+}
+
+.detailContent-DeleteButton:hover {
+    color: #cc0000;
 }
 
 .Image_Wrapper{
@@ -177,7 +207,7 @@ div.Fade_Wrapper{
 }
 
 .detailContent_Title{
-    margin-bottom: 10px;
+    margin-bottom: 50px;
     line-height: 22px;
     font-size: 20px;
 }

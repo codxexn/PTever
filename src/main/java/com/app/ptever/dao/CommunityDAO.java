@@ -36,4 +36,14 @@ public class CommunityDAO {
     public List<PostDTO> readAllByUserId(Long userId){
         return communityMapper.selectAllByUserId(userId);
     }
+
+    // 게시물 삭제
+    public void removeByPostId(Long postId) {
+        communityMapper.deleteByPostId(postId);
+    }
+
+    // 게시물 안의 댓글 삭제
+    public void removeCommentByPostId(Long postId) {
+        communityMapper.deleteCommentByPostId(postId);
+    }
 }
