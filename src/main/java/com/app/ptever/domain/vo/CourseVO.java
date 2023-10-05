@@ -24,7 +24,7 @@ public class CourseVO implements Serializable {
     // 강의 상태(default: true(강의 보이게), false(강의 삭제(?) 사라지게)
     private Boolean courseState;
     // 강의 생성 일자
-    private LocalDate courseDate;
+    private LocalDate courseCreateDate;
     // 강의 할인율
     private Integer courseDiscount;
     // 생성 날짜
