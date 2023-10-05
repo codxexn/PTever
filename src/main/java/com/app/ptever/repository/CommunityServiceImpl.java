@@ -37,4 +37,14 @@ public class CommunityServiceImpl implements CommunityService {
     public List<PostDTO> findAllByUserId(Long userId) {
         return communityDAO.readAllByUserId(userId);
     }
+
+    @Override
+    public void discardByPostId(Long postId) {
+        communityDAO.removeByPostId(postId);
+    }
+
+    @Override
+    public void discardCommentByPostId(Long postId) {
+        communityDAO.removeCommentByPostId(postId);
+    }
 }

@@ -37,7 +37,7 @@ public class LoginController {
         if(foundUser.isPresent()){
             UserVO user = foundUser.get();
             if (user.getUserState().equals("WITHDRAWN")){
-                return new RedirectView("/login/login");
+                return new RedirectView("/login/login-error");
             }
             session.setAttribute("user", foundUser.get());
             return new RedirectView("/");
