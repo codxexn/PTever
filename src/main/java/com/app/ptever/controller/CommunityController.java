@@ -84,7 +84,7 @@ public class CommunityController {
 //    글쓰기
 
     @GetMapping("write")
-    public String GoToWrite(HttpSession session, UserVO userVO){
+    public String GoToWrite(HttpSession session, UserVO userVO, PostDTO postDTO){
         if (session.getAttribute("user") == null) {
             return "/login/login";
         }
