@@ -32,19 +32,20 @@ public class LectureController {
     public void GoToLectureListAll(){;}
 
 //    강의 상세보기
-    @GetMapping("lecture-detailpage")
-    public void GoToLectureDetail(){;}
+//    @GetMapping("lecture-detailpage")
+//    public void GoToLectureDetail(ReviewDTO reviewDTO, CourseDTO courseDTO){;}
 
 //    강의 상세보기
     @GetMapping("lecture-detailpage/{id}")
-    public ModelAndView findCourseDetailById(@PathVariable("id")Long courseId){
+    public ModelAndView findCourseDetailById(@PathVariable("id") Long courseId, ReviewDTO reviewDTO){
         ModelAndView mv = new ModelAndView();
         Optional<CourseDTO> foundCourse = courseService.findCourseById(courseId);
         List<ReviewDTO> foundReviews = courseService.findAllReviewByCourseId(courseId);
         if(foundCourse.isPresent()) {
-            CourseDTO courseDTO = foundCourse.get();
-            log.info(courseDTO.toString());
-            mv.addObject("courseDTO", courseDTO);
+            log.info(foundCourse.toString());
+            foundReviews.stream().map(ReviewDTO::toString).forEach(log::info);
+            mv.addObject("courseDTO", foundCourse.get());
+            mv.addObject("reviewDTOS", foundReviews);
             mv.setViewName("/lecture/lecture-detailpage");
             return mv;
         }
