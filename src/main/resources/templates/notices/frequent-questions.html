@@ -1,19 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>고객 센터 -피테버(PTever)</title>
+    <title>고객 센터 - 자주 묻는 질문</title>
     <!-- SUIT 폰트 링크입니다. 프립과 동일한 폰트입니다. -->
     <link href="https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/static/woff2/SUIT.css" rel="stylesheet">
     <style>
         body {font-family: 'SUIT', sans-serif;}
     </style>
     <link rel="stylesheet" href="/css/frequent-questions/frequent_questions.css">
+    <th:block th:replace="~{fix/header-login :: my-header-head}"></th:block>
+    <th:block th:replace="~{fix/footer :: my-footer-head}"></th:block>
 </head>
 <body>
 <div class="root pc">
     <div class="RootWrapper">
+        <header th:replace="~{fix/header-login :: header-login}"></header>
         <div class="FrequentWrapper">
             <section>
                 <div class="FrequentPageWrapper">
@@ -617,11 +620,16 @@
                 <div class="FrequentPageWrapper">
                     <div class="QuestionArea">
                         찾는 질문이 없으신가요?
-                        <button class="LinkToPersonalFAQ">1:1 문의하기</button>
+                        <a href="./personal-faq-ask">
+                            <button class="LinkToPersonalFAQ">
+                                1:1 문의하기
+                            </button>
+                        </a>
                     </div>
                 </div>
             </section>
         </div>
+        <footer th:replace="~{fix/footer :: my-footer}"></footer>
     </div>
 </div>
 <!-- 이 아래는 모바일페이지입니다. -->

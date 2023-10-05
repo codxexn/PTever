@@ -21,32 +21,7 @@ public class EventMapperTests {
     @Autowired
     private EventMapper eventMapper;
 
-    public String imageToBase64(String filePath, String fileName){
-        String base64Img = "";
 
-        File f = new File(filePath + fileName);
-        if (f.exists() && f.isFile() && f.length() > 0) {
-            byte[] bt = new byte[(int) f.length()];
-            FileInputStream fis = null;
-            try {
-                fis = new FileInputStream(f);
-                fis.read(bt);
-                base64Img = new String(Base64.encodeBase64(bt));
-            } catch (Exception e) {
-                e.getMessage();
-            } finally {
-                try {
-                    if (fis != null) {
-                        fis.close();
-                    }
-                } catch (IOException e) {
-                } catch (Exception e) {
-                }
-            }
-        }
-
-        return base64Img;
-    }
 
 //    VARCHAR2(255) 크기로 인해 일부만 삽입
     @Test
@@ -59,11 +34,11 @@ public class EventMapperTests {
                 "                             \n" +
 
                 "당첨을 축하드립니다♥ \n"
-//                +
-//                "※ 당첨자분들께는 개인 연락처를 통해 별도 문자를 발송해 드렸습니다. \n" +
-//                "만우절 이벤트에 참여해주신 많은 대원님들께 감사 인사 드립니다. \n" +
-//                "앞으로도 피테버는 더 다양하고 즐거운 경험들로 대원님들의 일상을 채워드리도록 노력하겠습니다. \n" +
-//                "감사합니다. "
+                +
+                "※ 당첨자분들께는 개인 연락처를 통해 별도 문자를 발송해 드렸습니다. \n" +
+                "만우절 이벤트에 참여해주신 많은 대원님들께 감사 인사 드립니다. \n" +
+                "앞으로도 피테버는 더 다양하고 즐거운 경험들로 대원님들의 일상을 채워드리도록 노력하겠습니다. \n" +
+                "감사합니다. "
         );
         eventVO.setCreateDate(LocalDate.now());
         eventVO.setUpdateDate(LocalDate.now());

@@ -5,6 +5,9 @@ import com.app.ptever.domain.vo.EventVO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.Optional;
+
 @Service
 @RequiredArgsConstructor
 public class EventServiceImpl implements EventService {
@@ -14,4 +17,11 @@ public class EventServiceImpl implements EventService {
     public void register(EventVO eventVO) {
         eventDAO.register(eventVO);
     }
+
+    @Override
+    public List<EventVO> selectEvent( ) {
+        return eventDAO.select();
+    }
+
+
 }
