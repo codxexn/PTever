@@ -19,4 +19,10 @@ public interface CommunityService {
 
     // 내가 쓴 게시물 목록 조회
     public List<PostDTO> findAllByUserId(Long userId);
+
+    // 게시물 삭제
+    public void discardByPostId(Long postId);
+
+    // 게시물 안의 댓글 삭제
+    public void discardCommentByPostId(Long postId);
 }

@@ -1,5 +1,10 @@
 package com.app.ptever.domain.dto;
 
+import lombok.Data;
+import org.springframework.stereotype.Component;
+
+@Component
+@Data
 public class ReviewDTO {
     // 강의 후기 id
     private Long courseReviewId;

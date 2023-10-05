@@ -35,4 +35,14 @@
         ON P.USER_ID = U.USER_ID
         WHERE P.USER_ID = #{userId}
     </select>
+
+    <delete id="deleteCommentByPostId">
+        DELETE FROM TBL_COMMUNITY_COMMENT
+        WHERE POST_ID = #{postId}
+    </delete>
+
+    <delete id="deleteByPostId">
+        DELETE FROM TBL_POST
+        WHERE POST_ID = #{postId}
+    </delete>
 </mapper>
