@@ -351,3 +351,6 @@ button.ButtonPage_Styled{
     outline: none;
 }
 
+button.ButtonPage_Styled:disabled {
+    cursor: not-allowed;
+}
