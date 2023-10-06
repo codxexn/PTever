@@ -18,4 +18,16 @@
         ON R.USER_ID = U.USER_ID
         WHERE R.COURSE_ID = #{courseId}
     </select>
+
+    <select id="selectOtherCourse" resultType="courseVO">
+        <![CDATA[
+            SELECT * FROM
+                (SELECT COURSE_ID, COURSE_TITLE, COURSE_IMG_PATH
+                FROM TBL_COURSE C
+                WHERE COURSE_ID != #{courseId}
+                ORDER BY DBMS_RANDOM.RANDOM)
+            WHERE ROWNUM < 7
+        ]]>
+    </select>
+
 </mapper>

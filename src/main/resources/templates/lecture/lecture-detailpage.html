@@ -950,6 +950,10 @@
                                             <div>
                                                 환불 정책
                                             </div>
+                                            <div class="AccordionIconContainer">
+                                                <img src="data:image/svg+xml,%3Csvg width='7' height='12' viewBox='0 0 7 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cpath d='M1 11L6 6L1 1' stroke='%23CCCCCC' stroke-linecap='round' stroke-linejoin='round'/%3E %3C/svg%3E"
+                                                     alt="AccordionArrow" class="AccordionIconArrow">
+                                            </div>
                                         </div>
                                         <div class="AccordionContent">
                                             1. 결제 후 1시간 이내에는 무료 취소가 가능합니다.
@@ -986,19 +990,19 @@
                                     <header class="ArticleHeader2">
                                         <hgroup>
                                             <h2 class="ArticleTitle">
-                                                이런 프립 어때요?
+                                                이 강의들은 어떠신가요?
                                             </h2>
                                         </hgroup>
                                     </header>
                                     <!-- 사진 div -->
                                     <div class="AssociatedSectionContainer">
                                         <!-- 첫번째 사진 div -->
-                                        <div class="CardContainer">
+                                        <div class="CardContainer" th:each="courses : ${courseVOS}">
                                             <a class="CardText" href="">
                                                 <div class="CardImageContainer">
                                                     <div class="ImgWrapper">
-                                                        <img src="https://res.cloudinary.com/frientrip/image/upload/ar_1:1,c_fill,dpr_2,f_auto,q_auto,w_310/%ED%9B%84%ED%94%84_c18ad43a8101ac930c852bf19792cb863cc543dda1ea28a94739bec6695612c6"
-                                                             width="500" class="StyledImgLoader">
+<!--                                                        <img src="https://res.cloudinary.com/frientrip/image/upload/ar_1:1,c_fill,dpr_2,f_auto,q_auto,w_310/%ED%9B%84%ED%94%84_c18ad43a8101ac930c852bf19792cb863cc543dda1ea28a94739bec6695612c6"-->
+<!--                                                             width="500" class="StyledImgLoader">-->
                                                         <div class="FadeWrapper" style="opacity: 1; display:block;">
                                                             <div class="Ratio" style="display: block;">
                                                                 <div class="RatioRatio"
@@ -1006,8 +1010,8 @@
                                                                     <div class="RatioContent"
                                                                          style="height:100%; left:0px; position:absolute; top:0px; width:100%;">
                                                                         <img class="ImageStyledImage" width="500"
-                                                                             src="https://res.cloudinary.com/frientrip/image/upload/ar_1:1,c_fill,dpr_2,f_auto,q_auto,w_310/%ED%9B%84%ED%94%84_c18ad43a8101ac930c852bf19792cb863cc543dda1ea28a94739bec6695612c6"
-                                                                             alt="[면목] 몸과 마음 건강하게, 아름다운 에어리얼 후프 card">
+                                                                             th:src="${courses.courseImgPath}"
+                                                                             >
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -1016,180 +1020,180 @@
                                                 </div>
                                                 <!-- 글씨 -->
                                                 <div>
-                                                    <div class="CardLocation">
-                                                        노원/강북/도봉/중랑
-                                                    </div>
-                                                    <div class="CardTitle">
+<!--                                                    <div class="CardLocation">-->
+<!--                                                        노원/강북/도봉/중랑-->
+<!--                                                    </div>-->
+                                                    <div class="CardTitle" th:text="${courses.courseTitle}">
                                                         [면목] 몸과 마음 건강하게, 아름다운 에어리얼 후프
                                                     </div>
                                                 </div>
                                             </a>
                                         </div>
-                                        <!-- 두번째 사진 div -->
-                                        <div class="CardContainer">
-                                            <a class="CardText" href="">
-                                                <div class="CardImageContainer">
-                                                    <div class="ImgWrapper">
-                                                        <img src="https://res.cloudinary.com/frientrip/image/upload/ar_1:1,c_fill,dpr_2,f_auto,q_auto,w_310/KakaoTalk_20211217_174503312_261bec2d8685e6e3440b5c770b10fbbf4ece6bad172a15771ca033c3e58133e2"
-                                                             width="500" class="StyledImgLoader">
-                                                        <div class="FadeWrapper" style="opacity: 1; display:block;">
-                                                            <div class="Ratio" style="display: block;">
-                                                                <div class="RatioRatio"
-                                                                     style="height:0px; position:relative; width:100%; padding-top:100%">
-                                                                    <div class="RatioContent"
-                                                                         style="height:100%; left:0px; position:absolute; top:0px; width:100%;">
-                                                                        <img class="ImageStyledImage" width="500"
-                                                                             src="https://res.cloudinary.com/frientrip/image/upload/ar_1:1,c_fill,dpr_2,f_auto,q_auto,w_310/KakaoTalk_20211217_174503312_261bec2d8685e6e3440b5c770b10fbbf4ece6bad172a15771ca033c3e58133e2"
-                                                                             alt="소규모 플라잉요가 그룹레슨 7:1 수업 card">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- 글씨 -->
-                                                <div>
-                                                    <div class="CardLocation">
-                                                        <span style="text-decoration: none;">성남/분당</span>
-                                                    </div>
-                                                    <div class="CardTitle">
-                                                        소규모 플라잉요가 그룹레슨 7:1 수업
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <!-- 세번째 사진 div -->
-                                        <div class="CardContainer">
-                                            <a class="CardText" href="">
-                                                <div class="CardImageContainer">
-                                                    <div class="ImgWrapper">
-                                                        <img src="https://res.cloudinary.com/frientrip/image/upload/ar_1:1,c_fill,dpr_2,f_auto,q_auto,w_310/D99E36DF-030D-4B91-9781-3641CF207CE9_95c4969df03f7672ff2905ae499d59d34d2750bdf8495f91a62fc4a9ae86dcf8"
-                                                             width="500" class="StyledImgLoader">
-                                                        <div class="FadeWrapper" style="opacity: 1; display:block;">
-                                                            <div class="Ratio" style="display: block;">
-                                                                <div class="RatioRatio"
-                                                                     style="height:0px; position:relative; width:100%; padding-top:100%">
-                                                                    <div class="RatioContent"
-                                                                         style="height:100%; left:0px; position:absolute; top:0px; width:100%;">
-                                                                        <img class="ImageStyledImage" width="500"
-                                                                             src="https://res.cloudinary.com/frientrip/image/upload/ar_1:1,c_fill,dpr_2,f_auto,q_auto,w_310/D99E36DF-030D-4B91-9781-3641CF207CE9_95c4969df03f7672ff2905ae499d59d34d2750bdf8495f91a62fc4a9ae86dcf8"
-                                                                             alt="에너지를 채워주는 요가 card">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- 글씨 -->
-                                                <div>
-                                                    <div class="CardLocation">
-                                                        온라인
-                                                    </div>
-                                                    <div class="CardTitle">
-                                                        에너지를 채워주는 요가
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <!-- 네번째 사진 div -->
-                                        <div class="CardContainer">
-                                            <a class="CardText" href="">
-                                                <div class="CardImageContainer">
-                                                    <div class="ImgWrapper">
-                                                        <img src="https://res.cloudinary.com/frientrip/image/upload/ar_1:1,c_fill,dpr_2,f_auto,q_auto,w_310/IMG_20190721_6_xfsk4k"
-                                                             width="500" class="StyledImgLoader">
-                                                        <div class="FadeWrapper" style="opacity: 1; display:block;">
-                                                            <div class="Ratio" style="display: block;">
-                                                                <div class="RatioRatio"
-                                                                     style="height:0px; position:relative; width:100%; padding-top:100%">
-                                                                    <div class="RatioContent"
-                                                                         style="height:100%; left:0px; position:absolute; top:0px; width:100%;">
-                                                                        <img class="ImageStyledImage" width="500"
-                                                                             src="https://res.cloudinary.com/frientrip/image/upload/ar_1:1,c_fill,dpr_2,f_auto,q_auto,w_310/IMG_20190721_6_xfsk4k"
-                                                                             alt="[송파] 몸 불균형을 바로잡는 교정테라피 요가 (예약 가능) card">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- 글씨 -->
-                                                <div>
-                                                    <div class="CardLocation">
-                                                        송파/강동
-                                                    </div>
-                                                    <div class="CardTitle">
-                                                        [송파] 몸 불균형을 바로잡는 교정테라피 요가 (예약 가능)
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <!-- 다섯번째 사진 div -->
-                                        <div class="CardContainer">
-                                            <a class="CardText" href="">
-                                                <div class="CardImageContainer">
-                                                    <div class="ImgWrapper">
-                                                        <img src="https://res.cloudinary.com/frientrip/image/upload/ar_1:1,c_fill,dpr_2,f_auto,q_auto,w_310/IMG_7589_ebb6b033808c92d408b177395bbea06ebbb0f1270607201171ff8a8fcd0ef3e9"
-                                                             width="500" class="StyledImgLoader">
-                                                        <div class="FadeWrapper" style="opacity: 1; display:block;">
-                                                            <div class="Ratio" style="display: block;">
-                                                                <div class="RatioRatio"
-                                                                     style="height:0px; position:relative; width:100%; padding-top:100%">
-                                                                    <div class="RatioContent"
-                                                                         style="height:100%; left:0px; position:absolute; top:0px; width:100%;">
-                                                                        <img class="ImageStyledImage" width="500"
-                                                                             src="https://res.cloudinary.com/frientrip/image/upload/ar_1:1,c_fill,dpr_2,f_auto,q_auto,w_310/IMG_7589_ebb6b033808c92d408b177395bbea06ebbb0f1270607201171ff8a8fcd0ef3e9"
-                                                                             alt="[제주] 너랑 나랑, 요가랑 떡볶이 card">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- 글씨 -->
-                                                <div>
-                                                    <div class="CardLocation">
-                                                        제주시
-                                                    </div>
-                                                    <div class="CardTitle">
-                                                        [제주] 너랑 나랑, 요가랑 떡볶이
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <!-- 여섯번째 사진 div -->
-                                        <div class="CardContainer">
-                                            <a class="CardText" href="">
-                                                <div class="CardImageContainer">
-                                                    <div class="ImgWrapper">
-                                                        <img src="https://res.cloudinary.com/frientrip/image/upload/ar_1:1,c_fill,dpr_2,f_auto,q_auto,w_310/84D3870D-8548-4E6E-9D98-0DD441702239_2ea34ed519bccc7fb89322d9a940797c5d25db12b7f063b50e6d9dabeb37f7de"
-                                                             width="500" class="StyledImgLoader">
-                                                        <div class="FadeWrapper" style="opacity: 1; display:block;">
-                                                            <div class="Ratio" style="display: block;">
-                                                                <div class="RatioRatio"
-                                                                     style="height:0px; position:relative; width:100%; padding-top:100%">
-                                                                    <div class="RatioContent"
-                                                                         style="height:100%; left:0px; position:absolute; top:0px; width:100%;">
-                                                                        <img class="ImageStyledImage" width="500"
-                                                                             src="https://res.cloudinary.com/frientrip/image/upload/ar_1:1,c_fill,dpr_2,f_auto,q_auto,w_310/84D3870D-8548-4E6E-9D98-0DD441702239_2ea34ed519bccc7fb89322d9a940797c5d25db12b7f063b50e6d9dabeb37f7de"
-                                                                             alt="[서울] 플라잉요가 프라이빗 1:1 원데이 클래스 card">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- 글씨 -->
-                                                <div>
-                                                    <div class="CardLocation">
-                                                        마포/서대문/은평
-                                                    </div>
-                                                    <div class="CardTitle">
-                                                        [서울] 플라잉요가 프라이빗 1:1 원데이 클래스
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
+<!--                                        &lt;!&ndash; 두번째 사진 div &ndash;&gt;-->
+<!--                                        <div class="CardContainer">-->
+<!--                                            <a class="CardText" href="">-->
+<!--                                                <div class="CardImageContainer">-->
+<!--                                                    <div class="ImgWrapper">-->
+<!--                                                        <img src="https://res.cloudinary.com/frientrip/image/upload/ar_1:1,c_fill,dpr_2,f_auto,q_auto,w_310/KakaoTalk_20211217_174503312_261bec2d8685e6e3440b5c770b10fbbf4ece6bad172a15771ca033c3e58133e2"-->
+<!--                                                             width="500" class="StyledImgLoader">-->
+<!--                                                        <div class="FadeWrapper" style="opacity: 1; display:block;">-->
+<!--                                                            <div class="Ratio" style="display: block;">-->
+<!--                                                                <div class="RatioRatio"-->
+<!--                                                                     style="height:0px; position:relative; width:100%; padding-top:100%">-->
+<!--                                                                    <div class="RatioContent"-->
+<!--                                                                         style="height:100%; left:0px; position:absolute; top:0px; width:100%;">-->
+<!--                                                                        <img class="ImageStyledImage" width="500"-->
+<!--                                                                             src="https://res.cloudinary.com/frientrip/image/upload/ar_1:1,c_fill,dpr_2,f_auto,q_auto,w_310/KakaoTalk_20211217_174503312_261bec2d8685e6e3440b5c770b10fbbf4ece6bad172a15771ca033c3e58133e2"-->
+<!--                                                                             alt="소규모 플라잉요가 그룹레슨 7:1 수업 card">-->
+<!--                                                                    </div>-->
+<!--                                                                </div>-->
+<!--                                                            </div>-->
+<!--                                                        </div>-->
+<!--                                                    </div>-->
+<!--                                                </div>-->
+<!--                                                &lt;!&ndash; 글씨 &ndash;&gt;-->
+<!--                                                <div>-->
+<!--                                                    <div class="CardLocation">-->
+<!--                                                        <span style="text-decoration: none;">성남/분당</span>-->
+<!--                                                    </div>-->
+<!--                                                    <div class="CardTitle">-->
+<!--                                                        소규모 플라잉요가 그룹레슨 7:1 수업-->
+<!--                                                    </div>-->
+<!--                                                </div>-->
+<!--                                            </a>-->
+<!--                                        </div>-->
+<!--                                        &lt;!&ndash; 세번째 사진 div &ndash;&gt;-->
+<!--                                        <div class="CardContainer">-->
+<!--                                            <a class="CardText" href="">-->
+<!--                                                <div class="CardImageContainer">-->
+<!--                                                    <div class="ImgWrapper">-->
+<!--                                                        <img src="https://res.cloudinary.com/frientrip/image/upload/ar_1:1,c_fill,dpr_2,f_auto,q_auto,w_310/D99E36DF-030D-4B91-9781-3641CF207CE9_95c4969df03f7672ff2905ae499d59d34d2750bdf8495f91a62fc4a9ae86dcf8"-->
+<!--                                                             width="500" class="StyledImgLoader">-->
+<!--                                                        <div class="FadeWrapper" style="opacity: 1; display:block;">-->
+<!--                                                            <div class="Ratio" style="display: block;">-->
+<!--                                                                <div class="RatioRatio"-->
+<!--                                                                     style="height:0px; position:relative; width:100%; padding-top:100%">-->
+<!--                                                                    <div class="RatioContent"-->
+<!--                                                                         style="height:100%; left:0px; position:absolute; top:0px; width:100%;">-->
+<!--                                                                        <img class="ImageStyledImage" width="500"-->
+<!--                                                                             src="https://res.cloudinary.com/frientrip/image/upload/ar_1:1,c_fill,dpr_2,f_auto,q_auto,w_310/D99E36DF-030D-4B91-9781-3641CF207CE9_95c4969df03f7672ff2905ae499d59d34d2750bdf8495f91a62fc4a9ae86dcf8"-->
+<!--                                                                             alt="에너지를 채워주는 요가 card">-->
+<!--                                                                    </div>-->
+<!--                                                                </div>-->
+<!--                                                            </div>-->
+<!--                                                        </div>-->
+<!--                                                    </div>-->
+<!--                                                </div>-->
+<!--                                                &lt;!&ndash; 글씨 &ndash;&gt;-->
+<!--                                                <div>-->
+<!--                                                    <div class="CardLocation">-->
+<!--                                                        온라인-->
+<!--                                                    </div>-->
+<!--                                                    <div class="CardTitle">-->
+<!--                                                        에너지를 채워주는 요가-->
+<!--                                                    </div>-->
+<!--                                                </div>-->
+<!--                                            </a>-->
+<!--                                        </div>-->
+<!--                                        &lt;!&ndash; 네번째 사진 div &ndash;&gt;-->
+<!--                                        <div class="CardContainer">-->
+<!--                                            <a class="CardText" href="">-->
+<!--                                                <div class="CardImageContainer">-->
+<!--                                                    <div class="ImgWrapper">-->
+<!--                                                        <img src="https://res.cloudinary.com/frientrip/image/upload/ar_1:1,c_fill,dpr_2,f_auto,q_auto,w_310/IMG_20190721_6_xfsk4k"-->
+<!--                                                             width="500" class="StyledImgLoader">-->
+<!--                                                        <div class="FadeWrapper" style="opacity: 1; display:block;">-->
+<!--                                                            <div class="Ratio" style="display: block;">-->
+<!--                                                                <div class="RatioRatio"-->
+<!--                                                                     style="height:0px; position:relative; width:100%; padding-top:100%">-->
+<!--                                                                    <div class="RatioContent"-->
+<!--                                                                         style="height:100%; left:0px; position:absolute; top:0px; width:100%;">-->
+<!--                                                                        <img class="ImageStyledImage" width="500"-->
+<!--                                                                             src="https://res.cloudinary.com/frientrip/image/upload/ar_1:1,c_fill,dpr_2,f_auto,q_auto,w_310/IMG_20190721_6_xfsk4k"-->
+<!--                                                                             alt="[송파] 몸 불균형을 바로잡는 교정테라피 요가 (예약 가능) card">-->
+<!--                                                                    </div>-->
+<!--                                                                </div>-->
+<!--                                                            </div>-->
+<!--                                                        </div>-->
+<!--                                                    </div>-->
+<!--                                                </div>-->
+<!--                                                &lt;!&ndash; 글씨 &ndash;&gt;-->
+<!--                                                <div>-->
+<!--                                                    <div class="CardLocation">-->
+<!--                                                        송파/강동-->
+<!--                                                    </div>-->
+<!--                                                    <div class="CardTitle">-->
+<!--                                                        [송파] 몸 불균형을 바로잡는 교정테라피 요가 (예약 가능)-->
+<!--                                                    </div>-->
+<!--                                                </div>-->
+<!--                                            </a>-->
+<!--                                        </div>-->
+<!--                                        &lt;!&ndash; 다섯번째 사진 div &ndash;&gt;-->
+<!--                                        <div class="CardContainer">-->
+<!--                                            <a class="CardText" href="">-->
+<!--                                                <div class="CardImageContainer">-->
+<!--                                                    <div class="ImgWrapper">-->
+<!--                                                        <img src="https://res.cloudinary.com/frientrip/image/upload/ar_1:1,c_fill,dpr_2,f_auto,q_auto,w_310/IMG_7589_ebb6b033808c92d408b177395bbea06ebbb0f1270607201171ff8a8fcd0ef3e9"-->
+<!--                                                             width="500" class="StyledImgLoader">-->
+<!--                                                        <div class="FadeWrapper" style="opacity: 1; display:block;">-->
+<!--                                                            <div class="Ratio" style="display: block;">-->
+<!--                                                                <div class="RatioRatio"-->
+<!--                                                                     style="height:0px; position:relative; width:100%; padding-top:100%">-->
+<!--                                                                    <div class="RatioContent"-->
+<!--                                                                         style="height:100%; left:0px; position:absolute; top:0px; width:100%;">-->
+<!--                                                                        <img class="ImageStyledImage" width="500"-->
+<!--                                                                             src="https://res.cloudinary.com/frientrip/image/upload/ar_1:1,c_fill,dpr_2,f_auto,q_auto,w_310/IMG_7589_ebb6b033808c92d408b177395bbea06ebbb0f1270607201171ff8a8fcd0ef3e9"-->
+<!--                                                                             alt="[제주] 너랑 나랑, 요가랑 떡볶이 card">-->
+<!--                                                                    </div>-->
+<!--                                                                </div>-->
+<!--                                                            </div>-->
+<!--                                                        </div>-->
+<!--                                                    </div>-->
+<!--                                                </div>-->
+<!--                                                &lt;!&ndash; 글씨 &ndash;&gt;-->
+<!--                                                <div>-->
+<!--                                                    <div class="CardLocation">-->
+<!--                                                        제주시-->
+<!--                                                    </div>-->
+<!--                                                    <div class="CardTitle">-->
+<!--                                                        [제주] 너랑 나랑, 요가랑 떡볶이-->
+<!--                                                    </div>-->
+<!--                                                </div>-->
+<!--                                            </a>-->
+<!--                                        </div>-->
+<!--                                        &lt;!&ndash; 여섯번째 사진 div &ndash;&gt;-->
+<!--                                        <div class="CardContainer">-->
+<!--                                            <a class="CardText" href="">-->
+<!--                                                <div class="CardImageContainer">-->
+<!--                                                    <div class="ImgWrapper">-->
+<!--                                                        <img src="https://res.cloudinary.com/frientrip/image/upload/ar_1:1,c_fill,dpr_2,f_auto,q_auto,w_310/84D3870D-8548-4E6E-9D98-0DD441702239_2ea34ed519bccc7fb89322d9a940797c5d25db12b7f063b50e6d9dabeb37f7de"-->
+<!--                                                             width="500" class="StyledImgLoader">-->
+<!--                                                        <div class="FadeWrapper" style="opacity: 1; display:block;">-->
+<!--                                                            <div class="Ratio" style="display: block;">-->
+<!--                                                                <div class="RatioRatio"-->
+<!--                                                                     style="height:0px; position:relative; width:100%; padding-top:100%">-->
+<!--                                                                    <div class="RatioContent"-->
+<!--                                                                         style="height:100%; left:0px; position:absolute; top:0px; width:100%;">-->
+<!--                                                                        <img class="ImageStyledImage" width="500"-->
+<!--                                                                             src="https://res.cloudinary.com/frientrip/image/upload/ar_1:1,c_fill,dpr_2,f_auto,q_auto,w_310/84D3870D-8548-4E6E-9D98-0DD441702239_2ea34ed519bccc7fb89322d9a940797c5d25db12b7f063b50e6d9dabeb37f7de"-->
+<!--                                                                             alt="[서울] 플라잉요가 프라이빗 1:1 원데이 클래스 card">-->
+<!--                                                                    </div>-->
+<!--                                                                </div>-->
+<!--                                                            </div>-->
+<!--                                                        </div>-->
+<!--                                                    </div>-->
+<!--                                                </div>-->
+<!--                                                &lt;!&ndash; 글씨 &ndash;&gt;-->
+<!--                                                <div>-->
+<!--                                                    <div class="CardLocation">-->
+<!--                                                        마포/서대문/은평-->
+<!--                                                    </div>-->
+<!--                                                    <div class="CardTitle">-->
+<!--                                                        [서울] 플라잉요가 프라이빗 1:1 원데이 클래스-->
+<!--                                                    </div>-->
+<!--                                                </div>-->
+<!--                                            </a>-->
+<!--                                        </div>-->
                                     </div>
                                 </article>
                             </section>

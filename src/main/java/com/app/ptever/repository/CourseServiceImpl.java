@@ -25,4 +25,9 @@ public class CourseServiceImpl implements CourseService {
     public List<ReviewDTO> findAllReviewByCourseId(Long courseId) {
         return courseDAO.findAllReviewByCourseId(courseId);
     }
+
+    @Override
+    public List<CourseVO> findOtherCourse(Long courseId) {
+      return courseDAO.findOtherCourse(courseId);
+    }
 }
