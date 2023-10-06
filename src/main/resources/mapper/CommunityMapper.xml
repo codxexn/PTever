@@ -27,20 +27,36 @@
     </select>
 
     <select id="selectAllByCommunityId" resultType="postDTO">
-        SELECT P.POST_ID, P.COMMUNITY_ID, P.USER_ID, P.POST_TITLE, P.POST_CONTENT, P.POST_DATE, P.POST_UPDATE_DATE, U.USER_NICKNAME
-        FROM TBL_POST P
-        JOIN TBL_USER U
-        ON P.USER_ID = U.USER_ID
-        WHERE P.COMMUNITY_ID = #{communityId}
-        ORDER BY P.POST_ID DESC
+        SELECT P2.POST_ID, P2.COMMUNITY_ID, P2.USER_ID, P2.POST_TITLE, P2.POST_CONTENT, P2.POST_DATE, P2.POST_UPDATE_DATE, P2.USER_NICKNAME FROM
+            (SELECT ROWNUM R, P1.POST_ID, P1.COMMUNITY_ID, P1.USER_ID, P1.POST_TITLE, P1.POST_CONTENT, P1.POST_DATE, P1.POST_UPDATE_DATE, P1.USER_NICKNAME FROM
+                (SELECT P.POST_ID, P.COMMUNITY_ID, P.USER_ID, P.POST_TITLE, P.POST_CONTENT, P.POST_DATE, P.POST_UPDATE_DATE, U.USER_NICKNAME
+                FROM TBL_POST P
+                JOIN TBL_USER U
+                ON P.USER_ID = U.USER_ID
+                WHERE P.COMMUNITY_ID = #{communityId}
+                ORDER BY P.POST_ID DESC) P1
+    <![CDATA[
+            WHERE ROWNUM <= #{pagination.endRow}
+            ) P2
+        WHERE P2.R >= #{pagination.startRow}
+    ]]>
     </select>
 
     <select id="selectAllByUserId" resultType="postDTO">
-        SELECT P.POST_ID, P.COMMUNITY_ID, P.USER_ID, P.POST_TITLE, P.POST_CONTENT, P.POST_DATE, P.POST_UPDATE_DATE, U.USER_NICKNAME
-        FROM TBL_POST P
-        JOIN TBL_USER U
-        ON P.USER_ID = U.USER_ID
-        WHERE P.USER_ID = #{userId}
+        SELECT P2.POST_ID, P2.COMMUNITY_ID, P2.USER_ID, P2.POST_TITLE, P2.POST_CONTENT, P2.POST_DATE, P2.POST_UPDATE_DATE, P2.USER_NICKNAME FROM
+            (SELECT ROWNUM R, P1.POST_ID, P1.COMMUNITY_ID, P1.USER_ID, P1.POST_TITLE, P1.POST_CONTENT, P1.POST_DATE, P1.POST_UPDATE_DATE, P1.USER_NICKNAME FROM
+                (SELECT P.POST_ID, P.COMMUNITY_ID, P.USER_ID, P.POST_TITLE, P.POST_CONTENT, P.POST_DATE, P.POST_UPDATE_DATE, U.USER_NICKNAME
+                FROM TBL_POST P
+                JOIN TBL_USER U
+                ON P.USER_ID = U.USER_ID
+                WHERE P.USER_ID = #{userId}
+                ORDER BY P.POST_ID DESC) P1
+    <![CDATA[
+            WHERE ROWNUM <= #{pagination.endRow}
+            ) P2
+        WHERE P2.R >= #{pagination.startRow}
+    ]]>
+
     </select>
 
     <delete id="deleteCommentByPostId">
@@ -71,5 +87,15 @@
 
     <select id="selectTotalAllPost" resultType="int">
         SELECT COUNT(POST_ID) FROM TBL_POST
+    </select>
+
+    <select id="selectTotalByCommunityId" resultType="int">
+        SELECT COUNT(POST_ID) FROM TBL_POST
+        WHERE COMMUNITY_ID = #{communityId}
+    </select>
+
+    <select id="selectTotalByUserId" resultType="int">
+        SELECT COUNT(POST_ID) FROM TBL_POST
+        WHERE USER_ID = #{userId}
     </select>
 </mapper>

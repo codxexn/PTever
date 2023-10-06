@@ -247,6 +247,14 @@ button{
     margin: 0;
 }
 
+button:disabled {
+    cursor: not-allowed;
+}
+
+button.ButtonPage_Styled:disabled {
+    cursor: not-allowed;
+}
+
 div.PaginationButtonGroup_NextButtonWrapper{
     display: flex;
     margin-left: 10px;
