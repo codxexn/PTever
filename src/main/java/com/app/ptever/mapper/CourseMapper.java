@@ -14,4 +14,6 @@ public interface CourseMapper {
     public Optional<CourseVO> selectById(Long courseId);
 //    강의 아이디에 해당하는 모든 리뷰 조회
     public List<ReviewDTO> selectAllReview(Long courseId);
+//    해당 강의 제외 6개 강의 랜덤으로 조회
+    public List<CourseVO> selectOtherCourse(Long courseId);
 }
