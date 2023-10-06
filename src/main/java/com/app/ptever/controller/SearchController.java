@@ -14,4 +14,6 @@ public class SearchController {
 
     @GetMapping("search")
     public void GoToSearchResult(){;}
+
+
 }

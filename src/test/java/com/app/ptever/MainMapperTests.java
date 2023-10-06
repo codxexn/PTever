@@ -1,5 +1,6 @@
 package com.app.ptever;
 
+import com.app.ptever.domain.Search;
 import com.app.ptever.domain.dto.CourseSelectDTO;
 import com.app.ptever.domain.dto.PostDTO;
 import com.app.ptever.mapper.MainMapper;
@@ -28,5 +29,16 @@ public class MainMapperTests {
     @Test
     public void selectLatestDateByCommunityTest() {
         mainMapper.selectAllLatestDateByCommunity(2L).stream().map(PostDTO::toString).forEach(log::info);
+    }
+
+    @Test
+    public void selectTest() {
+        Search search = new Search();
+        search.setKeyword("스트레칭");
+
+        List<CourseSelectDTO> result = mainMapper.selectSearchByCourse(search);
+        for(CourseSelectDTO course : result ) {
+            log.info(course.toString());
+        }
     }
 }

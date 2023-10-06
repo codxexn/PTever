@@ -2,6 +2,7 @@ package com.app.ptever.mapper;
 
 import com.app.ptever.domain.dto.CourseSelectDTO;
 import com.app.ptever.domain.dto.PostDTO;
+import com.app.ptever.domain.Search;
 import com.app.ptever.domain.dto.ShoppingMallDTO;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -21,8 +22,8 @@ public interface MainMapper {
     public List<PostDTO> selectAllLatestDateByCommunity(Long communityId);
 
     // 통합 검색 중 강의 검색
-//    public List<CourseSelectDTO> selectSearchByCourse(Search search);
+    public List<CourseSelectDTO> selectSearchByCourse(Search search);
 
     // 통합 검색 중 상품 검색
-//    public List<ShoppingMallDTO> selectSearchByProduct(Search search);
+    public List<ShoppingMallDTO> selectSearchByProduct(Search search);
 }

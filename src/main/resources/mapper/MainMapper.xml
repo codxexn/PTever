@@ -2,11 +2,33 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.app.ptever.mapper.MainMapper">
 
-    <select id="selectCourseBySearch" resultType="courseSelectDTO">
-
+    <select id="selectSearchByCourse" resultType="courseSelectDTO">
+        SELECT COURSE_ID, COURSE_TITLE, COURSE_PRICE, COURSE_DISCOUNT, COURSE_AVG_SCORE, COURSE_LEVEL_DIFFICULTY, COURSE_STATE, COURSE_IMG_PATH
+        FROM
+            (
+                SELECT COURSE_ID, COURSE_TITLE, COURSE_PRICE, COURSE_DISCOUNT, COURSE_AVG_SCORE, COURSE_LEVEL_DIFFICULTY, COURSE_STATE, COURSE_IMG_PATH
+                FROM TBL_COURSE
+                WHERE COURSE_TITLE LIKE '%' || #{keyword} || '%'
+                ORDER BY COURSE_ID DESC
+            )
+        <![CDATA[
+            WHERE ROWNUM <= 5
+        ]]>
     </select>
 
-    <select id="selectSearchByProduct" resultType="courseSelectDTO">
+<!--    <select id="selectSearchByProduct" resultType="courseSelectDTO">-->
+<!--        SELECT COURSE_ID, COURSE_TITLE, COURSE_PRICE, COURSE_DISCOUNT, COURSE_AVG_SCORE, COURSE_LEVEL_DIFFICULTY, COURSE_STATE, COURSE_IMG_PATH-->
+<!--        FROM-->
+<!--            (-->
+<!--                SELECT COURSE_ID, COURSE_TITLE, COURSE_PRICE, COURSE_DISCOUNT, COURSE_AVG_SCORE, COURSE_LEVEL_DIFFICULTY, COURSE_STATE, COURSE_IMG_PATH-->
+<!--                FROM TBL_COURSE-->
+<!--                WHERE COURSE_TITLE LIKE '%' || #{keyword} || '%'-->
+<!--                ORDER BY COURSE_ID DESC-->
+<!--            )-->
+<!--        <![CDATA[-->
+<!--        WHERE ROWNUM <= 5-->
+<!--        ]]>-->
+<!--    </select>-->
 
 
 
