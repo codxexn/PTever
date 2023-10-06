@@ -95,7 +95,16 @@ public class CommunityController {
         return mav;
     }
 
-
+//    게시물 삭제
+    @PostMapping("detail-delete")
+    public RedirectView deletePostAndGoToAllPosts(@RequestParam("postId") Long postId){
+        List<CommunityCommentDTO> foundComments = communityCommentService.findAllByPostId(postId);
+        if (!foundComments.isEmpty()){
+            communityService.discardCommentByPostId(postId);
+        }
+        communityService.discardByPostId(postId);
+        return new RedirectView("/community/full-page");
+    }
 
 
 

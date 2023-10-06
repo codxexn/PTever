@@ -286,7 +286,7 @@ button, input, select, textarea{
 .BasicInfoSection{
     height:100%;
     position:relative;
-    padding:0px 0px 12px;
+    /*padding:0px 0px 12px;*/
     border-bottom: initial;
 }
 
