@@ -2,6 +2,7 @@ package com.app.ptever.dao;
 
 
 import com.app.ptever.domain.dto.PostDTO;
+import com.app.ptever.domain.pagination.Pagination;
 import com.app.ptever.domain.vo.PostVO;
 import com.app.ptever.mapper.CommunityMapper;
 import lombok.RequiredArgsConstructor;
@@ -18,8 +19,8 @@ public class CommunityDAO {
     private final CommunityMapper communityMapper;
 
     // 전체 게시판에서 게시물 최신순으로 가져오기
-    public List<PostDTO> readAll(){
-        return communityMapper.selectAll();
+    public List<PostDTO> readAll(Pagination pagination){
+        return communityMapper.selectAll(pagination);
     }
 
     // 게시물(1개) 상세 조회
@@ -60,5 +61,10 @@ public class CommunityDAO {
     // 게시물 수정
     public void modifyPost(PostDTO postDTO) {
         communityMapper.updatePost(postDTO);
+    }
+
+    // 게시물 전체 개수 조회
+    public int readAllPostCounts() {
+        return communityMapper.selectTotalAllPost();
     }
 }

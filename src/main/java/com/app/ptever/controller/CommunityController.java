@@ -2,6 +2,7 @@ package com.app.ptever.controller;
 
 import com.app.ptever.domain.dto.PostDTO;
 import com.app.ptever.domain.dto.CommunityCommentDTO;
+import com.app.ptever.domain.pagination.Pagination;
 import com.app.ptever.domain.vo.UserVO;
 import com.app.ptever.repository.CommunityCommentService;
 import com.app.ptever.repository.CommunityService;
@@ -28,10 +29,13 @@ public class CommunityController {
 
 //    전체 게시판
     @GetMapping("full-page")
-    public ModelAndView GoToFullPage(){
+    public ModelAndView GoToFullPage(Pagination pagination){
+        pagination.setTotal(communityService.findAllPostCounts());
+        pagination.progress();
         ModelAndView mav = new ModelAndView();
-        List<PostDTO> allPosts = communityService.findAll();
+        List<PostDTO> allPosts = communityService.findAll(pagination);
         mav.addObject("allPosts", allPosts);
+        mav.addObject("pagination", pagination);
 //        log.info(mav.toString());
         return mav;
     }
