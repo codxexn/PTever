@@ -13,4 +13,7 @@ public interface CommunityCommentMapper {
 
     // 댓글 달기
     public void insertComment(CommunityCommentDTO communityCommentDTO);
+
+    // 댓글 삭제
+    public void deleteComment(Long communityCommentId);
 }

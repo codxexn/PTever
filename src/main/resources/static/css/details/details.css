@@ -170,6 +170,15 @@ div.Fade_Wrapper{
     color: #cc0000;
 }
 
+.detailContent-comment-DeleteButton {
+    padding: 5px 5px;
+    cursor: pointer;
+}
+
+.detailContent-comment-DeleteButton:hover {
+    color: #cc0000;
+}
+
 .Image_Wrapper{
     min-height: 1px;
 }
@@ -198,9 +207,16 @@ div.Fade_Wrapper{
     display: flex;
     -webkit-box-align: center;
     align-items: center;
+    flex-direction: row;
 }
 
 .detailContent_Created{
+    line-height: 10px;
+    color: rgb(155, 155, 155);
+    font-size: 10px;
+}
+
+.detailContent_Updated{
     line-height: 10px;
     color: rgb(155, 155, 155);
     font-size: 10px;
@@ -322,6 +338,10 @@ button.ButtonWrite{
 .commentInner_Author{
     display: flex;
     margin-bottom: 20px;
+}
+
+.comment-userinfo-wrapper {
+    flex: 1 1 auto;
 }
 
 .Image_StyledLoader{

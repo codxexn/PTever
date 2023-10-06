@@ -329,3 +329,9 @@ p.FinalAgreement > span {
         height: 20px;
     }
 }
+
+.Password-ErrorMsg {
+    color: #ff0000; /* 빨간색 글씨 색상 */
+    font-size: 14px;
+    margin-top: 5px;
+}

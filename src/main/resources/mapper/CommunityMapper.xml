@@ -2,11 +2,18 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.app.ptever.mapper.CommunityMapper">
     <select id="selectAll" resultType="postDTO">
-        SELECT P.POST_ID, P.COMMUNITY_ID, P.USER_ID, P.POST_TITLE, P.POST_CONTENT, P.POST_DATE, P.POST_UPDATE_DATE, C.COMMUNITY_TYPE
-        FROM TBL_POST P
-        JOIN TBL_COMMUNITY C
-        ON P.COMMUNITY_ID = C.COMMUNITY_ID
-        ORDER BY P.POST_ID DESC
+        SELECT P2.POST_ID, P2.COMMUNITY_ID, P2.USER_ID, P2.POST_TITLE, P2.POST_CONTENT, P2.POST_DATE, P2.POST_UPDATE_DATE, P2.COMMUNITY_TYPE FROM
+            (SELECT ROWNUM R, P1.POST_ID, P1.COMMUNITY_ID, P1.USER_ID, P1.POST_TITLE, P1.POST_CONTENT, P1.POST_DATE, P1.POST_UPDATE_DATE, P1.COMMUNITY_TYPE FROM
+                (SELECT P.POST_ID, P.COMMUNITY_ID, P.USER_ID, P.POST_TITLE, P.POST_CONTENT, P.POST_DATE, P.POST_UPDATE_DATE, C.COMMUNITY_TYPE
+                FROM TBL_POST P
+                JOIN TBL_COMMUNITY C
+                ON P.COMMUNITY_ID = C.COMMUNITY_ID
+                ORDER BY P.POST_ID DESC) P1
+    <![CDATA[
+            WHERE ROWNUM <= #{endRow}
+                ) P2
+        WHERE P2.R >= #{startRow}
+    ]]>
     </select>
 
     <select id="selectByPostId" resultType="postDTO">
@@ -45,4 +52,24 @@
         DELETE FROM TBL_POST
         WHERE POST_ID = #{postId}
     </delete>
+
+    <insert id="insertFreePost">
+        INSERT INTO TBL_POST(POST_ID, COMMUNITY_ID, USER_ID, POST_TITLE, POST_CONTENT)
+        VALUES(SEQ_POST.NEXTVAL, 1, #{userId}, #{postTitle}, #{postContent})
+    </insert>
+
+    <insert id="insertTransPost">
+        INSERT INTO TBL_POST(POST_ID, COMMUNITY_ID, USER_ID, POST_TITLE, POST_CONTENT)
+        VALUES(SEQ_POST.NEXTVAL, 2, #{userId}, #{postTitle}, #{postContent})
+    </insert>
+
+    <update id="updatePost">
+        UPDATE TBL_POST
+        SET POST_TITLE = #{postTitle}, POST_CONTENT = #{postContent}, POST_UPDATE_DATE = CURRENT_TIMESTAMP
+        WHERE POST_ID = #{postId}
+    </update>
+
+    <select id="selectTotalAllPost" resultType="int">
+        SELECT COUNT(POST_ID) FROM TBL_POST
+    </select>
 </mapper>

@@ -248,6 +248,10 @@ button{
     margin: 0;
 }
 
+button:disabled {
+    cursor: not-allowed;
+}
+
 div.PaginationButtonGroup_NextButtonWrapper{
     display: flex;
     margin-left: 10px;

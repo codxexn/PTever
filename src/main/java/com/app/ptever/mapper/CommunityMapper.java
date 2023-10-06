@@ -2,6 +2,7 @@ package com.app.ptever.mapper;
 
 
 import com.app.ptever.domain.dto.PostDTO;
+import com.app.ptever.domain.pagination.Pagination;
 import com.app.ptever.domain.vo.PostVO;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -12,7 +13,7 @@ import java.util.Optional;
 public interface CommunityMapper {
 
     // 전체게시판에서 전체 게시물 최신순으로 조회
-    public List<PostDTO> selectAll();
+    public List<PostDTO> selectAll(Pagination pagination);
 
     // 게시물(1개) 상세 조회
     public Optional<PostDTO> selectByPostId(Long postId);
@@ -28,5 +29,17 @@ public interface CommunityMapper {
 
     // 게시물 안의 댓글 삭제
     public void deleteCommentByPostId(Long postId);
+
+    // 자유게시판 게시글 작성
+    public void insertFreePost(PostDTO postDTO);
+
+    // 소도구거래게시판 게시글 작성
+    public void insertTransPost(PostDTO postDTO);
+
+    // 게시물 수정
+    public void updatePost(PostDTO postDTO);
+
+    // 게시물 전체 개수 조회
+    public int selectTotalAllPost();
 
 }

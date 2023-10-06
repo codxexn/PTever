@@ -11,7 +11,12 @@
     </select>
 
     <insert id="insertComment">
-        INSERT INTO TBL_COMMUNITY_COMMENT(COMMUNITY_COMMENT_ID, COMMUNITY_ID, USER_ID, COMMENT_CONTENT, POST_ID)
-        VALUES(SEQ_COMMUNITY_COMMENT.NEXTVAL, #{communityId}, #{userId}, #{commentContent}, #{postId})
+        INSERT INTO TBL_COMMUNITY_COMMENT(COMMUNITY_COMMENT_ID, USER_ID, COMMENT_CONTENT, POST_ID)
+        VALUES(SEQ_COMMUNITY_COMMENT.NEXTVAL, #{userId}, #{commentContent}, #{postId})
     </insert>
+
+    <delete id="deleteComment">
+        DELETE FROM TBL_COMMUNITY_COMMENT
+        WHERE COMMUNITY_COMMENT_ID = #{communityCommentId}
+    </delete>
 </mapper>
