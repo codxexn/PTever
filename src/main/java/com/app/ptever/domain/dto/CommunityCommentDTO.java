@@ -24,7 +24,6 @@ public class CommunityCommentDTO {
     private LocalDate updateDate;
     // ==============================
     private Long userId; // 유저 id
-    private Long communityId; // 커뮤니티 id
     private Long postId; // 게시물 id
     private String userNickname; // 유저 닉네임
 }

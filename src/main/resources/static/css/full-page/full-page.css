@@ -85,6 +85,31 @@ button.ButtonWrite{
     font-size: 14px;
 }
 
+button.AllButtonWrite {
+    width: 120px;
+    height: 50px;
+    line-height: normal;
+    padding: 0px;
+    background-color: transparent;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid rgb(238, 238, 238);
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.AllButtonWrite:first-of-type {
+    margin-right: 10px;
+}
+
+.Fullpage-WriteButton-Wrapper {
+    display: flex;
+    float: right;
+    flex-direction: row;
+    justify-content: right;
+    align-items: center;
+}
+
 hr.Hr{
     width: 100%;
     height: 1px;

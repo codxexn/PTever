@@ -3,6 +3,10 @@ const warning = document.querySelector(".Warning");
 const button = document.querySelector(".ButtonWrapper");
 const final = document.querySelector(".FinalAgreement");
 
+function showAlertToLogin(){
+    alert("로그인을 먼저 진행해주세요.")
+}
+
 function deleteAccount(seq){
     Swal.fire({
         title: '정말 탈퇴를 진행하시겠습니까?',
