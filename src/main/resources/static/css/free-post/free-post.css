@@ -275,6 +275,10 @@ button.ButtonPage_StyledOff{
 
 }
 
+button.ButtonPage_Styled:disabled {
+    cursor: not-allowed;
+}
+
 .PaginationButtonGroup_Icon{
     transform: rotate(180deg);
 }

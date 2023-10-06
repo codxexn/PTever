@@ -29,13 +29,13 @@ public class CommunityDAO {
     }
 
     // 개별 게시판 전체 게시물 최신순으로 가져오기
-    public List<PostDTO> readAllByCommunityId(Long communityId) {
-        return communityMapper.selectAllByCommunityId(communityId);
+    public List<PostDTO> readAllByCommunityId(Pagination pagination, Long communityId) {
+        return communityMapper.selectAllByCommunityId(pagination, communityId);
     }
 
     // 내가 쓴 게시물 목록 조회
-    public List<PostDTO> readAllByUserId(Long userId){
-        return communityMapper.selectAllByUserId(userId);
+    public List<PostDTO> readAllByUserId(Pagination pagination, Long userId){
+        return communityMapper.selectAllByUserId(pagination, userId);
     }
 
     // 게시물 삭제
@@ -66,5 +66,15 @@ public class CommunityDAO {
     // 게시물 전체 개수 조회
     public int readAllPostCounts() {
         return communityMapper.selectTotalAllPost();
+    }
+
+    // 게시판 별 게시물 전체 개수 조회
+    public int readTotalByCommunityId(Long communityId) {
+        return communityMapper.selectTotalByCommunityId(communityId);
+    }
+
+    // 내가 쓴 게시물 개수 전체 조회
+    public int readTotalByUserId(Long userId){
+        return communityMapper.selectTotalByUserId(userId);
     }
 }

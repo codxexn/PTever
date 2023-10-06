@@ -30,13 +30,13 @@ public class CommunityServiceImpl implements CommunityService {
     }
 
     @Override
-    public List<PostDTO> findAllByCommunityId(Long communityId) {
-        return communityDAO.readAllByCommunityId(communityId);
+    public List<PostDTO> findAllByCommunityId(Pagination pagination, Long communityId) {
+        return communityDAO.readAllByCommunityId(pagination, communityId);
     }
 
     @Override
-    public List<PostDTO> findAllByUserId(Long userId) {
-        return communityDAO.readAllByUserId(userId);
+    public List<PostDTO> findAllByUserId(Pagination pagination, Long userId) {
+        return communityDAO.readAllByUserId(pagination, userId);
     }
 
     @Override
@@ -67,5 +67,15 @@ public class CommunityServiceImpl implements CommunityService {
     @Override
     public int findAllPostCounts() {
         return communityDAO.readAllPostCounts();
+    }
+
+    @Override
+    public int findTotalByCommunityId(Long communityId) {
+        return communityDAO.readTotalByCommunityId(communityId);
+    }
+
+    @Override
+    public int findTotalByUserId(Long userId) {
+        return communityDAO.readTotalByUserId(userId);
     }
 }

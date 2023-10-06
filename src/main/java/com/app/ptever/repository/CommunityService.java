@@ -16,10 +16,10 @@ public interface CommunityService {
     public Optional<PostDTO> findByPostId(Long postId);
 
     // 개별 게시판 전체 게시물 최신순으로 가져오기
-    public List<PostDTO> findAllByCommunityId(Long communityId);
+    public List<PostDTO> findAllByCommunityId(Pagination pagination, Long communityId);
 
     // 내가 쓴 게시물 목록 조회
-    public List<PostDTO> findAllByUserId(Long userId);
+    public List<PostDTO> findAllByUserId(Pagination pagination, Long userId);
 
     // 게시물 삭제
     public void discardByPostId(Long postId);
@@ -38,4 +38,10 @@ public interface CommunityService {
 
     // 게시물 전체 개수 조회
     public int findAllPostCounts();
+
+    // 게시판 별 게시물 전체 개수 조회
+    public int findTotalByCommunityId(Long communityId);
+
+    // 내가 쓴 게시물 전체 개수 조회
+    public int findTotalByUserId(Long userId);
 }
