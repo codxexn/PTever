@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.app.ptever.mapper.MainMapper">
+
+    <select id="selectCourseBySearch" resultType="courseSelectDTO">
+
+    </select>
+
+    <select id="selectSearchByProduct" resultType="courseSelectDTO">
+
+
+
+
     <select id="selectAllByCourse" resultType="courseSelectDTO">
 <!--        SELECT *-->
 <!--        FROM(SELECT ROWNUM AS RN, COURSE_ID, COURSE_TITLE, COURSE_PRICE, COURSE_DISCOUNT, COURSE_AVG_SCORE, COURSE_LEVEL_DIFFICULTY-->
@@ -11,7 +21,7 @@
         <![CDATA[
         SELECT * FROM
         (
-            SELECT ROWNUM AS RN, COURSE_ID, COURSE_TITLE, COURSE_PRICE, COURSE_DISCOUNT, COURSE_AVG_SCORE, COURSE_LEVEL_DIFFICULTY, COURSE_STATE
+            SELECT ROWNUM AS RN, COURSE_ID, COURSE_TITLE, COURSE_PRICE, COURSE_DISCOUNT, COURSE_AVG_SCORE, COURSE_LEVEL_DIFFICULTY, COURSE_STATE, COURSE_IMG_PATH
             FROM
             (
                 SELECT *
@@ -21,14 +31,15 @@
                 NULLS LAST
             ) C1
         ) C2
-        WHERE C2.RN < 5
+        WHERE C2.RN <= 4
         ]]>
     </select>
+
     <select id="selectAllLatestDateByCourse" resultType="courseSelectDTO">
         <![CDATA[
         SELECT * FROM
             (
-                SELECT ROWNUM AS RN, COURSE_ID, COURSE_TITLE, COURSE_PRICE, COURSE_DISCOUNT, COURSE_AVG_SCORE, COURSE_LEVEL_DIFFICULTY, COURSE_STATE, COURSE_CREATE_DATE
+                SELECT ROWNUM AS RN, COURSE_ID, COURSE_TITLE, COURSE_PRICE, COURSE_DISCOUNT, COURSE_AVG_SCORE, COURSE_LEVEL_DIFFICULTY, COURSE_STATE, COURSE_CREATE_DATE, COURSE_IMG_PATH
                 FROM
                     (
                         SELECT *
@@ -37,7 +48,7 @@
                         ORDER BY COURSE_CREATE_DATE DESC NULLS LAST
                     ) C1
             ) C2
-        WHERE C2.RN < 5
+        WHERE C2.RN <= 4
         ]]>
     </select>
     <select id="selectAllLatestDateByCommunity" resultType="postDTO">

@@ -25,4 +25,6 @@ public class CourseSelectDTO {
     private Integer courseDiscount;
     // 강의 생성 일자
     private LocalDateTime courseCreateDate;
+    // 강의 이미지 경로
+    private String courseImgPath;
 }

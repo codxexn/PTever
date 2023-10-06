@@ -587,6 +587,13 @@ strong {
     width: 100%;
 }
 
+.courseImg {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
 .ProductListWrapper {
     position: relative;
     width: 100%;

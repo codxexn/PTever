@@ -218,7 +218,7 @@
                                                             <div class="RatioRatio">
                                                                 <div class="RatioContent">
                                                                     <!-- 이미지-->
-                                                                    <img alt class="강의 이미지"/>
+                                                                    <img alt="강의 이미지" class="courseImg" th:src="${courseAvgScore.courseImgPath}"/>
                                                                          <!--th:src="${courseAvgScore.courseImg.imagePath}"-->
                                                                 </div>
                                                             </div>
@@ -332,7 +332,7 @@
                                                             <div class="RatioRatio">
                                                                 <div class="RatioContent">
                                                                     <!-- 이미지-->
-                                                                    <img alt class="강의 이미지"/> <!--th:src="${courseLatestDate.courseImg.imagePath}"-->
+                                                                    <img alt="강의 이미지" class="courseImg" th:src="${courseLatestDate.courseImgPath}"/> <!--th:src="${courseLatestDate.courseImg.imagePath}"-->
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -575,7 +575,7 @@
                                                 </div>
                                             </div>
                                             <div class="CardProduct-DetailContainer">
-<!--                                                    <span class="CardProduct-Location" th:text="${post.postDescription}"></span>-->
+                                                <span class="CardProduct-Location" th:text="${#temporals.format(transPost.postDate, 'yyyy-MM-dd HH:mm')}">2023-12-12</span>
                                                 <div class="CardProduct-Title" th:text="${transPost.postTitle}">제목</div>
                                                 <div class="CardProduct-ReviewContainer">
                                                     <span class="CardProduct-writer" th:text="|작성자: ${transPost.userNickname}|">홍길동</span>
