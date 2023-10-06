@@ -87,5 +87,7 @@ public class CourseMapperTests {
         log.info(courseService.getAvgByCourseId(62L).toString());
     }
 
+//    전체 강의 목록 페이징
+
 
 }

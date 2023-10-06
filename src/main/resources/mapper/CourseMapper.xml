@@ -36,4 +36,16 @@
         WHERE COURSE_ID = #{courseId}
     </select>
 
+    <select id="selectAllCourse" resultType="courseVO">
+        SELECT C2.COURSE_ID, C2.COURSE_LEVEL_DIFFICULTY, C2.COURSE_TITLE, C2.COURSE_PRICE, C2.COURSE_DISCOUNT, C2.COURSE_IMG_PATH FROM
+            (SELECT ROWNUM R, C1.COURSE_ID, C1.COURSE_LEVEL_DIFFICULTY, C1.COURSE_TITLE, C1.COURSE_PRICE, C1.COURSE_DISCOUNT, C1.COURSE_IMG_PATH FROM
+                (SELECT COURSE_ID, COURSE_LEVEL_DIFFICULTY, COURSE_TITLE, COURSE_PRICE, COURSE_DISCOUNT, COURSE_IMG_PATH
+                FROM TBL_COURSE
+                ORDER BY COURSE_ID DESC) C1
+        <![CDATA[
+             WHERE ROWNUM <= #{endRow}) C2
+        WHERE C2.R >= #{startRow}
+        ]]>
+    </select>
+
 </mapper>
