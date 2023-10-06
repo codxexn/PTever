@@ -29,20 +29,20 @@
                     <h1 font-size="20px"  class="LeftPageTitle">글쓰기</h1>
 
 
-                    <div class="checkBox_Wrapper">
-                        <div class="checkboxItem_Wrapper" id="freePost">
-                            <div class="CheckboxItem_Box_Select" id="Box1"></div>
-                            <input type="radio" class="CheckboxItem_Input freecheck" checked="true">
-                            <div>자유게시판</div>
-                        </div>
+<!--                    <div class="checkBox_Wrapper">-->
+<!--                        <div class="checkboxItem_Wrapper" id="freePost">-->
+<!--                            <div class="CheckboxItem_Box_Select" id="Box1"></div>-->
+<!--                            <input type="radio" class="CheckboxItem_Input freecheck">-->
+<!--                            <div>자유게시판</div>-->
+<!--                        </div>-->
 
 
-                        <div class="checkboxItem_Wrapper" id="transaction">
-                            <div class="CheckboxItem_Box" id="Box2"></div>
-                            <input type="radio" class="CheckboxItem_Input transcheck" >
-                            <div>소도구 거래장터</div>
-                        </div>
-                    </div>
+<!--                        <div class="checkboxItem_Wrapper" id="transaction">-->
+<!--                            <div class="CheckboxItem_Box" id="Box2"></div>-->
+<!--                            <input type="radio" class="CheckboxItem_Input transcheck">-->
+<!--                            <div>소도구 거래장터</div>-->
+<!--                        </div>-->
+<!--                    </div>-->
 
                 </div>
 
@@ -58,20 +58,7 @@
                                   class="WritePage_TextArea" th:field="*{postContent}"></textarea>
                         <div class="WritePage_Footer">
                             <button type="submit" width="100%" color="white" font-size="13px" disabled
-                                    class="buttonOff">등록하기</button>
-                        </div>
-                    </form>
-                </div>
-                <div class="Fade_Wrapper trans-post-write" style="opacity: 1; display: none;">
-                    <form th:action="@{/community/write-trans}" method="post" th:object="${postDTO}">
-                        <textarea placeholder="제목을 입력하세요." id="title"
-                                  class="WritePage_TitleArea" th:field="*{postTitle}"></textarea>
-                        <hr class="Hr">
-                        <textarea placeholder="내용을 입력하세요." id="content"
-                                  class="WritePage_TextArea" th:field="*{postContent}"></textarea>
-                        <div class="WritePage_Footer">
-                            <button type="submit" width="100%" color="white" font-size="13px" disabled
-                                    class="buttonOff">등록하기</button>
+                                    class="buttonOn">등록하기</button>
                         </div>
                     </form>
                 </div>
@@ -81,31 +68,5 @@
     </div>
 </div>
 <script src="/js/write/write.js"></script>
-<script>
-    const freePostWrite = document.querySelector(".free-post-write");
-    const transPostWrite = document.querySelector(".trans-post-write");
-    const freeCheck = document.querySelector(".freecheck");
-    const transCheck = document.querySelector(".transcheck");
-    const freeCheckWrap = document.getElementById("freePost");
-    const transCheckWrap = document.getElementById("transaction");
-    freeCheckWrap.addEventListener("click", () => {
-        if (freeCheck.checked === "true"){
-            transPostWrite.style.display = "none";
-            freePostWrite.style.display = "block";
-        } else {
-            transPostWrite.style.display = "block";
-            freePostWrite.style.display = "none";
-        }
-    })
-    transCheckWrap.addEventListener("click", () => {
-        if (freeCheck.checked === "true"){
-            transPostWrite.style.display = "none";
-            freePostWrite.style.display = "block";
-        } else {
-            transPostWrite.style.display = "block";
-            freePostWrite.style.display = "none";
-        }
-    })
-</script>
 </body>
 </html>
