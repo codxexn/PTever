@@ -16,6 +16,7 @@ public class ReviewDTO {
     private String userNickname;
     // 이미지 경로
     private String imagePath;
+    private Integer courseScore;
 
 
 
