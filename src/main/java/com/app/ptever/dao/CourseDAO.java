@@ -28,4 +28,9 @@ public class CourseDAO {
     public List<CourseVO> findOtherCourse(Long courseId) {
         return  courseMapper.selectOtherCourse(courseId);
     }
+
+    //    해당 강의에 대한 평점을 강의 후기 테이블에서 가지고 온 뒤 평균 내기
+    public Double findAvgByCourseId(Long courseId) {
+        return courseMapper.selectAvgByCourseId(courseId);
+    }
 }

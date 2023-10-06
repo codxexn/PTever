@@ -16,4 +16,6 @@ public interface CourseMapper {
     public List<ReviewDTO> selectAllReview(Long courseId);
 //    해당 강의 제외 6개 강의 랜덤으로 조회
     public List<CourseVO> selectOtherCourse(Long courseId);
+//    해당 강의에 대한 평점을 강의 후기 테이블에서 가지고 온 뒤 평균 내기
+    public Double selectAvgByCourseId(Long courseId);
 }

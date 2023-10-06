@@ -42,7 +42,7 @@ public class CourseMapperTests {
 //   해당 강의 전체 리뷰 조회 Test
     @Test
     public void selectAllReviewMapperTest() {
-        courseMapper.selectAllReview(39L).stream().map(ReviewDTO::toString).forEach(log::info);
+        courseMapper.selectAllReview(62L).stream().map(ReviewDTO::toString).forEach(log::info);
     }
 
     @Test
@@ -70,4 +70,22 @@ public class CourseMapperTests {
     public void findOtherCourseServiceTest() {
         courseService.findOtherCourse(61L).stream().map(CourseVO::toString).forEach(log::info);
     }
+
+    //    해당 강의에 대한 평점을 강의 후기 테이블에서 가지고 온 뒤 평균 내기
+    @Test
+    public void selectAvgByCourseIdMapperTest() {
+       log.info(courseMapper.selectAvgByCourseId(62L).toString());
+    }
+
+    @Test
+    public void findAvgByCourseIdDAOTest() {
+        log.info(courseDAO.findAvgByCourseId(62L).toString());
+    }
+
+    @Test
+    public void getAvgByCourseIdServiceTest() {
+        log.info(courseService.getAvgByCourseId(62L).toString());
+    }
+
+
 }
