@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,55 +13,58 @@
     </style>
     <!-- 아래 링크 태그를 꼭 넣어주세요. (경로 조심) -->
     <link rel="stylesheet" href="/css/lecture-list-all/lecture-list-all.css">
+<!--    <th:block th:replace="~{fix/header-login :: my-header-head}"></th:block>-->
+<!--    <th:block th:replace="~{fix/footer :: my-footer-head}"></th:block>-->
 </head>
 <body>
 <div id="root">
     <div class="RootWrapper">
         <!-- body부분 -->
+<!--        <header th:replace="~{fix/header-login :: header-login}"></header>-->
         <div class="PageWrapper">
             <div class="FadeWrapper" style="opacity:1; display: block;">
                 <!-- 피트니스의 카테고리입니다 -->
                 <div class="CategoryWrapper">
-                    <span class="CategoryName">피트니스</span>
+                    <span class="CategoryName">강의</span>
                 </div>
-                <div>
-                    <div class="ItemListWrapper">
-                        <a href="" class="active" style="font-weight:bold; color:rgb(51,151,255)">전체</a>
-                        <a href="">요가</a>
-                        <a href="">필라테스</a>
-                        <a href="">헬스, PT, GX</a>
-                        <a href="">기타</a>
-                        <a href="">크로스핏</a>
-                        <a href="">홈 피트니스</a>
-                    </div>
-                </div>
+<!--                <div>-->
+<!--                    <div class="ItemListWrapper">-->
+<!--                        <a href="" class="active" style="font-weight:bold; color:rgb(51,151,255)">전체</a>-->
+<!--                        <a href="">요가</a>-->
+<!--                        <a href="">필라테스</a>-->
+<!--                        <a href="">헬스, PT, GX</a>-->
+<!--                        <a href="">기타</a>-->
+<!--                        <a href="">크로스핏</a>-->
+<!--                        <a href="">홈 피트니스</a>-->
+<!--                    </div>-->
+<!--                </div>-->
                 <!-- 본문 -->
                 <div class="FilterWrapper">
                     <!-- 날짜와 필터 버튼 -->
-                    <div class="FilterButtonWrapper">
-                        <!-- 날짜 버튼 -->
-                        <div class="FilterDateWrapper">
-                            <div class="FilterOpenButton">
-                                <button height="auto" color="initial" font-size="14px" font-weight="500" class="DateButton">
-                                    날짜
-                                </button>
-                            </div>
-                        </div>
-                        <!-- 필터 버튼 -->
-                        <div class="FilterOtherWrapper">
-                            <div class="FilterOtherButton">
-                                <button height="auto" color="initial" font-size="14px" font-weight="500" class="FilteringButton">
-                                    필터
-                                </button>
-                            </div>
-                        </div>
-                    </div>
+<!--                    <div class="FilterButtonWrapper">-->
+<!--                        &lt;!&ndash; 날짜 버튼 &ndash;&gt;-->
+<!--                        <div class="FilterDateWrapper">-->
+<!--                            <div class="FilterOpenButton">-->
+<!--                                <button height="auto" color="initial" font-size="14px" font-weight="500" class="DateButton">-->
+<!--                                    날짜-->
+<!--                                </button>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        &lt;!&ndash; 필터 버튼 &ndash;&gt;-->
+<!--                        <div class="FilterOtherWrapper">-->
+<!--                            <div class="FilterOtherButton">-->
+<!--                                <button height="auto" color="initial" font-size="14px" font-weight="500" class="FilteringButton">-->
+<!--                                    필터-->
+<!--                                </button>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
                     <!-- 피트니스 프립 전체 목록 -->
                     <div>
                         <div class="FadeWrapper" style="opacity: 1; display: block;">
                             <!-- 피트니스 글자부분 -->
                             <div class="ProductListTitleWrapper" font-size="18px">
-                                <div class="ProductListTitle">피트니스 프립</div>
+                                <div class="ProductListTitle">전체 강의 목록</div>
                             </div>
                             <!-- 20개의 목록 -->
                             <div class="ProductListProductWrapper">
@@ -1465,6 +1468,7 @@
         </div>
     </div>
 </div>
+<!--<footer th:replace="~{fix/footer :: my-footer}"></footer>-->
 <script src="/js/lecture-list-all/lecture-list-all.js"></script>
 </body>
 </html>
