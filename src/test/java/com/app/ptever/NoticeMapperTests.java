@@ -23,24 +23,26 @@ public class NoticeMapperTests {
     @Test
     public void register(){
         NoticeVO noticeVO = new NoticeVO();
-        noticeVO.setNoticeTitle("현충일(6/6) 고객센터 운영시간 안내");
-        noticeVO.setNoticeContent("<p>안녕하세요. 크루님 :)</p>\n" +
-                "<p>프립입니다.</p>\n" +
-                "<p><br></p>\n" +
-                "<p>6월 6일 현충일의 <span style=\"color: rgb(226, 80, 65);\">고객센터 운영 시간이 일부 단축</span>되어 안내해드립니다.</p>\n" +
-                "<p><br></p>\n" +
-                "<p><strong><span style=\"background-color: rgb(247, 218, 100);\">[프립 고객센터 운영 시간 안내]</span></strong></p>\n" +
-                "<p>- 일자 : 6월 6일 (화) 현충일</p>\n" +
-                "<p>- 카카오톡 채널 운영 시간 : <strong><span style=\"color: rgb(226, 80, 65);\">오전 10:00 ~ 오후 1:00</span></strong></p>\n" +
-                "<p><br></p>\n" +
-                "<p>주말, 공휴일에는 취소 및 결제 관련 일부 문의에 대한 처리가 제한될 수 있는 점 양해 부탁드리며,</p>\n" +
-                "<p>문의 사항은 카카오톡 채널 @프립 로 남겨주시면 순차적으로 처리해드릴 예정입니다.</p>\n" +
-                "<p><br></p>\n" +
-                "<p>감사합니다.</p>\n" +
-                "<p>프립 고객센터 드림</p>");
-        noticeVO.setCreateDate(LocalDate.from(LocalDateTime.parse("2023-06-01 08:31", DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"))));
-        noticeVO.setNoticeRegisterDate(LocalDate.from(LocalDateTime.parse("2023-06-01 08:31", DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"))));
-        noticeVO.setUpdateDate(LocalDate.from(LocalDateTime.parse("2023-06-01 08:31", DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"))));
+        noticeVO.setNoticeTitle("8월 공휴일 (8/15) 고객센터 운영시간 안내");
+        noticeVO.setCreateDate(LocalDate.from(LocalDateTime.parse("2022-08-12 09:32", DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"))));
+        noticeVO.setNoticeRegisterDate(LocalDate.from(LocalDateTime.parse("2022-08-12 09:32", DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"))));
+        noticeVO.setUpdateDate(LocalDate.from(LocalDateTime.parse("2022-08-12 09:32", DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"))));
+
+        noticeVO.setNoticeContent(
+                "<p>안녕하세요. 크루님 :)</p>\n" +
+                        "<p>프립 고객센터입니다.</p>\n" +
+                        "<p><br></p>\n" +
+                        "<p>8월 15일(월) 광복절, 고객센터 운영시간이 단축되어 안내드립니다.</p>\n" +
+                        "<p><br></p>\n" +
+                        "<p><strong><span style=\"font-size: 16px; background-color: rgb(239, 239, 239);\">[프립 고객센터 운영 시간 안내]</span></strong></p>\n" +
+                        "<p>- 8월 15일(월) : 광복절</p>\n" +
+                        "<p><span style=\"color: rgb(226, 80, 65);\">- &nbsp;카카오톡 채널 운영 시간 : 오전 10:00 ~ 오후 1:00</span></p>\n" +
+                        "<p><br></p>\n" +
+                        "<p>주말, 공휴일은 카카오톡 채널만 운영되며</p>\n" +
+                        "<p>취소, 일정 변경 등 일부 문의에 대한 처리가 제한될 수 있으니 참고 부탁드립니다\uD83D\uDE4F</p>\n" +
+                        "<p><br></p>\n" +
+                        "<p>감사합니다.</p>\n" +
+                        "<p>프립 고객센터 드림</p>");
 
         noticeMapper.registerNotice(noticeVO);
     }
