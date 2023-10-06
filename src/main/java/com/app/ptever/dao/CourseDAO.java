@@ -24,4 +24,8 @@ public class CourseDAO {
     public List<ReviewDTO> findAllReviewByCourseId(Long courseId) {
         return courseMapper.selectAllReview(courseId);
     }
+    //    해당 강의 제외 6개 강의 랜덤으로 조회
+    public List<CourseVO> findOtherCourse(Long courseId) {
+        return  courseMapper.selectOtherCourse(courseId);
+    }
 }
