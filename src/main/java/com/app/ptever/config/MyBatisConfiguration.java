@@ -40,12 +40,14 @@ public class MyBatisConfiguration {
 
 //    SqlSession을 만들기 위한 SqlSessionFactory를 제작한다.
 
+
     @Bean
     public SqlSessionFactory sqlSessionFactory() throws IOException {
         SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
         sqlSessionFactoryBean.setDataSource(dataSource());
         sqlSessionFactoryBean.setMapperLocations(applicationContext.getResources("classpath*:/mapper/*.xml"));
         sqlSessionFactoryBean.setConfigLocation(applicationContext.getResource("classpath:/config/config.xml"));
+
         try {
             SqlSessionFactory sqlSessionFactory = sqlSessionFactoryBean.getObject();
             sqlSessionFactory.getConfiguration().setMapUnderscoreToCamelCase(true);

@@ -1,20 +1,30 @@
 package com.app.ptever.controller;
 
+import com.app.ptever.domain.vo.EventVO;
+import com.app.ptever.domain.vo.NoticeVO;
+import com.app.ptever.repository.NoticeService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import java.util.List;
 
 @Controller
 @Slf4j
 @RequiredArgsConstructor
 @RequestMapping("/notices/*")
 public class NoticesController {
+    private final NoticeService noticeService;
 
 //    공지사항
     @GetMapping("notices")
-    public void GoToNotices(){;}
+    public void GoToNotices(Model model){
+        List<NoticeVO> notices = noticeService.selectNotice();
+        model.addAttribute("notice",notices);
+    }
 
 //    자주 묻는 질문
     @GetMapping("frequent-questions")

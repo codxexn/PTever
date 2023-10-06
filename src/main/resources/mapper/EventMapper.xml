@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.app.ptever.mapper.EventMapper">
+<!--    이벤트 DB에 내용 넣기-->
     <insert id="registerEvent">
         INSERT INTO TBL_EVENT(EVENT_ID, EVENT_TITLE,CREATE_DATE,UPDATE_DATE,EVENT_CONTENT)
         VALUES(SEQ_EVENT.NEXTVAL, #{eventTitle},#{createDate},#{updateDate},#{eventContent})
     </insert>
 
+<!--    이벤트 페이지에 내용 뿌리기-->
     <select id="selectEvent" resultType="EventVO">
         SELECT *
         FROM TBL_EVENT
+        ORDER BY CREATE_DATE DESC
     </select>
 </mapper>

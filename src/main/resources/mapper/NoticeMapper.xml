@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.app.ptever.mapper.NoticeMapper">
+    <!--    이벤트 DB에 내용 넣기-->
+    <insert id="registerNotice">
+        INSERT INTO TBL_NOTICE(NOTICE_ID, NOTICE_TITLE, NOTICE_REGISTER_DATE, CREATE_DATE, UPDATE_DATE, NOTICE_CONTENT)
+        VALUES(SEQ_NOTICE.NEXTVAL, #{noticeTitle},#{noticeRegisterDate},#{createDate},#{updateDate},#{noticeContent})
+    </insert>
 
+    <!--    이벤트 페이지에 내용 뿌리기-->
+    <select id="selectNotice" resultType="NoticeVO">
+        SELECT *
+        FROM TBL_NOTICE
+        ORDER BY CREATE_DATE DESC
+    </select>
 </mapper>
