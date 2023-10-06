@@ -1,6 +1,7 @@
 package com.app.ptever.repository;
 
 import com.app.ptever.domain.dto.ReviewDTO;
+import com.app.ptever.domain.pagination.Pagination;
 import com.app.ptever.domain.vo.CourseVO;
 
 import java.util.List;
@@ -19,5 +20,11 @@ public interface CourseService {
 
     //    해당 강의에 대한 평점을 강의 후기 테이블에서 가지고 온 뒤 평균 내기
     public Double getAvgByCourseId(Long courseId);
+
+    // 전체 강의 목록 최신순으로 가지고 오기
+    public List<CourseVO> findAllCourses(Pagination pagination);
+
+    // 강의 전체 개수 조회
+    public int getAllCoursesCounts();
 
 }

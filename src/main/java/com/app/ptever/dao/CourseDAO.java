@@ -1,6 +1,8 @@
 package com.app.ptever.dao;
 
+import com.app.ptever.domain.dto.PostDTO;
 import com.app.ptever.domain.dto.ReviewDTO;
+import com.app.ptever.domain.pagination.Pagination;
 import com.app.ptever.domain.vo.CourseVO;
 import com.app.ptever.mapper.CourseMapper;
 import lombok.RequiredArgsConstructor;
@@ -32,5 +34,15 @@ public class CourseDAO {
     //    해당 강의에 대한 평점을 강의 후기 테이블에서 가지고 온 뒤 평균 내기
     public Double findAvgByCourseId(Long courseId) {
         return courseMapper.selectAvgByCourseId(courseId);
+    }
+
+    // 전체 강의 목록 최신순으로 가지고 오기
+    public List<CourseVO> findAllCourses(Pagination pagination){
+        return courseMapper.selectAllCourse(pagination);
+    }
+
+    // 강의 전체 개수 조회
+    public int getAllCoursesCounts() {
+        return courseMapper.selectTotalAllCourse();
     }
 }

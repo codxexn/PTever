@@ -2,6 +2,7 @@ package com.app.ptever.repository;
 
 import com.app.ptever.dao.CourseDAO;
 import com.app.ptever.domain.dto.ReviewDTO;
+import com.app.ptever.domain.pagination.Pagination;
 import com.app.ptever.domain.vo.CourseVO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -34,5 +35,15 @@ public class CourseServiceImpl implements CourseService {
     @Override
     public Double getAvgByCourseId(Long courseId) {
         return courseDAO.findAvgByCourseId(courseId);
+    }
+
+    @Override
+    public List<CourseVO> findAllCourses(Pagination pagination){
+        return courseDAO.findAllCourses(pagination);
+    }
+
+    @Override
+    public int getAllCoursesCounts() {
+        return courseDAO.getAllCoursesCounts();
     }
 }

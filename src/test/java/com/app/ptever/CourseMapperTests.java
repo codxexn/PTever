@@ -2,6 +2,7 @@ package com.app.ptever;
 
 import com.app.ptever.dao.CourseDAO;
 import com.app.ptever.domain.dto.ReviewDTO;
+import com.app.ptever.domain.pagination.Pagination;
 import com.app.ptever.domain.vo.CourseVO;
 import com.app.ptever.mapper.CourseMapper;
 import com.app.ptever.repository.CourseService;
@@ -9,6 +10,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+
+import java.util.List;
 
 @SpringBootTest
 @Slf4j
@@ -88,6 +91,33 @@ public class CourseMapperTests {
     }
 
 //    전체 강의 목록 페이징
+    @Test
+    public void selectAllCourseMapperTest() {
+        Pagination pagination = new Pagination();
+        pagination.setTotal(courseMapper.selectTotalAllCourse());
+        pagination.progress();
+        List<CourseVO> foundCourses = courseMapper.selectAllCourse(pagination);
+        foundCourses.stream().map(CourseVO::toString).forEach(log::info);
+    }
+
+    @Test
+    public void findAllCourseDAOTest() {
+        Pagination pagination = new Pagination();
+        pagination.setTotal(courseDAO.getAllCoursesCounts());
+        pagination.progress();
+        List<CourseVO> foundCourses = courseDAO.findAllCourses(pagination);
+        foundCourses.stream().map(CourseVO::toString).forEach(log::info);
+    }
+
+    @Test
+    public void findAllCourseServiceTest() {
+        Pagination pagination = new Pagination();
+        pagination.setTotal(courseService.getAllCoursesCounts());
+        pagination.progress();
+        List<CourseVO> foundCourses = courseService.findAllCourses(pagination);
+        foundCourses.stream().map(CourseVO::toString).forEach(log::info);
+    }
+
 
 
 }

@@ -1,6 +1,7 @@
 package com.app.ptever.mapper;
 
 import com.app.ptever.domain.dto.ReviewDTO;
+import com.app.ptever.domain.pagination.Pagination;
 import com.app.ptever.domain.vo.CourseVO;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -20,4 +21,8 @@ public interface CourseMapper {
     public Double selectAvgByCourseId(Long courseId);
 
 //    전체 강의 목록 페이징
+    public List<CourseVO> selectAllCourse(Pagination pagination);
+
+//    게시물 전체 개수 조회
+    public int selectTotalAllCourse();
 }

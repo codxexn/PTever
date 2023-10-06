@@ -1,7 +1,9 @@
 package com.app.ptever.controller;
 
 
+import com.app.ptever.domain.dto.PostDTO;
 import com.app.ptever.domain.dto.ReviewDTO;
+import com.app.ptever.domain.pagination.Pagination;
 import com.app.ptever.domain.vo.CourseVO;
 import com.app.ptever.repository.CourseService;
 import lombok.RequiredArgsConstructor;
@@ -29,7 +31,16 @@ public class LectureController {
 
 //    강의 전체 목록
     @GetMapping("lecture-list-all")
-    public void GoToLectureListAll(){;}
+    public ModelAndView GoToAllCourseListPage(Pagination pagination){
+        pagination.setTotal(courseService.getAllCoursesCounts());
+        pagination.progress();
+        ModelAndView mv = new ModelAndView();
+        List<CourseVO> allCourses = courseService.findAllCourses(pagination);
+        mv.addObject("allCourses", allCourses);
+        mv.addObject("pagination", pagination);
+    //        log.info(mv.toString());
+        return mv;
+    }
 
 //    강의 상세보기
 //    @GetMapping("lecture-detailpage")

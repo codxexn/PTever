@@ -48,4 +48,8 @@
         ]]>
     </select>
 
+    <select id="selectTotalAllCourse" resultType="int">
+        SELECT COUNT(COURSE_ID) FROM TBL_COURSE
+    </select>
+
 </mapper>
