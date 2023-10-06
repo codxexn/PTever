@@ -248,6 +248,10 @@ button{
     margin: 0;
 }
 
+button:disabled {
+    cursor: not-allowed;
+}
+
 div.PaginationButtonGroup_NextButtonWrapper{
     display: flex;
     margin-left: 10px;
@@ -269,6 +273,10 @@ button.ButtonPage_StyledOff{
     align-items: center;
     outline: none;
 
+}
+
+button.ButtonPage_Styled:disabled {
+    cursor: not-allowed;
 }
 
 .PaginationButtonGroup_Icon{
