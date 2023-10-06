@@ -46,4 +46,19 @@ public class CommunityDAO {
     public void removeCommentByPostId(Long postId) {
         communityMapper.deleteCommentByPostId(postId);
     }
+
+    // 자유게시판 게시물 작성
+    public void writeFreePost(PostDTO postDTO) {
+        communityMapper.insertFreePost(postDTO);
+    }
+
+    // 소도구거래게시판 게시물 작성
+    public void writeTransPost(PostDTO postDTO) {
+        communityMapper.insertTransPost(postDTO);
+    }
+
+    // 게시물 수정
+    public void modifyPost(PostDTO postDTO) {
+        communityMapper.updatePost(postDTO);
+    }
 }

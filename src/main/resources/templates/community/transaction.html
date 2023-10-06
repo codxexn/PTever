@@ -57,8 +57,8 @@
                             </div>
                         </a>
                     </div>
-                    <button th:if="${session.user == null}" onclick="location.href='/login/login'" width="210px" font-size="14px" class="ButtonWrite">글쓰기</button>
-                    <button th:if="${session.user != null}" onclick="location.href='/community/write'" width="210px" font-size="14px" class="ButtonWrite">글쓰기</button>
+                    <button th:if="${session.user == null}" onclick="location.href='/login/login'" width="210px" font-size="14px" class="ButtonWrite">소도구 거래하기</button>
+                    <button th:if="${session.user != null}" onclick="location.href='/community/write-trans'" width="210px" font-size="14px" class="ButtonWrite">소도구 거래하기</button>
                 </div>
                 
                 <hr class="Hr">
@@ -134,4 +134,5 @@
 </div>
 </body>
 <script src="/js/transaction/transaction.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 </html>

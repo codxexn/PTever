@@ -47,4 +47,19 @@ public class CommunityServiceImpl implements CommunityService {
     public void discardCommentByPostId(Long postId) {
         communityDAO.removeCommentByPostId(postId);
     }
+
+    @Override
+    public void saveFreePost(PostDTO postDTO) {
+        communityDAO.writeFreePost(postDTO);
+    }
+
+    @Override
+    public void saveTransPost(PostDTO postDTO) {
+        communityDAO.writeTransPost(postDTO);
+    }
+
+    @Override
+    public void revisePost(PostDTO postDTO) {
+        communityDAO.modifyPost(postDTO);
+    }
 }

@@ -25,4 +25,9 @@ public class CommunityCommentServiceImpl implements CommunityCommentService {
     public void saveComment(CommunityCommentDTO communityCommentDTO) {
         communityCommentDAO.writeComment(communityCommentDTO);
     }
+
+    @Override
+    public void discardComment(Long communityCommentId) {
+        communityCommentDAO.removeComment(communityCommentId);
+    }
 }

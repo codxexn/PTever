@@ -45,4 +45,20 @@
         DELETE FROM TBL_POST
         WHERE POST_ID = #{postId}
     </delete>
+
+    <insert id="insertFreePost">
+        INSERT INTO TBL_POST(POST_ID, COMMUNITY_ID, USER_ID, POST_TITLE, POST_CONTENT)
+        VALUES(SEQ_POST.NEXTVAL, 1, #{userId}, #{postTitle}, #{postContent})
+    </insert>
+
+    <insert id="insertTransPost">
+        INSERT INTO TBL_POST(POST_ID, COMMUNITY_ID, USER_ID, POST_TITLE, POST_CONTENT)
+        VALUES(SEQ_POST.NEXTVAL, 2, #{userId}, #{postTitle}, #{postContent})
+    </insert>
+
+    <update id="updatePost">
+        UPDATE TBL_POST
+        SET POST_TITLE = #{postTitle}, POST_CONTENT = #{postContent}, POST_UPDATE_DATE = CURRENT_TIMESTAMP
+        WHERE POST_ID = #{postId}
+    </update>
 </mapper>
