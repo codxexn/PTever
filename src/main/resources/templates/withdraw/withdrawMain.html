@@ -55,7 +55,14 @@
                                 <div class="InlineButtonWrapper LlaGz">
                                     <div class="AnimateStyled jPHXjX">
                                         <div class="InlineButtonInnerWrapper kUbtJC">
-                                            <a class="SubmitWrapper hWDZbk" href="/withdraw/withdrawNext">
+                                            <a th:if="${session.user == null}" onclick="showAlertToLogin()" class="SubmitWrapper hWDZbk" href="/login/login">
+                                                <button type="button" class="ButtonWrapper jXWOEn">
+                                                    <span class="FlexWrapper lnoWON"><span class="ButtonTextWrapper ffdgGn"><span class="TextContinue bFCrTC">계속하기</span>
+                                                    </span>
+                                                    </span>
+                                                </button>
+                                            </a>
+                                            <a th:if="${session.user != null}" class="SubmitWrapper hWDZbk" href="/withdraw/withdrawNext">
                                                 <button type="button" class="ButtonWrapper jXWOEn">
                                                     <span class="FlexWrapper lnoWON"><span class="ButtonTextWrapper ffdgGn"><span class="TextContinue bFCrTC">계속하기</span>
                                                     </span>

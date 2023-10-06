@@ -62,8 +62,13 @@
                             </div>
                         </a>
                     </div>
-                    
-                    <button onclick="location.href='/community/write'" width="210px" font-size="14px" class="ButtonWrite">글쓰기</button>
+                    <div class="Fullpage-WriteButton-Wrapper">
+                        <button th:if="${session.user == null}" onclick="location.href='/login/login'" width="50px" font-size="14px" class="AllButtonWrite">자유게시판 글쓰기</button>
+                        <button th:if="${session.user != null}" onclick="location.href='/community/write-free'" width="50px" font-size="14px" class="AllButtonWrite">자유게시판 글쓰기</button>
+                        <button th:if="${session.user == null}" onclick="location.href='/login/login'" width="50px" font-size="14px" class="AllButtonWrite">소도구 거래하기</button>
+                        <button th:if="${session.user != null}" onclick="location.href='/community/write-trans'" width="50px" font-size="14px" class="AllButtonWrite">소도구 거래하기</button>
+                    </div>
+<!--                    <button onclick="location.href='/community/write'" width="210px" font-size="14px" class="ButtonWrite">글쓰기</button>-->
                 </div>
                 
                 <hr class="Hr">

@@ -57,6 +57,7 @@
                               <span>✔ 비밀번호 확인</span>
                               <div class="FinalAgreementWrapper">
                                 <p class="FinalAgreement"> 본인 확인을 위한 비밀번호 입력 후, [확인✔] 버튼을 누르시면 바로 탈퇴처리가 완료됩니다. </p>
+                                
                               </div>
                             </label>
                           </span>
@@ -72,6 +73,7 @@
                                                        tabindex="0" placeholder="여기에 비밀번호를 입력하세요." class="InputField"
                                                        value
                                                 th:name="userPassword">
+                                                <p th:if="${errorMessage}" th:text="${errorMessage}" class="Password-ErrorMsg"></p>
                                             </div>
                                             <div class="BlockFooter hlIUEI">
                                                 <div class="BlockFooterSpacer deNRRV">

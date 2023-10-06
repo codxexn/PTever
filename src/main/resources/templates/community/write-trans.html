@@ -9,7 +9,7 @@
     <!-- SUIT 폰트 링크입니다. 프립과 동일한 폰트입니다. -->
     <link href="https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/static/woff2/SUIT.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/write/write.css">
-
+    
     <style>
         body {font-family: 'SUIT', sans-serif;}
     </style>
@@ -26,31 +26,31 @@
         <div class="Padded">
             <div class="WritePage_Wrapper">
                 <div class="WritePage_Header">
-                    <h1 font-size="20px"  class="LeftPageTitle">자유게시판 글쓰기</h1>
-
-
-<!--                    <div class="checkBox_Wrapper">-->
-<!--                        <div class="checkboxItem_Wrapper" id="freePost">-->
-<!--                            <div class="CheckboxItem_Box_Select" id="Box1"></div>-->
-<!--                            <input type="radio" class="CheckboxItem_Input freecheck">-->
-<!--                            <div>자유게시판</div>-->
-<!--                        </div>-->
-
-
-<!--                        <div class="checkboxItem_Wrapper" id="transaction">-->
-<!--                            <div class="CheckboxItem_Box" id="Box2"></div>-->
-<!--                            <input type="radio" class="CheckboxItem_Input transcheck">-->
-<!--                            <div>소도구 거래장터</div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-
+                    <h1 font-size="20px"  class="LeftPageTitle">소도구 거래 게시판 글쓰기</h1>
+                    
+                    
+                    <!--                    <div class="checkBox_Wrapper">-->
+                    <!--                        <div class="checkboxItem_Wrapper" id="freePost">-->
+                    <!--                            <div class="CheckboxItem_Box_Select" id="Box1"></div>-->
+                    <!--                            <input type="radio" class="CheckboxItem_Input freecheck">-->
+                    <!--                            <div>자유게시판</div>-->
+                    <!--                        </div>-->
+                    
+                    
+                    <!--                        <div class="checkboxItem_Wrapper" id="transaction">-->
+                    <!--                            <div class="CheckboxItem_Box" id="Box2"></div>-->
+                    <!--                            <input type="radio" class="CheckboxItem_Input transcheck">-->
+                    <!--                            <div>소도구 거래장터</div>-->
+                    <!--                        </div>-->
+                    <!--                    </div>-->
+                
                 </div>
-
+                
                 <hr class="Hr">
-
-
+                
+                
                 <div class="Fade_Wrapper free-post-write" style="opacity: 1; display: block;">
-                    <form th:action="@{/community/write-free}" method="post" th:object="${postDTO}">
+                    <form th:action="@{/community/write-trans}" method="post" th:object="${postDTO}">
                         <input type="hidden" th:value="${session.user.userId}" th:name="userId">
                         <textarea placeholder="제목을 입력하세요." id="title"
                                   class="WritePage_TitleArea" th:field="*{postTitle}"></textarea>
