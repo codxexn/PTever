@@ -14,6 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
 
 import javax.servlet.http.HttpSession;
+import javax.swing.text.html.Option;
 import java.util.List;
 import java.util.Optional;
 
@@ -44,7 +45,7 @@ public class CommunityController {
         return mav;
     }
 
-//    자유 게시판 상세보기
+//    상세보기
 
     @GetMapping("detail")
     public void showDetail(@RequestParam(value="postId", required = false) Long postId, Model model, HttpSession session, CommunityCommentDTO communityCommentDTO){
@@ -62,7 +63,6 @@ public class CommunityController {
 
     @PostMapping("detail")
     public RedirectView showDetailAfterComment(@RequestParam("userId") Long userId, @RequestParam("postId") Long postId, CommunityCommentDTO communityCommentDTO){
-        communityCommentDTO.setCommunityId(1L);
         communityCommentDTO.setUserId(userId);
         communityCommentDTO.setPostId(postId);
         communityCommentService.saveComment(communityCommentDTO);
@@ -81,10 +81,39 @@ public class CommunityController {
         return "/community/iWrite";
     }
 
-//    글쓰기
+//    자유게시판 글쓰기
 
-    @GetMapping("write")
-    public void GoToWrite(HttpSession session){;}
+    @GetMapping("write-free")
+    public String GoToWriteFree(HttpSession session, UserVO userVO, PostDTO postDTO){
+        if (session.getAttribute("user") == null) {
+            return "/login/login";
+        }
+        return "/community/write";
+    }
+
+    @PostMapping("write-free")
+    public RedirectView uploadFreePost(@RequestParam("userId") Long userId, PostDTO postDTO) {
+        postDTO.setUserId(userId);
+        communityService.saveFreePost(postDTO);
+        return new RedirectView("/community/free-post");
+    }
+
+//    소도구 거래 게시판 글쓰기
+
+    @GetMapping("write-trans")
+    public String GoToWriteTrans(HttpSession session, UserVO userVO, PostDTO postDTO){
+        if (session.getAttribute("user") == null) {
+            return "/login/login";
+        }
+        return "/community/write-trans";
+    }
+
+    @PostMapping("write-trans")
+    public RedirectView uploadTransPost(@RequestParam("userId") Long userId, PostDTO postDTO){
+        postDTO.setUserId(userId);
+        communityService.saveTransPost(postDTO);
+        return new RedirectView("/community/transaction");
+    }
 
 //    소도구 거래 게시판
     @GetMapping("transaction")
@@ -104,6 +133,36 @@ public class CommunityController {
         }
         communityService.discardByPostId(postId);
         return new RedirectView("/community/full-page");
+    }
+
+
+//    게시물 수정
+    @PostMapping("detail-update")
+    public String detailUpdate(@RequestParam("postId") Long postId, Model model, PostDTO postDTO){
+        Optional<PostDTO> foundPost = communityService.findByPostId(postId);
+        if (foundPost.isPresent()){
+            model.addAttribute("foundPost", foundPost.get());
+        } else {
+            model.addAttribute("foundPost", null);
+        }
+        return "/community/update-post";
+    }
+
+    @PostMapping("update-post")
+    public RedirectView updatePost(@RequestParam("postId") Long postId, @RequestParam("postTitle") String postTitle, @RequestParam("postContent") String postContent){
+        PostDTO postDTO = new PostDTO();
+        postDTO.setPostId(postId);
+        postDTO.setPostTitle(postTitle);
+        postDTO.setPostContent(postContent);
+        communityService.revisePost(postDTO);
+        return new RedirectView("/community/detail?postId=" + postId);
+    }
+
+//    댓글 삭제
+    @PostMapping("delete-comment")
+    public RedirectView deleteComment(@RequestParam("communityCommentId") Long communityCommentId, @RequestParam("postId") Long postId){
+        communityCommentService.discardComment(communityCommentId);
+        return new RedirectView("/community/detail?postId=" + postId);
     }
 
 

@@ -25,4 +25,13 @@ public interface CommunityService {
 
     // 게시물 안의 댓글 삭제
     public void discardCommentByPostId(Long postId);
+
+    // 자유게시판 게시물 작성
+    public void saveFreePost(PostDTO postDTO);
+
+    // 소도구 거래 게시판 게시물 작성
+    public void saveTransPost(PostDTO postDTO);
+
+    // 게시물 수정
+    public void revisePost(PostDTO postDTO);
 }

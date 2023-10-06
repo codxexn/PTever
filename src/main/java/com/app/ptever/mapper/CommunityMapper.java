@@ -29,4 +29,13 @@ public interface CommunityMapper {
     // 게시물 안의 댓글 삭제
     public void deleteCommentByPostId(Long postId);
 
+    // 자유게시판 게시글 작성
+    public void insertFreePost(PostDTO postDTO);
+
+    // 소도구거래게시판 게시글 작성
+    public void insertTransPost(PostDTO postDTO);
+
+    // 게시물 수정
+    public void updatePost(PostDTO postDTO);
+
 }

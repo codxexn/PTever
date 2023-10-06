@@ -24,4 +24,9 @@ public class CommunityCommentDAO {
     public void writeComment(CommunityCommentDTO communityCommentDTO){
         communityCommentMapper.insertComment(communityCommentDTO);
     }
+
+    // 댓글 삭제
+    public void removeComment(Long communityCommentId){
+        communityCommentMapper.deleteComment(communityCommentId);
+    }
 }
