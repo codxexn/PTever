@@ -42,6 +42,7 @@ public class LectureController {
         Optional<CourseVO> foundCourse = courseService.findCourseById(courseId);
         List<ReviewDTO> foundReviews = courseService.findAllReviewByCourseId(courseId);
         List<CourseVO> foundOtherCourses = courseService.findOtherCourse(courseId);
+        Double getCourseScoreAVG = courseService.getAvgByCourseId(courseId);
         if(foundCourse.isPresent()) {
             log.info(foundCourse.toString());
             foundReviews.stream().map(ReviewDTO::toString).forEach(log::info);
@@ -49,6 +50,7 @@ public class LectureController {
             mv.addObject("courseVO", foundCourse.get());
             mv.addObject("reviewDTOS", foundReviews);
             mv.addObject("courseVOS", foundOtherCourses);
+            mv.addObject("AVG", getCourseScoreAVG);
             mv.setViewName("/lecture/lecture-detailpage");
             return mv;
         }

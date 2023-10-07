@@ -10,7 +10,7 @@
     <select id="selectAllReview" resultType="reviewDTO">
         SELECT *
         FROM
-            (SELECT CR.COURSE_ID, CR.COURSE_REVIEW_ID, CR.REVIEW_CONTENT, CR.USER_ID, RI.IMAGE_PATH
+            (SELECT CR.COURSE_ID, CR.COURSE_REVIEW_ID, CR.REVIEW_CONTENT, CR.USER_ID, CR.COURSE_SCORE, RI.IMAGE_PATH
              FROM TBL_COURSE_REVIEW CR
             LEFT OUTER JOIN TBL_REVIEW_IMG RI
             ON CR.COURSE_REVIEW_ID = RI.COURSE_REVIEW_ID) R
@@ -28,6 +28,12 @@
                 ORDER BY DBMS_RANDOM.RANDOM)
             WHERE ROWNUM < 7
         ]]>
+    </select>
+
+    <select id="selectAvgByCourseId" resultType="Double">
+        SELECT ROUND(AVG(COURSE_SCORE),1) AS AVG
+        FROM TBL_COURSE_REVIEW
+        WHERE COURSE_ID = #{courseId}
     </select>
 
 </mapper>

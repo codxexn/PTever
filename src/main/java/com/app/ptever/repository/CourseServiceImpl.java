@@ -30,4 +30,9 @@ public class CourseServiceImpl implements CourseService {
     public List<CourseVO> findOtherCourse(Long courseId) {
       return courseDAO.findOtherCourse(courseId);
     }
+
+    @Override
+    public Double getAvgByCourseId(Long courseId) {
+        return courseDAO.findAvgByCourseId(courseId);
+    }
 }

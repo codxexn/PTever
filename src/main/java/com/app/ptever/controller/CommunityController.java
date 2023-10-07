@@ -2,6 +2,7 @@ package com.app.ptever.controller;
 
 import com.app.ptever.domain.dto.PostDTO;
 import com.app.ptever.domain.dto.CommunityCommentDTO;
+import com.app.ptever.domain.pagination.Pagination;
 import com.app.ptever.domain.vo.UserVO;
 import com.app.ptever.repository.CommunityCommentService;
 import com.app.ptever.repository.CommunityService;
@@ -28,20 +29,26 @@ public class CommunityController {
 
 //    전체 게시판
     @GetMapping("full-page")
-    public ModelAndView GoToFullPage(){
+    public ModelAndView GoToFullPage(Pagination pagination){
+        pagination.setTotal(communityService.findAllPostCounts());
+        pagination.progress();
         ModelAndView mav = new ModelAndView();
-        List<PostDTO> allPosts = communityService.findAll();
+        List<PostDTO> allPosts = communityService.findAll(pagination);
         mav.addObject("allPosts", allPosts);
+        mav.addObject("pagination", pagination);
 //        log.info(mav.toString());
         return mav;
     }
 
 //    자유 게시판
     @GetMapping("free-post")
-    public ModelAndView GoToFreePost(){
+    public ModelAndView GoToFreePost(Pagination pagination){
+        pagination.setTotal(communityService.findTotalByCommunityId(1L));
+        pagination.progress();
         ModelAndView mav = new ModelAndView();
-        List<PostDTO> freePosts = communityService.findAllByCommunityId(1L);
+        List<PostDTO> freePosts = communityService.findAllByCommunityId(pagination, 1L);
         mav.addObject("freePosts", freePosts);
+        mav.addObject("pagination", pagination);
         return mav;
     }
 
@@ -71,13 +78,17 @@ public class CommunityController {
 
 //    내가 쓴 글
     @GetMapping("iWrite")
-    public String GoToIWrite(HttpSession session, Model model){
+    public String GoToIWrite(Pagination pagination, HttpSession session, Model model){
         if (session.getAttribute("user") == null) {
             return "/login/login";
         }
         UserVO userVO = (UserVO) session.getAttribute("user");
-        List<PostDTO> foundMyPosts = communityService.findAllByUserId(userVO.getUserId());
+        Long userId = userVO.getUserId();
+        pagination.setTotal(communityService.findTotalByUserId(userId));
+        pagination.progress();
+        List<PostDTO> foundMyPosts = communityService.findAllByUserId(pagination, userId);
         model.addAttribute("foundMyPosts", foundMyPosts);
+        model.addAttribute("pagination", pagination);
         return "/community/iWrite";
     }
 
@@ -117,10 +128,13 @@ public class CommunityController {
 
 //    소도구 거래 게시판
     @GetMapping("transaction")
-    public ModelAndView GoToTransaction(){
+    public ModelAndView GoToTransaction(Pagination pagination){
+        pagination.setTotal(communityService.findTotalByCommunityId(2L));
+        pagination.progress();
         ModelAndView mav = new ModelAndView();
-        List<PostDTO> transPosts = communityService.findAllByCommunityId(2L);
+        List<PostDTO> transPosts = communityService.findAllByCommunityId(pagination, 2L);
         mav.addObject("transPosts", transPosts);
+        mav.addObject("pagination", pagination);
         return mav;
     }
 
