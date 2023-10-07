@@ -9,7 +9,10 @@ import java.util.List;
 @Data
 public class SearchDTO {
     private List<CourseSelectDTO> courseLists;
-    private List<ShoppingMallDTO> productLists;
+//    private List<ShoppingMallDTO> productLists;
+
+    // 강의 총 개수
+    private int courseTotalCount;
 
 
 }

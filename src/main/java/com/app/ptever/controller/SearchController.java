@@ -15,31 +15,49 @@ import org.springframework.web.servlet.view.RedirectView;
 @Slf4j
 @RequiredArgsConstructor
 @RequestMapping("/search-results/*")
+@SessionAttributes("keyword") // 키워드 저장
 public class SearchController {
     private final SearchService searchService;
 
-//    @GetMapping("search")
-//    public void GoToSearchResult(){;}
 
-//    @GetMapping("search")
-//    public SearchDTO getResult(Search search) {
-//        return searchService.getResult(search);
+//    @GetMapping
+//    public String showSearchResults() {
+//        return "search";
+//    }
+//
+//    // 통합 검색
+//    @PostMapping("search")
+//    public RedirectView searchCoursesAndProducts(@RequestParam("keyword") String keyword, Model model) {
+//        Search search = new Search();
+//        search.setKeyword(keyword);
+//
+//        SearchDTO searchDTO = searchService.getResult(search);
+//
+//        model.addAttribute("searchDTO", searchDTO);
+//
+//        return new RedirectView("/search-results/search");
 //    }
 
-    @GetMapping
-    public String showSearchResults() {
-        return "search";
-    }
+//    @GetMapping("search")
+//    public String showSearchResults(Model model) {
+//        SearchDTO searchDTO = new SearchDTO();
+//        model.addAttribute("searchCourses", searchDTO);
+//
+//        return "/search-results/search";
+//    }
+//
+//    @PostMapping("search")
+//    public String searchCoursesAndProducts(@RequestParam("keyword") String keyword, Model model) {
+//        Search search = new Search();
+//        search.setKeyword(keyword);
+//
+//        SearchDTO searchDTO = searchService.getResult(search);
+//        model.addAttribute("searchCourses", searchDTO);
+//
+//        int courseTotalCount = searchDTO.getCourseTotalCount();
+//        model.addAttribute("courseTotalCount", courseTotalCount);
+//
+//        return "search-results/search";
+//    }
 
-    @PostMapping("search")
-    public RedirectView searchCoursesAndProducts(@RequestParam("keyword") String keyword, Model model) {
-        Search search = new Search();
-        search.setKeyword(keyword);
-
-        SearchDTO searchDTO = searchService.getResult(search);
-
-        model.addAttribute("searchDTO", searchDTO);
-
-        return new RedirectView("/search-results/search");
-    }
 }

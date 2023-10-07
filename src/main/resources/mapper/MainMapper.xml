@@ -15,12 +15,19 @@
             WHERE ROWNUM <= 5
         ]]>
     </select>
+    
+    <select id="selectCourseTotal" resultType="int">
+        SELECT COUNT(COURSE_ID) FROM TBL_COURSE
+        <if test="keyword != null and !keyword.equals('')">
+            WHERE COURSE_TITLE LIKE '%' || #{keyword} || '%'
+        </if>
+    </select>
 
-<!--    <select id="selectSearchByProduct" resultType="courseSelectDTO">-->
-<!--        SELECT COURSE_ID, COURSE_TITLE, COURSE_PRICE, COURSE_DISCOUNT, COURSE_AVG_SCORE, COURSE_LEVEL_DIFFICULTY, COURSE_STATE, COURSE_IMG_PATH-->
+<!--    <select id="selectSearchByProduct" resultType="shoppingMallDTO">-->
+<!--        SELECT PRODUCT_ID, PRODUCT_TITLE, PRODUCT_DESCRIPTION, PRODUCT_PRICE, PRODUCT_AVG_SCORE, PRODUCT_DISCOUNT-->
 <!--        FROM-->
 <!--            (-->
-<!--                SELECT COURSE_ID, COURSE_TITLE, COURSE_PRICE, COURSE_DISCOUNT, COURSE_AVG_SCORE, COURSE_LEVEL_DIFFICULTY, COURSE_STATE, COURSE_IMG_PATH-->
+<!--                SELECT PRODUCT_ID, PRODUCT_TITLE, PRODUCT_DESCRIPTION, PRODUCT_PRICE, PRODUCT_AVG_SCORE, PRODUCT_DISCOUNT-->
 <!--                FROM TBL_COURSE-->
 <!--                WHERE COURSE_TITLE LIKE '%' || #{keyword} || '%'-->
 <!--                ORDER BY COURSE_ID DESC-->

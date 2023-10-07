@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>searchResultPage</title>
+  <!-- SUIT 폰트 링크입니다. 프립과 동일한 폰트입니다. -->
+  <link href="https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/static/woff2/SUIT.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'SUIT', sans-serif;
+    }
+  </style>
+  <link rel="stylesheet" href="/css/search-results/search.css">
+  <th:block th:replace="~{fix/header-login :: my-header-head}"></th:block>
+  <th:block th:replace="~{fix/footer :: my-footer-head}"></th:block>
+</head>
+<body>
+<div class="root pc">
+  <div class="rootWrapper">
+    <header th:replace="~{fix/header-login :: header-login}"></header>
+    <div class="pageWrapper">
+      <div class="searchResultPageHeader">
+        <span class="searchResultText">와인 검색 결과</span>
+        <span class="searchResultCount" th:text="${courseTotalCount}">186</span>
+      </div>
+      <div class="filterWrapper">
+        <div class="fadeWrapper" style="opacity: 1; display: block">
+          <div class="productListWrapper">
+            <div class="fadeWrapper" style="opacity: 1; display: block">
+              <div class="emptyWrapper">
+                <img class="empty" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath fill='%23FFF' fill-opacity='0' fill-rule='nonzero' d='M0 0h80v80H0z'/%3E %3Cg transform='translate(10 10)'%3E %3Ccircle cx='26.2' cy='26.2' r='24.6' fill-rule='nonzero' stroke='%23DDD' stroke-width='2'/%3E %3Cpath fill='%23DDD' d='M19.8 24.6a1.6 1.6 0 1 1 0-3.2 1.6 1.6 0 0 1 0 3.2zm12.8 0a1.6 1.6 0 1 1 0-3.2 1.6 1.6 0 0 1 0 3.2z'/%3E %3Cpath stroke='%23DDD' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M23 29.4c2.133-2.133 4.267-2.133 6.4 0'/%3E %3Cpath fill-rule='nonzero' stroke='%23DDD' stroke-width='2' d='M43.8 43.8l14.708 14.708'/%3E %3C/g%3E %3C/g%3E %3C/svg%3E">
+                <div class="emptyText">
+                  <p>검색 결과가 없어요.</p>
+                  <p>다른 검색어로 검색해 주세요!</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer th:replace="~{fix/footer :: my-footer}"></footer>
+  </div>
+</div>
+</body>
+<script type="text/javascript" th:src="@{'/js/search-results/search.js'}"></script>
+</html>
+
+
+

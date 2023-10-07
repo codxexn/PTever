@@ -21,8 +21,13 @@ public class SearchDAO {
         return mainMapper.selectSearchByCourse(search);
     }
 
-    // 통합 검색 상품
-    public List<ShoppingMallDTO> findSearchByProduct(Search search) {
-        return mainMapper.selectSearchByProduct(search);
+    // 강의 총 개수
+    public int findCourseTotal(Search search) {
+        return mainMapper.selectCourseTotal(search);
     }
+
+    // 통합 검색 상품
+//    public List<ShoppingMallDTO> findSearchByProduct(Search search) {
+//        return mainMapper.selectSearchByProduct(search);
+//    }
 }

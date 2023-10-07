@@ -15,8 +15,8 @@ public class SearchService {
     public SearchDTO getResult(Search search) {
         SearchDTO searchDTO = new SearchDTO();
         searchDTO.setCourseLists(searchCourse.findSearchByCourse(search));
-        searchDTO.setProductLists(searchProduct.findSearchByProduct(search));
-
+        searchDTO.setCourseTotalCount(searchCourse.findCourseTotal(search));
+//        searchDTO.setProductLists(searchProduct.findSearchByProduct(search));
         return searchDTO;
     }
 }

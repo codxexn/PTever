@@ -24,6 +24,9 @@ public interface MainMapper {
     // 통합 검색 중 강의 검색
     public List<CourseSelectDTO> selectSearchByCourse(Search search);
 
+    // 강의 전체 개수
+    public int selectCourseTotal(Search search);
+
     // 통합 검색 중 상품 검색
-    public List<ShoppingMallDTO> selectSearchByProduct(Search search);
+//    public List<ShoppingMallDTO> selectSearchByProduct(Search search);
 }
