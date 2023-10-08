@@ -114,6 +114,7 @@ div.Fade_Wrapper{
 .detailContent_Body{
     display: inline-block;
     margin-left: 20px;
+    margin-right: 20px;
     margin-bottom: 70px;
 }
 
@@ -177,6 +178,29 @@ div.Fade_Wrapper{
 
 .detailContent-comment-DeleteButton:hover {
     color: #cc0000;
+}
+
+.detailContent-Images {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 768px;
+    margin-bottom: 40px;
+}
+
+/*.detailContent-Images-Only {*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    margin-bottom: 40px;*/
+/*}*/
+
+
+.detailContent-ImageWrapper {
+    max-width: 370px;
+}
+
+.detailContent-Image {
+    width: 100%;
 }
 
 .Image_Wrapper{

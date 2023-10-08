@@ -77,4 +77,14 @@ public class CommunityDAO {
     public int readTotalByUserId(Long userId){
         return communityMapper.selectTotalByUserId(userId);
     }
+
+    // 유저id로 가장 최신 게시물 찾기
+    public PostVO readPostByUserId(Long userId){
+        return communityMapper.selectPostByUserId(userId);
+    }
+
+    // 게시물 안의 이미지 삭제
+    public void removeImageByPostId(Long postId){
+        communityMapper.deleteImageByPostId(postId);
+    }
 }

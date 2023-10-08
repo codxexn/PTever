@@ -44,4 +44,10 @@ public interface CommunityService {
 
     // 내가 쓴 게시물 전체 개수 조회
     public int findTotalByUserId(Long userId);
+
+    // 유저id로 가장 최신 게시물 찾기
+    public PostVO findPostByUserId(Long userId);
+
+    // 게시물 안의 이미지 삭제
+    public void discardImageByPostId(Long postId);
 }
