@@ -20,10 +20,10 @@
   <div class="rootWrapper">
     <header th:replace="~{fix/header-login :: header-login}"></header>
     <div class="pageWrapper">
-      <div class="searchResultPageHeader">
-        <span class="searchResultText" th:text="|${keyword} 검색 결과|">와인 검색 결과</span>
-        <span class="searchResultCount" th:text="${courseTotalCount}">186</span>
-      </div>
+<!--      <div class="searchResultPageHeader">-->
+<!--        <span class="searchResultText" th:text="|${keyword} 검색 결과|">와인 검색 결과</span>-->
+<!--        <span class="searchResultCount" th:text="${courseTotalCount}">0</span>-->
+<!--      </div>-->
       <div class="filterWrapper">
         <div class="fadeWrapper" style="opacity: 1; display: block">
           <div class="productListWrapper">
@@ -44,7 +44,22 @@
   </div>
 </div>
 </body>
-<script type="text/javascript" th:src="@{'/js/search-results/search.js'}"></script>
+<script src="/js/mainpage/mainpage-header.js"></script>
+<script>
+
+  // 검색어가 비어 있지 않은 경우 검색 페이지로 리디렉션
+  // URL 파라미터를 얻어오기 위한 URLSearchParams 객체 사용
+  const urlParams = new URLSearchParams(window.location.search);
+  const keyword = urlParams.get("keyword");
+
+  // 검색어가 비어 있지 않은 경우 검색 페이지로 리디렉션
+  if (keyword && keyword.trim() !== "") {
+    // 현재 URL과 새 URL이 다를 때 경로 리디렉션 해주기
+    if (window.location.pathname !== "/search-results/search") {
+      window.location.href = "/search-results/search?keyword=" + encodeURIComponent(keyword);
+    }
+  }
+</script>
 </html>
 
 
