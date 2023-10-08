@@ -17,7 +17,7 @@ public class SearchDAO {
     private final MainMapper mainMapper;
 
     // 통합 검색 강의
-    public List<CourseSelectDTO> findSearchByCourse(Search search) {
+    public List<CourseSelectDTO> findBySearchCourse(Search search) {
         return mainMapper.selectSearchByCourse(search);
     }
 
@@ -31,3 +31,4 @@ public class SearchDAO {
 //        return mainMapper.selectSearchByProduct(search);
 //    }
 }
+

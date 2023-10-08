@@ -61,34 +61,52 @@ function hideKeywordSearchMobile(){
 }
 
 // 검색 인풋 태그에 입력 후 엔터시 함수 실행
-const inputElement = document.querySelector(".SearchInput");
+// const inputElement = document.querySelector(".SearchInput");
+//
+// inputElement.addEventListener("keyup", (e) => {
+//     if(e.keyCode === 13) {
+//         let keyword = inputElement.value;
+//
+//
+//         // form 엘리먼트 생성
+//         let formElement = document.createElement("form");
+//
+//         let keywordInput = document.createElement("input");
+//         keywordInput.setAttribute("type", "hidden");
+//         keywordInput.setAttribute("name", "keyword");
+//         keywordInput.setAttribute("value", keyword)
+//
+//         // from의 method와 action 속성을 설정
+//         formElement.setAttribute("method", "get");
+//         formElement.setAttribute("action", "/search-results/search");
+//
+//         formElement.setAttribute("target", "_self");
+//
+//         // form에 input 엘리먼트 추가합니다.
+//         formElement.appendChild(keywordInput);
+//
+//         // form을 body에 추가하고 submit 합니다.
+//         document.body.appendChild(formElement);
+//         formElement.submit();
+//     }
+//
+//
+// });
 
-inputElement.addEventListener("keyup", (e) => {
-    if(e.keyCode === 13) {
-        let keyword = inputElement.value;
 
 
-        // form 엘리먼트 생성
-        let formElement = document.createElement("form");
+const searchForm = document.getElementById("searchForm");
+const inputElement = document.getElementById("search_keyword");
 
-        let keywordInput = document.createElement("input");
-        keywordInput.setAttribute("type", "hidden");
-        keywordInput.setAttribute("name", "keyword");
-        keywordInput.setAttribute("value", keyword)
 
-        // from의 method와 action 속성을 설정
-        formElement.setAttribute("method", "get");
-        formElement.setAttribute("action", "/search-results/search");
+searchForm.addEventListener("submit", function(event) {
+    event.preventDefault();
+    const keyword = inputElement.value;
 
-        formElement.setAttribute("target", "_self"); 
-
-        // form에 input 엘리먼트 추가합니다.
-        formElement.appendChild(keywordInput);
-
-        // form을 body에 추가하고 submit 합니다.
-        document.body.appendChild(formElement);
-        formElement.submit();
+    if(keyword.trim() === "") {
+        window.location.href = "/search-results/no-search";
+    } else {
+        window.location.href = "/search-results/search?keyword=" + encodeURIComponent(keyword);
     }
 
-
-})
+});

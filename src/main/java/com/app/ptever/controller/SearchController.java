@@ -44,6 +44,12 @@ public class SearchController {
 
     }
 
+    @GetMapping("no-search")
+    public String noSearchResults() {
+
+        return "search-results/no-search";
+    }
+
 
 
 //    @GetMapping
