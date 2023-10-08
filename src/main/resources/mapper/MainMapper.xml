@@ -1,6 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.app.ptever.mapper.MainMapper">
+
+    <select id="selectSearchByCourse" resultType="courseSelectDTO">
+        SELECT COURSE_ID, COURSE_TITLE, COURSE_PRICE, COURSE_DISCOUNT, COURSE_AVG_SCORE, COURSE_LEVEL_DIFFICULTY, COURSE_STATE, COURSE_IMG_PATH
+        FROM
+            (
+                SELECT COURSE_ID, COURSE_TITLE, COURSE_PRICE, COURSE_DISCOUNT, COURSE_AVG_SCORE, COURSE_LEVEL_DIFFICULTY, COURSE_STATE, COURSE_IMG_PATH
+                FROM TBL_COURSE
+                WHERE COURSE_TITLE LIKE '%' || #{keyword} || '%'
+                ORDER BY COURSE_ID DESC
+            )
+        <![CDATA[
+            WHERE ROWNUM <= 5
+        ]]>
+    </select>
+    
+    <select id="selectCourseTotal" resultType="int">
+        SELECT COUNT(COURSE_ID) FROM TBL_COURSE
+        <if test="keyword != null and !keyword.equals('')">
+            WHERE COURSE_TITLE LIKE '%' || #{keyword} || '%'
+        </if>
+    </select>
+
+<!--    <select id="selectSearchByProduct" resultType="shoppingMallDTO">-->
+<!--        SELECT PRODUCT_ID, PRODUCT_TITLE, PRODUCT_DESCRIPTION, PRODUCT_PRICE, PRODUCT_AVG_SCORE, PRODUCT_DISCOUNT-->
+<!--        FROM-->
+<!--            (-->
+<!--                SELECT PRODUCT_ID, PRODUCT_TITLE, PRODUCT_DESCRIPTION, PRODUCT_PRICE, PRODUCT_AVG_SCORE, PRODUCT_DISCOUNT-->
+<!--                FROM TBL_COURSE-->
+<!--                WHERE COURSE_TITLE LIKE '%' || #{keyword} || '%'-->
+<!--                ORDER BY COURSE_ID DESC-->
+<!--            )-->
+<!--        <![CDATA[-->
+<!--        WHERE ROWNUM <= 5-->
+<!--        ]]>-->
+<!--    </select>-->
+
+
+
+
     <select id="selectAllByCourse" resultType="courseSelectDTO">
 <!--        SELECT *-->
 <!--        FROM(SELECT ROWNUM AS RN, COURSE_ID, COURSE_TITLE, COURSE_PRICE, COURSE_DISCOUNT, COURSE_AVG_SCORE, COURSE_LEVEL_DIFFICULTY-->
@@ -11,7 +50,7 @@
         <![CDATA[
         SELECT * FROM
         (
-            SELECT ROWNUM AS RN, COURSE_ID, COURSE_TITLE, COURSE_PRICE, COURSE_DISCOUNT, COURSE_AVG_SCORE, COURSE_LEVEL_DIFFICULTY, COURSE_STATE
+            SELECT ROWNUM AS RN, COURSE_ID, COURSE_TITLE, COURSE_PRICE, COURSE_DISCOUNT, COURSE_AVG_SCORE, COURSE_LEVEL_DIFFICULTY, COURSE_STATE, COURSE_IMG_PATH
             FROM
             (
                 SELECT *
@@ -21,14 +60,15 @@
                 NULLS LAST
             ) C1
         ) C2
-        WHERE C2.RN < 5
+        WHERE C2.RN <= 4
         ]]>
     </select>
+
     <select id="selectAllLatestDateByCourse" resultType="courseSelectDTO">
         <![CDATA[
         SELECT * FROM
             (
-                SELECT ROWNUM AS RN, COURSE_ID, COURSE_TITLE, COURSE_PRICE, COURSE_DISCOUNT, COURSE_AVG_SCORE, COURSE_LEVEL_DIFFICULTY, COURSE_STATE, COURSE_CREATE_DATE
+                SELECT ROWNUM AS RN, COURSE_ID, COURSE_TITLE, COURSE_PRICE, COURSE_DISCOUNT, COURSE_AVG_SCORE, COURSE_LEVEL_DIFFICULTY, COURSE_STATE, COURSE_CREATE_DATE, COURSE_IMG_PATH
                 FROM
                     (
                         SELECT *
@@ -37,7 +77,7 @@
                         ORDER BY COURSE_CREATE_DATE DESC NULLS LAST
                     ) C1
             ) C2
-        WHERE C2.RN < 5
+        WHERE C2.RN <= 4
         ]]>
     </select>
     <select id="selectAllLatestDateByCommunity" resultType="postDTO">
