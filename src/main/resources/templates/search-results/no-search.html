@@ -11,7 +11,7 @@
       font-family: 'SUIT', sans-serif;
     }
   </style>
-  <link rel="stylesheet" href="/css/search-results/search.css">
+  <link rel="stylesheet" href="/css/search-results/no-search.css">
   <th:block th:replace="~{fix/header-login :: my-header-head}"></th:block>
   <th:block th:replace="~{fix/footer :: my-footer-head}"></th:block>
 </head>
@@ -21,7 +21,7 @@
     <header th:replace="~{fix/header-login :: header-login}"></header>
     <div class="pageWrapper">
       <div class="searchResultPageHeader">
-        <span class="searchResultText">와인 검색 결과</span>
+        <span class="searchResultText" th:text="|${keyword} 검색 결과|">와인 검색 결과</span>
         <span class="searchResultCount" th:text="${courseTotalCount}">186</span>
       </div>
       <div class="filterWrapper">

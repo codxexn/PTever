@@ -65,20 +65,22 @@ const inputElement = document.querySelector(".SearchInput");
 
 inputElement.addEventListener("keyup", (e) => {
     if(e.keyCode === 13) {
-        const keyword = inputElement.value;
+        let keyword = inputElement.value;
+
 
         // form 엘리먼트 생성
-        const formElement = document.createElement("form");
+        let formElement = document.createElement("form");
 
-
-        const keywordInput = document.createElement("input");
+        let keywordInput = document.createElement("input");
         keywordInput.setAttribute("type", "hidden");
         keywordInput.setAttribute("name", "keyword");
         keywordInput.setAttribute("value", keyword)
 
         // from의 method와 action 속성을 설정
-        formElement.setAttribute("method", "post");
+        formElement.setAttribute("method", "get");
         formElement.setAttribute("action", "/search-results/search");
+
+        formElement.setAttribute("target", "_self"); 
 
         // form에 input 엘리먼트 추가합니다.
         formElement.appendChild(keywordInput);
