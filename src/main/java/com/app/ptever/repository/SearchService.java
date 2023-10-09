@@ -5,6 +5,7 @@ import com.app.ptever.domain.dto.SearchDTO;
 
 public interface SearchService {
     public SearchDTO getResult(Search search);
+
 }
 
 

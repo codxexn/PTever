@@ -3,6 +3,8 @@ package com.app.ptever;
 import com.app.ptever.domain.Search;
 import com.app.ptever.domain.dto.CourseSelectDTO;
 import com.app.ptever.domain.dto.PostDTO;
+import com.app.ptever.domain.dto.ShoppingMallDTO;
+import com.app.ptever.domain.dto.ShoppingMallSelectDTO;
 import com.app.ptever.mapper.MainMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
@@ -39,6 +41,17 @@ public class MainMapperTests {
         List<CourseSelectDTO> result = mainMapper.selectSearchByCourse(search);
         for(CourseSelectDTO course : result ) {
             log.info(course.toString());
+        }
+    }
+
+    @Test
+    public void selectProductTest() {
+        Search search = new Search();
+        search.setKeyword("프로틴");
+
+        List<ShoppingMallSelectDTO> result = mainMapper.selectSearchByProduct(search);
+        for(ShoppingMallSelectDTO product : result ) {
+            log.info(product.toString());
         }
     }
 }

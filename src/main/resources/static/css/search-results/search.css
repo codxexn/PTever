@@ -277,6 +277,19 @@ strong {
     flex-flow: wrap;
 }
 
+.searchResultCourse {
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.searchResultProduct {
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+
 .productListWrapper > * {
     margin-right: 11px;
     -webkit-box-flex: 0;

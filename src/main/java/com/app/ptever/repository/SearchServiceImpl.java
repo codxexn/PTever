@@ -19,7 +19,9 @@ public class SearchServiceImpl implements SearchService {
         SearchDTO searchDTO = new SearchDTO();
         searchDTO.setCourseLists(searchCourse.findBySearchCourse(search));
         searchDTO.setCourseTotalCount(searchCourse.findCourseTotal(search));
-//        searchDTO.setProductLists(searchProduct.findSearchByProduct(search));
+        searchDTO.setProductLists(searchProduct.findSearchByProduct(search));
+        searchDTO.setProductTotalCount(searchProduct.findProductTotal(search));
+
         return searchDTO;
     }
 }
