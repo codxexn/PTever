@@ -2,10 +2,12 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.app.ptever.mapper.CommunityCommentMapper">
     <select id="selectAllByPostId" resultType="communityCommentDTO">
-        SELECT CC.COMMUNITY_COMMENT_ID, CC.COMMUNITY_ID, CC.USER_ID, CC.POST_ID, CC.COMMENT_CONTENT, CC.COMMENT_WRITE_DATE, CC.COMMENT_UPDATE_DATE, U.USER_NICKNAME
+        SELECT CC.COMMUNITY_COMMENT_ID, CC.COMMUNITY_ID, CC.USER_ID, CC.POST_ID, CC.COMMENT_CONTENT, CC.COMMENT_WRITE_DATE, CC.COMMENT_UPDATE_DATE, U.USER_NICKNAME, UP.USER_PROFILE_PATH
         FROM TBL_COMMUNITY_COMMENT CC
         JOIN TBL_USER U
         ON CC.USER_ID = U.USER_ID
+        LEFT OUTER JOIN TBL_USER_PROFILE UP
+        ON CC.USER_ID = UP.USER_ID
         WHERE POST_ID = #{postId}
         ORDER BY CC.COMMUNITY_COMMENT_ID DESC
     </select>

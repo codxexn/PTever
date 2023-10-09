@@ -3,9 +3,11 @@ package com.app.ptever.controller;
 import com.app.ptever.domain.dto.PostDTO;
 import com.app.ptever.domain.dto.CommunityCommentDTO;
 import com.app.ptever.domain.pagination.Pagination;
+import com.app.ptever.domain.vo.UserProfileVO;
 import com.app.ptever.domain.vo.UserVO;
 import com.app.ptever.repository.CommunityCommentService;
 import com.app.ptever.repository.CommunityService;
+import com.app.ptever.repository.UserProfileService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
@@ -15,7 +17,6 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
 
 import javax.servlet.http.HttpSession;
-import javax.swing.text.html.Option;
 import java.util.List;
 import java.util.Optional;
 
@@ -26,6 +27,7 @@ import java.util.Optional;
 public class CommunityController {
     private final CommunityService communityService;
     private final CommunityCommentService communityCommentService;
+    private final UserProfileService userProfileService;
 
 //    전체 게시판
     @GetMapping("full-page")
@@ -58,14 +60,42 @@ public class CommunityController {
     public void showDetail(@RequestParam(value="postId", required = false) Long postId, Model model, HttpSession session, CommunityCommentDTO communityCommentDTO){
         Optional<PostDTO> foundPost = communityService.findByPostId(postId);
         List<CommunityCommentDTO> foundComments = communityCommentService.findAllByPostId(postId);
+        UserProfileVO userProfileVO = null;
+        String currentUserProfilePath = "";
         if (foundPost.isPresent()){
+            if (foundPost.get().getUserProfilePath() == null) {
+                foundPost.get().setUserProfilePath("/image/user-profile/user-profile-default.png");
+            }
             model.addAttribute("post", foundPost.get());
             model.addAttribute("comments", foundComments);
+            if (!foundComments.isEmpty()) {
+                foundComments.forEach((comment) -> {
+                    if (comment.getUserProfilePath() == null) {
+                        comment.setUserProfilePath("/image/user-profile/user-profile-default.png");
+                    }
+                });
+            }
         } else {
             model.addAttribute("post", null);
             model.addAttribute("comments", null);
         }
         session.setAttribute("postId", postId);
+        if (session.getAttribute("user") != null) {
+            UserVO currentUser = (UserVO) session.getAttribute("user");
+            userProfileVO = userProfileService.findByUserId(currentUser.getUserId());
+            if (userProfileVO == null){
+                UserProfileVO newUserProfileVO = new UserProfileVO();
+                newUserProfileVO.setUserProfilePath("/image/user-profile/user-profile-default.png");
+                model.addAttribute("currentUserProfilePath", newUserProfileVO.getUserProfilePath());
+            } else {
+                if (userProfileVO.getUserProfilePath() == null) {
+                    userProfileVO.setUserProfilePath("/image/user-profile/user-profile-default.png");
+                }
+                model.addAttribute("currentUserProfilePath", userProfileVO.getUserProfilePath());
+            }
+        } else {
+            model.addAttribute("currentUserProfilePath", null);
+        }
     }
 
     @PostMapping("detail")

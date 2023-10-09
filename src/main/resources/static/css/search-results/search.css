@@ -1,0 +1,583 @@
+/* 기본 CSS */
+* {
+    outline: none;
+    background-repeat: no-repeat;
+    font-family: inherit;
+    box-sizing: inherit;
+    font-weight: bold;
+}
+
+html,
+body {
+    width: 100%;
+    font-size: 14px;
+    color: black;
+    word-break: normal;
+    overflow-wrap: break-word;
+}
+
+html {
+    display: block;
+    box-sizing: border-box;
+    cursor: default;
+    font-family: sans-serif;
+    line-height: 1.5;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+}
+
+div.root {
+    background-color: white;
+    min-height: 100%;
+    min-width: 100%;
+}
+
+div.RootWrapper {
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    min-height: 100vh;
+}
+
+div {
+    display: block;
+}
+
+input {
+    text-rendering: auto;
+    letter-spacing: normal;
+    word-spacing: normal;
+    line-height: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    appearance: auto;
+    -webkit-rtl-ordering: logical;
+    cursor: text;
+    border-width: 2px;
+    border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+    border-image: initial;
+}
+
+section {
+    display: block;
+    font-family: "SUIT", sans-serif;
+}
+
+h1 {
+    display: block;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+form {
+    display: block;
+    margin-top: 0em;
+}
+
+img {
+    border-style: none;
+    overflow-clip-margin: content-box;
+    overflow: clip;
+}
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+a,
+area,
+button,
+input,
+label,
+select,
+textarea,
+[tabindex] {
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+}
+
+button,
+input {
+    overflow: visible;
+}
+
+button,
+input,
+select,
+textarea {
+    background-color: transparent;
+    border-style: none;
+    color: inherit;
+    font-size: 1em;
+    margin: 0;
+}
+
+button,
+select {
+    text-transform: none;
+}
+
+button,
+html [type="button"],
+[type="reset"],
+[type="submit"] {
+    -webkit-appearance: button;
+}
+
+input:not([type="range"]):not([type="color"]):not([type="button"]):not([type="reset"]):not([type="submit"]):not(
+        [type="file"]
+    ) {
+    writing-mode: horizontal-tb !important;
+}
+
+input[type="text" i] {
+    padding: 1px 2px;
+}
+
+ul {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+menu,
+nav,
+section,
+summary {
+    display: block;
+}
+
+button {
+    text-rendering: auto;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-indent: 0px;
+    text-shadow: none;
+    writing-mode: horizontal-tb !important;
+    padding-block: 1px;
+    padding-inline: 6px;
+    border-width: 2px;
+    border-image: initial;
+}
+
+hr {
+    overflow: visible;
+    display: block;
+    unicode-bidi: isolate;
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+p,
+label {
+    margin: 0px;
+}
+
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+b,
+strong {
+    font-weight: bolder;
+}
+
+/*검색 결과 페이지 css*/
+.pc {
+    background-color: white;
+    min-height: 100%;
+    min-width: 100%;
+}
+
+.rootWrapper {
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    min-height: 100vh;
+}
+
+.pageWrapper {
+    display: flex;
+    flex-flow: column;
+    margin: 0px auto;
+    max-width: 808px;
+    width: 100%;
+    padding: 0px 20px;
+    min-height: 1px;
+}
+
+.searchResultPageHeader {
+    padding: 20px 0px;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+.searchResultText {
+    font-weight: bold;
+}
+
+.searchResultCount {
+    font-weight: 600;
+    margin-left: 8px;
+}
+
+.filterWrapper {
+    position: relative;
+}
+
+.fadeWrapper {
+    width: auto;
+    height: auto;
+    transition: opacity 200ms ease-in-out 0s;
+    min-width: 0px;
+    min-height: 1px;
+}
+
+.productListWrapper {
+    display: flex;
+    flex-flow: wrap;
+}
+
+.searchResultCourse {
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.searchResultProduct {
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+
+.productListWrapper > * {
+    margin-right: 11px;
+    -webkit-box-flex: 0;
+    flex: 0 1 calc(25% - 11.25px);
+    width: calc(25% - 11.25px);
+    margin-bottom: 60px;
+}
+
+.cardProductWrapper {
+    display: flex;
+    flex-flow: column;
+    background-color: white;
+    min-height: 1px;
+}
+
+.withLink {
+    min-height: 1px;
+}
+
+.cardProductInfoWrapper {
+    overflow: hidden;
+}
+
+.cardProductImgContainer {
+    position: relative;
+}
+
+.imgWrapper {
+    min-height: 1px;
+}
+
+.imgLoader {
+    display: none !important;
+}
+
+.ratioImgWrapper {
+    width: auto;
+    height: auto;
+    transition: opacity 200ms ease-in-out 0s;
+    min-width: 0px;
+    min-height: 1px;
+}
+
+.containImg {
+    display: initial;
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cardProductWishContainer {
+    position: absolute;
+    right: 15px;
+    bottom: 13px;
+}
+
+button.heartBtn {
+    width: 24px;
+    height: 24px;
+    line-height: normal;
+    padding: 0px;
+    background-color: transparent;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+    outline: none;
+}
+
+button.heartBtn img.NoHeart{
+    /*filter: drop-shadow(rgba(0, 0, 0, 0.4) 1px 1px 3px);*/
+    display: none;
+}
+
+button.heartBtn img.RedHeart {
+    /*filter: drop-shadow(rgba(0, 0, 0, 0.4) 1px 1px 3px);*/
+    display: block;
+}
+
+.FilledHeartImage {
+    display: none;
+}
+
+.cardProductDetailContainer {
+    padding: 10px 13px 0px 11px;
+}
+
+.cardProductContent {
+    display: block;
+    color: rgb(119, 119, 119);
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 14px;
+    margin: 0px 0px 8px;
+}
+
+.cardProductTitle {
+    height: auto;
+    margin: 0px 0px 9px;
+    font-weight: 400;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    max-height: 40px;
+    line-height: 20px;
+    font-size: 14px;
+}
+
+.cardProductReviewContainer {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.starImgContainer {
+    display: flex;
+    flex-flow: row;
+}
+
+.starImgContainer > img {
+    margin-right: 1px;
+}
+
+.cardProductReviewCount {
+    display: block;
+    margin: 0px 0px 0px 4px;
+    color: rgb(51, 51, 51);
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 14px;
+    letter-spacing: -0.03em;
+}
+
+.line {
+    height: 1px;
+    background-color: rgb(255, 255, 255);
+    margin: 8px 0px;
+    border-top: 1px solid rgb(238, 238, 238);
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+}
+
+.cardProductPriceContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.cardProductPrice {
+    color: rgb(204, 204, 204);
+    font-size: 10px;
+    line-height: 14px;
+    letter-spacing: -0.48px;
+    text-decoration: line-through;
+}
+
+.cardProductDiscountContainer {
+    display: flex;
+}
+
+.cardProductDiscountRate {
+    margin: 0px 2px 0px 0px;
+    color: rgb(255, 63, 51);
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 22px;
+}
+
+.cardProductSalePrice {
+    color: rgb(51, 51, 51);
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 22px;
+}
+
+.paginationWrapper {
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-flex: 0;
+    width: 100%;
+    padding: 30px 0px;
+    background-color: white;
+}
+
+.paginationPrevBtnGroup {
+    display: flex;
+    margin-right: 10px;
+}
+
+.leftBtnGroup {
+    width: 40px;
+    height: 40px;
+    line-height: normal;
+    padding: 0px;
+    background-color: white;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 18px;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    outline: none;
+}
+
+.leftBtn {
+    transform: rotate(180deg);
+}
+
+.focusNumberBtn {
+    width: 40px;
+    height: 40px;
+    line-height: normal;
+    padding: 0px;
+    background-color: white;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 50%;
+    color: rgb(51, 151, 255);
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    outline: none;
+}
+
+.noneFocusNumberBtn {
+    width: 40px;
+    height: 40px;
+    line-height: normal;
+    padding: 0px;
+    background-color: white;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 50%;
+    color: black;
+    font-size: 18px;
+    font-weight: normal;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    outline: none;
+}
+
+.paginationNextBtn {
+    display: flex;
+    margin-left: 10px;
+}
+
+.rightBtnGroup {
+    width: 40px;
+    height: 40px;
+    line-height: normal;
+    padding: 0px;
+    background-color: white;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 18px;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    outline: none;
+}
+button:disabled {
+    cursor: not-allowed;
+}
+
+.CardProduct-StarAvgScoreCount {
+    display: block;
+    margin: 0px 8px 0px 0px;
+    color: rgb(51, 51, 51);
+    font-size: 10px;
+    font-weight: bold;
+    line-height: 14px;
+    letter-spacing: -0.03em;
+}

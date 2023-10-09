@@ -192,8 +192,11 @@ div.Fade_Wrapper{
 }
 
 .Image_Default{
-    width: 100%;
+    display: initial;
     border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .detailContent_Name{

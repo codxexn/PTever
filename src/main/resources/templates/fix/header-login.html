@@ -81,13 +81,12 @@
                             <div class="MainNav-SearchWrapper">
                                 <div class="SearchWrapper">
                                     <div>
-                                        <form class="SearchForm">
+                                        <form class="SearchForm" id="searchForm">
                                             <img src="
                                             data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none' viewBox='0 0 24 24'%3E %3Cpath stroke='%23AAA' stroke-width='2' d='M11 17c3.314 0 6-2.686 6-6s-2.686-6-6-6-6 2.686-6 6 2.686 6 6 6zM15 15l4.95 4.95'/%3E %3C/svg%3E"
                                                  alt class="SearchBar-Icon">
-                                            <input type="search" placeholder="지금 생각나는 운동을 검색하세요." class="SearchInput"
-                                                   value
-                                                   onfocus="showKeywordSearch()" onblur="hideKeywordSearch()">
+                                            <input type="text" id="search_keyword" placeholder="지금 생각나는 운동을 검색하세요." class="SearchInput"
+                                                   value onfocus="showKeywordSearch()" onblur="hideKeywordSearch()">
                                         </form>
                                     </div>
                                 </div>
@@ -168,133 +167,6 @@
                             <a href="/login/login" class="Login-OR-Logout TopNavMenu-A">
                                 <div class="TopNavMenu-Text">로그인</div>
                             </a>
-                            <!-- 장바구니(로그인으로 연결) -->
-                            <a href="/login/sign-up" class="Help TopNavMenu-A">
-                                <div class="TopNavMenu-Text">장바구니</div>
-                            </a>
-                            <!-- 고객센터 -->
-                            <a href="/notices/frequent-questions" class="Help TopNavMenu-A">
-                                <div class="TopNavMenu-Text">고객센터</div>
-                            </a>
-                        </div>
-                    </div>
-                </section>
-                <!-- 그 아래 메인 섹션입니다. -->
-                <section class="NavBar-MainNavContainer">
-                    <div class="NavBar-MainNavMenuWrapper">
-                        <!-- 카테고리, 메인로고, 검색을 Left 섹션으로 둡니다. -->
-                        <div class="NavBar-MainNavLeft">
-                            <!-- 카테고리입니다. -->
-                            <a href="/categories/categories" class="MainNavMenu-A MainNav-Category">
-                                <div class="MainNavLeft-Category">
-                                    <div class="IconWrapper">
-                                        <img src="
-                                        data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Crect x='11.5' y='10.5' width='7' height='7' fill='%23CCCCCC'/%3E %3Crect x='1.5' y='10.5' width='7' height='7' fill='%23CCCCCC'/%3E %3Crect x='1.5' y='0.5' width='7' height='7' fill='%23CCCCCC'/%3E %3Crect x='11.5' y='0.5' width='7' height='7' fill='%23CCCCCC'/%3E %3C/svg%3E"
-                                             alt="카테고리-icon">
-                                    </div>
-                                    <span class="MainNav">카테고리</span>
-                                </div>
-                            </a>
-                            <!-- 로고와의 구분선 span 태그입니다. -->
-                            <span class="MainNav-Pipe"></span>
-                            <!-- 로고입니다. -->
-                            <a th:href="@{/}" class="MainNavMenu-A MainNav-Logo">
-                                <img src="/image/main-logo/main_logo.png" class="MainNav-Logo">
-                            </a>
-                            <!-- 검색창입니다. -->
-                            <div class="MainNav-SearchWrapper">
-                                <div class="SearchWrapper">
-                                    <div>
-                                        <form class="SearchForm">
-                                            <img src="
-                                            data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none' viewBox='0 0 24 24'%3E %3Cpath stroke='%23AAA' stroke-width='2' d='M11 17c3.314 0 6-2.686 6-6s-2.686-6-6-6-6 2.686-6 6 2.686 6 6 6zM15 15l4.95 4.95'/%3E %3C/svg%3E"
-                                                 alt class="SearchBar-Icon">
-                                            <input type="search" placeholder="지금 생각나는 운동을 검색하세요." class="SearchInput"
-                                                   value
-                                                   onfocus="showKeywordSearch()" onblur="hideKeywordSearch()">
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- 커뮤니티, 찜, 마이가 들어갈 Right 섹션입니다. -->
-                            <div class="NavBar-MainNavRight">
-                                <!-- 커뮤니티입니다. -->
-                                <a href="/community/full-page" class="MainNavMenu-A MainNav-Community">
-                                    <div class="MainNavRight-Community">
-                                        <div class="IconWrapper">
-                                            <img src="data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Crect x='1' y='0.5' width='18' height='17' fill='%23AAAAAA'/%3E %3Crect x='4.375' y='13.375' width='11.25' height='0.75' stroke='white' stroke-width='0.75'/%3E %3Crect x='4.375' y='10.375' width='7.25' height='0.75' stroke='white' stroke-width='0.75'/%3E %3Cpath d='M8.87786 3.85311C8.63758 3.62543 8.31786 3.5 7.97789 3.5C7.63792 3.5 7.31829 3.62534 7.07783 3.85311L6.75005 4.16359L6.42227 3.85302C6.18189 3.62534 5.86218 3.5 5.5222 3.5C5.18223 3.5 4.86261 3.62534 4.62224 3.85311C4.12592 4.32322 4.12592 5.08808 4.62224 5.55819L6.61734 7.44794C6.65251 7.48126 6.70025 7.5 6.74995 7.5C6.79966 7.5 6.8474 7.48126 6.88257 7.44794L8.87767 5.55819C9.37408 5.08799 9.37408 4.32313 8.87786 3.85311Z' fill='white'/%3E %3C/svg%3E"
-                                                 alt="커뮤니티-icon">
-                                        </div>
-                                        <span class="MainNav">커뮤니티</span>
-                                    </div>
-                                </a>
-                                <!-- 찜 입니다. -->
-                                <a href="/login/sign-up" class="MainNavMenu-A MainNav-Wishlist">
-                                    <div class="MainNavRight-Wishlist">
-                                        <div class="IconWrapper">
-                                            <img src="
-                                        data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cg clip-path='url(%23clip0_2730_481)'%3E %3Cpath d='M11.5835 20.2971L11.5775 20.2935L11.5547 20.2815C11.0812 20.0239 10.6161 19.7509 10.1603 19.4631C9.07354 18.7793 8.038 18.0173 7.0619 17.1831C4.8539 15.2787 2.3999 12.4215 2.3999 8.9991C2.40001 7.88245 2.74628 6.7933 3.39104 5.8816C4.0358 4.96991 4.94734 4.28052 6.00014 3.90836C7.05295 3.53619 8.19523 3.49955 9.26972 3.80349C10.3442 4.10743 11.298 4.73699 11.9999 5.6055C12.7018 4.73699 13.6556 4.10743 14.7301 3.80349C15.8046 3.49955 16.9469 3.53619 17.9997 3.90836C19.0525 4.28052 19.964 4.96991 20.6088 5.8816C21.2535 6.7933 21.5998 7.88245 21.5999 8.9991C21.5999 12.4215 19.1471 15.2787 16.9379 17.1831C15.5511 18.368 14.0455 19.4063 12.4451 20.2815L12.4223 20.2935L12.4163 20.2971H12.4139C12.2864 20.3646 12.1443 20.4001 12.0001 20.4003C11.8558 20.4005 11.7136 20.3655 11.5859 20.2983L11.5835 20.2971Z' fill='%23AAAAAA'/%3E %3C/g%3E %3Cdefs%3E %3CclipPath id='clip0_2730_481'%3E %3Crect width='24' height='24' fill='white'/%3E %3C/clipPath%3E %3C/defs%3E %3C/svg%3E"
-                                                 alt="찜-icon">
-                                        </div>
-                                        <span class="MainNav">찜</span>
-                                    </div>
-                                </a>
-                                <!-- 마이 입니다. -->
-                                <a href="/login/sign-up" class="MainNavMenu-A MainNav-Mypage">
-                                    <div class="MainNavRight-Mypage">
-                                        <div class="IconWrapper">
-                                            <img src="
-                                        data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cpath d='M17 11H3L1 17.4H19L17 11Z' fill='%23AAAAAA'/%3E %3Ccircle cx='10' cy='5' r='4.5' fill='%23AAAAAA'/%3E %3C/svg%3E"
-                                                 alt="마이-icon">
-                                        </div>
-                                        <span class="MainNav">마이</span>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <div class="FadeWrapper">
-                    <div class="NavBar-Overlay"></div>
-                    <div class="SearchPanelWrapper">
-                        <div class="PopKeywordContainer">
-                            <section class="PopKeywordSection">
-                                <header class="KeywordHeader">
-                                    <label class="KeywordSectionTitle">인기 검색어</label>
-                                </header>
-                                <div class="KeywordButtonWrapper">
-                                    <button class="KeywordButton">한동석</button>
-                                    <button class="KeywordButton">등</button>
-                                    <button class="KeywordButton">이두</button>
-                                    <button class="KeywordButton">프로틴</button>
-                                    <button class="KeywordButton">둔근</button>
-                                </div>
-                            </section>
-                        </div>
-                    </div>
-                </div>
-            </header>
-            <header class="NavBar-wrapper" th:if="${session.user != null && session.user.userNickname != null}">
-                <section class="NavBar-TopNavContainer">
-                    <div class="NavBar-TopNavMenuWrapper">
-                        <div class="NavBar-TopNavMenu">
-                            <!-- 아래 a 태그는 "트레이너 회원 지원" 연결 링크입니다. -->
-                            <a href="/join-trainer/joinTrainer" class="HostSupport TopNavMenu-A">
-                                <div class="TopNavMenu-Text">트레이너 회원 지원</div>
-                            </a>
-                        </div>
-                        <div class="NavBar-TopNavMenu">
-                            <!-- 유저이름 -->
-                            <a href="/mypage/myPage" class="Join-OR-UserName TopNavMenu-A">
-                                <div class="TopNavMenu-Text">
-                                    <span class="TopNavMenu-UserName" th:text="${session.user.userNickname}"></span>
-                                    님
-                                </div>
-                            </a>
-                            <!-- 로그아웃 -->
-                            <form th:action="@{/login/logout}">
-                                <button type="submit" class="TopNavMenu-LogoutButton">로그아웃</button>
-                            </form>
                             <!-- 장바구니 -->
                             <a href="/shoppingbasket/shoppingbasket-off" class="Help TopNavMenu-A">
                                 <div class="TopNavMenu-Text">장바구니</div>
@@ -367,7 +239,134 @@
                                     </div>
                                 </a>
                                 <!-- 마이 입니다. -->
-                                <a href="/mypage/myPage" class="MainNavMenu-A MainNav-Mypage">
+                                <a href="/login/sign-up" class="MainNavMenu-A MainNav-Mypage">
+                                    <div class="MainNavRight-Mypage">
+                                        <div class="IconWrapper">
+                                            <img src="
+                                        data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cpath d='M17 11H3L1 17.4H19L17 11Z' fill='%23AAAAAA'/%3E %3Ccircle cx='10' cy='5' r='4.5' fill='%23AAAAAA'/%3E %3C/svg%3E"
+                                                 alt="마이-icon">
+                                        </div>
+                                        <span class="MainNav">마이</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <div class="FadeWrapper">
+                    <div class="NavBar-Overlay"></div>
+                    <div class="SearchPanelWrapper">
+                        <div class="PopKeywordContainer">
+                            <section class="PopKeywordSection">
+                                <header class="KeywordHeader">
+                                    <label class="KeywordSectionTitle">인기 검색어</label>
+                                </header>
+                                <div class="KeywordButtonWrapper">
+                                    <button class="KeywordButton">한동석</button>
+                                    <button class="KeywordButton">등</button>
+                                    <button class="KeywordButton">이두</button>
+                                    <button class="KeywordButton">프로틴</button>
+                                    <button class="KeywordButton">둔근</button>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <header class="NavBar-wrapper" th:if="${session.user != null && session.user.userNickname != null}">
+                <section class="NavBar-TopNavContainer">
+                    <div class="NavBar-TopNavMenuWrapper">
+                        <div class="NavBar-TopNavMenu">
+                            <!-- 아래 a 태그는 "트레이너 회원 지원" 연결 링크입니다. -->
+                            <a href="/join-trainer/joinTrainer" class="HostSupport TopNavMenu-A">
+                                <div class="TopNavMenu-Text">트레이너 회원 지원</div>
+                            </a>
+                        </div>
+                        <div class="NavBar-TopNavMenu">
+                            <!-- 유저이름 -->
+                            <a href="/mypage/myPage" class="Join-OR-UserName TopNavMenu-A"> <!--th:href="@{'/mypage/myPage?Id=' + ${session.user.userId} }"-->
+                                <div class="TopNavMenu-Text">
+                                    <span class="TopNavMenu-UserName" th:text="${session.user.userNickname}"></span>
+                                    님
+                                </div>
+                            </a>
+                            <!-- 로그아웃 -->
+                            <form th:action="@{/login/logout}">
+                                <button type="submit" class="TopNavMenu-LogoutButton">로그아웃</button>
+                            </form>
+                            <!-- 장바구니 -->
+                            <a href="/shoppingbasket/shoppingbasket-off" class="Help TopNavMenu-A"> <!--th:href="@{'shoppingbasket/shoppingbasket-off?userId' + ${session.user.userId}}"-->
+                                <div class="TopNavMenu-Text">장바구니</div>
+                            </a>
+                            <!-- 고객센터 -->
+                            <a href="/notices/frequent-questions" class="Help TopNavMenu-A">
+                                <div class="TopNavMenu-Text">고객센터</div>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+                <!-- 그 아래 메인 섹션입니다. -->
+                <section class="NavBar-MainNavContainer">
+                    <div class="NavBar-MainNavMenuWrapper">
+                        <!-- 카테고리, 메인로고, 검색을 Left 섹션으로 둡니다. -->
+                        <div class="NavBar-MainNavLeft">
+                            <!-- 카테고리입니다. -->
+                            <a href="/categories/categories" class="MainNavMenu-A MainNav-Category">
+                                <div class="MainNavLeft-Category">
+                                    <div class="IconWrapper">
+                                        <img src="
+                                        data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Crect x='11.5' y='10.5' width='7' height='7' fill='%23CCCCCC'/%3E %3Crect x='1.5' y='10.5' width='7' height='7' fill='%23CCCCCC'/%3E %3Crect x='1.5' y='0.5' width='7' height='7' fill='%23CCCCCC'/%3E %3Crect x='11.5' y='0.5' width='7' height='7' fill='%23CCCCCC'/%3E %3C/svg%3E"
+                                             alt="카테고리-icon">
+                                    </div>
+                                    <span class="MainNav">카테고리</span>
+                                </div>
+                            </a>
+                            <!-- 로고와의 구분선 span 태그입니다. -->
+                            <span class="MainNav-Pipe"></span>
+                            <!-- 로고입니다. -->
+                            <a th:href="@{/}" class="MainNavMenu-A MainNav-Logo">
+                                <img src="/image/main-logo/main_logo.png" class="MainNav-Logo">
+                            </a>
+                            <!-- 검색창입니다. -->
+                            <div class="MainNav-SearchWrapper">
+                                <div class="SearchWrapper">
+                                    <div>
+                                        <form class="SearchForm">
+                                            <img src="
+                                            data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none' viewBox='0 0 24 24'%3E %3Cpath stroke='%23AAA' stroke-width='2' d='M11 17c3.314 0 6-2.686 6-6s-2.686-6-6-6-6 2.686-6 6 2.686 6 6 6zM15 15l4.95 4.95'/%3E %3C/svg%3E"
+                                                 alt class="SearchBar-Icon">
+                                            <input type="search" placeholder="지금 생각나는 운동을 검색하세요." class="SearchInput"
+                                                   th:value="${keyword}"
+                                                   onfocus="showKeywordSearch()" onblur="hideKeywordSearch()">
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 커뮤니티, 찜, 마이가 들어갈 Right 섹션입니다. -->
+                            <div class="NavBar-MainNavRight">
+                                <!-- 커뮤니티입니다. -->
+                                <a href="/community/full-page" class="MainNavMenu-A MainNav-Community">
+                                    <div class="MainNavRight-Community">
+                                        <div class="IconWrapper">
+                                            <img src="data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Crect x='1' y='0.5' width='18' height='17' fill='%23AAAAAA'/%3E %3Crect x='4.375' y='13.375' width='11.25' height='0.75' stroke='white' stroke-width='0.75'/%3E %3Crect x='4.375' y='10.375' width='7.25' height='0.75' stroke='white' stroke-width='0.75'/%3E %3Cpath d='M8.87786 3.85311C8.63758 3.62543 8.31786 3.5 7.97789 3.5C7.63792 3.5 7.31829 3.62534 7.07783 3.85311L6.75005 4.16359L6.42227 3.85302C6.18189 3.62534 5.86218 3.5 5.5222 3.5C5.18223 3.5 4.86261 3.62534 4.62224 3.85311C4.12592 4.32322 4.12592 5.08808 4.62224 5.55819L6.61734 7.44794C6.65251 7.48126 6.70025 7.5 6.74995 7.5C6.79966 7.5 6.8474 7.48126 6.88257 7.44794L8.87767 5.55819C9.37408 5.08799 9.37408 4.32313 8.87786 3.85311Z' fill='white'/%3E %3C/svg%3E"
+                                                 alt="커뮤니티-icon">
+                                        </div>
+                                        <span class="MainNav">커뮤니티</span>
+                                    </div>
+                                </a>
+                                <!-- 찜 입니다. -->
+                                <a href="/like/like-lecture" class="MainNavMenu-A MainNav-Wishlist"> <!--th:href="@{'/like/like-lecture?user=' + ${session.user.userId}}"-->
+                                    <div class="MainNavRight-Wishlist">
+                                        <div class="IconWrapper">
+                                            <img src="
+                                        data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cg clip-path='url(%23clip0_2730_481)'%3E %3Cpath d='M11.5835 20.2971L11.5775 20.2935L11.5547 20.2815C11.0812 20.0239 10.6161 19.7509 10.1603 19.4631C9.07354 18.7793 8.038 18.0173 7.0619 17.1831C4.8539 15.2787 2.3999 12.4215 2.3999 8.9991C2.40001 7.88245 2.74628 6.7933 3.39104 5.8816C4.0358 4.96991 4.94734 4.28052 6.00014 3.90836C7.05295 3.53619 8.19523 3.49955 9.26972 3.80349C10.3442 4.10743 11.298 4.73699 11.9999 5.6055C12.7018 4.73699 13.6556 4.10743 14.7301 3.80349C15.8046 3.49955 16.9469 3.53619 17.9997 3.90836C19.0525 4.28052 19.964 4.96991 20.6088 5.8816C21.2535 6.7933 21.5998 7.88245 21.5999 8.9991C21.5999 12.4215 19.1471 15.2787 16.9379 17.1831C15.5511 18.368 14.0455 19.4063 12.4451 20.2815L12.4223 20.2935L12.4163 20.2971H12.4139C12.2864 20.3646 12.1443 20.4001 12.0001 20.4003C11.8558 20.4005 11.7136 20.3655 11.5859 20.2983L11.5835 20.2971Z' fill='%23AAAAAA'/%3E %3C/g%3E %3Cdefs%3E %3CclipPath id='clip0_2730_481'%3E %3Crect width='24' height='24' fill='white'/%3E %3C/clipPath%3E %3C/defs%3E %3C/svg%3E"
+                                                 alt="찜-icon">
+                                        </div>
+                                        <span class="MainNav">찜</span>
+                                    </div>
+                                </a>
+                                <!-- 마이 입니다. -->
+                                <a href="/mypage/myPage" class="MainNavMenu-A MainNav-Mypage">  <!--th:href="@{'/mypage/myPage?Id=' + ${session.user.userId} }"-->
                                     <div class="MainNavRight-Mypage">
                                         <div class="IconWrapper">
                                             <img src="
@@ -522,4 +521,3 @@
 </div>
 </body>
 <script src="/js/mainpage/mainpage-header.js"></script>
-</html>
