@@ -290,6 +290,27 @@ strong {
 }
 
 
+
+button.ButtonPage_StyledButtonOn{
+    width: 40px;
+    height: 40px;
+    line-height: normal;
+    padding: 0px;
+    background-color: white;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 50%;
+    color: rgb(51, 151, 255);
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    outline: none;
+}
+
 .productListWrapper > * {
     margin-right: 11px;
     -webkit-box-flex: 0;

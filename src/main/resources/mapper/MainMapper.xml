@@ -44,6 +44,50 @@
         </if>
     </select>
 
+<!--    <select id="selectSearchByCourse" resultType="courseSelectDTO">-->
+<!--        SELECT COURSE_ID, COURSE_TITLE, COURSE_PRICE, COURSE_DISCOUNT, COURSE_AVG_SCORE, COURSE_LEVEL_DIFFICULTY, COURSE_STATE, COURSE_IMG_PATH-->
+<!--        FROM (-->
+<!--                 SELECT COURSE_ID, COURSE_TITLE, COURSE_PRICE, COURSE_DISCOUNT, COURSE_AVG_SCORE, COURSE_LEVEL_DIFFICULTY, COURSE_STATE, COURSE_IMG_PATH, ROWNUM AS rnum-->
+<!--                 FROM (-->
+<!--                          SELECT COURSE_ID, COURSE_TITLE, COURSE_PRICE, COURSE_DISCOUNT, COURSE_AVG_SCORE, COURSE_LEVEL_DIFFICULTY, COURSE_STATE, COURSE_IMG_PATH-->
+<!--                          FROM TBL_COURSE-->
+<!--                          WHERE COURSE_TITLE LIKE '%' || #{keyword} || '%'-->
+<!--                          ORDER BY COURSE_ID DESC-->
+<!--                      )-->
+<!--             )-->
+<!--        <![CDATA[-->
+<!--        WHERE rnum >= #{startRow} AND rnum <= #{endRow}-->
+<!--        ]]>-->
+<!--    </select>-->
+
+<!--    <select id="selectCourseTotal" resultType="int">-->
+<!--        SELECT COUNT(COURSE_ID) FROM TBL_COURSE-->
+<!--        <if test="keyword != null and !keyword.equals('')">-->
+<!--            WHERE COURSE_TITLE LIKE '%' || #{keyword} || '%'-->
+<!--        </if>-->
+<!--    </select>-->
+
+<!--    <select id="selectSearchByProduct" resultType="shoppingMallSelectDTO">-->
+<!--        SELECT PRODUCT_ID, PRODUCT_TITLE, PRODUCT_DESCRIPTION, PRODUCT_PRICE, PRODUCT_AVG_SCORE, PRODUCT_DISCOUNT, PRODUCT_IMG_PATH-->
+<!--        FROM-->
+<!--            (-->
+<!--                SELECT PRODUCT_ID, PRODUCT_TITLE, PRODUCT_DESCRIPTION, PRODUCT_PRICE, PRODUCT_AVG_SCORE, PRODUCT_DISCOUNT, PRODUCT_IMG_PATH, ROWNUM AS rnum-->
+<!--                FROM TBL_SHOPPING_MALL_PRODUCT-->
+<!--                WHERE PRODUCT_TITLE LIKE '%' || #{keyword} || '%'-->
+<!--                ORDER BY PRODUCT_ID DESC-->
+<!--            )-->
+<!--        <![CDATA[-->
+<!--        WHERE rnum >= #{startRow} AND rnum <= #{endRow}-->
+<!--        ]]>-->
+<!--    </select>-->
+
+<!--    <select id="selectProductTotal" resultType="int">-->
+<!--        SELECT COUNT(PRODUCT_ID) FROM TBL_SHOPPING_MALL_PRODUCT-->
+<!--        <if test="keyword != null and !keyword.equals('')">-->
+<!--            WHERE PRODUCT_TITLE LIKE '%' || #{keyword} || '%'-->
+<!--        </if>-->
+<!--    </select>-->
+
 
 
 
