@@ -48,4 +48,10 @@ public interface CommunityMapper {
     // 내가 쓴 게시물 전체 개수 조회
     public int selectTotalByUserId(Long userId);
 
+    // 유저id로 가장 최신 게시물 찾기
+    public PostVO selectPostByUserId(Long userId);
+
+    // 게시물 안의 이미지들 삭제
+    public void deleteImageByPostId(Long postId);
+
 }

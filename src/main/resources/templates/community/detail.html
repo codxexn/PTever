@@ -43,8 +43,8 @@
                                             <div class="Ratio" style="display: block;">
                                                 <div class="Ratio-ratio" style="height: 0px; position: relative; width: 100%; padding-top: 100%;">
                                                     <div class="Ratio-Content" style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;">
-<!--                                                        <img th:src="${post.userProfilePath}" style="width: 48px; height: 48px;" alt="프로필"-->
-<!--                                                             class="Image_Default">-->
+                                                        <img th:src="${post.userProfilePath}" style="width: 48px; height: 48px;" alt="프로필"
+                                                             class="Image_Default">
                                                     </div>
                                                 </div>
                                             </div>
@@ -83,6 +83,11 @@
     
                             <div class="detailContent_Title" th:text="${post.postTitle}"></div>
                             <div class="detailContent_Body">
+                                <div th:if="${foundImages != null}" class="detailContent-Images">
+                                    <div th:each="Image:${foundImages}" class="detailContent-ImageWrapper">
+                                        <img th:src="${Image.imagePath + Image.storedFileName}" alt="이미지" class="detailContent-Image">
+                                    </div>
+                                </div>
                                 <div class="detailContent_Content" th:text="${post.postContent}"></div>
                             </div>
 <!--                            <div class="detailContent_LikeButton">-->
@@ -126,7 +131,7 @@
                                                 <div class="Ratio" style="display: block;">
                                                     <div class="Ratio-ratio" style="height: 0px; position: relative; width: 100%; padding-top: 100%;">
                                                         <div class="Ratio-content" style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;">
-<!--                                                            <img src="https://res.cloudinary.com/frientrip/image/upload/ar_1:1,c_fill,dpr_2,f_auto,q_auto,w_36/profile-3_e46ec3186ca68d32186d751d56faac64aced55b786f6526ac02bbd04d4f3f3de" alt="프로필" class="Image_StyledImage">-->
+                                                            <img th:src="${Comment.userProfilePath}" alt="프로필" class="Image_StyledImage">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -156,7 +161,7 @@
                 <div class="backdrop"></div>
             
                 <div class="wrap">
-                    <p th:text="${session.user.userNickname}" class="profile" style="background-image: url(https://res.cloudinary.com/frientrip/image/upload/ar_1:1,c_fill,dpr_2,f_auto,q_auto,w_36/profile-3_e46ec3186ca68d32186d751d56faac64aced55b786f6526ac02bbd04d4f3f3de);"></p>
+                    <p th:text="${session.user.userNickname}" class="profile" th:style="|background-image: url(${currentUserProfilePath});|"></p>
                     <input type="hidden" th:value="${session.user.userId}" th:name="userId">
                     <input type="hidden" th:value="${session.postId}" th:name="postId">
             
@@ -176,7 +181,7 @@
                     </button>
                 </div>
                 <div class="imageWrap">
-                    <img class="imageBox_Styled">
+                    <img th:src="${currentUserProfilePath}" class="imageBox_Styled">
                 </div>
             </form>
             <footer th:replace="~{fix/footer :: my-footer}"></footer>

@@ -5,6 +5,7 @@ import org.springframework.stereotype.Component;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Component
 @Data
@@ -18,17 +19,17 @@ public class PostImgVO implements Serializable {
     // 썸네일
     private String storedThumbnail;
     // 파일 크기
-    private Integer fileSize;
+    private Long fileSize;
     // 파일 생성 날짜
     private LocalDate createFileDate;
     // 파일 삭제 여부(default: false(삭제 x), true(삭제 됨))
-    private Boolean fileDeleteCheck;
+    private String fileDeleteCheck;
     // 이미지 경로
     private String imagePath;
     // 생성 날짜
-    private LocalDate createDate;
+    private LocalDateTime createDate;
     // 업데이트 날짜
-    private LocalDate updateDate;
+    private LocalDateTime updateDate;
     //===============================
     // 게시물 id
     private Long postId;

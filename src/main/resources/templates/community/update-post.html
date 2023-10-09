@@ -50,13 +50,18 @@
                 
                 
                 <div class="Fade_Wrapper free-post-write" style="opacity: 1; display: block;">
-                    <form th:action="@{/community/update-post}" method="post">
+                    <form th:action="@{/community/update-post}" method="post" enctype="multipart/form-data">
                         <input type="hidden" th:value="${session.postId}" th:name="postId">
                         <textarea placeholder="제목을 입력하세요." id="title" th:name="postTitle"
                                   class="WritePage_TitleArea" th:value="${foundPost.postTitle}" th:text="${foundPost.postTitle}"></textarea>
                         <hr class="Hr">
                         <textarea placeholder="내용을 입력하세요." id="content" th:name="postContent"
                                   class="WritePage_TextArea" th:value="${foundPost.postContent}" th:text="${foundPost.postContent}"></textarea>
+                        <hr class="Hr">
+                        <div class="fileInput-wrapper">
+                            <input type="file" name="files">
+                            <input type="file" name="files">
+                        </div>
                         <div class="WritePage_Footer">
                             <button type="submit" width="100%" color="white" font-size="13px" disabled
                                     class="buttonOn">등록하기</button>
