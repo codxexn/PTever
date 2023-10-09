@@ -49,12 +49,17 @@
                         <input type="password" th:field="*{userPassword}" name="password" placeholder="비밀번호" autocomplete="new-password"
                                aria-autocomplete="list" class="correct-Input-Form">
                         <!-- 바뀌는 클래스명 cIOZzg -> bViOzS -->
-                        <p class="correct-Form-Description">대/소문자, 숫자, 특수문자 중 2가지 이상의 조합으로 10자 이상</p>
+                        <p class="correct-Form-Description">
+                            보안을 위해 대/소문자, 숫자, 특수문자 중 2가지 이상의 조합으로
+                            <br>
+                            10자 이상의 비밀번호를 권장드립니다.
+                        </p>
                     </div>
                     <div>
                         <!-- iRBMai -> hYhAPw -->
                         <input type="password" name="passwordConfirm" placeholder="비밀번호 한 번 더"
                                class="correct-Input-Form">
+                        <p class="warning"></p>
                     </div>
                     <div th:if="${errorMessage}" th:text="${errorMessage}" class="join-error-message"></div>
                     <a th:if="${errorMessage}" href="/login/find-password" class="find-Password">비밀번호 찾기</a>

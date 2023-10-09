@@ -474,6 +474,12 @@ button, [type="submit"] {
     float: left;
 }
 
+p.warning {
+    min-height: 20px;
+    color: red;
+    font-size: 12px;
+}
+
 .find-Password {
     color: rgb(170, 170, 170);
     line-height: 20px;
