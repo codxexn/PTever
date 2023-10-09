@@ -83,6 +83,11 @@
     
                             <div class="detailContent_Title" th:text="${post.postTitle}"></div>
                             <div class="detailContent_Body">
+                                <div th:if="${foundImages != null}" class="detailContent-Images">
+                                    <div th:each="Image:${foundImages}" class="detailContent-ImageWrapper">
+                                        <img th:src="${Image.imagePath + Image.storedFileName}" alt="이미지" class="detailContent-Image">
+                                    </div>
+                                </div>
                                 <div class="detailContent_Content" th:text="${post.postContent}"></div>
                             </div>
 <!--                            <div class="detailContent_LikeButton">-->

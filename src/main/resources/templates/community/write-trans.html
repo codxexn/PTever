@@ -50,13 +50,18 @@
                 
                 
                 <div class="Fade_Wrapper free-post-write" style="opacity: 1; display: block;">
-                    <form th:action="@{/community/write-trans}" method="post" th:object="${postDTO}">
+                    <form th:action="@{/community/write-trans}" method="post" th:object="${postDTO}" enctype="multipart/form-data">
                         <input type="hidden" th:value="${session.user.userId}" th:name="userId">
                         <textarea placeholder="제목을 입력하세요." id="title"
                                   class="WritePage_TitleArea" th:field="*{postTitle}"></textarea>
                         <hr class="Hr">
-                        <textarea placeholder="내용을 입력하세요." id="content"
+                        <textarea placeholder="내용을 입력하세요.&#13;&#10;&#13;&#10;아래에 첨부하신 이미지는 게시물 최상단에 노출됩니다." id="content"
                                   class="WritePage_TextArea" th:field="*{postContent}"></textarea>
+                        <hr class="Hr">
+                        <div class="fileInput-wrapper">
+                            <input type="file" name="files">
+                            <input type="file" name="files">
+                        </div>
                         <div class="WritePage_Footer">
                             <button type="submit" width="100%" color="white" font-size="13px" disabled
                                     class="buttonOn">등록하기</button>
