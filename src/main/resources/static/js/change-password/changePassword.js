@@ -16,6 +16,8 @@ const warning = document.querySelector(".warning");
 inputOldPw.addEventListener("keyup", (e) => {
     if (!e.target.value || !inputNewPassword.value || !correctDescription.value) {
         globalThis.flag = false;
+    } else if (inputNewPassword.value !== correctDescription.value){
+        globalThis.flag = false;
     } else {
         globalThis.flag = true;
     }
