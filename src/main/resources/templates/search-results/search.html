@@ -26,7 +26,17 @@
                 </div>
                 <div class="filterWrapper">
                     <div class="fadeWrapper" style="opacity: 1; display: block">
-                        <div class="searchResultCourse">강의 목록</div>
+                        <div class="ProductSection-HeaderWrapper">
+                            <div class="ProductSection-Header">
+                                <h2 class="ProductSection-HeaderTitle">
+                                    강의 목록
+                                </h2>
+                            </div>
+                            <div class="ProductSection-HeaderLinkWrapper">
+                                <!-- 강의 목록으로 연결됩니다. -->
+                                <a href="" class="ProductSection-HeaderLink">전체보기</a>
+                            </div>
+                        </div>
                         <div class="productListWrapper">
                             <div class="cardProductWrapper" th:each="searchCourse : ${searchResult.courseLists}">
                                 <a href="" class="withLink">
@@ -84,7 +94,17 @@
                             </div>
                         </div>
                         <hr>
-                        <div class="searchResultProduct">상품 목록</div>
+                        <div class="ProductSection-HeaderWrapper">
+                            <div class="ProductSection-Header">
+                                <h2 class="ProductSection-HeaderTitle">
+                                    상품 목록
+                                </h2>
+                            </div>
+                            <div class="ProductSection-HeaderLinkWrapper">
+                                <!-- 상품 목록으로 연결됩니다. -->
+                                <a href="" class="ProductSection-HeaderLink">전체보기</a>
+                            </div>
+                        </div>
                         <div class="productListWrapper">
                             <div class="cardProductWrapper" th:each=" searchProduct : ${searchResult.productLists}">
                                 <a href="" class="withLink">

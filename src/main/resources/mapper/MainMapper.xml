@@ -12,7 +12,7 @@
                 ORDER BY COURSE_ID DESC
             )
         <![CDATA[
-            WHERE ROWNUM <= 5
+            WHERE ROWNUM < 5
         ]]>
     </select>
     
@@ -33,7 +33,7 @@
                 ORDER BY PRODUCT_ID DESC
             )
         <![CDATA[
-        WHERE ROWNUM <= 5
+        WHERE ROWNUM < 5
         ]]>
     </select>
 
@@ -152,6 +152,33 @@
                       ) TBL_POST
                  WHERE ROWNUM <= 4
              )
+        ]]>
+    </select>
+
+    <select id="selectAllByPostId" resultType="postImgVO">
+        SELECT POST_IMG_ID, POST_ID, STORED_FILE_NAME, IMAGE_PATH
+        FROM (
+                 SELECT POST_IMG_ID, POST_ID, STORED_FILE_NAME, IMAGE_PATH, ROWNUM AS RN
+                 FROM (
+                          SELECT POST_IMG_ID, POST_ID, STORED_FILE_NAME, IMAGE_PATH
+                          FROM TBL_POST_IMG
+                          WHERE POST_ID = #{postId}
+                          ORDER BY POST_IMG_ID
+                      )
+             )
+        WHERE RN = 1
+    </select>
+
+    <select id="selectAllRegisterDateByProduct" resultType="shoppingMallSelectDTO">
+        SELECT PRODUCT_ID, PRODUCT_TITLE, PRODUCT_DESCRIPTION, PRODUCT_PRICE, PRODUCT_AVG_SCORE, PRODUCT_DISCOUNT, PRODUCT_IMG_PATH, PRODUCT_REGISTER_DATE
+        FROM
+            (
+                SELECT PRODUCT_ID, PRODUCT_TITLE, PRODUCT_DESCRIPTION, PRODUCT_PRICE, PRODUCT_AVG_SCORE, PRODUCT_DISCOUNT, PRODUCT_IMG_PATH, PRODUCT_REGISTER_DATE
+                FROM TBL_SHOPPING_MALL_PRODUCT
+                ORDER BY PRODUCT_REGISTER_DATE DESC
+            )
+        <![CDATA[
+        WHERE ROWNUM < 5
         ]]>
     </select>
 </mapper>
