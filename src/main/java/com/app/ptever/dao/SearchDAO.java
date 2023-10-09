@@ -3,6 +3,7 @@ package com.app.ptever.dao;
 import com.app.ptever.domain.Search;
 import com.app.ptever.domain.dto.CourseSelectDTO;
 import com.app.ptever.domain.dto.ShoppingMallDTO;
+import com.app.ptever.domain.dto.ShoppingMallSelectDTO;
 import com.app.ptever.mapper.MainMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -27,8 +28,13 @@ public class SearchDAO {
     }
 
     // 통합 검색 상품
-//    public List<ShoppingMallDTO> findSearchByProduct(Search search) {
-//        return mainMapper.selectSearchByProduct(search);
-//    }
+    public List<ShoppingMallSelectDTO> findSearchByProduct(Search search) {
+        return mainMapper.selectSearchByProduct(search);
+    }
+
+    // 상품 총 개수
+    public int findProductTotal(Search search) {
+        return mainMapper.selectProductTotal(search);
+    }
 }
 

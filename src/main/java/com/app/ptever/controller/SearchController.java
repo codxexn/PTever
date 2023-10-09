@@ -27,16 +27,20 @@ public class SearchController {
         Search search = new Search();
         search.setKeyword(keyword);
 
-        SearchDTO searchCourses = searchService.getResult(search);
-        model.addAttribute("searchCourses", searchCourses);
+        SearchDTO searchResult = searchService.getResult(search);
+        model.addAttribute("searchResult", searchResult);
+//        model.addAttribute("searchProducts", searchResults);
 
-        int courseTotalCount = searchCourses.getCourseTotalCount();
+        int courseTotalCount = searchResult.getCourseTotalCount();
         model.addAttribute("courseTotalCount", courseTotalCount);
+
+        int productTotalCount = searchResult.getProductTotalCount();
+        model.addAttribute("productTotalCount", productTotalCount);
 
         model.addAttribute("keyword", keyword);
 
 
-        if(searchCourses != null && searchCourses.getCourseTotalCount() > 0) {
+        if(searchResult != null && (searchResult.getCourseTotalCount() > 0 || searchResult.getProductTotalCount() > 0)) {
             return "search-results/search";
         } else {
             return "/search-results/no-search";

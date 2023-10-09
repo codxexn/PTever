@@ -23,19 +23,26 @@
         </if>
     </select>
 
-<!--    <select id="selectSearchByProduct" resultType="shoppingMallDTO">-->
-<!--        SELECT PRODUCT_ID, PRODUCT_TITLE, PRODUCT_DESCRIPTION, PRODUCT_PRICE, PRODUCT_AVG_SCORE, PRODUCT_DISCOUNT-->
-<!--        FROM-->
-<!--            (-->
-<!--                SELECT PRODUCT_ID, PRODUCT_TITLE, PRODUCT_DESCRIPTION, PRODUCT_PRICE, PRODUCT_AVG_SCORE, PRODUCT_DISCOUNT-->
-<!--                FROM TBL_COURSE-->
-<!--                WHERE COURSE_TITLE LIKE '%' || #{keyword} || '%'-->
-<!--                ORDER BY COURSE_ID DESC-->
-<!--            )-->
-<!--        <![CDATA[-->
-<!--        WHERE ROWNUM <= 5-->
-<!--        ]]>-->
-<!--    </select>-->
+    <select id="selectSearchByProduct" resultType="shoppingMallSelectDTO">
+        SELECT PRODUCT_ID, PRODUCT_TITLE, PRODUCT_DESCRIPTION, PRODUCT_PRICE, PRODUCT_AVG_SCORE, PRODUCT_DISCOUNT, PRODUCT_IMG_PATH
+        FROM
+            (
+                SELECT PRODUCT_ID, PRODUCT_TITLE, PRODUCT_DESCRIPTION, PRODUCT_PRICE, PRODUCT_AVG_SCORE, PRODUCT_DISCOUNT, PRODUCT_IMG_PATH
+                FROM TBL_SHOPPING_MALL_PRODUCT
+                WHERE PRODUCT_TITLE LIKE '%' || #{keyword} || '%'
+                ORDER BY PRODUCT_ID DESC
+            )
+        <![CDATA[
+        WHERE ROWNUM <= 5
+        ]]>
+    </select>
+
+    <select id="selectProductTotal" resultType="int">
+        SELECT COUNT(PRODUCT_ID) FROM TBL_SHOPPING_MALL_PRODUCT
+        <if test="keyword != null and !keyword.equals('')">
+            WHERE PRODUCT_TITLE LIKE '%' || #{keyword} || '%'
+        </if>
+    </select>
 
 
 

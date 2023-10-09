@@ -4,6 +4,7 @@ import com.app.ptever.domain.dto.CourseSelectDTO;
 import com.app.ptever.domain.dto.PostDTO;
 import com.app.ptever.domain.Search;
 import com.app.ptever.domain.dto.ShoppingMallDTO;
+import com.app.ptever.domain.dto.ShoppingMallSelectDTO;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -28,5 +29,8 @@ public interface MainMapper {
     public int selectCourseTotal(Search search);
 
     // 통합 검색 중 상품 검색
-//    public List<ShoppingMallDTO> selectSearchByProduct(Search search);
+    public List<ShoppingMallSelectDTO> selectSearchByProduct(Search search);
+
+    //상품 전체 개수 조회
+    public int selectProductTotal(Search search);
 }
