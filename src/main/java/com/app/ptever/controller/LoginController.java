@@ -2,16 +2,21 @@ package com.app.ptever.controller;
 
 
 import com.app.ptever.domain.dto.PasswordMailDTO;
+import com.app.ptever.domain.dto.UserDTO;
 import com.app.ptever.domain.vo.UserVO;
+import com.app.ptever.repository.KakaoService;
+import com.app.ptever.repository.UserProfileService;
 import com.app.ptever.repository.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.catalina.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.servlet.view.RedirectView;
 
 import javax.servlet.http.HttpSession;
@@ -25,6 +30,11 @@ import java.util.Optional;
 @RequestMapping("/login/*")
 public class LoginController {
     private final UserService userService;
+    private final KakaoService kakaoService;
+    private final UserProfileService userProfileService;
+    private String CLIENT_ID = "c8b8e53a7e7ef6e2b7449cc4f0a8ac9f";
+    private String LOGOUT_REDIRECT_URI = "http://localhost:10000/login/logout-finally";
+    private String LOGOUT_START_REDIRECT_URI = "http://localhost:10000/login/logout-before-start";
 
 //    로그인
 
@@ -55,6 +65,19 @@ public class LoginController {
 //    로그아웃
 
     @GetMapping("logout")
+    public RedirectView kakaoLogoutFirst(HttpSession session){
+        if (session.getAttribute("user") != null){
+            UserVO userVO = (UserVO) session.getAttribute("user");
+            if (userVO.getUserLoginCode().equals("KAKAO")) {
+                return new RedirectView("https://kauth.kakao.com/oauth/logout?client_id=" + CLIENT_ID +
+                        "&logout_redirect_uri=" + LOGOUT_REDIRECT_URI);
+            }
+        }
+        return new RedirectView("/login/logout-finally");
+
+    }
+
+    @GetMapping("logout-finally")
     public RedirectView logout(HttpSession session){
         if(session != null) {
             session.invalidate();
@@ -116,6 +139,54 @@ public class LoginController {
         }
         session.invalidate();
         return new RedirectView("/login/login");
+    }
+
+//    카카오 회원가입
+    @GetMapping("logout-before-start")
+    public RedirectView logoutKakaoBeforeStart(){
+        return new RedirectView("https://kauth.kakao.com/oauth/authorize?client_id=c8b8e53a7e7ef6e2b7449cc4f0a8ac9f&redirect_uri=http://localhost:10000/login/kakao/callback&response_type=code");
+    }
+
+    @GetMapping("kakao/callback")
+    public RedirectView kakaoLogin(String code, HttpSession session, RedirectAttributes redirectAttributes, Model model){
+        String token = kakaoService.getKakaoAccessToken(code);
+        Optional<UserDTO> foundInfo = kakaoService.getKakaoInfo(token);
+        if (foundInfo.isPresent()){
+            UserDTO userDTO = foundInfo.get();
+            String userEmail = userDTO.getUserKakaoEmail();
+            if (userService.checkByEmail(userEmail).isPresent()){
+                String userState = userService.checkByEmail(userEmail).get().getUserState();
+                if (userState.equals("ACTIVE")){
+                    return new RedirectView("/login/login-error-kakao");
+                } else {
+                    userService.reactivateToActiveByKakao(userDTO);
+                    return new RedirectView("/login/login");
+                }
+            }
+            model.addAttribute("kakaoErrorMessage", null);
+            model.addAttribute("kakaoErrorMessage2", null);
+            userService.saveKakao(userDTO);
+            Long userId = userService.checkByEmail(userEmail).get().getUserId();
+            userDTO.setUserId(userId);
+            userProfileService.saveKakaoProfile(userDTO);
+            UserVO userVO = new UserVO();
+            userVO.setUserEmail(userDTO.getUserKakaoEmail());
+            userVO.setUserPassword("1234");
+            Optional<UserVO> foundUser = userService.login(userVO);
+            session.setAttribute("user", foundUser.get());
+            return new RedirectView("/");
+        }
+        return new RedirectView("/login/sign-up");
+
+    }
+
+    @GetMapping("login-error-kakao")
+    public String kakaoLoginError(Model model, UserVO userVO, HttpSession session){
+        String kakaoErrorMessage = "이미 존재하는 이메일 주소이거나 이미 가입하신 카카오 회원입니다. 로그인을 먼저 진행해주세요.";
+        String kakaoErrorMessage2 = "카카오 회원가입을 하셨다면 초기 비밀번호는 1234입니다. 로그인 후 비밀번호 변경을 권장드립니다.";
+        model.addAttribute("kakaoErrorMessage", kakaoErrorMessage);
+        model.addAttribute("kakaoErrorMessage2", kakaoErrorMessage2);
+        return "/login/login";
     }
 
 //    //    이메일 회원가입

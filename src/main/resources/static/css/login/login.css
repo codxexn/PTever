@@ -345,6 +345,12 @@ button, input {
     float: left;
 }
 
+.login-error-message-kakao {
+    color: #cc0000;
+    line-height: 20px;
+    text-align: center;
+}
+
 .find-Password {
     color: rgb(170, 170, 170);
     line-height: 20px;

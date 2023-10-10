@@ -30,6 +30,8 @@
                 <h3>로그인</h3>
             </div>
             <!-- Id, Pw 입력 하는 form -->
+            <div th:if="${kakaoErrorMessage != null}" th:text = "${kakaoErrorMessage}" class="login-error-message-kakao"></div>
+            <div th:if="${kakaoErrorMessage2 != null}" th:text = "${kakaoErrorMessage2}" class="login-error-message-kakao"></div>
             <form method="post" th:action="@{/login/login}" class="login-Register" th:object="${userVO}">
                 <div>
                     <!-- iRBMai -> hYhAPw -->
@@ -47,7 +49,7 @@
                 <button type="submit" width="100%" height="56px" font-size="16px" color="#f4f4f4" disabled
                         class="login-Btn">로그인
                 </button>
-                <button aria-label="카카오로 인증하기" class="kakao-Btn" type="button" onclick="alert('아직 지원하지 않는 서비스입니다.')">
+                <button onclick="location.href='https://kauth.kakao.com/oauth/logout?client_id=c8b8e53a7e7ef6e2b7449cc4f0a8ac9f&logout_redirect_uri=http://localhost:10000/login/logout-before-start'" aria-label="카카오로 인증하기" class="kakao-Btn" type="button">
                         <span>
                             <span class="kakao-ImgBox">
                                 <svg viewBox="0 0 32 32" focusable="false" role="presentation" class="kakao-Icon"

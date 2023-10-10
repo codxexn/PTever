@@ -35,4 +35,15 @@
         SET USER_PASSWORD = #{userPassword}
         WHERE USER_EMAIL = #{userEmail}
     </update>
+
+    <insert id="insertKakao">
+        INSERT INTO TBL_USER(USER_ID, USER_EMAIL, USER_PASSWORD, USER_NICKNAME, USER_LOGIN_CODE)
+        VALUES(SEQ_USER.NEXTVAL, #{userKakaoEmail}, '1234', #{userNickname}, #{userLoginCode})
+    </insert>
+
+    <update id="updateToActiveByKakao">
+        UPDATE TBL_USER
+        SET USER_EMAIL = #{userKakaoEmail}, USER_PASSWORD = '1234', USER_NICKNAME = #{userNickname}, USER_LOGIN_CODE = #{userLoginCode}, USER_STATE = 'ACTIVE'
+        WHERE USER_ID = #{userId}
+    </update>
 </mapper>
