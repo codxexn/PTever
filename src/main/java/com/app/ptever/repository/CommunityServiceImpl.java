@@ -78,4 +78,14 @@ public class CommunityServiceImpl implements CommunityService {
     public int findTotalByUserId(Long userId) {
         return communityDAO.readTotalByUserId(userId);
     }
+
+    @Override
+    public PostVO findPostByUserId(Long userId) {
+        return communityDAO.readPostByUserId(userId);
+    }
+
+    @Override
+    public void discardImageByPostId(Long postId) {
+        communityDAO.removeImageByPostId(postId);
+    }
 }

@@ -66,6 +66,11 @@
         WHERE POST_ID = #{postId}
     </delete>
 
+    <delete id="deleteImageByPostId">
+        DELETE FROM TBL_POST_IMG
+        WHERE POST_ID = #{postId}
+    </delete>
+
     <delete id="deleteByPostId">
         DELETE FROM TBL_POST
         WHERE POST_ID = #{postId}
@@ -99,5 +104,16 @@
     <select id="selectTotalByUserId" resultType="int">
         SELECT COUNT(POST_ID) FROM TBL_POST
         WHERE USER_ID = #{userId}
+    </select>
+
+    <select id="selectPostByUserId" resultType="postVO">
+        SELECT P2.POST_ID, P2.USER_ID FROM
+        (SELECT ROWNUM R, P1.POST_ID, P1.USER_ID
+         FROM (SELECT POST_ID, USER_ID
+               FROM TBL_POST
+               WHERE USER_ID = #{userId}
+               ORDER BY POST_ID DESC) P1
+         ) P2
+        WHERE P2.R = 1
     </select>
 </mapper>

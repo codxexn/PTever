@@ -3,6 +3,8 @@ package com.app.ptever.repository;
 import com.app.ptever.dao.MainDAO;
 import com.app.ptever.domain.dto.CourseSelectDTO;
 import com.app.ptever.domain.dto.PostDTO;
+import com.app.ptever.domain.dto.ShoppingMallSelectDTO;
+import com.app.ptever.domain.vo.PostImgVO;
 import com.app.ptever.mapper.MainMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -30,8 +32,15 @@ public class MainServiceImpl implements MainService {
         return mainDAO.findAllLatestDateCourse();
     }
 
+    public List<ShoppingMallSelectDTO> getRegisterDateProductList() {return mainDAO.findAllRegisterDateProduct(); }
+
     @Override
     public List<PostDTO> getLatestDateCommunityList() {
         return mainDAO.findAllLatestDateCommunity();
+    }
+
+    @Override
+    public List<PostImgVO> findAllByPostId(Long postId) {
+        return mainDAO.readAllByPostId(postId);
     }
 }

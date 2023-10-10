@@ -2,6 +2,8 @@ package com.app.ptever.dao;
 
 import com.app.ptever.domain.dto.CourseSelectDTO;
 import com.app.ptever.domain.dto.PostDTO;
+import com.app.ptever.domain.dto.ShoppingMallSelectDTO;
+import com.app.ptever.domain.vo.PostImgVO;
 import com.app.ptever.mapper.MainMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -25,6 +27,13 @@ public class MainDAO {
         return mainMapper.selectAllLatestDateByCourse();
     }
 
+    public List<ShoppingMallSelectDTO> findAllRegisterDateProduct() {return mainMapper.selectAllRegisterDateByProduct(); }
+
     // 최신순으로 소도구 거래 목록 조회
     public List<PostDTO> findAllLatestDateCommunity() { return mainMapper.selectAllLatestDateByCommunity(2L); }
+
+    // postId로 이미지들 가져오기
+    public List<PostImgVO> readAllByPostId(Long postId){
+        return mainMapper.selectAllByPostId(postId);
+    }
 }

@@ -425,6 +425,7 @@ button:disabled {
     color: #495057;
     font-weight: 500;
     -webkit-appearance: none;
+    cursor: pointer;
 }
 
 .kakao-Btn span {

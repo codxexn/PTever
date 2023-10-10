@@ -18,6 +18,8 @@ import java.util.List;
 public class MainMapperTests {
     @Autowired
     private MainMapper mainMapper;
+
+
     @Test
     public void selectByCourseTest() {
         mainMapper.selectAllByCourse().stream().map(CourseSelectDTO :: toString).forEach(log::info);
@@ -54,4 +56,23 @@ public class MainMapperTests {
             log.info(product.toString());
         }
     }
+
+    @Test
+    public void testSelectSearchByCourse() {
+        // 검색 조건을 설정합니다.
+        Search search = new Search();
+        search.setKeyword("아 ");  // 원하는 키워드로 설정
+        search.setStartRow(1); ;  // 시작 행 설정
+        search.setEndRow(10);   // 끝 행 설정
+
+        // MainMapper 인터페이스의 selectSearchByCourse 메서드를 호출하여 테스트합니다.
+        List<CourseSelectDTO> result = mainMapper.selectSearchByCourse(search);
+
+        // 테스트 결과를 확인하는 코드를 작성합니다.
+        for (CourseSelectDTO course : result) {
+            System.out.println(course);
+        }
+    }
+
+
 }

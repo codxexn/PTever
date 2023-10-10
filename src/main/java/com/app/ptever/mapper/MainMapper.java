@@ -5,6 +5,7 @@ import com.app.ptever.domain.dto.PostDTO;
 import com.app.ptever.domain.Search;
 import com.app.ptever.domain.dto.ShoppingMallDTO;
 import com.app.ptever.domain.dto.ShoppingMallSelectDTO;
+import com.app.ptever.domain.vo.PostImgVO;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -17,6 +18,11 @@ public interface MainMapper {
 
     // 강의 최신순 목록 조회
     public List<CourseSelectDTO> selectAllLatestDateByCourse();
+
+    public List<ShoppingMallSelectDTO> selectAllRegisterDateByProduct();
+
+    // postId로 이미지들 가져오기
+    public List<PostImgVO> selectAllByPostId(Long postId);
 
 
     // 최신순으로 개별 게시판 게시물 조회(메인에는 소도구 거래만)

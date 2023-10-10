@@ -26,7 +26,17 @@
                 </div>
                 <div class="filterWrapper">
                     <div class="fadeWrapper" style="opacity: 1; display: block">
-                        <div class="searchResultCourse">강의 목록</div>
+                        <div class="ProductSection-HeaderWrapper">
+                            <div class="ProductSection-Header">
+                                <h2 class="ProductSection-HeaderTitle">
+                                    강의 목록
+                                </h2>
+                            </div>
+                            <div class="ProductSection-HeaderLinkWrapper">
+                                <!-- 강의 목록으로 연결됩니다. -->
+                                <a href="" class="ProductSection-HeaderLink">전체보기</a>
+                            </div>
+                        </div>
                         <div class="productListWrapper">
                             <div class="cardProductWrapper" th:each="searchCourse : ${searchResult.courseLists}">
                                 <a href="" class="withLink">
@@ -84,7 +94,17 @@
                             </div>
                         </div>
                         <hr>
-                        <div class="searchResultProduct">상품 목록</div>
+                        <div class="ProductSection-HeaderWrapper">
+                            <div class="ProductSection-Header">
+                                <h2 class="ProductSection-HeaderTitle">
+                                    상품 목록
+                                </h2>
+                            </div>
+                            <div class="ProductSection-HeaderLinkWrapper">
+                                <!-- 상품 목록으로 연결됩니다. -->
+                                <a href="" class="ProductSection-HeaderLink">전체보기</a>
+                            </div>
+                        </div>
                         <div class="productListWrapper">
                             <div class="cardProductWrapper" th:each=" searchProduct : ${searchResult.productLists}">
                                 <a href="" class="withLink">
@@ -142,26 +162,6 @@
                             </div>
                         </div>
                     </div>
-                    <footer class="paginationWrapper">
-                        <div class="paginationPrevBtnGroup">
-                            <button class="leftBtnGroup" width="40px" height="40px" font-size="18px" disabled>
-                                <img class="leftBtn" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath fill='%23FFF' fill-opacity='0' fill-rule='nonzero' d='M0 0h40v40H0z'/%3E %3Cpath stroke='%23DDD' stroke-width='1.5' d='M16 16l4 4-4 4M21 16l4 4-4 4'/%3E %3C/g%3E %3C/svg%3E">
-                            </button>
-                            <button class="leftBtnGroup" width="40px" height="40px" font-size="18px" disabled>
-                                <img class="leftBtn" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath fill='none' d='M0 0h40v40H0z'/%3E %3Cpath stroke='%23DDD' stroke-width='1.5' d='M18 16l4 4-4 4'/%3E %3C/g%3E %3C/svg%3E">
-                            </button>
-                        </div>
-                        <button width="40px" height="40px" color="#3397ff" font-size="18px" font-weight="bold" class="focusNumberBtn">1</button>
-                        <button width="40px" height="40px" color="#black" font-size="18px" font-weight="normal" class="noneFocusNumberBtn">2</button>
-                        <div class="paginationNextBtn">
-                            <button class="rightBtnGroup" width="40px" height="40px" font-size="18px">
-                                <img class="rightBtn" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 18 18'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath d='M18 0H0v18h18z'/%3E %3Cpath stroke='%23000' stroke-width='1.5' d='M7 5l4 4-4 4'/%3E %3C/g%3E %3C/svg%3E">
-                            </button>
-                            <button class="rightBtnGroup" width="40px" height="40px" font-size="18px">
-                                <img class="rightBtn" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Crect width='40' height='40' fill='%23FFF' fill-opacity='0' fill-rule='nonzero' rx='20'/%3E %3Cg stroke='%23000' stroke-width='1.5'%3E %3Cpath d='M16 16l4 4-4 4M21 16l4 4-4 4'/%3E %3C/g%3E %3C/g%3E %3C/svg%3E">
-                            </button>
-                        </div>
-                    </footer>
                 </div>
             </div>
             <footer th:replace="~{fix/footer :: my-footer}"></footer>
