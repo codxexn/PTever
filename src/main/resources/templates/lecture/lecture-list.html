@@ -74,7 +74,7 @@
                                 </div>
                                 <!-- 오른쪽 전체보기 글자 -->
                                 <div class="LinkSectionHeader">
-                                    <a href="" class="Link">전체 보기</a>
+                                    <a th:href="@{'/lecture/lecture-list-all/'}" class="Link">전체 보기</a>
                                 </div>
                             </div>
                             <!-- 그 아래에 있는 피트니스 목록들 -->
@@ -353,7 +353,7 @@
                                 </div>
                                 <!-- 오른쪽 전체보기 글자 -->
                                 <div class="LinkSectionHeader">
-                                    <a href="" class="Link">전체 보기</a>
+                                    <a th:href="@{'/lecture/lecture-list-all/'}" class="Link">전체 보기</a>
                                 </div>
                             </div>
                             <!-- 그 밑에 사진 div -->
@@ -362,7 +362,7 @@
                                     <div class="CardGroupProductContent">
                                         <!-- 반복 분기점 -->
                                         <div class="CardProductWrapper" th:each="newDTOS : ${newCoursesList}">
-                                            <a href="" class="withLink">
+                                            <a th:href="@{'/lecture/lecture-detailpage/' + ${newDTOS.courseId}}" class="withLink">
                                                 <!-- 사진 및 설명 -->
                                                 <div class="CardProductInfo">
                                                     <!-- 사진 -->
@@ -395,8 +395,8 @@
                                                             <div class="CardProductPrice" th:if="${newDTOS.courseDiscount} != 0" th:text="|${#numbers.formatInteger(newDTOS.coursePrice,0,'COMMA')}원|"></div>
                                                             <div class="CardProductDiscountPrice">
                                                                 <div class="CardProductDiscountRate" th:if="${newDTOS.courseDiscount} != 0" th:text="|${newDTOS.courseDiscount}%|"></div>
-                                                                <div class="CardProductSalePrice" th:if="${newDTOS.courseDiscount} != 0" th:text="|${#numbers.formatInteger(newDTOS.coursePrice - (newDTOS.coursePrice * 0.01 * newDTOS.courseDiscount),0,'COMMA')}원|"></div>
-                                                                <div class="CardProductSalePrice" th:unless="${newDTOS.courseDiscount} != 0" th:text="|${#numbers.formatInteger(newDTOS.coursePrice,0,'COMMA')}원|"></div>
+                                                                <span class="CardProductSalePrice" th:if="${newDTOS.courseDiscount} != 0" th:text="|${#numbers.formatInteger(newDTOS.coursePrice - (newDTOS.coursePrice * 0.01 * newDTOS.courseDiscount),0,'COMMA')}원|"></span>
+                                                                <span class="CardProductSalePrice" th:unless="${newDTOS.courseDiscount} != 0" th:text="|${#numbers.formatInteger(newDTOS.coursePrice,0,'COMMA')}원|"></span>
                                                             </div>
                                                         </div>
                                                         <!-- 슈퍼호스트 버튼 -->

@@ -97,17 +97,18 @@ public class CourseMapperTests {
         Pagination pagination = new Pagination();
         pagination.setTotal(courseMapper.selectTotalAllCourse());
         pagination.progress();
-        List<CourseVO> foundCourses = courseMapper.selectAllCourse(pagination);
-        foundCourses.stream().map(CourseVO::toString).forEach(log::info);
+        List<CourseSelectDTO> foundCourses = courseMapper.selectAllCourse(pagination);
+        foundCourses.stream().map(CourseSelectDTO::toString).forEach(log::info);
     }
+
 
     @Test
     public void findAllCourseDAOTest() {
         Pagination pagination = new Pagination();
         pagination.setTotal(courseDAO.getAllCoursesCounts());
         pagination.progress();
-        List<CourseVO> foundCourses = courseDAO.findAllCourses(pagination);
-        foundCourses.stream().map(CourseVO::toString).forEach(log::info);
+        List<CourseSelectDTO> foundCourses = courseDAO.findAllCourses(pagination);
+        foundCourses.stream().map(CourseSelectDTO::toString).forEach(log::info);
     }
 
     @Test
@@ -115,8 +116,8 @@ public class CourseMapperTests {
         Pagination pagination = new Pagination();
         pagination.setTotal(courseService.getAllCoursesCounts());
         pagination.progress();
-        List<CourseVO> foundCourses = courseService.findAllCourses(pagination);
-        foundCourses.stream().map(CourseVO::toString).forEach(log::info);
+        List<CourseSelectDTO> foundCourses = courseService.findAllCourses(pagination);
+        foundCourses.stream().map(CourseSelectDTO::toString).forEach(log::info);
     }
 
 

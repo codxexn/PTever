@@ -480,6 +480,10 @@ button.FilteringButton{
     line-height: 22px;
 }
 
+.CardProductDiscountPrice {
+    display: flex;
+}
+
 .CardProductSalePrice{
     color: rgb(51, 51, 51);
     font-size: 14px;
