@@ -39,7 +39,7 @@ public class CourseServiceImpl implements CourseService {
     }
 
     @Override
-    public List<CourseVO> findAllCourses(Pagination pagination){
+    public List<CourseSelectDTO> findAllCourses(Pagination pagination){
         return courseDAO.findAllCourses(pagination);
     }
 

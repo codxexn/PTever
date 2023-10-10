@@ -23,7 +23,7 @@ public interface CourseService {
     public Double getAvgByCourseId(Long courseId);
 
     // 전체 강의 목록 최신순으로 가지고 오기
-    public List<CourseVO> findAllCourses(Pagination pagination);
+    public List<CourseSelectDTO> findAllCourses(Pagination pagination);
 
     // 강의 전체 개수 조회
     public int getAllCoursesCounts();

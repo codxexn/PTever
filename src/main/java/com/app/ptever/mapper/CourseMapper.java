@@ -22,7 +22,7 @@ public interface CourseMapper {
     public Double selectAvgByCourseId(Long courseId);
 
 //    전체 강의 목록 페이징
-    public List<CourseVO> selectAllCourse(Pagination pagination);
+    public List<CourseSelectDTO> selectAllCourse(Pagination pagination);
 
 //    게시물 전체 개수 조회
     public int selectTotalAllCourse();
