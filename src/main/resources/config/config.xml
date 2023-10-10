@@ -49,5 +49,6 @@
         <typeAlias type="com.app.ptever.domain.dto.ReviewDTO" alias="reviewDTO" />
         <typeAlias type="com.app.ptever.domain.vo.PostImgVO" alias="postImgVO" />
         <typeAlias type="com.app.ptever.domain.dto.ShoppingMallSelectDTO" alias="shoppingMallSelectDTO" />
+        <typeAlias type="com.app.ptever.domain.dto.UserDTO" alias="userDTO" />
     </typeAliases>
 </configuration>

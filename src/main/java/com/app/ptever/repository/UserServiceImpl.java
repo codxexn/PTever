@@ -2,6 +2,7 @@ package com.app.ptever.repository;
 
 import com.app.ptever.dao.UserDAO;
 import com.app.ptever.domain.dto.PasswordMailDTO;
+import com.app.ptever.domain.dto.UserDTO;
 import com.app.ptever.domain.vo.UserVO;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -99,6 +100,16 @@ public class UserServiceImpl implements UserService {
             log.info("fail");
             throw new RuntimeException(e);
         }
+    }
+
+    @Override
+    public void saveKakao(UserDTO userDTO) {
+        userDAO.writeKakao(userDTO);
+    }
+
+    @Override
+    public void reactivateToActiveByKakao(UserDTO userDTO) {
+        userDAO.modifyToActiveByKakao(userDTO);
     }
 
 
