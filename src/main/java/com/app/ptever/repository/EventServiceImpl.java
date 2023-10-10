@@ -1,6 +1,7 @@
 package com.app.ptever.repository;
 
 import com.app.ptever.dao.EventDAO;
+import com.app.ptever.domain.pagination.Pagination;
 import com.app.ptever.domain.vo.EventVO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -21,6 +22,16 @@ public class EventServiceImpl implements EventService {
     @Override
     public List<EventVO> selectEvent( ) {
         return eventDAO.select();
+    }
+
+    @Override
+    public int selectAllCounts() {
+        return eventDAO.readAllCounts();
+    }
+
+    @Override
+    public List<EventVO> selectAllEvents(Pagination pagination) {
+        return eventDAO.readAllNotices(pagination);
     }
 
 

@@ -1,6 +1,9 @@
 package com.app.ptever;
 
+import com.app.ptever.domain.pagination.Pagination;
+import com.app.ptever.domain.vo.FaqVO;
 import com.app.ptever.domain.vo.NoticeVO;
+import com.app.ptever.mapper.FaqMapper;
 import com.app.ptever.mapper.NoticeMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -11,14 +14,44 @@ import org.springframework.boot.test.context.SpringBootTest;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
 
 @SpringBootTest
+@RequiredArgsConstructor
 @Slf4j
 public class NoticeMapperTests {
 
     @Autowired
     private NoticeMapper noticeMapper;
 
+    private Pagination pagination;
+
+
+    @Autowired
+    private FaqMapper faqMapper;
+
+
+    @Test
+    public void select(){
+        int count = noticeMapper.selectAllCounts();
+        System.out.println(count);
+    }
+
+    @Test
+    public void selectAll(Pagination pagination){
+        List<NoticeVO> no = noticeMapper.selectAllNotice(pagination);
+        System.out.println("no = " + no);
+    }
+
+    @Test
+    public void insertFAQ(FaqVO faqVO){
+        faqVO.setFaqTitle("test");
+        faqVO.setFaqContent("test");
+        faqVO.setFaqId(9999);
+        faqVO.setUserId(999L);
+
+        faqMapper.registerFAQ(faqVO);
+    }
 
     @Test
     public void register(){

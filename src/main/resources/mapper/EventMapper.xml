@@ -13,4 +13,23 @@
         FROM TBL_EVENT
         ORDER BY CREATE_DATE DESC
     </select>
+
+    <!--    내용 갖고오기-->
+    <select id="readAllEvent" resultType="eventVO">
+        SELECT E2.EVENT_ID, E2.EVENT_ID, E2.EVENT_TITLE, E2.CREATE_DATE, E2.UPDATE_DATE, E2.EVENT_CONTENT FROM
+            (SELECT ROWNUM R, E1.EVENT_ID, E1.EVENT_TITLE, E1.CREATE_DATE, E1.UPDATE_DATE, E1.EVENT_CONTENT FROM
+                (SELECT E.EVENT_ID, E.EVENT_TITLE, E.CREATE_DATE, E.UPDATE_DATE, E.EVENT_CONTENT
+                 FROM TBL_EVENT E
+                 ORDER BY E.EVENT_ID DESC) E1
+    <![CDATA[
+             WHERE ROWNUM <= #{endRow}
+            ) E2
+        WHERE E2.R >= #{startRow}
+        ]]>
+    </select>
+
+    <!--    페이징 처리를 위해 전체 목록 개수를 갖고오기-->
+    <select id="readAllCounts" resultType="int">
+        SELECT COUNT(EVENT_ID) FROM TBL_EVENT
+    </select>
 </mapper>

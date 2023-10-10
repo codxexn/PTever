@@ -8,9 +8,30 @@
     </insert>
 
     <!--    공지사항 페이지에 내용 뿌리기-->
-    <select id="selectNotice" resultType="NoticeVO">
+    <select id="selectNotice" resultType="noticeVO">
         SELECT *
         FROM TBL_NOTICE
         ORDER BY CREATE_DATE DESC
+    </select>
+
+<!--    내용 갖고오기-->
+    <select id="selectAllNotice" resultType="noticeVO">
+        SELECT N2.NOTICE_ID, N2.NOTICE_TITLE, N2.NOTICE_CONTENT, N2.NOTICE_REGISTER_DATE, N2.CREATE_DATE, N2.UPDATE_DATE FROM
+            (SELECT ROWNUM R, N1.NOTICE_ID, N1.NOTICE_TITLE, N1.NOTICE_CONTENT, N1.NOTICE_REGISTER_DATE, N1.CREATE_DATE, N1.UPDATE_DATE FROM
+                (SELECT N.NOTICE_ID, N.NOTICE_TITLE, N.NOTICE_CONTENT, N.NOTICE_REGISTER_DATE, N.CREATE_DATE, N.UPDATE_DATE
+                 FROM TBL_NOTICE N
+                 ORDER BY N.NOTICE_ID DESC) N1
+    <![CDATA[
+             WHERE ROWNUM <= #{endRow}
+            ) N2
+        WHERE N2.R >= #{startRow}
+        ]]>
+    </select>
+
+
+
+<!--    페이징 처리를 위해 전체 목록 개수를 갖고오기-->
+    <select id="selectAllCounts" resultType="int">
+        SELECT COUNT(NOTICE_ID) FROM TBL_NOTICE
     </select>
 </mapper>

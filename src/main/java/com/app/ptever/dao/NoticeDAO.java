@@ -1,5 +1,6 @@
 package com.app.ptever.dao;
 
+import com.app.ptever.domain.pagination.Pagination;
 import com.app.ptever.domain.vo.EventVO;
 import com.app.ptever.domain.vo.NoticeVO;
 import com.app.ptever.mapper.NoticeMapper;
@@ -26,4 +27,15 @@ public class NoticeDAO {
     public List<NoticeVO> select(){
         return noticeMapper.selectNotice();
     }
+
+//    개수 불러오기
+    public int readAllCounts(){
+        return noticeMapper.selectAllCounts();
+    }
+
+//    내용 불러오기
+    public List<NoticeVO> readAllNotices(Pagination pagination){
+        return noticeMapper.selectAllNotice(pagination);
+    }
+
 }

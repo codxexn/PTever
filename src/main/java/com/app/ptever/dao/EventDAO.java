@@ -1,5 +1,6 @@
 package com.app.ptever.dao;
 
+import com.app.ptever.domain.pagination.Pagination;
 import com.app.ptever.domain.vo.EventVO;
 import com.app.ptever.mapper.EventMapper;
 import lombok.RequiredArgsConstructor;
@@ -24,5 +25,15 @@ public class EventDAO {
 //    조회
     public List<EventVO> select(){
         return eventMapper.selectEvent();
+    }
+
+//    페이징 개수
+    public int readAllCounts(){
+        return eventMapper.readAllCounts();
+    }
+
+//    페이징 내용 불러오기
+    public List<EventVO> readAllNotices(Pagination pagination){
+        return eventMapper.readAllEvent(pagination);
     }
 }
