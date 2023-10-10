@@ -37,7 +37,7 @@ public class LoginController {
         if(foundUser.isPresent()){
             UserVO user = foundUser.get();
             if (user.getUserState().equals("WITHDRAWN")){
-                return new RedirectView("/login/login");
+                return new RedirectView("/login/login-error");
             }
             session.setAttribute("user", foundUser.get());
             return new RedirectView("/");
@@ -145,7 +145,7 @@ public class LoginController {
     public String checkEmailError(String userEmail, Model model){
         String errorMessage = "등록되지 않은 이메일입니다.";
         model.addAttribute("errorMessage", errorMessage);
-        return "login/find-password";
+        return "/login/find-password";
     }
 
     //    인증번호 메일로 보내기
@@ -158,6 +158,9 @@ public class LoginController {
 
     @PostMapping("changePassword")
     public RedirectView changePassword(HttpSession session, @RequestParam("oldPassword") String oldPassword, @RequestParam("newPassword") String newPassword){
+        if (session.getAttribute("user") == null){
+            return new RedirectView("/login/login");
+        }
         UserVO currentUser = (UserVO) session.getAttribute("user");
         if (!currentUser.getUserPassword().equals(oldPassword)) {
             return new RedirectView("/login/changePassword-error");
@@ -165,6 +168,14 @@ public class LoginController {
         userService.saveNewPassword(currentUser.getUserEmail(), newPassword);
         return new RedirectView("/login/login");
     }
+
+    @GetMapping("changePassword-error")
+    public String checkPasswordError(Model model){
+        String errorMessage = "기존 비밀번호가 일치하지 않습니다.";
+        model.addAttribute("errorMessage", errorMessage);
+        return "/login/changePassword";
+    }
+
 
 
 

@@ -1,15 +1,184 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.app.ptever.mapper.MainMapper">
-    <!--이벤트 조회-->
-    <!--강의 인기순 조회-->
-    <select id="selectAllByCourse" resultType="courseSelectDTO">
-        SELECT *
-        FROM(SELECT ROWNUM AS RN, COURSE_ID, COURSE_TITLE, COURSE_PRICE, COURSE_DISCOUNT, COURSE_AVG_SCORE, COURSE_LEVEL_DIFFICULTY
-             FROM TBL_COURSE WHERE COURSE_STATE = 'ACTIVE' ORDER BY COURSE_AVG_SCORE DESC NULLS LAST )
+
+    <select id="selectSearchByCourse" resultType="courseSelectDTO">
+        SELECT COURSE_ID, COURSE_TITLE, COURSE_PRICE, COURSE_DISCOUNT, COURSE_AVG_SCORE, COURSE_LEVEL_DIFFICULTY, COURSE_STATE, COURSE_IMG_PATH
+        FROM
+            (
+                SELECT COURSE_ID, COURSE_TITLE, COURSE_PRICE, COURSE_DISCOUNT, COURSE_AVG_SCORE, COURSE_LEVEL_DIFFICULTY, COURSE_STATE, COURSE_IMG_PATH
+                FROM TBL_COURSE
+                WHERE COURSE_TITLE LIKE '%' || #{keyword} || '%'
+                ORDER BY COURSE_ID DESC
+            )
         <![CDATA[
-            WHERE RN < 5
+            WHERE ROWNUM < 5
         ]]>
     </select>
-    <!--상품 조회-->
+    
+    <select id="selectCourseTotal" resultType="int">
+        SELECT COUNT(COURSE_ID) FROM TBL_COURSE
+        <if test="keyword != null and !keyword.equals('')">
+            WHERE COURSE_TITLE LIKE '%' || #{keyword} || '%'
+        </if>
+    </select>
+
+    <select id="selectSearchByProduct" resultType="shoppingMallSelectDTO">
+        SELECT PRODUCT_ID, PRODUCT_TITLE, PRODUCT_DESCRIPTION, PRODUCT_PRICE, PRODUCT_AVG_SCORE, PRODUCT_DISCOUNT, PRODUCT_IMG_PATH
+        FROM
+            (
+                SELECT PRODUCT_ID, PRODUCT_TITLE, PRODUCT_DESCRIPTION, PRODUCT_PRICE, PRODUCT_AVG_SCORE, PRODUCT_DISCOUNT, PRODUCT_IMG_PATH
+                FROM TBL_SHOPPING_MALL_PRODUCT
+                WHERE PRODUCT_TITLE LIKE '%' || #{keyword} || '%'
+                ORDER BY PRODUCT_ID DESC
+            )
+        <![CDATA[
+        WHERE ROWNUM < 5
+        ]]>
+    </select>
+
+    <select id="selectProductTotal" resultType="int">
+        SELECT COUNT(PRODUCT_ID) FROM TBL_SHOPPING_MALL_PRODUCT
+        <if test="keyword != null and !keyword.equals('')">
+            WHERE PRODUCT_TITLE LIKE '%' || #{keyword} || '%'
+        </if>
+    </select>
+
+<!--    <select id="selectSearchByCourse" resultType="courseSelectDTO">-->
+<!--        SELECT COURSE_ID, COURSE_TITLE, COURSE_PRICE, COURSE_DISCOUNT, COURSE_AVG_SCORE, COURSE_LEVEL_DIFFICULTY, COURSE_STATE, COURSE_IMG_PATH-->
+<!--        FROM (-->
+<!--                 SELECT COURSE_ID, COURSE_TITLE, COURSE_PRICE, COURSE_DISCOUNT, COURSE_AVG_SCORE, COURSE_LEVEL_DIFFICULTY, COURSE_STATE, COURSE_IMG_PATH, ROWNUM AS rnum-->
+<!--                 FROM (-->
+<!--                          SELECT COURSE_ID, COURSE_TITLE, COURSE_PRICE, COURSE_DISCOUNT, COURSE_AVG_SCORE, COURSE_LEVEL_DIFFICULTY, COURSE_STATE, COURSE_IMG_PATH-->
+<!--                          FROM TBL_COURSE-->
+<!--                          WHERE COURSE_TITLE LIKE '%' || #{keyword} || '%'-->
+<!--                          ORDER BY COURSE_ID DESC-->
+<!--                      )-->
+<!--             )-->
+<!--        <![CDATA[-->
+<!--        WHERE rnum >= #{startRow} AND rnum <= #{endRow}-->
+<!--        ]]>-->
+<!--    </select>-->
+
+<!--    <select id="selectCourseTotal" resultType="int">-->
+<!--        SELECT COUNT(COURSE_ID) FROM TBL_COURSE-->
+<!--        <if test="keyword != null and !keyword.equals('')">-->
+<!--            WHERE COURSE_TITLE LIKE '%' || #{keyword} || '%'-->
+<!--        </if>-->
+<!--    </select>-->
+
+<!--    <select id="selectSearchByProduct" resultType="shoppingMallSelectDTO">-->
+<!--        SELECT PRODUCT_ID, PRODUCT_TITLE, PRODUCT_DESCRIPTION, PRODUCT_PRICE, PRODUCT_AVG_SCORE, PRODUCT_DISCOUNT, PRODUCT_IMG_PATH-->
+<!--        FROM-->
+<!--            (-->
+<!--                SELECT PRODUCT_ID, PRODUCT_TITLE, PRODUCT_DESCRIPTION, PRODUCT_PRICE, PRODUCT_AVG_SCORE, PRODUCT_DISCOUNT, PRODUCT_IMG_PATH, ROWNUM AS rnum-->
+<!--                FROM TBL_SHOPPING_MALL_PRODUCT-->
+<!--                WHERE PRODUCT_TITLE LIKE '%' || #{keyword} || '%'-->
+<!--                ORDER BY PRODUCT_ID DESC-->
+<!--            )-->
+<!--        <![CDATA[-->
+<!--        WHERE rnum >= #{startRow} AND rnum <= #{endRow}-->
+<!--        ]]>-->
+<!--    </select>-->
+
+<!--    <select id="selectProductTotal" resultType="int">-->
+<!--        SELECT COUNT(PRODUCT_ID) FROM TBL_SHOPPING_MALL_PRODUCT-->
+<!--        <if test="keyword != null and !keyword.equals('')">-->
+<!--            WHERE PRODUCT_TITLE LIKE '%' || #{keyword} || '%'-->
+<!--        </if>-->
+<!--    </select>-->
+
+
+
+
+    <select id="selectAllByCourse" resultType="courseSelectDTO">
+<!--        SELECT *-->
+<!--        FROM(SELECT ROWNUM AS RN, COURSE_ID, COURSE_TITLE, COURSE_PRICE, COURSE_DISCOUNT, COURSE_AVG_SCORE, COURSE_LEVEL_DIFFICULTY-->
+<!--             FROM TBL_COURSE WHERE COURSE_STATE = 'ACTIVE' ORDER BY COURSE_AVG_SCORE DESC NULLS LAST )-->
+<!--        <![CDATA[-->
+<!--            WHERE RN < 5-->
+<!--        ]]>-->
+        <![CDATA[
+        SELECT * FROM
+        (
+            SELECT ROWNUM AS RN, COURSE_ID, COURSE_TITLE, COURSE_PRICE, COURSE_DISCOUNT, COURSE_AVG_SCORE, COURSE_LEVEL_DIFFICULTY, COURSE_STATE, COURSE_IMG_PATH
+            FROM
+            (
+                SELECT *
+                FROM TBL_COURSE
+                WHERE COURSE_STATE = 'ACTIVE'
+                ORDER BY COURSE_AVG_SCORE DESC
+                NULLS LAST
+            ) C1
+        ) C2
+        WHERE C2.RN <= 4
+        ]]>
+    </select>
+
+    <select id="selectAllLatestDateByCourse" resultType="courseSelectDTO">
+        <![CDATA[
+        SELECT * FROM
+            (
+                SELECT ROWNUM AS RN, COURSE_ID, COURSE_TITLE, COURSE_PRICE, COURSE_DISCOUNT, COURSE_AVG_SCORE, COURSE_LEVEL_DIFFICULTY, COURSE_STATE, COURSE_CREATE_DATE, COURSE_IMG_PATH
+                FROM
+                    (
+                        SELECT *
+                        FROM TBL_COURSE
+                        WHERE COURSE_STATE = 'ACTIVE'
+                        ORDER BY COURSE_CREATE_DATE DESC NULLS LAST
+                    ) C1
+            ) C2
+        WHERE C2.RN <= 4
+        ]]>
+    </select>
+    <select id="selectAllLatestDateByCommunity" resultType="postDTO">
+        <![CDATA[
+        SELECT *
+        FROM (
+                 SELECT ROWNUM AS RN, TBL_POST.*
+                 FROM (
+                          SELECT P.POST_ID,
+                                 P.COMMUNITY_ID,
+                                 P.USER_ID,
+                                 P.POST_TITLE,
+                                 P.POST_CONTENT,
+                                 P.POST_DATE,
+                                 P.POST_UPDATE_DATE,
+                                 U.USER_NICKNAME
+                          FROM TBL_POST P
+                                   JOIN TBL_USER U ON P.USER_ID = U.USER_ID
+                          WHERE P.COMMUNITY_ID = #{communityId}
+                          ORDER BY P.POST_ID DESC
+                      ) TBL_POST
+                 WHERE ROWNUM <= 4
+             )
+        ]]>
+    </select>
+
+    <select id="selectAllByPostId" resultType="postImgVO">
+        SELECT POST_IMG_ID, POST_ID, STORED_FILE_NAME, IMAGE_PATH
+        FROM (
+                 SELECT POST_IMG_ID, POST_ID, STORED_FILE_NAME, IMAGE_PATH, ROWNUM AS RN
+                 FROM (
+                          SELECT POST_IMG_ID, POST_ID, STORED_FILE_NAME, IMAGE_PATH
+                          FROM TBL_POST_IMG
+                          WHERE POST_ID = #{postId}
+                          ORDER BY POST_IMG_ID
+                      )
+             )
+        WHERE RN = 1
+    </select>
+
+    <select id="selectAllRegisterDateByProduct" resultType="shoppingMallSelectDTO">
+        SELECT PRODUCT_ID, PRODUCT_TITLE, PRODUCT_DESCRIPTION, PRODUCT_PRICE, PRODUCT_AVG_SCORE, PRODUCT_DISCOUNT, PRODUCT_IMG_PATH, PRODUCT_REGISTER_DATE
+        FROM
+            (
+                SELECT PRODUCT_ID, PRODUCT_TITLE, PRODUCT_DESCRIPTION, PRODUCT_PRICE, PRODUCT_AVG_SCORE, PRODUCT_DISCOUNT, PRODUCT_IMG_PATH, PRODUCT_REGISTER_DATE
+                FROM TBL_SHOPPING_MALL_PRODUCT
+                ORDER BY PRODUCT_REGISTER_DATE DESC
+            )
+        <![CDATA[
+        WHERE ROWNUM < 5
+        ]]>
+    </select>
 </mapper>

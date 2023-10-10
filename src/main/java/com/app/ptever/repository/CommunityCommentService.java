@@ -11,4 +11,7 @@ public interface CommunityCommentService {
 
     // 댓글 달기
     public void saveComment(CommunityCommentDTO communityCommentDTO);
+
+    // 댓글 삭제
+    public void discardComment(Long communityCommentId);
 }

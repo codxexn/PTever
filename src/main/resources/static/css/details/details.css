@@ -88,6 +88,11 @@ div.Fade_Wrapper{
 
 }
 
+.List-link-wrapper {
+    font-size: 15px;
+    margin-right: 5px;
+}
+
 .detailPageContent_Wrapper{
     padding: 0px;
 }
@@ -108,6 +113,9 @@ div.Fade_Wrapper{
 
 .detailContent_Body{
     display: inline-block;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 70px;
 }
 
 .detailContent_LikeButton{
@@ -130,9 +138,69 @@ div.Fade_Wrapper{
     overflow: hidden;
 }
 
-.detailContent_Header > div:last-child{
+.detailContent_MetaData{
     -webkit-box-flex: 1;
     flex: 1 1 auto;
+}
+
+.detailContent-ButtonWrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 60px;
+    height: 30px;
+    margin-right: 5px;
+}
+
+.detailContent-UpdateButton {
+    padding: 5px 5px;
+    cursor: pointer;
+}
+
+.detailContent-UpdateButton:hover {
+    color: rgb(51, 151, 255);
+}
+
+.detailContent-DeleteButton {
+    padding: 5px 5px;
+    cursor: pointer;
+}
+
+.detailContent-DeleteButton:hover {
+    color: #cc0000;
+}
+
+.detailContent-comment-DeleteButton {
+    padding: 5px 5px;
+    cursor: pointer;
+}
+
+.detailContent-comment-DeleteButton:hover {
+    color: #cc0000;
+}
+
+.detailContent-Images {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 768px;
+    margin-bottom: 40px;
+}
+
+/*.detailContent-Images-Only {*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    margin-bottom: 40px;*/
+/*}*/
+
+
+.detailContent-ImageWrapper {
+    max-width: 370px;
+}
+
+.detailContent-Image {
+    width: 100%;
 }
 
 .Image_Wrapper{
@@ -148,8 +216,11 @@ div.Fade_Wrapper{
 }
 
 .Image_Default{
-    width: 100%;
+    display: initial;
     border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .detailContent_Name{
@@ -163,6 +234,7 @@ div.Fade_Wrapper{
     display: flex;
     -webkit-box-align: center;
     align-items: center;
+    flex-direction: row;
 }
 
 .detailContent_Created{
@@ -171,8 +243,14 @@ div.Fade_Wrapper{
     font-size: 10px;
 }
 
+.detailContent_Updated{
+    line-height: 10px;
+    color: rgb(155, 155, 155);
+    font-size: 10px;
+}
+
 .detailContent_Title{
-    margin-bottom: 10px;
+    margin-bottom: 50px;
     line-height: 22px;
     font-size: 20px;
 }
@@ -287,6 +365,10 @@ button.ButtonWrite{
 .commentInner_Author{
     display: flex;
     margin-bottom: 20px;
+}
+
+.comment-userinfo-wrapper {
+    flex: 1 1 auto;
 }
 
 .Image_StyledLoader{

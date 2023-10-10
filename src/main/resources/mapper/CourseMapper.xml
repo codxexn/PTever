@@ -1,11 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.app.ptever.mapper.CourseMapper">
-    <select id="selectById" resultType="courseDTO">
-        SELECT C.COURSE_ID, C.COURSE_TITLE, C.COURSE_DESCRIPTION, C.COURSE_PRICE, C.COURSE_DISCOUNT, CR.REVIEW_CONTENT, CR.USER_ID
-        FROM TBL_COURSE C
-        LEFT OUTER JOIN TBL_COURSE_REVIEW CR
-        ON C.COURSE_ID = CR.COURSE_ID
-        WHERE C.COURSE_ID = #{courseId}
+    <select id="selectById" resultType="courseVO">
+        SELECT COURSE_ID, COURSE_TITLE, COURSE_DESCRIPTION, COURSE_PRICE, COURSE_DISCOUNT, COURSE_IMG_PATH
+        FROM TBL_COURSE
+        WHERE COURSE_ID = #{courseId}
     </select>
+
+    <select id="selectAllReview" resultType="reviewDTO">
+        SELECT *
+        FROM
+            (SELECT CR.COURSE_ID, CR.COURSE_REVIEW_ID, CR.REVIEW_CONTENT, CR.USER_ID, CR.COURSE_SCORE, RI.IMAGE_PATH
+             FROM TBL_COURSE_REVIEW CR
+            LEFT OUTER JOIN TBL_REVIEW_IMG RI
+            ON CR.COURSE_REVIEW_ID = RI.COURSE_REVIEW_ID) R
+        LEFT OUTER JOIN TBL_USER U
+        ON R.USER_ID = U.USER_ID
+        WHERE R.COURSE_ID = #{courseId}
+    </select>
+
+    <select id="selectOtherCourse" resultType="courseVO">
+        <![CDATA[
+            SELECT * FROM
+                (SELECT COURSE_ID, COURSE_TITLE, COURSE_IMG_PATH
+                FROM TBL_COURSE C
+                WHERE COURSE_ID != #{courseId}
+                ORDER BY DBMS_RANDOM.RANDOM)
+            WHERE ROWNUM < 7
+        ]]>
+    </select>
+
+    <select id="selectAvgByCourseId" resultType="Double">
+        SELECT ROUND(AVG(COURSE_SCORE),1) AS AVG
+        FROM TBL_COURSE_REVIEW
+        WHERE COURSE_ID = #{courseId}
+    </select>
+
 </mapper>

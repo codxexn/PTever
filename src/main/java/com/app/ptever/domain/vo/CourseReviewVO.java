@@ -21,6 +21,7 @@ public class CourseReviewVO implements Serializable {
     private LocalDate createDate;
     // 업데이트 날짜
     private LocalDate updateDate;
+    private Integer courseScore;
     // ========================
     private Long courseId; // 강의 id
 }

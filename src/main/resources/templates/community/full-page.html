@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:style="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -45,15 +45,24 @@
                                 <span class="FreePostPage_Link_Element">소도구 거래 장터</span>
                             </div>
                         </a>
-
-                        <a href="/community/iWrite" class="FreePostPage_Link">
+                        
+                        <a th:if="${session.user == null}" href="/login/login" class="FreePostPage_Link">
+                            <div class="FreePostPage_Link_Wrapper">
+                                <span class="FreePostPage_Link_Element">내가 쓴 게시글</span>
+                            </div>
+                        </a>
+                        <a th:if="${session.user != null}" href="/community/iWrite" class="FreePostPage_Link">
                             <div class="FreePostPage_Link_Wrapper">
                                 <span class="FreePostPage_Link_Element">내가 쓴 게시글</span>
                             </div>
                         </a>
                     </div>
-
-                    <button onclick="location.href='/community/write'" width="210px" font-size="14px" class="ButtonWrite">글쓰기</button>
+                    <div class="Fullpage-WriteButton-Wrapper">
+                        <button th:if="${session.user == null}" onclick="location.href='/login/login'" width="50px" font-size="14px" class="AllButtonWrite">자유게시판 글쓰기</button>
+                        <button th:if="${session.user != null}" onclick="location.href='/community/write-free'" width="50px" font-size="14px" class="AllButtonWrite">자유게시판 글쓰기</button>
+                        <button th:if="${session.user == null}" onclick="location.href='/login/login'" width="50px" font-size="14px" class="AllButtonWrite">소도구 거래하기</button>
+                        <button th:if="${session.user != null}" onclick="location.href='/community/write-trans'" width="50px" font-size="14px" class="AllButtonWrite">소도구 거래하기</button>
+                    </div>
                 </div>
 
                 <hr class="Hr">
@@ -63,7 +72,8 @@
                         <li th:each="List:${allPosts}">
                             <a th:href="@{'/community/detail?postId=' + ${List.postId}}">
                                 <div class="NoticeEntity_TitleWrapper">
-                                    <div th:text="${List.communityType}" class="FreePost_Badge"></div>
+                                    <div th:text="${List.communityType}" class="FreePost_Badge"
+                                         th:style="${List.communityId == 1 ? 'background-color: rgb(51, 151, 255);' : 'background-color: rgb(160, 130, 250);'}"></div>
     
                                     <div th:text="${List.postTitle}" class="FreePost_Title"></div>
     
@@ -73,46 +83,50 @@
                         </li>
                     </ul>
 
-                    <footer class="Footer_Wrapper">
+                    <footer class="Footer_Wrapper" th:with="start=${pagination.startPage},
+                    last=(${pagination.endPage})">
                         <div class="PaginationButtonGroup_PrevButtonWrapper">
-                            <button width="40px" height="40px" font-size="18px" disabled
-                                    class="ButtonPage_StyledOff" id="prevprev_button">
+                            <button th:if="${pagination.page == start}" disabled width="40px" height="40px" font-size="18px"
+                                    id="prevprev_button" class="ButtonPage_Styled">
                                 <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath fill='%23FFF' fill-opacity='0' fill-rule='nonzero' d='M0 0h40v40H0z'/%3E %3Cpath stroke='%23DDD' stroke-width='1.5' d='M16 16l4 4-4 4M21 16l4 4-4 4'/%3E %3C/g%3E %3C/svg%3E"
                                      class="PaginationButtonGroup_Icon">
-
-                                <button width="40px" height="40px" font-size="18px" disabled
-                                        class="ButtonPage_StyledOff" id="prev_button">
-                                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath fill='none' d='M0 0h40v40H0z'/%3E %3Cpath stroke='%23DDD' stroke-width='1.5' d='M18 16l4 4-4 4'/%3E %3C/g%3E %3C/svg%3E"
-                                         class="PaginationButtonGroup_Icon">
-                                </button>
                             </button>
-
-
+                            <button th:if="${pagination.page != start}" th:onclick="|location.href='@{/community/full-page(page=${start})}'|" width="40px" height="40px" font-size="18px"
+                                     id="prevprev_button" style="cursor: pointer;" class="ButtonPage_Styled">
+                                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Crect width='40' height='40' fill='%23FFF' fill-opacity='0' fill-rule='nonzero' rx='20'/%3E %3Cg stroke='%23000' stroke-width='1.5'%3E %3Cpath d='M16 16l4 4-4 4M21 16l4 4-4 4'/%3E %3C/g%3E %3C/g%3E %3C/svg%3E"
+                                     class="PaginationButtonGroup_Icon">
+                            </button>
+                            <button th:if="${pagination.page == start}" width="40px" height="40px" font-size="18px" class="ButtonPage_Styled" disabled
+                                    id="prev_button">
+                                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath fill='none' d='M0 0h40v40H0z'/%3E %3Cpath stroke='%23DDD' stroke-width='1.5' d='M18 16l4 4-4 4'/%3E %3C/g%3E %3C/svg%3E"
+                                     class="PaginationButtonGroup_Icon">
+                            </button>
+                            <button th:if="${pagination.page != start}" th:onclick="|location.href='@{/community/full-page(page=${pagination.page-1})}'|" width="40px" height="40px" font-size="18px" class="ButtonPage_Styled"
+                                    id="prev_button">
+                                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 18 18'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath d='M18 0H0v18h18z'/%3E %3Cpath stroke='%23000' stroke-width='1.5' d='M7 5l4 4-4 4'/%3E %3C/g%3E %3C/svg%3E"
+                                     class="PaginationButtonGroup_Icon">
+                            </button>
                         </div>
 
-                        <button  class="footerButton ButtonPage_StyledButtonOn">
-                            1
-                        </button>
-
-                        <button class="footerButton ButtonPage_StyledButton">
-                            2
-                        </button>
-
-                        <button class="footerButton ButtonPage_StyledButton">
-                            3
-                        </button>
-
-                        <button  class="footerButton ButtonPage_StyledButton">
-                            4
+                        <button th:each="buttonpage: ${#numbers.sequence(start, last)}" class="footerButton"
+                        th:class="${buttonpage == pagination.page ? 'ButtonPage_StyledButtonOn' : 'ButtonPage_StyledButtonOff'}">
+                            <a th:text="${buttonpage}" th:href="@{/community/full-page(page=${buttonpage})}"></a>
                         </button>
 
                         <div class="PaginationButtonGroup_NextButtonWrapper">
-                            <button width="40px" height="40px" font-size="18px" class="ButtonPage_Styled" id="next_button">
+                            <button th:if="${pagination.page == last}" disabled width="40px" height="40px" font-size="18px" class="ButtonPage_Styled" id="next_button">
+                                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath fill='none' d='M0 0h40v40H0z'/%3E %3Cpath stroke='%23DDD' stroke-width='1.5' d='M18 16l4 4-4 4'/%3E %3C/g%3E %3C/svg%3E"
+                                     class="" id="next_button">
+                            </button>
+                            <button th:if="${pagination.page != last}" th:onclick="|location.href='@{/community/full-page(page=${pagination.page+1})}'|" width="40px" height="40px" font-size="18px" class="ButtonPage_Styled" id="next_button">
                                 <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 18 18'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath d='M18 0H0v18h18z'/%3E %3Cpath stroke='%23000' stroke-width='1.5' d='M7 5l4 4-4 4'/%3E %3C/g%3E %3C/svg%3E"
                                      class="" id="next_button">
                             </button>
-
-                            <button width="40px" height="40px" font-size="18px" class="ButtonPage_Styled" id="nextnext_button">
+                            <button th:if="${pagination.page == last}" disabled width="40px" height="40px" font-size="18px" class="ButtonPage_Styled" id="nextnext_button">
+                                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath fill='%23FFF' fill-opacity='0' fill-rule='nonzero' d='M0 0h40v40H0z'/%3E %3Cpath stroke='%23DDD' stroke-width='1.5' d='M16 16l4 4-4 4M21 16l4 4-4 4'/%3E %3C/g%3E %3C/svg%3E"
+                                     class="" id="nextnext_button">
+                            </button>
+                            <button th:if="${pagination.page != last}" th:onclick="|location.href='@{/community/full-page(page=${pagination.realEnd})}'|" width="40px" height="40px" font-size="18px" class="ButtonPage_Styled" id="nextnext_button">
                                 <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Crect width='40' height='40' fill='%23FFF' fill-opacity='0' fill-rule='nonzero' rx='20'/%3E %3Cg stroke='%23000' stroke-width='1.5'%3E %3Cpath d='M16 16l4 4-4 4M21 16l4 4-4 4'/%3E %3C/g%3E %3C/g%3E %3C/svg%3E"
                                      class="" id="nextnext_button">
                             </button>
@@ -128,4 +142,5 @@
 </div>
 </body>
 <script src="/js/full-page/full-page.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 </html>

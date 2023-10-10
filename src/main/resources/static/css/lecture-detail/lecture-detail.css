@@ -286,7 +286,7 @@ button, input, select, textarea{
 .BasicInfoSection{
     height:100%;
     position:relative;
-    padding:0px 0px 12px;
+    /*padding:0px 0px 12px;*/
     border-bottom: initial;
 }
 
@@ -556,7 +556,7 @@ h2{
 .ReviewSummaryCount{
     color:rgb(119,119,119);
     font-size:14px;
-    line-height: 22px;
+    /*line-height: 22px;*/
     letter-spacing: -0.42px;
 }
 

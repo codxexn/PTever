@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,55 +15,64 @@
     </style>
     <!-- 아래 링크 태그를 꼭 넣어주세요. (경로 조심) -->
     <link rel="stylesheet" href="/css/mainpage/mainpage-header.css">
+    <th:block th:replace="~{fix/header-login :: my-header-head}"></th:block>
+    <th:block th:replace="~{fix/footer :: my-footer-head}"></th:block>
 </head>
 <body>
 <!-- DOM TREE를 하나로 구성하기 위해서 전체를 감싸는 div태그입니다. -->
 <div id="root">
     <div class="RootWrapper">
-
+        <header th:replace="~{fix/header-login :: header-login}"></header>
         <div class="Padded">
             <div class="WritePage_Wrapper">
                 <div class="WritePage_Header">
-                    <h1 font-size="20px"  class="LeftPageTitle">글쓰기</h1>
+                    <h1 font-size="20px"  class="LeftPageTitle">자유게시판 글쓰기</h1>
 
 
-                    <div class="checkBox_Wrapper">
-                        <div class="checkboxItem_Wrapper" id="freePost">
-                            <div class="CheckboxItem_Box_Select" id="Box1"></div>
-                            <input type="radio" class="CheckboxItem_Input" checked="true">
-                            <div>자유게시판</div>
-                        </div>
+<!--                    <div class="checkBox_Wrapper">-->
+<!--                        <div class="checkboxItem_Wrapper" id="freePost">-->
+<!--                            <div class="CheckboxItem_Box_Select" id="Box1"></div>-->
+<!--                            <input type="radio" class="CheckboxItem_Input freecheck">-->
+<!--                            <div>자유게시판</div>-->
+<!--                        </div>-->
 
 
-                        <div class="checkboxItem_Wrapper" id="transaction">
-                            <div class="CheckboxItem_Box" id="Box2"></div>
-                            <input type="radio" class="CheckboxItem_Input" >
-                            <div>소도구 거래장터</div>
-                        </div>
-                    </div>
+<!--                        <div class="checkboxItem_Wrapper" id="transaction">-->
+<!--                            <div class="CheckboxItem_Box" id="Box2"></div>-->
+<!--                            <input type="radio" class="CheckboxItem_Input transcheck">-->
+<!--                            <div>소도구 거래장터</div>-->
+<!--                        </div>-->
+<!--                    </div>-->
 
                 </div>
 
                 <hr class="Hr">
 
 
-                <div class="Fade_Wrapper" style="opacity: 1; display: block;">
-                <textarea placeholder="제목을 입력하세요." id="title"
-                          class="WritePage_TitleArea"></textarea>
-                    <hr class="Hr">
-                    <textarea placeholder="내용을 입력하세요." id="content"
-                              class="WritePage_TextArea"></textarea>
-
-                    <div class="WritePage_Footer">
-                        <button width="100%" color="white" font-size="13px" disabled
-                                class="buttonOff">등록하기</button>
-                    </div>
+                <div class="Fade_Wrapper free-post-write" style="opacity: 1; display: block;">
+                    <form th:action="@{/community/write-free}" method="post" th:object="${postDTO}" enctype="multipart/form-data">
+                        <input type="hidden" th:value="${session.user.userId}" th:name="userId">
+                        <textarea placeholder="제목을 입력하세요." id="title"
+                                  class="WritePage_TitleArea" th:field="*{postTitle}"></textarea>
+                        <hr class="Hr">
+                        <textarea placeholder="내용을 입력하세요.&#13;&#10;&#13;&#10;아래에 첨부하신 이미지는 게시물 최상단에 노출됩니다." id="content"
+                                  class="WritePage_TextArea" th:field="*{postContent}"></textarea>
+                        <hr class="Hr">
+                        <div class="fileInput-wrapper">
+                            <input type="file" name="files">
+                            <input type="file" name="files">
+                        </div>
+                        <div class="WritePage_Footer">
+                            <button type="submit" width="100%" color="white" font-size="13px" disabled
+                                    class="buttonOn">등록하기</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
+        <footer th:replace="~{fix/footer :: my-footer}"></footer>
     </div>
 </div>
-
 <script src="/js/write/write.js"></script>
 </body>
 </html>

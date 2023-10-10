@@ -4,9 +4,12 @@ const inputId = document.querySelector("input[name=userEmail]");
 const inputPassword = document.querySelector("input[name=userPassword]");
 const correctDescription = document.querySelector("input[name=passwordConfirm]");
 const loginBtn = document.querySelector(".correct-RegisterPage-Submit-Btn");
+const warning = document.querySelector(".warning");
 
 inputId.addEventListener("keyup", (e) => {
     if(!e.target.value || !inputPassword.value || !correctDescription.value){
+        globalThis.flag[0] = false;
+    } else if (inputPassword.value !== correctDescription.value){
         globalThis.flag[0] = false;
     } else {
         globalThis.flag[0] = true;
@@ -20,6 +23,8 @@ inputId.addEventListener("keyup", (e) => {
 
 inputPassword.addEventListener("keyup", (e) => {
     if(!e.target.value || !inputId.value || !correctDescription.value){
+        globalThis.flag[0] = false;
+    } else if (inputPassword.value !== correctDescription.value){
         globalThis.flag[0] = false;
     } else {
         globalThis.flag[0] = true;
@@ -35,6 +40,8 @@ inputPassword.addEventListener("keyup", (e) => {
 correctDescription.addEventListener("keyup", (e) => {
     if(!e.target.value || !inputPassword.value || !inputId.value){
         globalThis.flag[0] = false;
+    } else if (inputPassword.value !== correctDescription.value){
+        globalThis.flag[0] = false;
     } else {
         globalThis.flag[0] = true;
     }
@@ -42,6 +49,40 @@ correctDescription.addEventListener("keyup", (e) => {
         loginBtn.disabled = false;
     } else {
         loginBtn.disabled = true;
+    }
+});
+
+// 새 비번과 새 비번 확인란의 값이 일치하지 않으면 p 태그에 경고문구가 뜨고
+// 두 input의 border를 빨갛게 변경하였습니다.
+inputPassword.addEventListener("keyup", () => {
+    if (!inputPassword.value || !correctDescription.value) {
+        inputPassword.style.border = "solid 1px rgb(238, 238, 238)";
+        correctDescription.style.border = "solid 1px rgb(238, 238, 238)";
+        warning.innerText = "";
+    } else if (inputPassword.value !== correctDescription.value) {
+        inputPassword.style.border = "solid 1px red";
+        correctDescription.style.border = "solid 1px red";
+        warning.innerText = "입력하신 비밀번호가 일치하지 않습니다.";
+    } else {
+        inputPassword.style.border = "solid 1px rgb(238, 238, 238)";
+        correctDescription.style.border = "solid 1px rgb(238, 238, 238)";
+        warning.innerText = "";
+    }
+});
+
+correctDescription.addEventListener("keyup", () => {
+    if (!inputPassword.value || !correctDescription.value) {
+        inputPassword.style.border = "solid 1px rgb(238, 238, 238)";
+        correctDescription.style.border = "solid 1px rgb(238, 238, 238)";
+        warning.innerText = "";
+    } else if (inputPassword.value !== correctDescription.value) {
+        inputPassword.style.border = "solid 1px red";
+        correctDescription.style.border = "solid 1px red";
+        warning.innerText = "입력하신 비밀번호가 일치하지 않습니다.";
+    } else {
+        inputPassword.style.border = "solid 1px rgb(238, 238, 238)";
+        correctDescription.style.border = "solid 1px rgb(238, 238, 238)";
+        warning.innerText = "";
     }
 });
 

@@ -587,6 +587,13 @@ strong {
     width: 100%;
 }
 
+.courseImg {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
 .ProductListWrapper {
     position: relative;
     width: 100%;
@@ -787,6 +794,16 @@ strong {
 }
 
 .CardProduct-StarAvgScoreCount {
+    display: block;
+    margin: 0px 8px 0px 0px;
+    color: rgb(51, 51, 51);
+    font-size: 10px;
+    font-weight: bold;
+    line-height: 14px;
+    letter-spacing: -0.03em;
+}
+
+.CardProduct-writer {
     display: block;
     margin: 0px 8px 0px 0px;
     color: rgb(51, 51, 51);
