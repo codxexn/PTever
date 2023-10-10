@@ -27,4 +27,6 @@ public class CourseSelectDTO {
     private LocalDateTime courseCreateDate;
     // 강의 이미지 경로
     private String courseImgPath;
+    // 후기 개수
+    private Integer reviewCount;
 }
