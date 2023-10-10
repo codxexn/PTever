@@ -32,6 +32,7 @@
         <typeAlias type="com.app.ptever.domain.vo.ShoppingMallProductVO" alias="shoppingMallProductVO"/>
         <typeAlias type="com.app.ptever.domain.vo.TrainerImgVO" alias="trainerImgVO"/>
         <typeAlias type="com.app.ptever.domain.vo.TrainerReviewVO" alias="trainerReviewVO"/>
+        <typeAlias type="com.app.ptever.domain.vo.FaqVO" alias="faqVO"/>
         <typeAlias type="com.app.ptever.domain.vo.TrainerVO" alias="trainerVO"/>
         <typeAlias type="com.app.ptever.domain.vo.UserAddressVO" alias="userAddressVO"/>
         <typeAlias type="com.app.ptever.domain.vo.UserProfileVO" alias="userProfileVO"/>

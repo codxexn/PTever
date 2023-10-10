@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>고객 센터 -피테버(PTever)</title>
+    <title>고객 센터 - 자주 묻는 질문</title>
     <!-- SUIT 폰트 링크입니다. 프립과 동일한 폰트입니다. -->
     <link href="https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/static/woff2/SUIT.css" rel="stylesheet">
     <style>
@@ -620,7 +620,11 @@
                 <div class="FrequentPageWrapper">
                     <div class="QuestionArea">
                         찾는 질문이 없으신가요?
-                        <button class="LinkToPersonalFAQ">1:1 문의하기</button>
+                        <a href="./personal-faq-ask">
+                            <button class="LinkToPersonalFAQ">
+                                1:1 문의하기
+                            </button>
+                        </a>
                     </div>
                 </div>
             </section>

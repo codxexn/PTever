@@ -95,24 +95,41 @@ labelsM.filter((label) => !label.parentNode.classList.contains("LinkToEventPage"
 // 임시 데이터이므로 첫 번째 공지사항 글에만 적용했습니다.
 /////////////////////
 // 웹
-const noticeTitles = new Array(document.querySelector(".NoticeTitle-1"), document.querySelector(".NoticeTitle-2"), document.querySelector(".NoticeTitle-3"));
+// const noticeTitles = new Array(document.querySelector(".NoticeTitle-1"), document.querySelector(".NoticeTitle-2"), document.querySelector(".NoticeTitle-3"));
+// const noticeContents = document.querySelectorAll(".Notice-ContentWrapper");
+//
+// for(let i = 0; i < noticeTitles.length; i++){
+//     noticeTitles[i].addEventListener("click", (e) => {
+//         e.preventDefault();
+//         if(e.target.parentNode.style.borderBottom != "none"){
+//             e.target.parentNode.style.borderBottom = "none";
+//             e.target.style.fontWeight = "bolder";
+//             noticeContents[i].style.display = "block";
+//         } else {
+//             e.target.parentNode.style.borderBottom = "1px solid rgb(230, 230, 230)";
+//             e.target.style.fontWeight = "bold";
+//             noticeContents[i].style.display = "none";
+//         }
+//     })
+// }
+
+const noticeTitles = document.querySelectorAll(".Notice-TitleWrapper");
 const noticeContents = document.querySelectorAll(".Notice-ContentWrapper");
+const noticeTitleTitles = document.querySelectorAll(".Notice-Title");
 
-for(let i = 0; i < noticeTitles.length; i++){
-    noticeTitles[i].addEventListener("click", (e) => {
-        e.preventDefault();
-        if(e.target.parentNode.style.borderBottom != "none"){
-            e.target.parentNode.style.borderBottom = "none";
-            e.target.style.fontWeight = "bolder";
-            noticeContents[i].style.display = "block";
+noticeTitles.forEach((noticeTitle, index) => {
+    noticeTitle.addEventListener("click", () => {
+        if (noticeTitle.style.borderBottom !== "none") {
+            noticeTitle.style.borderBottom = "none";
+            noticeTitleTitles[index].style.fontWeight = "bolder";
+            noticeContents[index].style.display = "block";
         } else {
-            e.target.parentNode.style.borderBottom = "1px solid rgb(230, 230, 230)";
-            e.target.style.fontWeight = "bold";
-            noticeContents[i].style.display = "none";
+            noticeTitle.style.borderBottom = "1px solid rgb(230, 230, 230)";
+            noticeTitleTitles[index].style.fontWeight = "bold";
+            noticeContents[index].style.display = "none";
         }
-    })
-}
-
+    });
+});
 
 
 

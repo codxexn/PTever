@@ -453,6 +453,7 @@ button:disabled {
     padding: 0px;
     background-color: white;
     text-align: center;
+    cursor: pointer;
     border-radius: 50%;
     font-size: 18px;
     display: flex;
@@ -461,6 +462,15 @@ button:disabled {
     -webkit-box-align: center;
     align-items: center;
     outline: none;
+}
+
+
+.Pagination-PrevButton:disabled{
+    cursor: not-allowed;
+}
+
+.Pagination-NextButton:disabled{
+    cursor: not-allowed;
 }
 
 .PrevButton-Image {
@@ -496,7 +506,6 @@ button:disabled {
     text-align: center;
     cursor: pointer;
     border-radius: 50%;
-    color: black;
     font-size: 18px;
     font-weight: normal;
     display: flex;
@@ -511,6 +520,7 @@ button:disabled {
     display: flex;
     margin-left: 10px;
 }
+
 
 .Pagination-NextButton {
     width: 40px;
