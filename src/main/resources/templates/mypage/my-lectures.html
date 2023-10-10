@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,11 +14,13 @@
   <!-- 아래 링크 태그를 꼭 넣어주세요. (경로 조심) -->
   <link rel="stylesheet" href="/css/default-common/defaultCommon.css">
   <link rel="stylesheet" href="/css/my-lectures/myLectures.css">
+  <th:block th:replace="~{fix/header-login :: my-header-head}"></th:block>
+  <th:block th:replace="~{fix/footer :: my-footer-head}"></th:block>
 </head>
 <body>
 <div class="root pc myLectures">
   <div class="RootWrapper">
-
+    <header th:replace="~{fix/header-login :: header-login}"></header>
     <div class="PageWrapper">
       <header class="myLecturesHeader">
         <div class="Content">
@@ -97,6 +99,7 @@
         </div>
       </div>
     </div>
+    <footer th:replace="~{fix/footer :: my-footer}"></footer>
   </div>
 
   <!-- 모바일 버전 -->

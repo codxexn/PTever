@@ -12,10 +12,13 @@
     }
   </style>
   <link rel="stylesheet" href="/css/personal-faq/personal_faq_ask.css">
+  <th:block th:replace="~{fix/header-login :: my-header-head}"></th:block>
+  <th:block th:replace="~{fix/footer :: my-footer-head}"></th:block>
 </head>
 <body>
 <div class="root pc">
   <div class="RootWrapper">
+    <header th:replace="~{fix/header-login :: header-login}"></header>
     <div class="PersonalAskWrapper">
       <section>
         <div class="PersonalAskPageWrapper">
@@ -35,6 +38,7 @@
         </div>
       </section>
     </div>
+    <footer th:replace="~{fix/footer :: my-footer}"></footer>
   </div>
 </div>
 </body>
