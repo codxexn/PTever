@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,19 +15,21 @@
   <link rel="stylesheet" href="/css/mypage/myPage.css">
   <link rel="stylesheet" href="/css/paging/paging.css">
   <link rel="stylesheet" href="/css/default-common/defaultCommon.css">
+  <th:block th:replace="~{fix/header-login :: my-header-head}"></th:block>
+  <th:block th:replace="~{fix/footer :: my-footer-head}"></th:block>
 </head>
 <body>
 <!-- 전체를 감싸는 DOM div -->
 <!-- pc 버전 -->
 <div class="root pc myPage">
   <div class="RootWrapper">
-
+    <header th:replace="~{fix/header-login :: header-login}"></header>
     <!-- 헤더 아래에 들어갈 페이지 wrap -->
     <div class="PageWrapper">
       <!-- 내 정보 wrap -->
       <div class="UserInfoWrapper">
         <!-- 누르면 내 정보로 이동하는 a태그 -->
-        <a class="UserInfoWrapperLink" href="/my/profile">
+        <a class="UserInfoWrapperLink" href="/mypage/my-info">
           <img src="/image/mypage/profile.jpg" class="UserImage">
           <!-- 닉네임, 계정상태 wrap -->
           <div class="UserInfoTextWrapper">
@@ -39,7 +41,7 @@
 
       <!-- 사용자가 보유한 정보를 보여줍니다. -->
       <div class="UserPropertyContainer">
-        <a href="/my/lectures">
+        <a href="/mypage/no-lectures">
           <div class="UserPropertyTitle">내 강의실</div>
           <div class="UserPropertyValue">0</div>
         </a>
@@ -49,17 +51,17 @@
           <div class="UserPropertyValue">0</div>
         </a>
 
-        <a href="/my/reviews">
+        <a href="/mypage/no-reviews">
           <div class="UserPropertyTitle">후기</div>
           <div class="UserPropertyValue">0</div>
         </a>
 
-        <a href="/my/coupons">
+        <a href="/mypage/no-coupon">
           <div class="UserPropertyTitle">쿠폰</div>
           <div class="UserPropertyValue">0</div>
         </a>
 
-        <a href="/my/setting">
+        <a href="/mypage/personal-setting">
           <div class="UserPropertyTitle">설정</div>
           <img id="cogwheel" src="/image/mypage/setting.png">
         </a>
@@ -72,7 +74,7 @@
       <div class="MyPageDomainWrapper">
         <header>내 활동</header>
         <!-- 강의 결제내역 페이지로 이동 -->
-        <a href="/my/purchases/lectures">
+        <a href="/mypage/purchase-history">
           <div class="TableBase">
             <div class="TableRowContentWrapper">
               <div class="TableRowTitle">강의 결제내역</div>
@@ -81,7 +83,7 @@
           </div>
         </a>
         <!-- 상품 주문내역 페이지로 이동 -->
-        <a href="/my/purchases/products">
+        <a href="/mypage/no-history">
           <div class="TableBase">
             <div class="TableRowContentWrapper">
               <div class="TableRowTitle">상품 주문내역</div>
@@ -98,7 +100,7 @@
       <div class="MyPageDomainWrapper">
         <header>고객센터</header>
         <!-- 공지사항 페이지로 이동 -->
-        <a href="/notice">
+        <a href="/notices/notices">
           <div class="TableBase">
             <div class="TableRowContentWrapper">
               <div class="TableRowTitle">공지사항</div>
@@ -107,7 +109,7 @@
           </div>
         </a>
         <!-- 자주 묻는 질문 페이지로 이동 -->
-        <a href="/help">
+        <a href="/notices/frequent-questions">
           <div class="TableBase">
             <div class="TableRowContentWrapper">
               <div class="TableRowTitle">FAQ</div>
@@ -116,7 +118,7 @@
           </div>
         </a>
         <!-- 1:1 문의(문의목록) 페이지로 이동 -->
-        <a href="/inquiry">
+        <a href="/notices/personal-faq-list">
           <div class="TableBase">
             <div class="TableRowContentWrapper">
               <div class="TableRowTitle">1:1 문의</div>
@@ -127,6 +129,7 @@
       </div>
 
     </div>
+    <footer th:replace="~{fix/footer :: my-footer}"></footer>
   </div>
 </div>
 
@@ -141,7 +144,7 @@
       <!-- 내 정보 wrap -->
       <div class="UserInfoWrapper">
         <!-- 누르면 내 정보로 이동하는 a태그 -->
-        <a class="UserInfoWrapperLink" href="/my/profile">
+        <a class="UserInfoWrapperLink" href="/mypage/my-info">
           <img src="/image/mypage/profile.jpg" class="UserImage">
           <!-- 닉네임, 계정상태 wrap -->
           <div class="UserInfoTextWrapper">
@@ -153,27 +156,27 @@
 
       <!-- 사용자가 보유한 정보를 보여줍니다. -->
       <div class="UserPropertyContainer">
-        <a href="/my/lectures">
+        <a href="/mypage/no-lectures">
           <div class="UserPropertyTitle">내 강의실</div>
           <div class="UserPropertyValue">0</div>
         </a>
 
-        <a href="/my/posts">
+        <a href="//mypage/post">
           <div class="UserPropertyTitle">게시물</div>
           <div class="UserPropertyValue">0</div>
         </a>
 
-        <a href="/my/reviews">
+        <a href="/mypage/no-reviews">
           <div class="UserPropertyTitle">후기</div>
           <div class="UserPropertyValue">0</div>
         </a>
 
-        <a href="/my/coupons">
+        <a href="/mypage/no-coupon">
           <div class="UserPropertyTitle">쿠폰</div>
           <div class="UserPropertyValue">0</div>
         </a>
 
-        <a href="/my/setting">
+        <a href="/mypage/personal-setting">
           <div class="UserPropertyTitle">설정</div>
           <img id="cogwheel" src="/image/mypage/setting.png">
 
@@ -187,7 +190,7 @@
       <div class="MyPageDomainWrapper">
         <header>내 활동</header>
         <!-- 강의 결제내역 페이지로 이동 -->
-        <a href="/my/purchases/lectures">
+        <a href="/mypage/purchase-history">
           <div class="TableBase">
             <div class="TableRowContentWrapper">
               <div class="TableRowTitle">강의 결제내역</div>
@@ -213,7 +216,7 @@
       <div class="MyPageDomainWrapper">
         <header>고객센터</header>
         <!-- 공지사항 페이지로 이동 -->
-        <a href="/notice">
+        <a href="/notices/notices">
           <div class="TableBase">
             <div class="TableRowContentWrapper">
               <div class="TableRowTitle">공지사항</div>
@@ -222,7 +225,7 @@
           </div>
         </a>
         <!-- 자주 묻는 질문 페이지로 이동 -->
-        <a href="/help">
+        <a href="/notices/frequent-questions">
           <div class="TableBase">
             <div class="TableRowContentWrapper">
               <div class="TableRowTitle">FAQ</div>
@@ -231,7 +234,7 @@
           </div>
         </a>
         <!-- 1:1 문의(문의목록) 페이지로 이동 -->
-        <a href="/inquiry">
+        <a href="/notices/personal-faq-list">
           <div class="TableBase">
             <div class="TableRowContentWrapper">
               <div class="TableRowTitle">1:1 문의</div>

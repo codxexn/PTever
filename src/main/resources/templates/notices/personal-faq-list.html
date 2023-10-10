@@ -12,10 +12,13 @@
     }
   </style>
   <link rel="stylesheet" href="/css/personal-faq/personal_faq_list.css" />
+  <th:block th:replace="~{fix/header-login :: my-header-head}"></th:block>
+  <th:block th:replace="~{fix/footer :: my-footer-head}"></th:block>
 </head>
 <body>
 <div class="root pc">
   <div class="RootWrapper">
+    <header th:replace="~{fix/header-login :: header-login}"></header>
     <div class="PersonalWrapper">
       <section>
         <div class="PersonalHelpPageWrapper">
@@ -128,6 +131,7 @@
         </div>
       </section>
     </div>
+    <footer th:replace="~{fix/footer :: my-footer}"></footer>
   </div>
 </div>
 <div class="root mobile">

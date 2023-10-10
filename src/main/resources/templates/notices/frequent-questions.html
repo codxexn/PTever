@@ -10,10 +10,13 @@
         body {font-family: 'SUIT', sans-serif;}
     </style>
     <link rel="stylesheet" href="/css/frequent-questions/frequent_questions.css">
+    <th:block th:replace="~{fix/header-login :: my-header-head}"></th:block>
+    <th:block th:replace="~{fix/footer :: my-footer-head}"></th:block>
 </head>
 <body>
 <div class="root pc">
     <div class="RootWrapper">
+        <header th:replace="~{fix/header-login :: header-login}"></header>
         <div class="FrequentWrapper">
             <section>
                 <div class="FrequentPageWrapper">
@@ -622,6 +625,7 @@
                 </div>
             </section>
         </div>
+        <footer th:replace="~{fix/footer :: my-footer}"></footer>
     </div>
 </div>
 <!-- 이 아래는 모바일페이지입니다. -->

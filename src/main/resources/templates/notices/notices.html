@@ -10,10 +10,13 @@
     body {font-family: 'SUIT', sans-serif;}
   </style>
   <link rel="stylesheet" href="/css/notices/notices.css">
+  <th:block th:replace="~{fix/header-login :: my-header-head}"></th:block>
+  <th:block th:replace="~{fix/footer :: my-footer-head}"></th:block>
 </head>
 <body>
 <div class="root pc">
   <div class="RootWrapper">
+    <header th:replace="~{fix/header-login :: header-login}"></header>
     <div class="NoticesWrapper">
       <h1 class="NoticesPageTitle">공지사항</h1>
       <div class="TabLabelsWrapper">
@@ -518,6 +521,7 @@
         </footer>
       </div>
     </div>
+    <footer th:replace="~{fix/footer :: my-footer}"></footer>
   </div>
 </div>
 <div class="root mobile">
