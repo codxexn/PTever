@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,11 +14,14 @@
   <!-- 아래 링크 태그를 꼭 넣어주세요. (경로 조심) -->
   <link rel="stylesheet" href="/css/personal-setting/personalSetting.css">
   <link rel="stylesheet" href="/css/default-common/defaultCommon.css">
+  <th:block th:replace="~{fix/header-login :: my-header-head}"></th:block>
+  <th:block th:replace="~{fix/footer :: my-footer-head}"></th:block>
 </head>
 <body>
 <!-- DOM TREE를 하나로 구성하기 위해서 전체를 감싸는 div태그입니다. -->
 <div class="root pc">
   <div class="RootWrapper">
+    <header th:replace="~{fix/header-login :: header-login}"></header>
     <div class="MySettingContainerWrapper fRNvBI">
 
       <div class="MySettingPcTopWrapper gNQfPm">
@@ -44,11 +47,12 @@
         </div>
 
         <div class="TableBase brCKKc">
-          <a href="../withdraw/withdrawMain.html"><div class="MySettingMenuWrapper hPZtca" style="cursor: pointer;">회원 탈퇴</div></a>
+          <a href="//withdraw/withdrawMain"><div class="MySettingMenuWrapper hPZtca" style="cursor: pointer;">회원 탈퇴</div></a>
         </div>
       </div>
 
     </div>
+    <footer th:replace="~{fix/footer :: my-footer}"></footer>
   </div>
 </div>
 
@@ -87,7 +91,7 @@
 
 
         <div class="TableBase brCKKc">
-          <a href="../withdraw/withdrawMain.html"><div class="MySettingMenuWrapper hPZtca" style="cursor: pointer;">회원 탈퇴</div></a>
+          <a href="//withdraw/withdrawMain"><div class="MySettingMenuWrapper hPZtca" style="cursor: pointer;">회원 탈퇴</div></a>
         </div>
       </div>
 

@@ -535,6 +535,106 @@ button:disabled {
     outline: none;
 }
 
+.pagination-Wrapper {
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-flex: 0;
+    flex: 0 0 auto;
+    width: 100%;
+    padding: 30px 0px;
+    background-color: white;
+}
+
+.prev-Btn {
+    display: flex;
+    margin-right: 10px;
+}
+
+.paginationBtn-Group-Icon {
+    transform: rotate(180deg);
+}
+
+.Page-Selected {
+    width: 40px;
+    height: 40px;
+    line-height: normal;
+    padding: 0px;
+    background-color: white;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 50%;
+    color: rgb(51, 151, 255);
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    outline: none;
+}
+
+.Page-Unselected {
+    width: 40px;
+    height: 40px;
+    line-height: normal;
+    padding: 0px;
+    background-color: white;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 18px;
+    font-weight: normal;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    outline: none;
+}
+
+.next-Btn {
+    display: flex;
+    margin-left: 10px;
+}
+
+.right-Btn {
+    width: 40px;
+    height: 40px;
+    line-height: normal;
+    padding: 0px;
+    background-color: white;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 18px;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    outline: none;
+}
+
+.left-Btn {
+    width: 40px;
+    height: 40px;
+    line-height: normal;
+    padding: 0px;
+    background-color: white;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 18px;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    outline: none;
+}
+
 .LineUnderPagination {
     height: 1px;
     background-color: rgb(255, 255, 255);

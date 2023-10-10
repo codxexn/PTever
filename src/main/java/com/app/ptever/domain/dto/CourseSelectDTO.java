@@ -29,4 +29,6 @@ public class CourseSelectDTO {
     private String courseImgPath;
     // 후기 개수
     private Integer reviewCount;
+    private Long userId; // 유저 id
+
 }

@@ -13,36 +13,48 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class MyPageController {
 
 //    마이페이지
-    @GetMapping("myPage")
+    @GetMapping("mypage")
     public void GoToMyPage(){;}
 
 //    내 정보
-    @GetMapping("myInfo")
+    @GetMapping("my-info")
     public void  GoToMyInfo(){;}
 
 //    내 강의실
-    @GetMapping("myLectures")
+    @GetMapping("no-lectures")
     public void GoToMyLectures(){;}
 
+    @GetMapping("my-lectures")
+    public void GoToLectures(){;}
+
 //    내 리뷰
-    @GetMapping("myReviews")
+
+    @GetMapping("no-reviews")
+    public void GoToReviews(){;}
+    @GetMapping("my-reviews")
     public void GoToMyReviews(){;}
 
 //    설정
-    @GetMapping("personalSetting")
+    @GetMapping("personal-setting")
     public void GoToPersonalSetting(){;}
 
 //    내 강의영상 목록
-    @GetMapping("videoList")
+    @GetMapping("video-list")
     public void GoToVideoList(){;}
 
 //    내 쿠폰
+    @GetMapping("no-coupon")
+    public void GoToNoCoupon(){;}
     @GetMapping("coupon")
     public void GoToCoupon(){;}
 
 //    강의 구매내역
-    @GetMapping("purchaseHistory")
-    public void GotoPurchaseHistory(){;}
+
+    @GetMapping("no-history")
+    public void GoToNoHistory(){;}
+
+    @GetMapping("purchase-history")
+    public void GoToPurchaseHistory(){;}
 
 
 

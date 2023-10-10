@@ -62,9 +62,6 @@ public class MainMapperTests {
         // 검색 조건을 설정합니다.
         Search search = new Search();
         search.setKeyword("아 ");  // 원하는 키워드로 설정
-//        search.setStartRow(1); ;  // 시작 행 설정
-//        search.setEndRow(10);   // 끝 행 설정
-
         // MainMapper 인터페이스의 selectSearchByCourse 메서드를 호출하여 테스트합니다.
         List<CourseSelectDTO> result = mainMapper.selectSearchByCourse(search);
 
