@@ -1001,7 +1001,7 @@
                                     <div class="AssociatedSectionContainer">
                                         <!-- 첫번째 사진 div -->
                                         <div class="CardContainer" th:each="courses : ${courseVOS}">
-                                            <a class="CardText" href="">
+                                            <a class="CardText" th:href="@{'/lecture/lecture-detailpage/' + ${courses.courseId}}">
                                                 <div class="CardImageContainer">
                                                     <div class="ImgWrapper">
 <!--                                                        <img src="https://res.cloudinary.com/frientrip/image/upload/ar_1:1,c_fill,dpr_2,f_auto,q_auto,w_310/%ED%9B%84%ED%94%84_c18ad43a8101ac930c852bf19792cb863cc543dda1ea28a94739bec6695612c6"-->

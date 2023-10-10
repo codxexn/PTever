@@ -69,18 +69,18 @@
                             <!-- 20개의 목록 -->
                             <div class="ProductListProductWrapper">
                                 <!-- 반복되는 카드 목록1 -->
-                                <div class="CardProductWrapper">
-                                    <a class="WithLinkStyledLink" href="">
+                                <div class="CardProductWrapper" th:each="List:${all}">
+                                    <a class="WithLinkStyledLink" th:href="@{'lecture-detailpage/' + ${List.courseId}}">
                                         <div class="CardProductInfoWrapper">
                                             <!-- 사진 -->
                                             <div class="CardProductImageContainer">
                                                 <div class="ImageWrapper CardProductStyledImage">
-                                                    <img width="192" src="https://res.cloudinary.com/frientrip/image/upload/ar_1:1,c_fill,dpr_2,f_auto,q_auto,w_310/%EC%8D%B8%EB%84%A4%EC%9D%BC%EB%8C%80%EC%A7%80%204_b01c9f43a0f512ec3b9946d665aa152ce163462abcb33bd3204b0345dcc7c700" alt="" class="ImageStyledImageLoader">
+<!--                                                    <img width="192" src="https://res.cloudinary.com/frientrip/image/upload/ar_1:1,c_fill,dpr_2,f_auto,q_auto,w_310/%EC%8D%B8%EB%84%A4%EC%9D%BC%EB%8C%80%EC%A7%80%204_b01c9f43a0f512ec3b9946d665aa152ce163462abcb33bd3204b0345dcc7c700" alt="" class="ImageStyledImageLoader">-->
                                                     <div class="FadeWrapper" style="opacity: 1; display: block;">
                                                         <div class="Ratio" style="display: block;">
                                                             <div class="RatioRatio" style="height: 0px; position: relative; width: 100%; padding-top: 100%;">
                                                                 <div class="RatioContent" style="height: 100%; left:0px; position: absolute; top:0px; width: 100%;">
-                                                                    <img src="https://res.cloudinary.com/frientrip/image/upload/ar_1:1,c_fill,dpr_2,f_auto,q_auto,w_310/%EC%8D%B8%EB%84%A4%EC%9D%BC%EB%8C%80%EC%A7%80%204_b01c9f43a0f512ec3b9946d665aa152ce163462abcb33bd3204b0345dcc7c700" width="192" alt="" class="ImageStyledImage">
+                                                                    <img th:src="${List.courseImgPath}" width="192" alt="" class="ImageStyledImage">
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -96,22 +96,21 @@
                                             </div>
                                             <!-- 제목 -->
                                             <div class="CardProductDetailContainer">
-                                                <span class="CardProductLocation">성동/광진</span>
-                                                <div class="CardProductTitle">[성수/서울숲] 주말 아침을 여는 요가 원데이/정기권/회차권 (예약 가능)</div>
+                                                <span class="CardProductLocation" th:text="|난이도 - ${List.courseLevelDifficult}|">성동/광진</span>
+                                                <div class="CardProductTitle" th:text="${List.courseTitle}"></div>
                                                 <!-- 별점이랑 후기 -->
                                                 <div class="CardProductReviewContainer">
                                                     <!-- 별점 -->
-                                                    <div class="ReadOnlyWrapper">
-                                                        <img width="11" height="10" src="data:image/svg+xml,%3Csvg width='16' height='14' viewBox='0 0 16 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cpath d='M12.293 8.6189L15.7442 6.00968C16.2325 5.63914 15.9799 4.9135 15.3402 4.88263L10.8957 4.6356C10.6263 4.62016 10.3906 4.46577 10.2896 4.23418L8.65658 0.405277C8.42088 -0.135092 7.59595 -0.135092 7.36026 0.405277L5.72724 4.21874C5.62623 4.45033 5.39053 4.60472 5.12117 4.62016L0.659819 4.86719C0.0200779 4.89806 -0.232451 5.6237 0.255772 5.99424L3.707 8.58802C3.90903 8.74241 4.01004 9.00487 3.9427 9.23646L2.81473 13.2043C2.66322 13.7601 3.31979 14.2079 3.85852 13.8991L7.61279 11.6913C7.84848 11.5523 8.13468 11.5523 8.35354 11.6913L12.1246 13.8991C12.6634 14.2079 13.3199 13.7601 13.1684 13.2043L12.0405 9.2519C11.99 9.02031 12.0741 8.77329 12.293 8.6189Z' fill='%237A29FA'/%3E %3C/svg%3E" alt="평점 icon">
-                                                        <img width="11" height="10" src="data:image/svg+xml,%3Csvg width='16' height='14' viewBox='0 0 16 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cpath d='M12.293 8.6189L15.7442 6.00968C16.2325 5.63914 15.9799 4.9135 15.3402 4.88263L10.8957 4.6356C10.6263 4.62016 10.3906 4.46577 10.2896 4.23418L8.65658 0.405277C8.42088 -0.135092 7.59595 -0.135092 7.36026 0.405277L5.72724 4.21874C5.62623 4.45033 5.39053 4.60472 5.12117 4.62016L0.659819 4.86719C0.0200779 4.89806 -0.232451 5.6237 0.255772 5.99424L3.707 8.58802C3.90903 8.74241 4.01004 9.00487 3.9427 9.23646L2.81473 13.2043C2.66322 13.7601 3.31979 14.2079 3.85852 13.8991L7.61279 11.6913C7.84848 11.5523 8.13468 11.5523 8.35354 11.6913L12.1246 13.8991C12.6634 14.2079 13.3199 13.7601 13.1684 13.2043L12.0405 9.2519C11.99 9.02031 12.0741 8.77329 12.293 8.6189Z' fill='%237A29FA'/%3E %3C/svg%3E" alt="평점 icon">
-                                                        <img width="11" height="10" src="data:image/svg+xml,%3Csvg width='16' height='14' viewBox='0 0 16 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cpath d='M12.293 8.6189L15.7442 6.00968C16.2325 5.63914 15.9799 4.9135 15.3402 4.88263L10.8957 4.6356C10.6263 4.62016 10.3906 4.46577 10.2896 4.23418L8.65658 0.405277C8.42088 -0.135092 7.59595 -0.135092 7.36026 0.405277L5.72724 4.21874C5.62623 4.45033 5.39053 4.60472 5.12117 4.62016L0.659819 4.86719C0.0200779 4.89806 -0.232451 5.6237 0.255772 5.99424L3.707 8.58802C3.90903 8.74241 4.01004 9.00487 3.9427 9.23646L2.81473 13.2043C2.66322 13.7601 3.31979 14.2079 3.85852 13.8991L7.61279 11.6913C7.84848 11.5523 8.13468 11.5523 8.35354 11.6913L12.1246 13.8991C12.6634 14.2079 13.3199 13.7601 13.1684 13.2043L12.0405 9.2519C11.99 9.02031 12.0741 8.77329 12.293 8.6189Z' fill='%237A29FA'/%3E %3C/svg%3E" alt="평점 icon">
-                                                        <img width="11" height="10" src="data:image/svg+xml,%3Csvg width='16' height='14' viewBox='0 0 16 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cpath d='M12.293 8.6189L15.7442 6.00968C16.2325 5.63914 15.9799 4.9135 15.3402 4.88263L10.8957 4.6356C10.6263 4.62016 10.3906 4.46577 10.2896 4.23418L8.65658 0.405277C8.42088 -0.135092 7.59595 -0.135092 7.36026 0.405277L5.72724 4.21874C5.62623 4.45033 5.39053 4.60472 5.12117 4.62016L0.659819 4.86719C0.0200779 4.89806 -0.232451 5.6237 0.255772 5.99424L3.707 8.58802C3.90903 8.74241 4.01004 9.00487 3.9427 9.23646L2.81473 13.2043C2.66322 13.7601 3.31979 14.2079 3.85852 13.8991L7.61279 11.6913C7.84848 11.5523 8.13468 11.5523 8.35354 11.6913L12.1246 13.8991C12.6634 14.2079 13.3199 13.7601 13.1684 13.2043L12.0405 9.2519C11.99 9.02031 12.0741 8.77329 12.293 8.6189Z' fill='%237A29FA'/%3E %3C/svg%3E" alt="평점 icon">
-                                                        <img width="11" height="10" src="data:image/svg+xml,%3Csvg width='16' height='14' viewBox='0 0 16 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cpath d='M12.293 8.6189L15.7442 6.00968C16.2325 5.63914 15.9799 4.9135 15.3402 4.88263L10.8957 4.6356C10.6263 4.62016 10.3906 4.46577 10.2896 4.23418L8.65658 0.405277C8.42088 -0.135092 7.59595 -0.135092 7.36026 0.405277L5.72724 4.21874C5.62623 4.45033 5.39053 4.60472 5.12117 4.62016L0.659819 4.86719C0.0200779 4.89806 -0.232451 5.6237 0.255772 5.99424L3.707 8.58802C3.90903 8.74241 4.01004 9.00487 3.9427 9.23646L2.81473 13.2043C2.66322 13.7601 3.31979 14.2079 3.85852 13.8991L7.61279 11.6913C7.84848 11.5523 8.13468 11.5523 8.35354 11.6913L12.1246 13.8991C12.6634 14.2079 13.3199 13.7601 13.1684 13.2043L12.0405 9.2519C11.99 9.02031 12.0741 8.77329 12.293 8.6189Z' fill='%237A29FA'/%3E %3C/svg%3E" alt="평점 icon">
-                                                    </div>
+<!--                                                    <div class="ReadOnlyWrapper">-->
+<!--                                                        <img width="11" height="10" src="data:image/svg+xml,%3Csvg width='16' height='14' viewBox='0 0 16 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cpath d='M12.293 8.6189L15.7442 6.00968C16.2325 5.63914 15.9799 4.9135 15.3402 4.88263L10.8957 4.6356C10.6263 4.62016 10.3906 4.46577 10.2896 4.23418L8.65658 0.405277C8.42088 -0.135092 7.59595 -0.135092 7.36026 0.405277L5.72724 4.21874C5.62623 4.45033 5.39053 4.60472 5.12117 4.62016L0.659819 4.86719C0.0200779 4.89806 -0.232451 5.6237 0.255772 5.99424L3.707 8.58802C3.90903 8.74241 4.01004 9.00487 3.9427 9.23646L2.81473 13.2043C2.66322 13.7601 3.31979 14.2079 3.85852 13.8991L7.61279 11.6913C7.84848 11.5523 8.13468 11.5523 8.35354 11.6913L12.1246 13.8991C12.6634 14.2079 13.3199 13.7601 13.1684 13.2043L12.0405 9.2519C11.99 9.02031 12.0741 8.77329 12.293 8.6189Z' fill='%237A29FA'/%3E %3C/svg%3E" alt="평점 icon">-->
+<!--                                                        <img width="11" height="10" src="data:image/svg+xml,%3Csvg width='16' height='14' viewBox='0 0 16 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cpath d='M12.293 8.6189L15.7442 6.00968C16.2325 5.63914 15.9799 4.9135 15.3402 4.88263L10.8957 4.6356C10.6263 4.62016 10.3906 4.46577 10.2896 4.23418L8.65658 0.405277C8.42088 -0.135092 7.59595 -0.135092 7.36026 0.405277L5.72724 4.21874C5.62623 4.45033 5.39053 4.60472 5.12117 4.62016L0.659819 4.86719C0.0200779 4.89806 -0.232451 5.6237 0.255772 5.99424L3.707 8.58802C3.90903 8.74241 4.01004 9.00487 3.9427 9.23646L2.81473 13.2043C2.66322 13.7601 3.31979 14.2079 3.85852 13.8991L7.61279 11.6913C7.84848 11.5523 8.13468 11.5523 8.35354 11.6913L12.1246 13.8991C12.6634 14.2079 13.3199 13.7601 13.1684 13.2043L12.0405 9.2519C11.99 9.02031 12.0741 8.77329 12.293 8.6189Z' fill='%237A29FA'/%3E %3C/svg%3E" alt="평점 icon">-->
+<!--                                                        <img width="11" height="10" src="data:image/svg+xml,%3Csvg width='16' height='14' viewBox='0 0 16 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cpath d='M12.293 8.6189L15.7442 6.00968C16.2325 5.63914 15.9799 4.9135 15.3402 4.88263L10.8957 4.6356C10.6263 4.62016 10.3906 4.46577 10.2896 4.23418L8.65658 0.405277C8.42088 -0.135092 7.59595 -0.135092 7.36026 0.405277L5.72724 4.21874C5.62623 4.45033 5.39053 4.60472 5.12117 4.62016L0.659819 4.86719C0.0200779 4.89806 -0.232451 5.6237 0.255772 5.99424L3.707 8.58802C3.90903 8.74241 4.01004 9.00487 3.9427 9.23646L2.81473 13.2043C2.66322 13.7601 3.31979 14.2079 3.85852 13.8991L7.61279 11.6913C7.84848 11.5523 8.13468 11.5523 8.35354 11.6913L12.1246 13.8991C12.6634 14.2079 13.3199 13.7601 13.1684 13.2043L12.0405 9.2519C11.99 9.02031 12.0741 8.77329 12.293 8.6189Z' fill='%237A29FA'/%3E %3C/svg%3E" alt="평점 icon">-->
+<!--                                                        <img width="11" height="10" src="data:image/svg+xml,%3Csvg width='16' height='14' viewBox='0 0 16 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cpath d='M12.293 8.6189L15.7442 6.00968C16.2325 5.63914 15.9799 4.9135 15.3402 4.88263L10.8957 4.6356C10.6263 4.62016 10.3906 4.46577 10.2896 4.23418L8.65658 0.405277C8.42088 -0.135092 7.59595 -0.135092 7.36026 0.405277L5.72724 4.21874C5.62623 4.45033 5.39053 4.60472 5.12117 4.62016L0.659819 4.86719C0.0200779 4.89806 -0.232451 5.6237 0.255772 5.99424L3.707 8.58802C3.90903 8.74241 4.01004 9.00487 3.9427 9.23646L2.81473 13.2043C2.66322 13.7601 3.31979 14.2079 3.85852 13.8991L7.61279 11.6913C7.84848 11.5523 8.13468 11.5523 8.35354 11.6913L12.1246 13.8991C12.6634 14.2079 13.3199 13.7601 13.1684 13.2043L12.0405 9.2519C11.99 9.02031 12.0741 8.77329 12.293 8.6189Z' fill='%237A29FA'/%3E %3C/svg%3E" alt="평점 icon">-->
+<!--                                                        <img width="11" height="10" src="data:image/svg+xml,%3Csvg width='16' height='14' viewBox='0 0 16 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cpath d='M12.293 8.6189L15.7442 6.00968C16.2325 5.63914 15.9799 4.9135 15.3402 4.88263L10.8957 4.6356C10.6263 4.62016 10.3906 4.46577 10.2896 4.23418L8.65658 0.405277C8.42088 -0.135092 7.59595 -0.135092 7.36026 0.405277L5.72724 4.21874C5.62623 4.45033 5.39053 4.60472 5.12117 4.62016L0.659819 4.86719C0.0200779 4.89806 -0.232451 5.6237 0.255772 5.99424L3.707 8.58802C3.90903 8.74241 4.01004 9.00487 3.9427 9.23646L2.81473 13.2043C2.66322 13.7601 3.31979 14.2079 3.85852 13.8991L7.61279 11.6913C7.84848 11.5523 8.13468 11.5523 8.35354 11.6913L12.1246 13.8991C12.6634 14.2079 13.3199 13.7601 13.1684 13.2043L12.0405 9.2519C11.99 9.02031 12.0741 8.77329 12.293 8.6189Z' fill='%237A29FA'/%3E %3C/svg%3E" alt="평점 icon">-->
+<!--                                                    </div>-->
                                                     <!-- 후기 -->
-                                                    <span class="CardProductReview">
-                                                        후기 1132
-                                                    </span>
+<!--                                                    <span class="CardProductReview" th:if="${List.reviewCount} != 0" th:text="|후기 ${List.reviewCount} |"></span>-->
+<!--                                                    <span class="CardProductReview" th:if="${List.courseAvgScore} != null" th:text="| 평점 ${List.courseAvgScore} |"></span>-->
                                                 </div>
                                                 <hr type="Line" size="16" class="Border">
                                                 <!-- 비용 -->
@@ -1430,18 +1429,18 @@
 <!--                                </div>-->
                             </div>
                             <!-- 1~10 페이지 이동 -->
-                            <footer class="WrapperPaginationWrapper">
-                                <!-- 이전 버튼 -->
-                                <div class="PaginationButtonGroupPrevButtonWrapper">
-                                    <button width="40px" height="40px" font-size="18px" disabled class="ButtonPageStyledButton" >
-                                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath fill='%23FFF' fill-opacity='0' fill-rule='nonzero' d='M0 0h40v40H0z'/%3E %3Cpath stroke='%23DDD' stroke-width='1.5' d='M16 16l4 4-4 4M21 16l4 4-4 4'/%3E %3C/g%3E %3C/svg%3E" alt="" class="PaginationButtonGroupIcon">
-                                    </button>
-                                    <button width="40px" height="40px" font-size="18px" disabled class="ButtonPageStyledButton" >
-                                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath fill='none' d='M0 0h40v40H0z'/%3E %3Cpath stroke='%23DDD' stroke-width='1.5' d='M18 16l4 4-4 4'/%3E %3C/g%3E %3C/svg%3E" alt="" class="PaginationButtonGroupIcon">
-                                    </button>
-                                </div>
-                                <!-- 1-10 -->
-                                <button width="40px" height="40px" color="#3397ff" font-size="18px" font-weight="bold" class="ButtonPageStyledNumberButton">1</button>
+<!--                            <footer class="WrapperPaginationWrapper">-->
+<!--                                &lt;!&ndash; 이전 버튼 &ndash;&gt;-->
+<!--                                <div class="PaginationButtonGroupPrevButtonWrapper">-->
+<!--                                    <button width="40px" height="40px" font-size="18px" disabled class="ButtonPageStyledButton" >-->
+<!--                                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath fill='%23FFF' fill-opacity='0' fill-rule='nonzero' d='M0 0h40v40H0z'/%3E %3Cpath stroke='%23DDD' stroke-width='1.5' d='M16 16l4 4-4 4M21 16l4 4-4 4'/%3E %3C/g%3E %3C/svg%3E" alt="" class="PaginationButtonGroupIcon">-->
+<!--                                    </button>-->
+<!--                                    <button width="40px" height="40px" font-size="18px" disabled class="ButtonPageStyledButton" >-->
+<!--                                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath fill='none' d='M0 0h40v40H0z'/%3E %3Cpath stroke='%23DDD' stroke-width='1.5' d='M18 16l4 4-4 4'/%3E %3C/g%3E %3C/svg%3E" alt="" class="PaginationButtonGroupIcon">-->
+<!--                                    </button>-->
+<!--                                </div>-->
+<!--                                &lt;!&ndash; 1-10 &ndash;&gt;-->
+<!--                                <button width="40px" height="40px" color="#3397ff" font-size="18px" font-weight="bold" class="ButtonPageStyledNumberButton">1</button>-->
 <!--                                <button width="40px" height="40px" color="black" font-size="18px" font-weight="normal" class="ButtonPageStyledNumberButtons">2</button>-->
 <!--                                <button width="40px" height="40px" color="black" font-size="18px" font-weight="normal" class="ButtonPageStyledNumberButtons">3</button>-->
 <!--                                <button width="40px" height="40px" color="black" font-size="18px" font-weight="normal" class="ButtonPageStyledNumberButtons">4</button>-->
@@ -1451,15 +1450,66 @@
 <!--                                <button width="40px" height="40px" color="black" font-size="18px" font-weight="normal" class="ButtonPageStyledNumberButtons">8</button>-->
 <!--                                <button width="40px" height="40px" color="black" font-size="18px" font-weight="normal" class="ButtonPageStyledNumberButtons">9</button>-->
 <!--                                <button width="40px" height="40px" color="black" font-size="18px" font-weight="normal" class="ButtonPageStyledNumberButtons">10</button>-->
-                                <!-- 다음 버튼 -->
-                                <div class="PaginationButtonGroupNextButtonWrapper">
-                                    <button width="40px" height="40px" font-size="18px"  class="ButtonPageStyledButtonToRight">
-                                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 18 18'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath d='M18 0H0v18h18z'/%3E %3Cpath stroke='%23000' stroke-width='1.5' d='M7 5l4 4-4 4'/%3E %3C/g%3E %3C/svg%3E" alt="" class="PaginationButtonGroupIcons">
+<!--                                &lt;!&ndash; 다음 버튼 &ndash;&gt;-->
+<!--                                <div class="PaginationButtonGroupNextButtonWrapper">-->
+<!--                                    <button width="40px" height="40px" font-size="18px"  class="ButtonPageStyledButtonToRight">-->
+<!--                                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 18 18'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath d='M18 0H0v18h18z'/%3E %3Cpath stroke='%23000' stroke-width='1.5' d='M7 5l4 4-4 4'/%3E %3C/g%3E %3C/svg%3E" alt="" class="PaginationButtonGroupIcons">-->
+<!--                                    </button>-->
+<!--                                    <button width="40px" height="40px" font-size="18px"  class="ButtonPageStyledButtonToRight">-->
+<!--                                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Crect width='40' height='40' fill='%23FFF' fill-opacity='0' fill-rule='nonzero' rx='20'/%3E %3Cg stroke='%23000' stroke-width='1.5'%3E %3Cpath d='M16 16l4 4-4 4M21 16l4 4-4 4'/%3E %3C/g%3E %3C/g%3E %3C/svg%3E" alt="" class="PaginationButtonGroupIcons">-->
+<!--                                    </button>-->
+<!--                                </div>-->
+<!--                            </footer>-->
+                            <footer class="Footer_Wrapper" th:with="start=${pagination.startPage},
+                    last=(${pagination.endPage})">
+                                <div class="PaginationButtonGroup_PrevButtonWrapper">
+                                    <button th:if="${pagination.page == start}" disabled width="40px" height="40px" font-size="18px"
+                                            id="prevprev_button" class="ButtonPage_Styled">
+                                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath fill='%23FFF' fill-opacity='0' fill-rule='nonzero' d='M0 0h40v40H0z'/%3E %3Cpath stroke='%23DDD' stroke-width='1.5' d='M16 16l4 4-4 4M21 16l4 4-4 4'/%3E %3C/g%3E %3C/svg%3E"
+                                             class="PaginationButtonGroup_Icon">
                                     </button>
-                                    <button width="40px" height="40px" font-size="18px"  class="ButtonPageStyledButtonToRight">
-                                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Crect width='40' height='40' fill='%23FFF' fill-opacity='0' fill-rule='nonzero' rx='20'/%3E %3Cg stroke='%23000' stroke-width='1.5'%3E %3Cpath d='M16 16l4 4-4 4M21 16l4 4-4 4'/%3E %3C/g%3E %3C/g%3E %3C/svg%3E" alt="" class="PaginationButtonGroupIcons">
+                                    <button th:if="${pagination.page != start}" th:onclick="|location.href='@{/lecture/lecture-list-all(page=${start})}'|" width="40px" height="40px" font-size="18px"
+                                            id="prevprev_button" style="cursor: pointer;" class="ButtonPage_Styled">
+                                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Crect width='40' height='40' fill='%23FFF' fill-opacity='0' fill-rule='nonzero' rx='20'/%3E %3Cg stroke='%23000' stroke-width='1.5'%3E %3Cpath d='M16 16l4 4-4 4M21 16l4 4-4 4'/%3E %3C/g%3E %3C/g%3E %3C/svg%3E"
+                                             class="PaginationButtonGroup_Icon">
+                                    </button>
+                                    <button th:if="${pagination.page == start}" width="40px" height="40px" font-size="18px" class="ButtonPage_Styled" disabled
+                                            id="prev_button">
+                                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath fill='none' d='M0 0h40v40H0z'/%3E %3Cpath stroke='%23DDD' stroke-width='1.5' d='M18 16l4 4-4 4'/%3E %3C/g%3E %3C/svg%3E"
+                                             class="PaginationButtonGroup_Icon">
+                                    </button>
+                                    <button th:if="${pagination.page != start}" th:onclick="|location.href='@{/lecture/lecture-list-all(page=${pagination.page-1})}'|" width="40px" height="40px" font-size="18px" class="ButtonPage_Styled"
+                                            id="prev_button">
+                                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 18 18'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath d='M18 0H0v18h18z'/%3E %3Cpath stroke='%23000' stroke-width='1.5' d='M7 5l4 4-4 4'/%3E %3C/g%3E %3C/svg%3E"
+                                             class="PaginationButtonGroup_Icon">
                                     </button>
                                 </div>
+
+                                <button th:each="buttonpage: ${#numbers.sequence(start, last)}" class="footerButton"
+                                        th:class="${buttonpage == pagination.page ? 'ButtonPage_StyledButtonOn' : 'ButtonPage_StyledButtonOff'}">
+                                    <a th:text="${buttonpage}" th:href="@{/lecture/lecture-list-all(page=${buttonpage})}"></a>
+                                </button>
+
+                                <div class="PaginationButtonGroup_NextButtonWrapper">
+                                    <button th:if="${pagination.page == last}" disabled width="40px" height="40px" font-size="18px" class="ButtonPage_Styled" id="next_button">
+                                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath fill='none' d='M0 0h40v40H0z'/%3E %3Cpath stroke='%23DDD' stroke-width='1.5' d='M18 16l4 4-4 4'/%3E %3C/g%3E %3C/svg%3E"
+                                             class="" id="next_button">
+                                    </button>
+                                    <button th:if="${pagination.page != last}" th:onclick="|location.href='@{/lecture/lecture-list-all(page=${pagination.page+1})}'|" width="40px" height="40px" font-size="18px" class="ButtonPage_Styled" id="next_button">
+                                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 18 18'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath d='M18 0H0v18h18z'/%3E %3Cpath stroke='%23000' stroke-width='1.5' d='M7 5l4 4-4 4'/%3E %3C/g%3E %3C/svg%3E"
+                                             class="" id="next_button">
+                                    </button>
+                                    <button th:if="${pagination.page == last}" disabled width="40px" height="40px" font-size="18px" class="ButtonPage_Styled" id="nextnext_button">
+                                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath fill='%23FFF' fill-opacity='0' fill-rule='nonzero' d='M0 0h40v40H0z'/%3E %3Cpath stroke='%23DDD' stroke-width='1.5' d='M16 16l4 4-4 4M21 16l4 4-4 4'/%3E %3C/g%3E %3C/svg%3E"
+                                             class="" id="nextnext_button">
+                                    </button>
+                                    <button th:if="${pagination.page != last}" th:onclick="|location.href='@{/lecture/lecture-list-all(page=${pagination.realEnd})}'|" width="40px" height="40px" font-size="18px" class="ButtonPage_Styled" id="nextnext_button">
+                                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Crect width='40' height='40' fill='%23FFF' fill-opacity='0' fill-rule='nonzero' rx='20'/%3E %3Cg stroke='%23000' stroke-width='1.5'%3E %3Cpath d='M16 16l4 4-4 4M21 16l4 4-4 4'/%3E %3C/g%3E %3C/g%3E %3C/svg%3E"
+                                             class="" id="nextnext_button">
+                                    </button>
+
+                                </div>
+
                             </footer>
                         </div>
                     </div>

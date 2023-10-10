@@ -1,11 +1,12 @@
 package com.app.ptever.controller;
 
 
-import com.app.ptever.domain.dto.PostDTO;
+import com.app.ptever.domain.dto.CourseSelectDTO;
 import com.app.ptever.domain.dto.ReviewDTO;
 import com.app.ptever.domain.pagination.Pagination;
 import com.app.ptever.domain.vo.CourseVO;
 import com.app.ptever.repository.CourseService;
+import com.app.ptever.repository.MainService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
@@ -25,9 +26,22 @@ import java.util.Optional;
 public class LectureController {
     // 서비스 주입
     private final CourseService courseService;
+    private final MainService mainService;
 //    강의 목록
     @GetMapping("lecture-list")
-    public void GoToLectureList(){;}
+    public ModelAndView GoToLectureList(){
+        ModelAndView mv = new ModelAndView();
+        List<CourseSelectDTO> popularCourses = mainService.getScoreCourseList();
+        List<CourseSelectDTO> newCourses = mainService.getLatestDateCourseList();
+        popularCourses.forEach(p -> p.setCourseAvgScore(courseService.getAvgByCourseId(p.getCourseId())));
+        popularCourses.forEach(p -> p.setReviewCount(courseService.findAllReviewByCourseId(p.getCourseId()).size()));
+        newCourses.forEach(p -> p.setCourseAvgScore(courseService.getAvgByCourseId(p.getCourseId())));
+        newCourses.forEach(p -> p.setReviewCount(courseService.findAllReviewByCourseId(p.getCourseId()).size()));
+        mv.addObject("popularCoursesList", popularCourses);
+        mv.addObject("newCoursesList", newCourses);
+        mv.setViewName("/lecture/lecture-list");
+        return mv;
+    }
 
 //    강의 전체 목록
     @GetMapping("lecture-list-all")
@@ -36,8 +50,11 @@ public class LectureController {
         pagination.progress();
         ModelAndView mv = new ModelAndView();
         List<CourseVO> allCourses = courseService.findAllCourses(pagination);
-        mv.addObject("allCourses", allCourses);
+//        allCourses.forEach(p -> p.setCourseAvgScore(courseService.getAvgByCourseId(p.getCourseId())));
+//        allCourses.forEach(p -> p.setReviewCount(courseService.findAllReviewByCourseId(p.getCourseId()).size()));
+        mv.addObject("all", allCourses);
         mv.addObject("pagination", pagination);
+        mv.setViewName("/lecture/lecture-list-all");
     //        log.info(mv.toString());
         return mv;
     }

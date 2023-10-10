@@ -1,6 +1,7 @@
 package com.app.ptever;
 
 import com.app.ptever.dao.CourseDAO;
+import com.app.ptever.domain.dto.CourseSelectDTO;
 import com.app.ptever.domain.dto.ReviewDTO;
 import com.app.ptever.domain.pagination.Pagination;
 import com.app.ptever.domain.vo.CourseVO;

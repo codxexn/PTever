@@ -487,49 +487,130 @@ button.FilteringButton{
     line-height: 22px;
 }
 
-.WrapperPaginationWrapper{
+/*.WrapperPaginationWrapper{*/
+/*    display: flex;*/
+/*    -webkit-box-pack: center;*/
+/*    justify-content: center;*/
+/*    -webkit-box-flex: 0;*/
+/*    flex: 0 0 auto;*/
+/*    width: 100%;*/
+/*    padding: 30px 0px;*/
+/*    background-color: white;*/
+/*}*/
+
+/*.PaginationButtonGroupPrevButtonWrapper{*/
+/*    display: flex;*/
+/*    margin-right: 10px;*/
+/*}*/
+
+/*button:disabled{*/
+/*    cursor: not-allowed;*/
+/*}*/
+
+/*.ButtonPageStyledButton{*/
+/*    width: 40px;*/
+/*    height: 40px;*/
+/*    line-height: normal;*/
+/*    padding: 0px;*/
+/*    background-color: white;*/
+/*    text-align: center;*/
+/*    cursor: not-allowed;*/
+/*    border-radius: 50%;*/
+/*    font-size: 18px;*/
+/*    display: flex;*/
+/*    -webkit-box-pack: center;*/
+/*    justify-content: center;*/
+/*    -webkit-box-align: center;*/
+/*    align-items: center;*/
+/*    outline: none;*/
+/*}*/
+
+/*.PaginationButtonGroupIcon{*/
+/*    transform: rotate(180deg);*/
+/*}*/
+
+/*.ButtonPageStyledNumberButton{*/
+/*    width: 40px;*/
+/*    height: 40px;*/
+/*    line-height: normal;*/
+/*    padding: 0px;*/
+/*    background-color: white;*/
+/*    text-align: center;*/
+/*    cursor: pointer;*/
+/*    border-radius: 50%;*/
+/*    color: rgb(51, 151, 255);*/
+/*    font-size: 18px;*/
+/*    font-weight: bold;*/
+/*    display: flex;*/
+/*    -webkit-box-pack: center;*/
+/*    justify-content: center;*/
+/*    -webkit-box-align: center;*/
+/*    align-items: center;*/
+/*    outline: none;*/
+/*}*/
+
+/*.ButtonPageStyledNumberButtons{*/
+/*    width: 40px;*/
+/*    height: 40px;*/
+/*    line-height: normal;*/
+/*    padding: 0px;*/
+/*    background-color: white;*/
+/*    text-align: center;*/
+/*    cursor: pointer;*/
+/*    border-radius: 50%;*/
+/*    color: black;*/
+/*    font-size: 18px;*/
+/*    font-weight: normal;*/
+/*    display: flex;*/
+/*    -webkit-box-pack: center;*/
+/*    justify-content: center;*/
+/*    -webkit-box-align: center;*/
+/*    align-items: center;*/
+/*    outline: none;*/
+/*}*/
+
+/*.PaginationButtonGroupNextButtonWrapper{*/
+/*    display: flex;*/
+/*    margin-left: 10px;*/
+/*}*/
+
+/*.ButtonPageStyledButtonToRight{*/
+/*    width: 40px;*/
+/*    height: 40px;*/
+/*    line-height: normal;*/
+/*    padding: 0px;*/
+/*    background-color: white;*/
+/*    text-align: center;*/
+/*    cursor: pointer;*/
+/*    border-radius: 50%;*/
+/*    font-size: 18px;*/
+/*    display: flex;*/
+/*    -webkit-box-pack: center;*/
+/*    justify-content: center;*/
+/*    -webkit-box-align: center;*/
+/*    align-items: center;*/
+/*    outline: none;*/
+/*}*/
+
+/*양현님*/
+footer.Footer_Wrapper{
     display: flex;
     -webkit-box-pack: center;
     justify-content: center;
     -webkit-box-flex: 0;
-    flex: 0 0 auto;
     width: 100%;
     padding: 30px 0px;
     background-color: white;
 }
 
-.PaginationButtonGroupPrevButtonWrapper{
+
+
+div.PaginationButtonGroup_PrevButtonWrapper{
     display: flex;
     margin-right: 10px;
 }
 
-button:disabled{
-    cursor: not-allowed;
-}
-
-.ButtonPageStyledButton{
-    width: 40px;
-    height: 40px;
-    line-height: normal;
-    padding: 0px;
-    background-color: white;
-    text-align: center;
-    cursor: not-allowed;
-    border-radius: 50%;
-    font-size: 18px;
-    display: flex;
-    -webkit-box-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    align-items: center;
-    outline: none;
-}
-
-.PaginationButtonGroupIcon{
-    transform: rotate(180deg);
-}
-
-.ButtonPageStyledNumberButton{
+button.ButtonPage_StyledButtonOn{
     width: 40px;
     height: 40px;
     line-height: normal;
@@ -549,7 +630,7 @@ button:disabled{
     outline: none;
 }
 
-.ButtonPageStyledNumberButtons{
+button.ButtonPage_StyledButton{
     width: 40px;
     height: 40px;
     line-height: normal;
@@ -569,12 +650,38 @@ button:disabled{
     outline: none;
 }
 
-.PaginationButtonGroupNextButtonWrapper{
+button{
+    border-style: none;
+    margin: 0;
+}
+
+div.PaginationButtonGroup_NextButtonWrapper{
     display: flex;
     margin-left: 10px;
 }
 
-.ButtonPageStyledButtonToRight{
+button.ButtonPage_StyledOff{
+    width: 40px;
+    height: 40px;
+    line-height: normal;
+    padding: 0px;
+    background-color: white;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 18px;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    outline: none;
+}
+
+.PaginationButtonGroup_Icon{
+    transform: rotate(180deg);
+}
+
+button.ButtonPage_Styled{
     width: 40px;
     height: 40px;
     line-height: normal;
@@ -592,357 +699,6 @@ button:disabled{
     outline: none;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+button.ButtonPage_Styled:disabled {
+    cursor: not-allowed;
+}
