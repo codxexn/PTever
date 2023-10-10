@@ -1235,6 +1235,8 @@ strong {
     overflow: hidden;
 }
 
+
+
 .ImageSlider-Mobile {
     visibility: visible;
     position: relative;
@@ -1564,3 +1566,4 @@ h2 {
         display: block;
     }
 }
+

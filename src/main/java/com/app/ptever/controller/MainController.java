@@ -7,6 +7,7 @@ import com.app.ptever.domain.dto.ShoppingMallSelectDTO;
 import com.app.ptever.domain.vo.PostImgVO;
 import com.app.ptever.repository.CommunityCommentService;
 import com.app.ptever.repository.CommunityService;
+import com.app.ptever.repository.CourseService;
 import com.app.ptever.repository.MainService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -26,12 +27,17 @@ import java.util.Map;
 
 public class MainController {
     private final MainService mainService;
+    private final CourseService courseService;
     private final CommunityCommentService communityCommentService;
 
     @GetMapping("/")
     public String GoToMain(Model model){
         List<CourseSelectDTO> courseAvgScoreList = mainService.getScoreCourseList();
         List<CourseSelectDTO> courseLatestDateList = mainService.getLatestDateCourseList();
+        courseAvgScoreList.forEach(p -> p.setCourseAvgScore(courseService.getAvgByCourseId(p.getCourseId())));
+        courseAvgScoreList.forEach(p -> p.setReviewCount(courseService.findAllReviewByCourseId(p.getCourseId()).size()));
+        courseLatestDateList.forEach(p -> p.setCourseAvgScore(courseService.getAvgByCourseId(p.getCourseId())));
+        courseLatestDateList.forEach(p -> p.setReviewCount(courseService.findAllReviewByCourseId(p.getCourseId()).size()));
         List<ShoppingMallSelectDTO> productRegisterList = mainService.getRegisterDateProductList();
         List<PostDTO> transPosts = mainService.getLatestDateCommunityList();
 //        Map<PostDTO, List<String>> postImageMap = new HashMap<>();
