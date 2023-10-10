@@ -38,7 +38,7 @@ public class CourseDAO {
     }
 
     // 전체 강의 목록 최신순으로 가지고 오기
-    public List<CourseVO> findAllCourses(Pagination pagination){
+    public List<CourseSelectDTO> findAllCourses(Pagination pagination){
         return courseMapper.selectAllCourse(pagination);
     }
 

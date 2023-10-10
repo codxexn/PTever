@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.app.ptever.mapper.FaqMapper">
+    <insert id="registerFAQ">
+        INSERT INTO TBL_FAQ(FAQ_ID, FAQ_TITLE, FAQ_CONTENT, USER_ID)
+        VALUES (SEQ_FAQ.nextval, #{faqTitle},#{faqContent},#{userId})
+    </insert>
+
+    <select id="selectTotalByUserId" resultType="int">
+        SELECT COUNT(FAQ_ID) FROM TBL_FAQ
+        WHERE USER_ID = #{userId}
+    </select>
+
+    <select id="selectAllByUserId" resultType="faqVO">
+        SELECT F2.FAQ_ID, F2.FAQ_CONTENT, F2.FAQ_TITLE, F2.USER_ID FROM
+            (SELECT ROWNUM R, F1.FAQ_ID, F1.FAQ_TITLE, F1.FAQ_CONTENT, F1.USER_ID FROM
+                (SELECT F.FAQ_ID, F.FAQ_TITLE, F.USER_ID, F.FAQ_CONTENT
+                 FROM TBL_FAQ F
+                          JOIN TBL_USER U
+                               ON F.USER_ID = U.USER_ID
+                 WHERE F.USER_ID = #{userId}
+                 ORDER BY F.FAQ_ID DESC) F1
+    <![CDATA[
+             WHERE ROWNUM <= #{pagination.endRow}
+            ) F2
+        WHERE F2.R >= #{pagination.startRow}
+        ]]>
+    </select>
+</mapper>

@@ -49,9 +49,9 @@ public class LectureController {
         pagination.setTotal(courseService.getAllCoursesCounts());
         pagination.progress();
         ModelAndView mv = new ModelAndView();
-        List<CourseVO> allCourses = courseService.findAllCourses(pagination);
-//        allCourses.forEach(p -> p.setCourseAvgScore(courseService.getAvgByCourseId(p.getCourseId())));
-//        allCourses.forEach(p -> p.setReviewCount(courseService.findAllReviewByCourseId(p.getCourseId()).size()));
+        List<CourseSelectDTO> allCourses = courseService.findAllCourses(pagination);
+        allCourses.forEach(p -> p.setCourseAvgScore(courseService.getAvgByCourseId(p.getCourseId())));
+        allCourses.forEach(p -> p.setReviewCount(courseService.findAllReviewByCourseId(p.getCourseId()).size()));
         mv.addObject("all", allCourses);
         mv.addObject("pagination", pagination);
         mv.setViewName("/lecture/lecture-list-all");

@@ -406,7 +406,7 @@ p {
     padding: 0px;
     background-color: white;
     text-align: center;
-    cursor: not-allowed;
+    cursor: pointer;
     border-radius: 50%;
     font-size: 18px;
     display: flex;
@@ -417,8 +417,51 @@ p {
     outline: none;
 }
 
+.left-Btn:disabled{
+    cursor: not-allowed;
+}
+
 .paginationBtn-Group-Icon {
     transform: rotate(180deg);
+}
+
+.Page-Selected {
+    width: 40px;
+    height: 40px;
+    line-height: normal;
+    padding: 0px;
+    background-color: white;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 50%;
+    color: rgb(51, 151, 255);
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    outline: none;
+}
+
+.Page-Unselected {
+    width: 40px;
+    height: 40px;
+    line-height: normal;
+    padding: 0px;
+    background-color: white;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 18px;
+    font-weight: normal;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    outline: none;
 }
 
 .page-Btn {
@@ -464,7 +507,9 @@ p {
     outline: none;
 }
 
-
+.right-Btn:disabled{
+    cursor: not-allowed;
+}
 
 
 button {

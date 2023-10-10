@@ -20,7 +20,7 @@ public class CourseVO implements Serializable {
     // 강의 평균 별정
     private Integer courseAvgScore;
     // 강의 난이도(쉬움, 보통, 어려움으로 분류 우리 페이지에 있나? 근데?)
-    private String courseLevelDifficult;
+    private String courseLevelDifficulty;
     // 강의 상태(default: true(강의 보이게), false(강의 삭제(?) 사라지게)
     private Boolean courseState;
     // 강의 생성 일자

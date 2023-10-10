@@ -88,13 +88,16 @@
                                                                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none' viewBox='0 0 24 24'%3E %3Cpath stroke='%23333' stroke-width='1.5' d='M3 10v7c0 2.21 1.79 4 4 4h10c2.21 0 4-1.79 4-4v-7M8.25 7L12 3.25 15.75 7M12 4v9'/%3E %3C/svg%3E"
                                                                 alt="공유 아이콘">
                                                     </button>
+                                                    <a href="/lecture/lecture-list" style="text-decoration: none; margin-top: 100px;">
+                                                    <div>목록</div>
+                                                    </a>
                                                 </div>
                                             </div>
                                         </div>
                                         <!-- 가격있는 div -->
                                         <div class="PriceInfoWrapper">
                                             <!-- 할인율 있는 div -->
-                                            <div class="PriceInfoDiscountRate" th:text="|${courseVO.courseDiscount}%|">
+                                            <div class="PriceInfoDiscountRate" th:if="${courseVO.courseDiscount} != 0" th:text="|${courseVO.courseDiscount}%|">
                                                 34%
                                             </div>
                                             <!-- 할인된 가격 있는 div -->
@@ -105,7 +108,7 @@
                                             </div>
                                             <!-- 원가 있는 div -->
                                             <div class="PriceInfoFakedPrice"
-                                                 th:text="|${#numbers.formatInteger(courseVO.coursePrice,0,'COMMA')}원|">
+                                                 th:if="${courseVO.courseDiscount} != 0" th:text="|${#numbers.formatInteger(courseVO.coursePrice,0,'COMMA')}원|">
                                                 44,000원
                                             </div>
                                         </div>
@@ -176,9 +179,9 @@
                             <!-- 후기가 있는 div -->
                             <section class="ProductDetailPageSectionContainer">
                                 <article>
-                                    <h2 class="ReviewSectionHiddenText">후기</h2>
                                     <!-- 평점이랑 후기 개수 나와있는 div -->
-                                    <div class="ReviewSummaryWrapper">
+                                    <div class="ReviewSummaryWrapper" th:if="${reviewDTOS.size()} != 0">
+                                        <h2 class="ReviewSectionHiddenText">후기</h2>
                                         <div class="ReviewSummaryInfoSection">
                                             <div class="ReadOnlyWrapper">
                                                 평균 평점
@@ -201,14 +204,12 @@
                                             <strong class="ReviewSummaryAverage" th:text="|${AVG}점|">
                                                 4.9
                                             </strong>
-                                            <span class="ReviewSummaryCount" th:text="|${reviewDTOS.size()}개 후기|">
-                        1090개 후기
-                      </span>
+                                            <span class="ReviewSummaryCount" th:text="|${reviewDTOS.size()}개 후기|"></span>
                                         </div>
                                         <!--                                    <span class="ReviewSummaryComment">경험한 크루의 90%가 5점을 줬어요!</span>-->
                                     </div>
                                     <!-- 후기(사진이랑 아이디, 글) 있는 div -->
-                                    <div class="ReviewSectionWrapper">
+                                    <div class="ReviewSectionWrapper" th:if="${reviewDTOS.size()} != 0">
                                         <!-- 몇개 후개 더보기의 윗부분이면서 사진이랑 글만 있는부분 -->
                                         <div class="CoverReviewCardListWrapper">
                                             <div class="SlickSlider CoverReviewSliderStyledSlider SlickInitialized">
@@ -453,16 +454,16 @@
                                 </article>
                             </section>
                             <!-- 프립 정보 div -->
-                            <section class="ProductDetailPageSectionContainer2">
-                                <article>
-                                    <header class="ArticleHeader">
-                                        <hgroup>
-                                            <h2 class="ArticleTitle">프립 정보</h2>
-                                        </hgroup>
-                                    </header>
-                                    <dl class="InfoSectionInfoContainer"></dl>
-                                </article>
-                            </section>
+<!--                            <section class="ProductDetailPageSectionContainer2">-->
+<!--                                <article>-->
+<!--                                    <header class="ArticleHeader">-->
+<!--                                        <hgroup>-->
+<!--                                            <h2 class="ArticleTitle">프립 정보</h2>-->
+<!--                                        </hgroup>-->
+<!--                                    </header>-->
+<!--                                    <dl class="InfoSectionInfoContainer"></dl>-->
+<!--                                </article>-->
+<!--                            </section>-->
                             <!-- 프립 소개가 있는 div
                               추후에 js로 상세정보 눌렀을때 확장되는것으로 변경필요 -->
                             <div class="ProductDetailPageSectionWrapper">
@@ -764,93 +765,93 @@
                                 </section>
                             </div>
                             <!-- 커리큘럼 div -->
-                            <section class="ProductDetailPageSectionContainer2">
-                                <article>
-                                    <!-- 제목 -->
-                                    <header class="ArticleHeader">
-                                        <hgroup>
-                                            <h2 class="ArticleTitle">
-                                                커리큘럼
-                                            </h2>
-                                            <h3 class="ArticleSubTitle">
-                                                당일 진행상황에 따라 일정이 변동될 수 있습니다.
-                                            </h3>
-                                        </hgroup>
-                                    </header>
-                                    <div class="CurriculumSectionWrapper">
-                                        <!-- 내용 -->
-                                        <div class="CurriculumSectionContainer">
-                                            <h6 class="CurriculumSectionHeader">
-                                                요가클리닉 센스요가 자세교정 프로그램
-                                            </h6>
-                                            <ul class="CurriculumSectionContent">
-                                                <li>
-                                                    <div class="CurriculumSectionCurriculumItem">
-                                                        <div class="CurriculumSectionTime">
-                                                            주말 공휴일
-                                                        </div>
-                                                        <div class="CurriculumSectionDescription">
-                                                            ● 1타임 75분 프로그램 / 2타임 90분 프로그램
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="CurriculumSectionCurriculumItem">
-                                                        <div class="CurriculumSectionTime">
-                                                            평일 저녁반
-                                                        </div>
-                                                        <div class="CurriculumSectionDescription">
-                                                            ● 자세교정 90분 ABCD 프로그램
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="CurriculumSectionCurriculumItem">
-                                                        <div class="CurriculumSectionTime">
-                                                            평일 정오반
-                                                        </div>
-                                                        <div class="CurriculumSectionDescription">
-                                                            ● 자세교정 70분 ABCD 프로그램
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="CurriculumSectionCurriculumItem">
-                                                        <div class="CurriculumSectionTime">
-                                                            주말 120분 특별수련
-                                                        </div>
-                                                        <div class="CurriculumSectionDescription">
-                                                            ● 자세교정 90분 프로그램 & 108배
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="CurriculumSectionCurriculumItem">
-                                                        <div class="CurriculumSectionTime">
-                                                            단체ㆍ동호희
-                                                        </div>
-                                                        <div class="CurriculumSectionDescription">
-                                                            ● 그룹요가 예약 진행 (요일시간 조율)
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                            <div class="CurriculumSectionEtcContainer">
-                                                <h6 class="CurriculumSectionEtcTitle">
-                                                    기타사항
-                                                </h6>
-                                                <p class="CurriculumSectionEtcDescription">
-                                                    ✔️정규반 정기권 참가자는 프로그램 변동일정등 별도안내
-                                                    ✔️교정관리 시작하실 분은 정기권ㆍ정규반 이용하세요.
-                                                    ✔️주말클래스 연강참가자 다수로 1타임 2타임간 15분 쉼
-                                                    ✔️단체참가 희망시 사전연락 좌석조율(010 3945 1234)
-                                                    ✔️70분 29,000원 / 90분 34,000원 / 120분 39,000원
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </article>
-                            </section>
+<!--                            <section class="ProductDetailPageSectionContainer2">-->
+<!--                                <article>-->
+<!--                                    &lt;!&ndash; 제목 &ndash;&gt;-->
+<!--                                    <header class="ArticleHeader">-->
+<!--                                        <hgroup>-->
+<!--                                            <h2 class="ArticleTitle">-->
+<!--                                                커리큘럼-->
+<!--                                            </h2>-->
+<!--                                            <h3 class="ArticleSubTitle">-->
+<!--                                                당일 진행상황에 따라 일정이 변동될 수 있습니다.-->
+<!--                                            </h3>-->
+<!--                                        </hgroup>-->
+<!--                                    </header>-->
+<!--                                    <div class="CurriculumSectionWrapper">-->
+<!--                                        &lt;!&ndash; 내용 &ndash;&gt;-->
+<!--                                        <div class="CurriculumSectionContainer">-->
+<!--                                            <h6 class="CurriculumSectionHeader">-->
+<!--                                                요가클리닉 센스요가 자세교정 프로그램-->
+<!--                                            </h6>-->
+<!--                                            <ul class="CurriculumSectionContent">-->
+<!--                                                <li>-->
+<!--                                                    <div class="CurriculumSectionCurriculumItem">-->
+<!--                                                        <div class="CurriculumSectionTime">-->
+<!--                                                            주말 공휴일-->
+<!--                                                        </div>-->
+<!--                                                        <div class="CurriculumSectionDescription">-->
+<!--                                                            ● 1타임 75분 프로그램 / 2타임 90분 프로그램-->
+<!--                                                        </div>-->
+<!--                                                    </div>-->
+<!--                                                </li>-->
+<!--                                                <li>-->
+<!--                                                    <div class="CurriculumSectionCurriculumItem">-->
+<!--                                                        <div class="CurriculumSectionTime">-->
+<!--                                                            평일 저녁반-->
+<!--                                                        </div>-->
+<!--                                                        <div class="CurriculumSectionDescription">-->
+<!--                                                            ● 자세교정 90분 ABCD 프로그램-->
+<!--                                                        </div>-->
+<!--                                                    </div>-->
+<!--                                                </li>-->
+<!--                                                <li>-->
+<!--                                                    <div class="CurriculumSectionCurriculumItem">-->
+<!--                                                        <div class="CurriculumSectionTime">-->
+<!--                                                            평일 정오반-->
+<!--                                                        </div>-->
+<!--                                                        <div class="CurriculumSectionDescription">-->
+<!--                                                            ● 자세교정 70분 ABCD 프로그램-->
+<!--                                                        </div>-->
+<!--                                                    </div>-->
+<!--                                                </li>-->
+<!--                                                <li>-->
+<!--                                                    <div class="CurriculumSectionCurriculumItem">-->
+<!--                                                        <div class="CurriculumSectionTime">-->
+<!--                                                            주말 120분 특별수련-->
+<!--                                                        </div>-->
+<!--                                                        <div class="CurriculumSectionDescription">-->
+<!--                                                            ● 자세교정 90분 프로그램 & 108배-->
+<!--                                                        </div>-->
+<!--                                                    </div>-->
+<!--                                                </li>-->
+<!--                                                <li>-->
+<!--                                                    <div class="CurriculumSectionCurriculumItem">-->
+<!--                                                        <div class="CurriculumSectionTime">-->
+<!--                                                            단체ㆍ동호희-->
+<!--                                                        </div>-->
+<!--                                                        <div class="CurriculumSectionDescription">-->
+<!--                                                            ● 그룹요가 예약 진행 (요일시간 조율)-->
+<!--                                                        </div>-->
+<!--                                                    </div>-->
+<!--                                                </li>-->
+<!--                                            </ul>-->
+<!--                                            <div class="CurriculumSectionEtcContainer">-->
+<!--                                                <h6 class="CurriculumSectionEtcTitle">-->
+<!--                                                    기타사항-->
+<!--                                                </h6>-->
+<!--                                                <p class="CurriculumSectionEtcDescription">-->
+<!--                                                    ✔️정규반 정기권 참가자는 프로그램 변동일정등 별도안내-->
+<!--                                                    ✔️교정관리 시작하실 분은 정기권ㆍ정규반 이용하세요.-->
+<!--                                                    ✔️주말클래스 연강참가자 다수로 1타임 2타임간 15분 쉼-->
+<!--                                                    ✔️단체참가 희망시 사전연락 좌석조율(010 3945 1234)-->
+<!--                                                    ✔️70분 29,000원 / 90분 34,000원 / 120분 39,000원-->
+<!--                                                </p>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </article>-->
+<!--                            </section>-->
 
                             <!-- 포함 사항, 불포함 사항, 준비물 -->
                             <section class="ProductDetailPageSectionContainer3">
@@ -859,44 +860,29 @@
                                     <header class="ArticleHeader2">
                                         <hgroup>
                                             <h2 class="ArticleTitle">
-                                                포함 사항
+                                                효과
                                             </h2>
                                         </hgroup>
                                     </header>
                                     <div class="StuffStuffContainer">
                     <span type="Round" class="TagRoundTag">
-                      자세교정프로그램 지도강습
+                      자세교정
                     </span>
                                         <span type="Round" class="TagRoundTag">
-                      맞춤교정도구 매트
+                      지방 분해
                     </span>
                                         <span type="Round" class="TagRoundTag">
-                      프로그램별 수업전부터 10~15분 도구마사지
+                      근력향상
                     </span>
-                                        <span type="Round" class="TagRoundTag">
-                      남여 탈의실
-                    </span>
-                                        <span type="Round" class="TagRoundTag">
-                      무료주차
-                    </span>
+<!--                                        <span type="Round" class="TagRoundTag">-->
+<!--                      남여 탈의실-->
+<!--                    </span>-->
+<!--                                        <span type="Round" class="TagRoundTag">-->
+<!--                      무료주차-->
+<!--                    </span>-->
                                     </div>
                                 </article>
                                 <!-- 불포함 사항 -->
-                                <article>
-                                    <header class="ArticleHeader2">
-                                        <hgroup>
-                                            <h2 class="ArticleTitle">
-                                                불포함 사항
-                                            </h2>
-                                        </hgroup>
-                                    </header>
-                                    <div class="StuffStuffContainer">
-                    <span type="Round" class="TagRoundTag2">
-                      샤워시설
-                    </span>
-                                    </div>
-                                </article>
-                                <!-- 준비물 -->
                                 <article>
                                     <header class="ArticleHeader2">
                                         <hgroup>
@@ -906,17 +892,38 @@
                                         </hgroup>
                                     </header>
                                     <div class="StuffStuffContainer">
-                    <span type="Round" class="TagRoundTag3">
+                    <span type="Round" class="TagRoundTag2">
                       즐거운 마음
                     </span>
-                                        <span type="Round" class="TagRoundTag3">
-                      땀이 많거나 너무 건조하면 (미끌림) 요가삭스 글러브 도움됩니다
+                    <span type="Round" class="TagRoundTag2">
+                      의지
                     </span>
-                                        <span type="Round" class="TagRoundTag3">
-                      자세점검시 너무 두껍고 박시하지 않는 밝은색 운동복이 좋습니다
+                    <span type="Round" class="TagRoundTag2">
+                      끈기
                     </span>
-                                    </div>
-                                </article>
+<!--                                    </div>-->
+<!--                                </article>-->
+                                <!-- 준비물 -->
+<!--                                <article>-->
+<!--                                    <header class="ArticleHeader2">-->
+<!--                                        <hgroup>-->
+<!--                                            <h2 class="ArticleTitle">-->
+<!--                                                준비물-->
+<!--                                            </h2>-->
+<!--                                        </hgroup>-->
+<!--                                    </header>-->
+<!--                                    <div class="StuffStuffContainer">-->
+<!--                    <span type="Round" class="TagRoundTag3">-->
+<!--                      즐거운 마음-->
+<!--                    </span>-->
+<!--                                        <span type="Round" class="TagRoundTag3">-->
+<!--                      땀이 많거나 너무 건조하면 (미끌림) 요가삭스 글러브 도움됩니다-->
+<!--                    </span>-->
+<!--                                        <span type="Round" class="TagRoundTag3">-->
+<!--                      자세점검시 너무 두껍고 박시하지 않는 밝은색 운동복이 좋습니다-->
+<!--                    </span>-->
+<!--                                    </div>-->
+<!--                                </article>-->
                             </section>
                             <!-- 1:1문의, 유의사항, 환불정책 div -->
                             <section class="ProductDetailPageSectionContainer2">

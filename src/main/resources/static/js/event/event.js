@@ -2,20 +2,38 @@
 // 임시 데이터이므로 첫 번째 공지사항 글에만 적용했습니다.
 
 // 웹
-const eventTitle = document.querySelectorAll(".event-Entity-Wrapper");
-const eventContent = document.querySelectorAll(".event-Entity-Content");
-const eventTitleTitle = document.querySelectorAll(".event-Title");
+// const eventTitle = document.querySelectorAll(".event-Entity-Wrapper");
+// const eventContent = document.querySelectorAll(".event-Entity-Content");
+// const eventTitleTitle = document.querySelectorAll(".event-Title");
 
-eventTitle[0].addEventListener("click", () => {
-    if(eventTitle[0].style.borderBottom != "none"){
-        eventTitle[0].style.borderBottom = "none";
-        eventTitleTitle[0].style.fontWeight = "bolder";
-        eventContent[0].style.display = "block";
-    } else{
-        eventTitle[0].style.borderBottom = "1px solid rgb(230, 230, 230)";
-        eventTitleTitle[0].style.fontWeight = "bold";
-        eventContent[0].style.display = "none";
-    }
+// eventTitle[0].addEventListener("click", () => {
+//     if(eventTitle[0].style.borderBottom != "none"){
+//         eventTitle[0].style.borderBottom = "none";
+//         eventTitleTitle[0].style.fontWeight = "bolder";
+//         eventContent[0].style.display = "block";
+//     } else{
+//         eventTitle[0].style.borderBottom = "1px solid rgb(230, 230, 230)";
+//         eventTitleTitle[0].style.fontWeight = "bold";
+//         eventContent[0].style.display = "none";
+//     }
+// });
+
+const eventTitles = document.querySelectorAll(".event-Entity-Wrapper");
+const eventContents = document.querySelectorAll(".event-Entity-Content");
+const eventTitleTitles = document.querySelectorAll(".event-Title");
+
+eventTitles.forEach((eventTitle, index) => {
+    eventTitle.addEventListener("click", () => {
+        if (eventTitle.style.borderBottom !== "none") {
+            eventTitle.style.borderBottom = "none";
+            eventTitleTitles[index].style.fontWeight = "bolder";
+            eventContents[index].style.display = "block";
+        } else {
+            eventTitle.style.borderBottom = "1px solid rgb(230, 230, 230)";
+            eventTitleTitles[index].style.fontWeight = "bold";
+            eventContents[index].style.display = "none";
+        }
+    });
 });
 
 // 앱 {

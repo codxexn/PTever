@@ -70,7 +70,7 @@
                             <div class="ProductListProductWrapper">
                                 <!-- 반복되는 카드 목록1 -->
                                 <div class="CardProductWrapper" th:each="List:${all}">
-                                    <a class="WithLinkStyledLink" th:href="@{'lecture-detailpage/' + ${List.courseId}}">
+                                    <a class="WithLinkStyledLink" th:href="@{'/lecture/lecture-detailpage/' + ${List.courseId}}">
                                         <div class="CardProductInfoWrapper">
                                             <!-- 사진 -->
                                             <div class="CardProductImageContainer">
@@ -96,7 +96,7 @@
                                             </div>
                                             <!-- 제목 -->
                                             <div class="CardProductDetailContainer">
-                                                <span class="CardProductLocation" th:text="|난이도 - ${List.courseLevelDifficult}|">성동/광진</span>
+                                                <span class="CardProductLocation" th:text="|난이도 - ${List.courseLevelDifficulty}|"></span>
                                                 <div class="CardProductTitle" th:text="${List.courseTitle}"></div>
                                                 <!-- 별점이랑 후기 -->
                                                 <div class="CardProductReviewContainer">
@@ -108,27 +108,35 @@
 <!--                                                        <img width="11" height="10" src="data:image/svg+xml,%3Csvg width='16' height='14' viewBox='0 0 16 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cpath d='M12.293 8.6189L15.7442 6.00968C16.2325 5.63914 15.9799 4.9135 15.3402 4.88263L10.8957 4.6356C10.6263 4.62016 10.3906 4.46577 10.2896 4.23418L8.65658 0.405277C8.42088 -0.135092 7.59595 -0.135092 7.36026 0.405277L5.72724 4.21874C5.62623 4.45033 5.39053 4.60472 5.12117 4.62016L0.659819 4.86719C0.0200779 4.89806 -0.232451 5.6237 0.255772 5.99424L3.707 8.58802C3.90903 8.74241 4.01004 9.00487 3.9427 9.23646L2.81473 13.2043C2.66322 13.7601 3.31979 14.2079 3.85852 13.8991L7.61279 11.6913C7.84848 11.5523 8.13468 11.5523 8.35354 11.6913L12.1246 13.8991C12.6634 14.2079 13.3199 13.7601 13.1684 13.2043L12.0405 9.2519C11.99 9.02031 12.0741 8.77329 12.293 8.6189Z' fill='%237A29FA'/%3E %3C/svg%3E" alt="평점 icon">-->
 <!--                                                        <img width="11" height="10" src="data:image/svg+xml,%3Csvg width='16' height='14' viewBox='0 0 16 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cpath d='M12.293 8.6189L15.7442 6.00968C16.2325 5.63914 15.9799 4.9135 15.3402 4.88263L10.8957 4.6356C10.6263 4.62016 10.3906 4.46577 10.2896 4.23418L8.65658 0.405277C8.42088 -0.135092 7.59595 -0.135092 7.36026 0.405277L5.72724 4.21874C5.62623 4.45033 5.39053 4.60472 5.12117 4.62016L0.659819 4.86719C0.0200779 4.89806 -0.232451 5.6237 0.255772 5.99424L3.707 8.58802C3.90903 8.74241 4.01004 9.00487 3.9427 9.23646L2.81473 13.2043C2.66322 13.7601 3.31979 14.2079 3.85852 13.8991L7.61279 11.6913C7.84848 11.5523 8.13468 11.5523 8.35354 11.6913L12.1246 13.8991C12.6634 14.2079 13.3199 13.7601 13.1684 13.2043L12.0405 9.2519C11.99 9.02031 12.0741 8.77329 12.293 8.6189Z' fill='%237A29FA'/%3E %3C/svg%3E" alt="평점 icon">-->
 <!--                                                    </div>-->
-                                                    <!-- 후기 -->
-<!--                                                    <span class="CardProductReview" th:if="${List.reviewCount} != 0" th:text="|후기 ${List.reviewCount} |"></span>-->
-<!--                                                    <span class="CardProductReview" th:if="${List.courseAvgScore} != null" th:text="| 평점 ${List.courseAvgScore} |"></span>-->
+<!--                                                     후기 -->
+                                                    <span class="CardProductReview" th:if="${List.reviewCount} != 0" th:text="|후기 ${List.reviewCount} |"></span>
+                                                    <span class="CardProductReview" th:if="${List.courseAvgScore} != null" th:text="| 평점 ${List.courseAvgScore} |"></span>
                                                 </div>
                                                 <hr type="Line" size="16" class="Border">
                                                 <!-- 비용 -->
+<!--                                                <div class="CardProductPriceContainer">-->
+<!--                                                    &lt;!&ndash; 원가 &ndash;&gt;-->
+<!--                                                    <div class="CardProductPrice">-->
+<!--                                                        30,000원-->
+<!--                                                    </div>-->
+<!--                                                    &lt;!&ndash; 할인율, 할인가 &ndash;&gt;-->
+<!--                                                    <div class="CardProductDiscountRateContainer">-->
+<!--                                                        &lt;!&ndash; 할인율&ndash;&gt;-->
+<!--                                                        <div class="CardProductDiscountRate">-->
+<!--                                                            33%-->
+<!--                                                        </div>-->
+<!--                                                        &lt;!&ndash; 할인가 &ndash;&gt;-->
+<!--                                                        <div class="CardProductSalePrice">-->
+<!--                                                            20,000원-->
+<!--                                                        </div>-->
+<!--                                                    </div>-->
+<!--                                                </div>-->
                                                 <div class="CardProductPriceContainer">
-                                                    <!-- 원가 -->
-                                                    <div class="CardProductPrice">
-                                                        30,000원
-                                                    </div>
-                                                    <!-- 할인율, 할인가 -->
-                                                    <div class="CardProductDiscountRateContainer">
-                                                        <!-- 할인율-->
-                                                        <div class="CardProductDiscountRate">
-                                                            33%
-                                                        </div>
-                                                        <!-- 할인가 -->
-                                                        <div class="CardProductSalePrice">
-                                                            20,000원
-                                                        </div>
+                                                    <div class="CardProductPrice" th:if="${List.courseDiscount} != 0" th:text="|${#numbers.formatInteger(List.coursePrice,0,'COMMA')}원|"></div>
+                                                    <div class="CardProductDiscountPrice">
+                                                        <div class="CardProductDiscountRate" th:if="${List.courseDiscount} != 0" th:text="|${List.courseDiscount}%|"></div>
+                                                        <div class="CardProductSalePrice" th:if="${List.courseDiscount} != 0" th:text="|${#numbers.formatInteger(List.coursePrice - (List.coursePrice * 0.01 * List.courseDiscount),0,'COMMA')}원|"></div>
+                                                        <div class="CardProductSalePrice" th:unless="${List.courseDiscount} != 0" th:text="|${#numbers.formatInteger(List.coursePrice,0,'COMMA')}원|"></div>
                                                     </div>
                                                 </div>
                                             </div>
