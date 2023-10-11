@@ -5,4 +5,15 @@
         SELECT USER_ID, USER_PROFILE_PATH FROM TBL_USER_PROFILE
         WHERE USER_ID = #{userId}
     </select>
+
+    <insert id="insertKakaoProfile">
+        INSERT INTO TBL_USER_PROFILE(USER_PROFILE_ID, USER_ID, USER_PROFILE_NAME, USER_PROFILE_PATH)
+        VALUES(SEQ_USER_PROFILE.NEXTVAL, #{userId}, 'KAKAO', #{userProfilePath})
+    </insert>
+
+    <update id="updateProfileWithKakao">
+        UPDATE TBL_USER_PROFILE
+        SET USER_PROFILE_PATH = #{userProfilePath}
+        WHERE USER_ID = #{userId}
+    </update>
 </mapper>

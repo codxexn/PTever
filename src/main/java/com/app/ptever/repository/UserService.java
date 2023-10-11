@@ -1,6 +1,7 @@
 package com.app.ptever.repository;
 
 import com.app.ptever.domain.dto.PasswordMailDTO;
+import com.app.ptever.domain.dto.UserDTO;
 import com.app.ptever.domain.vo.UserVO;
 import org.apache.catalina.User;
 
@@ -34,4 +35,10 @@ public interface UserService {
 
     // 메일 보내기
     public void sendEmail(PasswordMailDTO passwordMailDTO);
+
+    // 카카오 회원가입
+    public void saveKakao(UserDTO userDTO);
+
+    // 탈퇴 유저가 카카오 회원가입 시 업데이트
+    public void reactivateToActiveByKakao(UserDTO userDTO);
 }

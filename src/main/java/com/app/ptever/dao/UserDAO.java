@@ -1,6 +1,7 @@
 package com.app.ptever.dao;
 
 
+import com.app.ptever.domain.dto.UserDTO;
 import com.app.ptever.domain.vo.UserVO;
 import com.app.ptever.mapper.UserMapper;
 import lombok.RequiredArgsConstructor;
@@ -42,4 +43,14 @@ public class UserDAO {
 
     // 비밀번호 재설정을 위한 임시비밀번호로의 업데이트
     public void changePassword(String userEmail, String userPassword){ userMapper.updatePassword(userEmail, userPassword);}
+
+    // 카카오 회원가입
+    public void writeKakao(UserDTO userDTO) {
+        userMapper.insertKakao(userDTO);
+    }
+
+    // 탈퇴 유저가 카카오 회원가입 시 업데이트
+    public void modifyToActiveByKakao(UserDTO userDTO){
+        userMapper.updateToActiveByKakao(userDTO);
+    }
 }

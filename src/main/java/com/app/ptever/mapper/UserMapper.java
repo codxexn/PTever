@@ -1,6 +1,7 @@
 package com.app.ptever.mapper;
 
 
+import com.app.ptever.domain.dto.UserDTO;
 import com.app.ptever.domain.vo.UserVO;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -27,4 +28,10 @@ public interface UserMapper {
 
     // 비밀번호 재설정을 위한 임시비밀번호로의 업데이트
     public void updatePassword(String userEmail, String userPassword);
+
+    // 카카오 회원가입
+    public void insertKakao(UserDTO userDTO);
+
+    // 탈퇴 유저가 카카오 회원가입 시 업데이트
+    public void updateToActiveByKakao(UserDTO userDTO);
 }
