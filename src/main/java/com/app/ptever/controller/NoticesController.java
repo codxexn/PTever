@@ -72,14 +72,29 @@ public class NoticesController {
     }
 
 //    1대1 문의 목록
-    @GetMapping("personal-faq-list")
-    public void GoTopersonalFaqList(HttpSession session,Long userId, Pagination pagination){
-//        pagination.setTotal(faqService.findTotalByUserId(session));
-//        pagination.progress();
-//        ModelAndView mav = new ModelAndView();
-//        List<FaqVO> faqlist=faqService.findAllByUserId(pagination,userId);
-//        mav.addObject("faqlist",faqlist);
-//        mav.addObject("pagination",pagination);
 
+    @GetMapping("personal-faq-list")
+    public String GoTopersonalFaqlists(HttpSession session, FaqVO faqVO){
+        if(session.getAttribute("user")==null){
+            return "/login/login";
+        }
+
+        return "/notices/personal-faq-list";
+    }
+
+    @PostMapping("personal-faq-list")
+    public String GoTopersonalFaqList(@RequestParam("userId") Long userId, Pagination pagination){
+
+
+
+        pagination.setTotal(faqService.findTotalByUserId(userId));
+        pagination.progress();
+        ModelAndView mav = new ModelAndView();
+        List<FaqVO> faqlist=faqService.findAllByUserId(pagination,userId);
+        mav.addObject("faqlist",faqlist);
+        mav.addObject("pagination",pagination);
+        log.info(mav.toString());
+
+        return "/notices/personal-faq-list";
     }
 }

@@ -99,55 +99,55 @@
               </div>
             </li>
           </ul>
-          <footer class="pagination-Wrapper" th:with="start=${pagination.startPage}, last=(${pagination.endPage})">
-            <div class="prev-Btn">
-              <button th:if="${pagination.page==start}" disabled width="40px" height="40px" font-size="18px"
-                      class="left-Btn" id="prevprev_button">
-                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath fill='%23FFF' fill-opacity='0' fill-rule='nonzero' d='M0 0h40v40H0z'/%3E %3Cpath stroke='%23DDD' stroke-width='1.5' d='M16 16l4 4-4 4M21 16l4 4-4 4'/%3E %3C/g%3E %3C/svg%3E" class="paginationBtn-Group-Icon">
-              </button>
-              <button th:if="${pagination.page != start}" th:onclick="|location.href='@{/notices/personal-faq-list(page=${start})}'|"
-                      width="40px" height="40px" font-size="18px" class="left-Btn" id="prevprev_button">
-                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Crect width='40' height='40' fill='%23FFF' fill-opacity='0' fill-rule='nonzero' rx='20'/%3E %3Cg stroke='%23000' stroke-width='1.5'%3E %3Cpath d='M16 16l4 4-4 4M21 16l4 4-4 4'/%3E %3C/g%3E %3C/g%3E %3C/svg%3E"
-                     class="paginationBtn-Group-Icon">
-              </button>
-              <button th:if="${pagination.page == start}" disabled class="left-Btn" id="prev_button">
-                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath fill='none' d='M0 0h40v40H0z'/%3E %3Cpath stroke='%23DDD' stroke-width='1.5' d='M18 16l4 4-4 4'/%3E %3C/g%3E %3C/svg%3E"
-                     class="paginationBtn-Group-Icon">
-              </button>
-              <button th:if="${pagination.page != start}" th:onclick="|location.href='@{/notices/personal-faq-list(page=${pagination.page-1})}'|"
-                      class="left-Btn" id="prev_button">
-                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 18 18'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath d='M18 0H0v18h18z'/%3E %3Cpath stroke='%23000' stroke-width='1.5' d='M7 5l4 4-4 4'/%3E %3C/g%3E %3C/svg%3E"
-                     class="paginationBtn-Group-Icon">
-              </button>
-            </div>
+<!--          <footer class="pagination-Wrapper" th:with="start=${pagination.startPage}, last=(${pagination.endPage})">-->
+<!--            <div class="prev-Btn">-->
+<!--              <button th:if="${pagination.page==start}" disabled width="40px" height="40px" font-size="18px"-->
+<!--                      class="left-Btn" id="prevprev_button">-->
+<!--                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath fill='%23FFF' fill-opacity='0' fill-rule='nonzero' d='M0 0h40v40H0z'/%3E %3Cpath stroke='%23DDD' stroke-width='1.5' d='M16 16l4 4-4 4M21 16l4 4-4 4'/%3E %3C/g%3E %3C/svg%3E" class="paginationBtn-Group-Icon">-->
+<!--              </button>-->
+<!--              <button th:if="${pagination.page != start}" th:onclick="|location.href='@{/notices/personal-faq-list(page=${start})}'|"-->
+<!--                      width="40px" height="40px" font-size="18px" class="left-Btn" id="prevprev_button">-->
+<!--                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Crect width='40' height='40' fill='%23FFF' fill-opacity='0' fill-rule='nonzero' rx='20'/%3E %3Cg stroke='%23000' stroke-width='1.5'%3E %3Cpath d='M16 16l4 4-4 4M21 16l4 4-4 4'/%3E %3C/g%3E %3C/g%3E %3C/svg%3E"-->
+<!--                     class="paginationBtn-Group-Icon">-->
+<!--              </button>-->
+<!--              <button th:if="${pagination.page == start}" disabled class="left-Btn" id="prev_button">-->
+<!--                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath fill='none' d='M0 0h40v40H0z'/%3E %3Cpath stroke='%23DDD' stroke-width='1.5' d='M18 16l4 4-4 4'/%3E %3C/g%3E %3C/svg%3E"-->
+<!--                     class="paginationBtn-Group-Icon">-->
+<!--              </button>-->
+<!--              <button th:if="${pagination.page != start}" th:onclick="|location.href='@{/notices/personal-faq-list(page=${pagination.page-1})}'|"-->
+<!--                      class="left-Btn" id="prev_button">-->
+<!--                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 18 18'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath d='M18 0H0v18h18z'/%3E %3Cpath stroke='%23000' stroke-width='1.5' d='M7 5l4 4-4 4'/%3E %3C/g%3E %3C/svg%3E"-->
+<!--                     class="paginationBtn-Group-Icon">-->
+<!--              </button>-->
+<!--            </div>-->
 
 
-            <button th:each="buttonpage:${#numbers.sequence(start,last)}" class="Page-Selected"
-                    th:class="${buttonpage == pagination.page ? 'Page-Selected' : 'Page-Unselected'}">
-              <a th:text="${buttonpage}" th:href="@{/event/event(page=${buttonpage})}"></a>
-            </button>
+<!--            <button th:each="buttonpage:${#numbers.sequence(start,last)}" class="Page-Selected"-->
+<!--                    th:class="${buttonpage == pagination.page ? 'Page-Selected' : 'Page-Unselected'}">-->
+<!--              <a th:text="${buttonpage}" th:href="@{/event/event(page=${buttonpage})}"></a>-->
+<!--            </button>-->
 
-            <div class="next-Btn">
-              <button th:if="${pagination.page == last}" disabled width="40px" height="40px" font-size="18px" class="right-Btn" id="next_button">
-                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath fill='none' d='M0 0h40v40H0z'/%3E %3Cpath stroke='%23DDD' stroke-width='1.5' d='M18 16l4 4-4 4'/%3E %3C/g%3E %3C/svg%3E"
-                     class="">
-              </button>
-              <button th:if="${pagination.page != last}" th:onclick="|location.href='@{/notices/personal-faq-list(page=${pagination.page+1})}'|"
-                      width="40px" height="40px" font-size="18px" class="right-Btn" id="next_button">
-                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 18 18'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath d='M18 0H0v18h18z'/%3E %3Cpath stroke='%23000' stroke-width='1.5' d='M7 5l4 4-4 4'/%3E %3C/g%3E %3C/svg%3E"
-                     class="">
-              </button>
-              <button th:if="${pagination.page == last}" disabled width="40px" height="40px" font-size="18px" class="right-Btn" id="nextnext_button">
-                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath fill='%23FFF' fill-opacity='0' fill-rule='nonzero' d='M0 0h40v40H0z'/%3E %3Cpath stroke='%23DDD' stroke-width='1.5' d='M16 16l4 4-4 4M21 16l4 4-4 4'/%3E %3C/g%3E %3C/svg%3E"
-                     class="" id="nextnext_button">
-              </button>
-              <button th:if="${pagination.page != last}" th:onclick="|location.href='@{/notices/personal-faq-list(page=${pagination.realEnd})}'|"
-                      class="right-Btn" id="nextnext_button">
-                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Crect width='40' height='40' fill='%23FFF' fill-opacity='0' fill-rule='nonzero' rx='20'/%3E %3Cg stroke='%23000' stroke-width='1.5'%3E %3Cpath d='M16 16l4 4-4 4M21 16l4 4-4 4'/%3E %3C/g%3E %3C/g%3E %3C/svg%3E"
-                     class="" id="nextnext_button">
-              </button>
-            </div>
-          </footer>
+<!--            <div class="next-Btn">-->
+<!--              <button th:if="${pagination.page == last}" disabled width="40px" height="40px" font-size="18px" class="right-Btn" id="next_button">-->
+<!--                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath fill='none' d='M0 0h40v40H0z'/%3E %3Cpath stroke='%23DDD' stroke-width='1.5' d='M18 16l4 4-4 4'/%3E %3C/g%3E %3C/svg%3E"-->
+<!--                     class="">-->
+<!--              </button>-->
+<!--              <button th:if="${pagination.page != last}" th:onclick="|location.href='@{/notices/personal-faq-list(page=${pagination.page+1})}'|"-->
+<!--                      width="40px" height="40px" font-size="18px" class="right-Btn" id="next_button">-->
+<!--                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 18 18'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath d='M18 0H0v18h18z'/%3E %3Cpath stroke='%23000' stroke-width='1.5' d='M7 5l4 4-4 4'/%3E %3C/g%3E %3C/svg%3E"-->
+<!--                     class="">-->
+<!--              </button>-->
+<!--              <button th:if="${pagination.page == last}" disabled width="40px" height="40px" font-size="18px" class="right-Btn" id="nextnext_button">-->
+<!--                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath fill='%23FFF' fill-opacity='0' fill-rule='nonzero' d='M0 0h40v40H0z'/%3E %3Cpath stroke='%23DDD' stroke-width='1.5' d='M16 16l4 4-4 4M21 16l4 4-4 4'/%3E %3C/g%3E %3C/svg%3E"-->
+<!--                     class="" id="nextnext_button">-->
+<!--              </button>-->
+<!--              <button th:if="${pagination.page != last}" th:onclick="|location.href='@{/notices/personal-faq-list(page=${pagination.realEnd})}'|"-->
+<!--                      class="right-Btn" id="nextnext_button">-->
+<!--                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Crect width='40' height='40' fill='%23FFF' fill-opacity='0' fill-rule='nonzero' rx='20'/%3E %3Cg stroke='%23000' stroke-width='1.5'%3E %3Cpath d='M16 16l4 4-4 4M21 16l4 4-4 4'/%3E %3C/g%3E %3C/g%3E %3C/svg%3E"-->
+<!--                     class="" id="nextnext_button">-->
+<!--              </button>-->
+<!--            </div>-->
+<!--          </footer>-->
           <hr size="40" type="Line" class="LineUnderPagination">
         </div>
       </section>
