@@ -26,7 +26,7 @@
                 </div>
                 <div class="filterWrapper">
                     <div class="fadeWrapper" style="opacity: 1; display: block">
-                        <div class="ProductSection-HeaderWrapper">
+                        <div class="ProductSection-HeaderWrapper" th:if="${courseTotalCount != 0}">
                             <div class="ProductSection-Header">
                                 <h2 class="ProductSection-HeaderTitle">
                                     강의 목록
@@ -37,9 +37,9 @@
                                 <a href="" class="ProductSection-HeaderLink">전체보기</a>
                             </div>
                         </div>
-                        <div class="productListWrapper">
+                        <div class="productListWrapper" th:if="${courseTotalCount != 0}">
                             <div class="cardProductWrapper" th:each="searchCourse : ${searchResult.courseLists}">
-                                <a href="" class="withLink">
+                                <a th:href="@{'/lecture/lecture-detailpage/' + ${searchCourse.courseId}}" class="withLink">
                                     <div class="cardProductInfoWrapper">
                                         <div class="cardProductImgContainer">
                                             <div class="imgWrapper">
@@ -93,8 +93,8 @@
                                 </a>
                             </div>
                         </div>
-                        <hr>
-                        <div class="ProductSection-HeaderWrapper">
+                        <hr th:if="${productTotalCount != 0 && courseTotalCount != 0}">
+                        <div class="ProductSection-HeaderWrapper" th:if="${productTotalCount != 0}">
                             <div class="ProductSection-Header">
                                 <h2 class="ProductSection-HeaderTitle">
                                     상품 목록
@@ -105,9 +105,9 @@
                                 <a href="" class="ProductSection-HeaderLink">전체보기</a>
                             </div>
                         </div>
-                        <div class="productListWrapper">
+                        <div class="productListWrapper" th:if="${productTotalCount != 0}">
                             <div class="cardProductWrapper" th:each=" searchProduct : ${searchResult.productLists}">
-                                <a href="" class="withLink">
+                                <a href="" class="withLink"> <!--th:href="@{'/lecture/lecture-detailpage/' + ${searchProduct.productId}}"-->
                                     <div class="cardProductInfoWrapper">
                                         <div class="cardProductImgContainer">
                                             <div class="imgWrapper">
