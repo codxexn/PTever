@@ -31,12 +31,12 @@
             </a>
           </div>
           <ul class="FAQListWrapper">
-            <li th:each="faqlist:${faqlist}">
-              <div class="FAQ-Element" th:text="${faqlist.faqTitle}">
+            <li th:each="faqlists:${faqlist}">
+              <div class="FAQ-Element" th:text="${faqlists.faqTitle}">
                 운동 열심히 하고 싶은데 의지가 안 생겨서 어떻게 해야 할까요?
                 <div class="FAQ-AnswerBadge">답변 완료</div>
               </div>
-              <div class="FAQ-Content" th:utext="${faqlist.faqContent}">
+              <div class="FAQ-Content" th:utext="${faqlists.faqContent}">
                 <p>안녕하세요.</p>
                 <p>제목에도 썼지만 제가 운동을 열심히 하려고 피테버 강의를 신청했는데</p>
                 <p>의지가 생기지 않아서 걱정입니다.</p>
