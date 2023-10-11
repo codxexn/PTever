@@ -7,8 +7,11 @@
     </insert>
 
     <select id="selectTotalByUserId" resultType="int">
-        SELECT COUNT(FAQ_ID) FROM TBL_FAQ
-        WHERE USER_ID = #{userId}
+        SELECT COUNT(F.FAQ_ID)
+        FROM TBL_FAQ F
+            JOIN TBL_USER TU
+                on F.USER_ID = TU.USER_ID
+        WHERE F.USER_ID = #{userId}
     </select>
 
     <select id="selectAllByUserId" resultType="faqVO">

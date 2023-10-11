@@ -24,6 +24,7 @@ public class NoticeMapperTests {
     @Autowired
     private NoticeMapper noticeMapper;
 
+
     private Pagination pagination;
 
 
@@ -51,6 +52,11 @@ public class NoticeMapperTests {
         faqVO.setUserId(999L);
 
         faqMapper.registerFAQ(faqVO);
+    }
+
+    @Test
+    public void selectFaq(){
+        System.out.println(faqMapper.selectTotalByUserId(105L));
     }
 
     @Test
