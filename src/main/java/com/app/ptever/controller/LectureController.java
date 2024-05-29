@@ -59,9 +59,6 @@ public class LectureController {
         return mv;
     }
 
-//    강의 상세보기
-//    @GetMapping("lecture-detailpage")
-//    public void GoToLectureDetail(ReviewDTO reviewDTO, CourseDTO courseDTO){;}
 
 //    강의 상세보기
     @GetMapping("lecture-detailpage/{id}")

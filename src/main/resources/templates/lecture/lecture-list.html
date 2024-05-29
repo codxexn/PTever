@@ -101,9 +101,7 @@
                                                     <!-- 제목이랑 가격등 -->
                                                     <div class="CardProductDetailContainer">
                                                         <span class="CardProductLocation" th:text="|난이도 - ${popularDTOS.courseLevelDifficulty}|"></span>
-                                                        <div class="CardProductTitle" th:text="${popularDTOS.courseTitle}">
-                                                            자세교정 요가클리닉 90분 프로그램
-                                                        </div>
+                                                        <div class="CardProductTitle" th:text="${popularDTOS.courseTitle}"></div>
                                                         <!-- 별점 -->
                                                         <div class="CardProductReview">
                                                             <div class="CardProductReviewGo" th:if="${popularDTOS.reviewCount} != 0" th:text="|후기 ${popularDTOS.reviewCount} |"></div>
